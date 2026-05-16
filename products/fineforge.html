@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FineForge · Product Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item active" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#00ff88;border-color:#00ff8855;background:#00ff8812">FineForge</span>
+  <h1>FineForge</h1>
+  <p class="sub">Days 120–149 · <a href="../index.html">Master calendar</a></p>
+</div>
+<div class="days-wrap">
+<article class="day-block status-pending" id="day-120" data-product="fineforge" data-status="pending" data-repo="data-prep-pipeline">
+  <header class="day-hdr">
+    <div class="day-num">120</div>
+    <div class="day-title-wrap">
+      <div class="day-title">data-prep-pipeline</div>
+      <div class="day-meta">Wed · <code>data-prep-pipeline</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">data-prep-pipeline: DESIGN.md — ClickHouse source tables, PII fields, dedup keys, Alpaca vs ShareGPT export, train/eval stratification.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Training Data Is Production Data — Legal at Walmart</div>
+        <div class="dc-sub">PII in logs almost shipped to vendor—legal review caught</div>
+        <div class="dc-body"><em>Bridge → code:</em> PII scrubber fail-closed before any Parquet export</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 120</div>
+        <div class="dc-title">Day 120 of Learning LLM Inference — Instruction Tuning Formats — Alpaca vs ShareGPT</div>
+        <div class="dc-sub">Schema choice affects tokenizer efficiency</div>
+        <div class="dc-body"><em>Hook → design:</em> Export CLI supports both formats</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Export CLI supports both formats ↔ PII scrubber fail-closed before any Parquet export</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-121" data-product="fineforge" data-status="pending" data-repo="data-prep-pipeline">
+  <header class="day-hdr">
+    <div class="day-num">121</div>
+    <div class="day-title-wrap">
+      <div class="day-title">data-prep-pipeline</div>
+      <div class="day-meta">Thu · <code>data-prep-pipeline</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">data-prep-pipeline: LensAI ClickHouse connector — SQL pull last 30d high-quality conversations (`judge_score&gt;0.8`).</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">ClickHouse at Agoda — Why We Left Pure Prometheus</div>
+        <div class="dc-sub">High-cardinality queries needed columnar rollups</div>
+        <div class="dc-body"><em>Bridge → code:</em> FineForge pulls training rows from same ClickHouse spine as LensAI</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 121</div>
+        <div class="dc-title">Day 121 of Learning LLM Inference — Mining Production Logs for SFT Data</div>
+        <div class="dc-sub">ClickHouse SQL as feature store</div>
+        <div class="dc-body"><em>Hook → design:</em> Connector query filters high judge_score</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Connector query filters high judge_score ↔ FineForge pulls training rows from same ClickHouse spine as LensAI</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-122" data-product="fineforge" data-status="pending" data-repo="data-prep-pipeline">
+  <header class="day-hdr">
+    <div class="day-num">122</div>
+    <div class="day-title-wrap">
+      <div class="day-title">data-prep-pipeline</div>
+      <div class="day-meta">Fri · <code>data-prep-pipeline</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">data-prep-pipeline: PII scrubber — regex + NER pass for emails/phones; audit log of redactions; fail closed on high-risk rows.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">GDPR Delete Requests — Delivery Hero User Erasure</div>
+        <div class="dc-sub">Had to cascade delete across 4 stores</div>
+        <div class="dc-body"><em>Bridge → code:</em> PII audit log proves compliance for fine-tune datasets</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 122</div>
+        <div class="dc-title">Day 122 of Learning LLM Inference — PII in Training Data — NER + Regex</div>
+        <div class="dc-sub">Fail closed like PCI scrubbers</div>
+        <div class="dc-body"><em>Hook → design:</em> Redaction audit table schema</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Redaction audit table schema ↔ PII audit log proves compliance for fine-tune datasets</div>
+      </div>
+      <div class="detail-card extra"><div class="dc-label">Weekly · Project blog</div><div class="dc-body">Data Prep Pipeline — ClickHouse → PII Scrub → Dedup → Instruction-Tuning JSONL</div></div>
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-123" data-product="fineforge" data-status="pending" data-repo="data-prep-pipeline">
+  <header class="day-hdr">
+    <div class="day-num">123</div>
+    <div class="day-title-wrap">
+      <div class="day-title">data-prep-pipeline</div>
+      <div class="day-meta">Sat · <code>data-prep-pipeline</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">data-prep-pipeline: Dedup via MinHash on prompt text; quality filter drop bottom quartile; output Parquet shards.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Dedup at 1.5T/day — Bloom vs MinHash Tradeoff</div>
+        <div class="dc-sub">False positive rate budgeted per query cost</div>
+        <div class="dc-body"><em>Bridge → code:</em> MinHash dedup chooses cheap approximate duplicate detection</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 123</div>
+        <div class="dc-title">Day 123 of Learning LLM Inference — MinHash Dedup — Near-Duplicate Prompts</div>
+        <div class="dc-sub">Similar to SimHash for docs</div>
+        <div class="dc-body"><em>Hook → design:</em> Hamming threshold config in prep pipeline</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Hamming threshold config in prep pipeline ↔ MinHash dedup chooses cheap approximate duplicate detection</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-124" data-product="fineforge" data-status="pending" data-repo="data-prep-pipeline">
+  <header class="day-hdr">
+    <div class="day-num">124</div>
+    <div class="day-title-wrap">
+      <div class="day-title">data-prep-pipeline</div>
+      <div class="day-meta">Sun · <code>data-prep-pipeline</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">data-prep-pipeline: Convert to instruction-tuning JSONL (Alpaca format); stratified 90/10 split by task_type; stats notebook.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Stratified Sampling — A/B Analysis at Wayfair</div>
+        <div class="dc-sub">Random split biased weekend traffic—stratify by segment</div>
+        <div class="dc-body"><em>Bridge → code:</em> Train/eval split stratified by task_type avoids leakage</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 124</div>
+        <div class="dc-title">Day 124 of Learning LLM Inference — Train/Eval Leakage — Stratified Splits</div>
+        <div class="dc-sub">Same prompt different split = leakage</div>
+        <div class="dc-body"><em>Hook → design:</em> Stratify on `task_type` hash</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Stratify on `task_type` hash ↔ Train/eval split stratified by task_type avoids leakage</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-125" data-product="fineforge" data-status="pending" data-repo="data-prep-pipeline">
+  <header class="day-hdr">
+    <div class="day-num">125</div>
+    <div class="day-title-wrap">
+      <div class="day-title">data-prep-pipeline</div>
+      <div class="day-meta">Mon · <code>data-prep-pipeline</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">data-prep-pipeline: Dataset dashboard — token histogram, language mix, label distribution; export `dataset_manifest.json`.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Data Quality Dashboards — Walmart Sensor Null Rates</div>
+        <div class="dc-sub">Null spike predicted firmware bug 48h early</div>
+        <div class="dc-body"><em>Bridge → code:</em> Token histogram catches broken tokenizer in export</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 125</div>
+        <div class="dc-title">Day 125 of Learning LLM Inference — Dataset Statistics — Shift Before Train</div>
+        <div class="dc-sub">EDA prevents day-4 loss flatline</div>
+        <div class="dc-body"><em>Hook → design:</em> Manifest JSON captures distributions</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Manifest JSON captures distributions ↔ Token histogram catches broken tokenizer in export</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-126" data-product="fineforge" data-status="pending" data-repo="data-prep-pipeline">
+  <header class="day-hdr">
+    <div class="day-num">126</div>
+    <div class="day-title-wrap">
+      <div class="day-title">data-prep-pipeline</div>
+      <div class="day-meta">Tue · <code>data-prep-pipeline</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">data-prep-pipeline: End-to-end dry run 10k rows; BENCHMARKS.md; publish Day 122 project blog on production data pitfalls.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">90% of ML Is Data — Manager Quote I Now Believe</div>
+        <div class="dc-sub">Spent 3 weeks on features, 3 days on model</div>
+        <div class="dc-body"><em>Bridge → code:</em> Data prep project blog documents the real calendar time</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 126</div>
+        <div class="dc-title">Day 126 of Learning LLM Inference — Data-Centric AI — Labels from Judges</div>
+        <div class="dc-sub">Use Month 4 judge scores as quality filter</div>
+        <div class="dc-body"><em>Hook → design:</em> Filter `judge_score&gt;0.8` in export</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Filter `judge_score&gt;0.8` in export ↔ Data prep project blog documents the real calendar time</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-127" data-product="fineforge" data-status="pending" data-repo="lora-trainer">
+  <header class="day-hdr">
+    <div class="day-num">127</div>
+    <div class="day-title-wrap">
+      <div class="day-title">lora-trainer</div>
+      <div class="day-meta">Wed · <code>lora-trainer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">lora-trainer: DESIGN.md — target modules, rank/alpha grid, QLoRA 4-bit, checkpoint policy, LensAI metrics stream.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">GPU Cluster Quotas — First Cloud Train Job</div>
+        <div class="dc-sub">Preemptible VMs taught checkpoint obsession</div>
+        <div class="dc-body"><em>Bridge → code:</em> LoRA DESIGN starts with VRAM budget like Kafka disk budget</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 127</div>
+        <div class="dc-title">Day 127 of Learning LLM Inference — LoRA — Low-Rank Adaptation Intuition</div>
+        <div class="dc-sub">Rank decomposition like compressed sensing</div>
+        <div class="dc-body"><em>Hook → design:</em> Target modules list in trainer config</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Target modules list in trainer config ↔ LoRA DESIGN starts with VRAM budget like Kafka disk budget</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-128" data-product="fineforge" data-status="pending" data-repo="lora-trainer">
+  <header class="day-hdr">
+    <div class="day-num">128</div>
+    <div class="day-title-wrap">
+      <div class="day-title">lora-trainer</div>
+      <div class="day-meta">Thu · <code>lora-trainer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">lora-trainer: LoRA config generator CLI — input base model + GPU VRAM → recommended rank/alpha/batch.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Hyperparameter Grids — Wayfair Price Model Tuning</div>
+        <div class="dc-sub">Grid search automated but needed guardrails</div>
+        <div class="dc-body"><em>Bridge → code:</em> Config generator prevents illegal rank for 7B on 24GB</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 128</div>
+        <div class="dc-title">Day 128 of Learning LLM Inference — Rank and Alpha — Capacity vs Overfit</div>
+        <div class="dc-sub">Higher rank = more capacity, more VRAM</div>
+        <div class="dc-body"><em>Hook → design:</em> CLI prints recommended rank for GPU</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: CLI prints recommended rank for GPU ↔ Config generator prevents illegal rank for 7B on 24GB</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-129" data-product="fineforge" data-status="pending" data-repo="lora-trainer">
+  <header class="day-hdr">
+    <div class="day-num">129</div>
+    <div class="day-title-wrap">
+      <div class="day-title">lora-trainer</div>
+      <div class="day-meta">Fri · <code>lora-trainer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">lora-trainer: QLoRA training script (HF PEFT) on prepared JSONL; log loss/grad_norm every 50 steps to Kafka.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Training Metrics — Agoda Ingestion Lag Analogy</div>
+        <div class="dc-sub">Watch consumer lag not just loss curve</div>
+        <div class="dc-body"><em>Bridge → code:</em> Stream loss to LensAI like ingestion metrics</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 129</div>
+        <div class="dc-title">Day 129 of Learning LLM Inference — QLoRA — 4-bit Training</div>
+        <div class="dc-sub">Quantized base weights save memory</div>
+        <div class="dc-body"><em>Hook → design:</em> bitsandbytes config in training script</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: bitsandbytes config in training script ↔ Stream loss to LensAI like ingestion metrics</div>
+      </div>
+      <div class="detail-card extra"><div class="dc-label">Weekly · Project blog</div><div class="dc-body">LoRA Trainer — QLoRA on 7B, Checkpoint WAL, and Real GPU Dollar Costs</div></div>
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-130" data-product="fineforge" data-status="pending" data-repo="lora-trainer">
+  <header class="day-hdr">
+    <div class="day-num">130</div>
+    <div class="day-title-wrap">
+      <div class="day-title">lora-trainer</div>
+      <div class="day-meta">Sat · <code>lora-trainer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">lora-trainer: Checkpoint manager — save every 500 steps to MinIO; resume from latest on crash.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Checkpoint Corruption — Resume After Spot Kill</div>
+        <div class="dc-sub">Lost 6h once without step checkpoints</div>
+        <div class="dc-body"><em>Bridge → code:</em> MinIO checkpoint every 500 steps is WAL for training</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 130</div>
+        <div class="dc-title">Day 130 of Learning LLM Inference — Checkpointing — WAL for Gradients</div>
+        <div class="dc-sub">Resume training like Kafka offset commit</div>
+        <div class="dc-body"><em>Hook → design:</em> Checkpoint metadata in MinIO manifest</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Checkpoint metadata in MinIO manifest ↔ MinIO checkpoint every 500 steps is WAL for training</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-131" data-product="fineforge" data-status="pending" data-repo="lora-trainer">
+  <header class="day-hdr">
+    <div class="day-num">131</div>
+    <div class="day-title-wrap">
+      <div class="day-title">lora-trainer</div>
+      <div class="day-meta">Sun · <code>lora-trainer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">lora-trainer: Training cost calculator — GPU $/hr × wall time → total; expose in CLI summary.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">FinOps GPU — Finance Asked for Cost Per Model</div>
+        <div class="dc-sub">Tagged cloud resources by `model_id` label</div>
+        <div class="dc-body"><em>Bridge → code:</em> Training cost CLI answers &#x27;what did this adapter cost&#x27;</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 131</div>
+        <div class="dc-title">Day 131 of Learning LLM Inference — GPU Cost Accounting — $/1M Tokens Trained</div>
+        <div class="dc-sub">FinOps for training not just inference</div>
+        <div class="dc-body"><em>Hook → design:</em> CLI prints total $ from wall×$/hr</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: CLI prints total $ from wall×$/hr ↔ Training cost CLI answers &#x27;what did this adapter cost&#x27;</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-132" data-product="fineforge" data-status="pending" data-repo="lora-trainer">
+  <header class="day-hdr">
+    <div class="day-num">132</div>
+    <div class="day-title-wrap">
+      <div class="day-title">lora-trainer</div>
+      <div class="day-meta">Mon · <code>lora-trainer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">lora-trainer: Run first full training on 7B (4×A10 or cloud spot); capture final adapter weights.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">First Successful Train — Emotional Milestone</div>
+        <div class="dc-sub">Loss flatlined day 1—bad data; day 4 clicked</div>
+        <div class="dc-body"><em>Bridge → code:</em> Full 7B run is your &#x27;pipeline works&#x27; moment</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 132</div>
+        <div class="dc-title">Day 132 of Learning LLM Inference — Training Curves — Loss vs Generalization</div>
+        <div class="dc-sub">Watch eval loss not train loss</div>
+        <div class="dc-body"><em>Hook → design:</em> Log eval every N steps to Kafka</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Log eval every N steps to Kafka ↔ Full 7B run is your &#x27;pipeline works&#x27; moment</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-133" data-product="fineforge" data-status="pending" data-repo="lora-trainer">
+  <header class="day-hdr">
+    <div class="day-num">133</div>
+    <div class="day-title-wrap">
+      <div class="day-title">lora-trainer</div>
+      <div class="day-meta">Tue · <code>lora-trainer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">lora-trainer: Post-training sanity generation samples; document hyperparameter sweep results.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Sanity Generations — Smell Test Before Eval</div>
+        <div class="dc-sub">Model spewing JSON meant broken template</div>
+        <div class="dc-body"><em>Bridge → code:</em> Sample outputs before expensive eval harness</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 133</div>
+        <div class="dc-title">Day 133 of Learning LLM Inference — Qualitative Eval — Smell Tests</div>
+        <div class="dc-sub">Human scan before harness</div>
+        <div class="dc-body"><em>Hook → design:</em> Sample generation script output</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Sample generation script output ↔ Sample outputs before expensive eval harness</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-134" data-product="fineforge" data-status="pending" data-repo="eval-harness">
+  <header class="day-hdr">
+    <div class="day-num">134</div>
+    <div class="day-title-wrap">
+      <div class="day-title">eval-harness</div>
+      <div class="day-meta">Wed · <code>eval-harness</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">eval-harness: DESIGN.md — held-out test set, metrics (exact match, judge score, latency), baseline models list.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Leakage — Train/Test Contamination Postmortem</div>
+        <div class="dc-sub">Near-duplicate prompts inflated eval 20 points</div>
+        <div class="dc-body"><em>Bridge → code:</em> Eval harness DESIGN starts with leakage checks</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 134</div>
+        <div class="dc-title">Day 134 of Learning LLM Inference — Eval Harness Design — Held-Out Sets</div>
+        <div class="dc-sub">Never tune on eval set</div>
+        <div class="dc-body"><em>Hook → design:</em> Lock test set hash in registry metadata</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Lock test set hash in registry metadata ↔ Eval harness DESIGN starts with leakage checks</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-135" data-product="fineforge" data-status="pending" data-repo="eval-harness">
+  <header class="day-hdr">
+    <div class="day-num">135</div>
+    <div class="day-title-wrap">
+      <div class="day-title">eval-harness</div>
+      <div class="day-meta">Thu · <code>eval-harness</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">eval-harness: Batch inference runner for base vs LoRA vs GPT-4o on same prompts; store results Parquet.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Benchmark Honesty — Don&#x27;t Cherry-Pick 10 Prompts</div>
+        <div class="dc-sub">Wayfair pricing eval used 2k SKU sample minimum</div>
+        <div class="dc-body"><em>Bridge → code:</em> Batch runner uses full held-out set, not demos</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 135</div>
+        <div class="dc-title">Day 135 of Learning LLM Inference — Batch Inference — Throughput for Eval</div>
+        <div class="dc-sub">vLLM batch mode for eval runs</div>
+        <div class="dc-body"><em>Hook → design:</em> Runner uses shared prompt batch API</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Runner uses shared prompt batch API ↔ Batch runner uses full held-out set, not demos</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-136" data-product="fineforge" data-status="pending" data-repo="eval-harness">
+  <header class="day-hdr">
+    <div class="day-num">136</div>
+    <div class="day-title-wrap">
+      <div class="day-title">eval-harness</div>
+      <div class="day-meta">Fri · <code>eval-harness</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">eval-harness: Aggregate metrics table — win-rate per task_type; statistical significance vs base.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Win-Rate vs Accuracy — Stakeholder Language</div>
+        <div class="dc-sub">PM understood win-rate; not F1</div>
+        <div class="dc-body"><em>Bridge → code:</em> Aggregate table speaks product language for fine-tune</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 136</div>
+        <div class="dc-title">Day 136 of Learning LLM Inference — Comparing Models — Win-Rate and CI</div>
+        <div class="dc-sub">Confidence intervals on win-rate</div>
+        <div class="dc-body"><em>Hook → design:</em> Report Wilson interval in results</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Report Wilson interval in results ↔ Aggregate table speaks product language for fine-tune</div>
+      </div>
+      <div class="detail-card extra"><div class="dc-label">Weekly · Project blog</div><div class="dc-body">Eval Harness + Model Registry — Honest Win-Rates Before Production Promotion</div></div>
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-137" data-product="fineforge" data-status="pending" data-repo="eval-harness">
+  <header class="day-hdr">
+    <div class="day-num">137</div>
+    <div class="day-title-wrap">
+      <div class="day-title">eval-harness</div>
+      <div class="day-meta">Sat · <code>eval-harness</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">eval-harness: HTML report generator with failure case gallery; wire worst cases to DriftWatch samples.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Failure Galleries — How Support Triages Tickets</div>
+        <div class="dc-sub">Worst examples taught more than mean metric</div>
+        <div class="dc-body"><em>Bridge → code:</em> HTML report gallery is support-triage for models</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 137</div>
+        <div class="dc-title">Day 137 of Learning LLM Inference — Error Analysis — Failure Taxonomies</div>
+        <div class="dc-sub">Cluster failures like incident tags</div>
+        <div class="dc-body"><em>Hook → design:</em> Gallery groups by error type</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Gallery groups by error type ↔ HTML report gallery is support-triage for models</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-138" data-product="fineforge" data-status="pending" data-repo="model-registry">
+  <header class="day-hdr">
+    <div class="day-num">138</div>
+    <div class="day-title-wrap">
+      <div class="day-title">model-registry</div>
+      <div class="day-meta">Sun · <code>model-registry</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">model-registry: Implement registry API — upload artifact + metadata (eval scores, git sha, dataset hash).</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Artifact Storage — Wayfair Model Pickle Incidents</div>
+        <div class="dc-sub">Unversioned blobs caused rollback panic</div>
+        <div class="dc-body"><em>Bridge → code:</em> Registry API is S3 + metadata, not shared folder</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 138</div>
+        <div class="dc-title">Day 138 of Learning LLM Inference — Model Registry — Artifacts + Metadata</div>
+        <div class="dc-sub">Git for weights with semver tags</div>
+        <div class="dc-body"><em>Hook → design:</em> Registry row: artifact_uri, eval_scores</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Registry row: artifact_uri, eval_scores ↔ Registry API is S3 + metadata, not shared folder</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-139" data-product="fineforge" data-status="pending" data-repo="model-registry">
+  <header class="day-hdr">
+    <div class="day-num">139</div>
+    <div class="day-title-wrap">
+      <div class="day-title">model-registry</div>
+      <div class="day-meta">Mon · <code>model-registry</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">model-registry: Semantic versioning `major.minor.patch`; promote `staging→production` gate requiring eval threshold.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Semantic Versioning for Config — Agoda Flag Drama</div>
+        <div class="dc-sub">Breaking flag schema needed major bump</div>
+        <div class="dc-body"><em>Bridge → code:</em> promote staging→prod gate mirrors semver discipline</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 139</div>
+        <div class="dc-title">Day 139 of Learning LLM Inference — Promotion Gates — Staging to Production</div>
+        <div class="dc-sub">CI gate on eval threshold</div>
+        <div class="dc-body"><em>Hook → design:</em> Promotion API checks min win-rate</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Promotion API checks min win-rate ↔ promote staging→prod gate mirrors semver discipline</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-140" data-product="fineforge" data-status="pending" data-repo="model-registry">
+  <header class="day-hdr">
+    <div class="day-num">140</div>
+    <div class="day-title-wrap">
+      <div class="day-title">model-registry</div>
+      <div class="day-meta">Tue · <code>model-registry</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">model-registry: DriftWatch baseline registration — push eval score vector for future CUSUM reference.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Baseline Registration — Drift Needs a Reference</div>
+        <div class="dc-sub">Can&#x27;t detect drift day 1 without day 0 score</div>
+        <div class="dc-body"><em>Bridge → code:</em> Push eval vector to DriftWatch when registering model</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 140</div>
+        <div class="dc-title">Day 140 of Learning LLM Inference — Baselines for Drift — Register at Deploy</div>
+        <div class="dc-sub">CUSUM needs μ0 from eval harness</div>
+        <div class="dc-body"><em>Hook → design:</em> Webhook pushes baseline vector on promote</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Webhook pushes baseline vector on promote ↔ Push eval vector to DriftWatch when registering model</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-141" data-product="fineforge" data-status="pending" data-repo="vllm-deploy-kit">
+  <header class="day-hdr">
+    <div class="day-num">141</div>
+    <div class="day-title-wrap">
+      <div class="day-title">vllm-deploy-kit</div>
+      <div class="day-meta">Wed · <code>vllm-deploy-kit</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">vllm-deploy-kit: DESIGN.md — Helm values for tensor parallel, KV cache, HPA on GPU utilization.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Helm at Delivery Hero — Values File Sprawl</div>
+        <div class="dc-sub">12 envs × values—templated with helmfile</div>
+        <div class="dc-body"><em>Bridge → code:</em> vLLM chart inherits Helm lessons from ingestion month</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 141</div>
+        <div class="dc-title">Day 141 of Learning LLM Inference — vLLM Architecture — PagedAttention Refresher</div>
+        <div class="dc-sub">KV cache paging like OS virtual memory</div>
+        <div class="dc-body"><em>Hook → design:</em> Helm values set max_num_seqs</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Helm values set max_num_seqs ↔ vLLM chart inherits Helm lessons from ingestion month</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-142" data-product="fineforge" data-status="pending" data-repo="vllm-deploy-kit">
+  <header class="day-hdr">
+    <div class="day-num">142</div>
+    <div class="day-title-wrap">
+      <div class="day-title">vllm-deploy-kit</div>
+      <div class="day-meta">Thu · <code>vllm-deploy-kit</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">vllm-deploy-kit: Helm chart deploying vLLM with LoRA adapter mount; readiness on `/health`.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">GPU Node Pools — Taints and Tolerations</div>
+        <div class="dc-sub">CPU pods scheduling on GPU nodes wasted $$$</div>
+        <div class="dc-body"><em>Bridge → code:</em> nodeAffinity for vLLM prevents expensive mistakes</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 142</div>
+        <div class="dc-title">Day 142 of Learning LLM Inference — Tensor Parallel — Multi-GPU Serving</div>
+        <div class="dc-sub">Split layers across GPUs</div>
+        <div class="dc-body"><em>Hook → design:</em> tensor_parallel_size in chart values</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: tensor_parallel_size in chart values ↔ nodeAffinity for vLLM prevents expensive mistakes</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-143" data-product="fineforge" data-status="pending" data-repo="vllm-deploy-kit">
+  <header class="day-hdr">
+    <div class="day-num">143</div>
+    <div class="day-title-wrap">
+      <div class="day-title">vllm-deploy-kit</div>
+      <div class="day-meta">Fri · <code>vllm-deploy-kit</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">vllm-deploy-kit: RouteIQ auto-register new model endpoint on promotion; weighted routing trial 10% traffic.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Canary Routing — Agoda 5% Feature Rollout</div>
+        <div class="dc-sub">Percent traffic matched error budget math</div>
+        <div class="dc-body"><em>Bridge → code:</em> 10% RouteIQ trial on fine-tuned model copies flag rollout</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 143</div>
+        <div class="dc-title">Day 143 of Learning LLM Inference — Routing Fine-Tuned Models — Registry Integration</div>
+        <div class="dc-sub">RouteIQ reads registry for endpoints</div>
+        <div class="dc-body"><em>Hook → design:</em> Auto-register on promotion event</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Auto-register on promotion event ↔ 10% RouteIQ trial on fine-tuned model copies flag rollout</div>
+      </div>
+      <div class="detail-card extra"><div class="dc-label">Weekly · Project blog</div><div class="dc-body">vLLM Deploy Kit — GPU Helm, RouteIQ Registration, and the Closed-Loop Demo</div></div>
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-144" data-product="fineforge" data-status="pending" data-repo="vllm-deploy-kit">
+  <header class="day-hdr">
+    <div class="day-num">144</div>
+    <div class="day-title-wrap">
+      <div class="day-title">vllm-deploy-kit</div>
+      <div class="day-meta">Sat · <code>vllm-deploy-kit</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">vllm-deploy-kit: LensAI monitors fine-tuned model from first request — dashboards cloned from base model.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Day-1 Monitoring — New Service Checklist</div>
+        <div class="dc-sub">Dashboard cloned before launch, not after incident</div>
+        <div class="dc-body"><em>Bridge → code:</em> Clone LensAI dashboards for fine-tuned endpoint immediately</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 144</div>
+        <div class="dc-title">Day 144 of Learning LLM Inference — Observing Custom Models — LensAI Labels</div>
+        <div class="dc-sub">model_id label on all metrics</div>
+        <div class="dc-body"><em>Hook → design:</em> Dashboard variables for adapter version</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Dashboard variables for adapter version ↔ Clone LensAI dashboards for fine-tuned endpoint immediately</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-145" data-product="fineforge" data-status="pending" data-repo="vllm-deploy-kit">
+  <header class="day-hdr">
+    <div class="day-num">145</div>
+    <div class="day-title-wrap">
+      <div class="day-title">vllm-deploy-kit</div>
+      <div class="day-meta">Sun · <code>vllm-deploy-kit</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">vllm-deploy-kit: Simulate DriftWatch alert → webhook → retrain stub → redeploy; document loop in LOOP.md.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Closed Loop Demo — The North Star Slide</div>
+        <div class="dc-sub">Drew this architecture on whiteboard in interview</div>
+        <div class="dc-body"><em>Bridge → code:</em> Simulated retrain loop is the 5-month story in code</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 145</div>
+        <div class="dc-title">Day 145 of Learning LLM Inference — Closed-Loop MLOps — Event-Driven Retrain</div>
+        <div class="dc-sub">Alert→train→deploy sequence</div>
+        <div class="dc-body"><em>Hook → design:</em> LOOP.md sequence diagram</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: LOOP.md sequence diagram ↔ Simulated retrain loop is the 5-month story in code</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-146" data-product="fineforge" data-status="pending" data-repo="vllm-deploy-kit">
+  <header class="day-hdr">
+    <div class="day-num">146</div>
+    <div class="day-title-wrap">
+      <div class="day-title">vllm-deploy-kit</div>
+      <div class="day-meta">Mon · <code>vllm-deploy-kit</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">vllm-deploy-kit: Load test fine-tuned endpoint vs GPT-4o on cost/latency/quality triangle.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Cost/Latency/Quality Triangle — Executive Frame</div>
+        <div class="dc-sub">Pick two—engineering makes the third explicit</div>
+        <div class="dc-body"><em>Bridge → code:</em> Load test documents triangle numbers for platform essay</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 146</div>
+        <div class="dc-title">Day 146 of Learning LLM Inference — Pareto Frontier — Cost Latency Quality</div>
+        <div class="dc-sub">Plot empirical frontier from load test</div>
+        <div class="dc-body"><em>Hook → design:</em> CSV export for platform essay chart</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: CSV export for platform essay chart ↔ Load test documents triangle numbers for platform essay</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-147" data-product="fineforge" data-status="pending" data-repo="vllm-deploy-kit">
+  <header class="day-hdr">
+    <div class="day-num">147</div>
+    <div class="day-title-wrap">
+      <div class="day-title">vllm-deploy-kit</div>
+      <div class="day-meta">Tue · <code>vllm-deploy-kit</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">vllm-deploy-kit: Production hardening — PDB, GPU node affinity, graceful rollout; BENCHMARKS.md.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Graceful Rollout — Wayfair Zero-Downtime Price Push</div>
+        <div class="dc-sub">Blue/green for config, not big bang</div>
+        <div class="dc-body"><em>Bridge → code:</em> PDB + rolling update on GPU workloads</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 147</div>
+        <div class="dc-title">Day 147 of Learning LLM Inference — GPU Rollouts — Surge During Deploy</div>
+        <div class="dc-sub">Rolling update avoids all GPUs busy</div>
+        <div class="dc-body"><em>Hook → design:</em> maxUnavailable=1 on GPU deployment</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: maxUnavailable=1 on GPU deployment ↔ PDB + rolling update on GPU workloads</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-148" data-product="fineforge" data-status="pending" data-repo="platform-launch">
+  <header class="day-hdr">
+    <div class="day-num">148</div>
+    <div class="day-title-wrap">
+      <div class="day-title">platform-launch</div>
+      <div class="day-meta">Wed · <code>platform-launch</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">platform-launch: Unified landing page linking 5 products; architecture video script; compose `platform-quickstart`.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Portfolio Launch — Cohesive Narrative</div>
+        <div class="dc-sub">Five repos without story = confusion</div>
+        <div class="dc-body"><em>Bridge → code:</em> Unified landing is recruiter UX</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 148</div>
+        <div class="dc-title">Day 148 of Learning LLM Inference — Platform Architecture — Five Products One Story</div>
+        <div class="dc-sub">Interview whiteboard in HTML</div>
+        <div class="dc-body"><em>Hook → design:</em> Landing page copy ties north star</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Landing page copy ties north star ↔ Unified landing is recruiter UX</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-149" data-product="fineforge" data-status="pending" data-repo="platform-launch">
+  <header class="day-hdr">
+    <div class="day-num">149</div>
+    <div class="day-title-wrap">
+      <div class="day-title">platform-launch</div>
+      <div class="day-meta">Thu · <code>platform-launch</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">platform-launch: Platform product essay + HN Show HN; tag platform-v1.0.0; 5-product integration demo recording; aggressive apply list (Anthropic, OpenAI, Modal, Together, Cohere).</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">150 Days — What I&#x27;d Tell Day-0 Me</div>
+        <div class="dc-sub">Consistency beat intensity; public build attracted inbound</div>
+        <div class="dc-body"><em>Bridge → code:</em> Platform essay closes loop: observability→route→drift→retrain</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 149</div>
+        <div class="dc-title">Day 149 of Learning LLM Inference — 150 Days of LLM Inference — Curriculum Recap</div>
+        <div class="dc-sub">Spine: observe→trace→route→drift→retrain</div>
+        <div class="dc-body"><em>Hook → design:</em> Final essay links AI Day 0–149 themes</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Final essay links AI Day 0–149 themes ↔ Platform essay closes loop: observability→route→drift→retrain</div>
+      </div>
+      <div class="detail-card extra"><div class="dc-label">Monthly · Product blog</div><div class="dc-body">The Self-Healing AI Infrastructure Platform — Five Products, One Loop, 150 Days</div></div>
+    </div>
+  </div>
+</article></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

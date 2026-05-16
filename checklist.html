@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Multi-Agent Checklist · 150-Day Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item" href="index.html">Master Plan</a>
+<a class="nav-item" href="platform.html">Platform</a>
+<a class="nav-item active" href="checklist.html">Daily Checklist</a>
+<a class="nav-item" href="products/lensai.html">LensAI</a>
+<a class="nav-item" href="products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:var(--green);border-color:rgba(0,255,136,.3);background:rgba(0,255,136,.06)">Multi-Agent Framework</span>
+  <h1>Daily <em>Checklist</em></h1>
+  <p class="sub">Reusable orchestration for code · Experience blog · AI Learning blog. Plan mode → approval → implement. Source: <a href="CHECKLIST.md">CHECKLIST.md</a> · <a href="WORKFLOW.md">Plans vs agents (WORKFLOW)</a></p>
+</div>
+
+<div class="checklist-wrap">
+  <div class="checklist-meta" id="daily-meta">
+    <div>
+      <label for="meta-day">Calendar day</label>
+      <input type="number" id="meta-day" min="0" max="149" placeholder="e.g. 4">
+    </div>
+    <div>
+      <label for="meta-date">Date</label>
+      <input type="date" id="meta-date">
+    </div>
+    <div>
+      <label for="meta-repo">Today's repo</label>
+      <input type="text" id="meta-repo" placeholder="infra-ai-streaming">
+    </div>
+    <div>
+      <label for="meta-branch">Branch</label>
+      <input type="text" id="meta-branch" placeholder="feat/consumer-kafka-stdout-skeleton">
+    </div>
+    <div class="full-width">
+      <label for="meta-thread">Shared Daily Thread (all agents)</label>
+      <textarea id="meta-thread" rows="2" placeholder="Paste plan.json thread one-liner"></textarea>
+    </div>
+  </div>
+
+  <p class="checklist-progress" id="progress">0 / 0 complete</p>
+  <div class="checklist-actions">
+    <button type="button" id="btn-save">Save progress</button>
+    <button type="button" id="btn-reset">Reset today's checks</button>
+    <button type="button" id="btn-copy-md">Copy unchecked from CHECKLIST.md</button>
+  </div>
+
+  <!-- A. Master Daily Flow -->
+  <section class="checklist-section" data-section="A">
+    <h2>A. Master Daily Flow</h2>
+    <h3>Pre-flight</h3>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="a-pf-1"><span>Open index.html — confirm today's row status</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-pf-2"><span>Read data/plan.json for day N (code, repo, experience, ai, thread, status)</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-pf-3"><span>Confirm code repo local + remote (akshantvats)</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-pf-4"><span>Confirm Profile repo + blog folders</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-pf-5"><span>Create/checkout branch per CHECKLIST.md (feat/chore/docs/…)</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-pf-6"><span>Note carryover (PRs, CI, drafts)</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-pf-7"><span>Set today status to "today" in plan.json (local only)</span></label>
+    </div>
+    <h3>Phase 1 — Plan mode (no implementation)</h3>
+    <div class="section-body">
+      <table class="check-table">
+        <thead><tr><th>Agent</th><th>Workstream</th><th>Output</th></tr></thead>
+        <tbody>
+          <tr><td>A1</td><td>Code / project</td><td>Markdown plan: what, why, arch, files, tests, docs</td></tr>
+          <tr><td>A2</td><td>Experience blog</td><td>Markdown plan: headline, bridge, thread, mermaid ideas</td></tr>
+          <tr><td>A3</td><td>AI Learning blog</td><td>Markdown plan: title format, DS analogy, schema refs</td></tr>
+        </tbody>
+      </table>
+      <label class="check-item"><input type="checkbox" data-id="a-p1-1"><span>A1 plan references plan.json code + repo</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-p1-2"><span>A2 uses Experience Series · X of N</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-p1-3"><span>A3 uses Day N of Learning LLM Inference</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-p1-4"><span>All plans include Shared Daily Thread</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-p1-5"><span>Cross-dependencies documented (section D)</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-p1-6"><span>Stop: no code, no HTML, no git push</span></label>
+    </div>
+    <h3>Phase 2 — User approval</h3>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="a-p2-1"><span>User reviewed all three plans in chat</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-p2-2"><span>Scope approved / edited per workstream</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-p2-3"><span>Daily Thread updated if user edited</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-p2-4"><span>Explicit approval before Phase 3</span></label>
+    </div>
+    <h3>Phase 3 — Implementation</h3>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="a-p3-1"><span>Code agent: branch, implement, test, docs, local commits</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-p3-2"><span>Experience: chat draft → approval → HTML → Profile</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-p3-3"><span>AI Learning: same workflow as Experience</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-p3-4"><span>Mid-day sync if schema/API changed</span></label>
+    </div>
+    <h3>Phase 4 — End of day</h3>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="a-p4-1"><span>Mark day done in plan.json</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-p4-2"><span>Blogs reference commit SHA / PR (not full diffs)</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-p4-3"><span>Distribution: share live blog URLs only</span></label>
+      <label class="check-item"><input type="checkbox" data-id="a-p4-4"><span>Optional retrofix notes for prior posts</span></label>
+    </div>
+  </section>
+
+  <!-- B. Blog Checklist -->
+  <section class="checklist-section" data-section="B">
+    <h2>B. Blog Checklist (Experience + AI Learning)</h2>
+    <h3>Series identity</h3>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="b-id-1"><span>Experience Series (not Agoda Series) · X of N</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-id-2"><span>AI: Day N of Learning LLM Inference — Topic</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-id-3"><span>Subtitle tone matches prior 1–2 posts</span></label>
+    </div>
+    <h3>Consistency review</h3>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="b-con-1"><span>Read previous 1–2 posts in series</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-con-2"><span>Match structure, headings, code fences, links</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-con-3"><span>List retrofix suggestions (optional backlog)</span></label>
+    </div>
+    <h3>Workflow</h3>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="b-wf-1"><span>Draft in chat first</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-wf-2"><span>User review & approval on draft</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-wf-3"><span>NO HTML until draft approved</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-wf-4"><span>HTML → blog folder → Profile site integration</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-wf-5"><span>Site live first → verify URL → share link only</span></label>
+    </div>
+    <h3>Publishing &amp; cross-links</h3>
+    <p class="checklist-note">Canonical base: <code>https://akshantvats.github.io/Profile/</code> — drafts in <code>plans/drafts/</code> are review-only; published HTML lives in Profile <code>blog/series/...</code>.</p>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="b-url-1"><span>Drafts in plans/drafts/ — not the live blog URL</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-url-2"><span>HTML in Profile blog/series/... only</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-url-3"><span>Cross-links use full https://akshantvats.github.io/Profile/... URLs (or verified /Profile/blog/... paths)</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-url-4"><span>No file://, localhost, or plans/drafts/ in published HTML</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-url-5"><span>Replace TBD placeholders with canonical URL before HTML merge</span></label>
+    </div>
+    <h3>Mermaid & visuals</h3>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="b-vis-1"><span>Architecture/flow posts include Mermaid</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-vis-2"><span>Kafka/API/data-path diagram (or user waiver)</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-vis-3"><span>Mermaid renders on Profile preview</span></label>
+    </div>
+    <h3>Per-blog sections</h3>
+    <div class="section-body">
+      <table class="check-table">
+        <thead><tr><th>Section</th><th>Experience</th><th>AI Learning</th></tr></thead>
+        <tbody>
+          <tr><td>Headline</td><td>Story-led, scale</td><td>Concept-led</td></tr>
+          <tr><td>Subtitle</td><td>Bridge to shipping</td><td>Hook to design</td></tr>
+          <tr><td>Thread link</td><td>→ AI post</td><td>→ Experience post</td></tr>
+          <tr><td>Code snippet</td><td>From today's commit</td><td>Schema / API / pseudo</td></tr>
+          <tr><td>Numbers</td><td>QPS, latency, cost</td><td>Metrics, complexity</td></tr>
+          <tr><td>DS analogy</td><td>Optional</td><td>Required</td></tr>
+          <tr><td>Company bridge</td><td>Required</td><td>Optional</td></tr>
+          <tr><td>Tradeoffs</td><td>What we skipped</td><td>Algo vs systems</td></tr>
+          <tr><td>Cross-link</td><td>Prior Experience + README</td><td>Prior AI day + docs</td></tr>
+        </tbody>
+      </table>
+      <label class="check-item"><input type="checkbox" data-id="b-pub-1"><span>Headline + subtitle match series format</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-pub-2"><span>Correct day numbering</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-pub-3"><span>Sibling blog + Daily Thread linked</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-pub-3b"><span>Cross-links use live Profile URLs — no file://, localhost, or plans/drafts/</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-pub-3c"><span>No TBD placeholders for published sibling posts</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-pub-4"><span>Code/schema matches today's commit</span></label>
+      <label class="check-item"><input type="checkbox" data-id="b-pub-5"><span>Mermaid + site build + GitHub Pages URL confirmed</span></label>
+    </div>
+  </section>
+
+  <!-- C. Code Development -->
+  <section class="checklist-section" data-section="C">
+    <h2>C. Code Development Checklist</h2>
+    <h3>Planning (before code)</h3>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="c-pl-1"><span>What ships today (one observable outcome)</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-pl-2"><span>Why — platform / day arc</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-pl-3"><span>Fit in codebase — modules, no orphans</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-pl-4"><span>Architecture impact (topics, schemas, compose)</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-pl-5"><span>Design choices + tradeoffs documented</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-pl-6"><span>Blog dependencies listed</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-pl-7"><span>User approval (Phase 2)</span></label>
+    </div>
+    <h3>Implementation</h3>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="c-im-1"><span>Branch feat/chore/docs/… from updated main</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-im-2"><span>Small logical commits</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-im-3"><span>README updated if user-facing</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-im-4"><span>DESIGN.md if architecture changed</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-im-5"><span>BENCHMARKS.md if perf claims changed</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-im-6"><span>docker-compose / config aligned</span></label>
+    </div>
+    <h3>Validation</h3>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="c-val-1"><span>docker compose up — stack healthy</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-val-2"><span>Tests pass</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-val-3"><span>Manual smoke: happy + failure path</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-val-4"><span>Benchmarks if perf-sensitive</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-val-5"><span>No PII/secrets in logs</span></label>
+    </div>
+    <h3>Self-review & git</h3>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="c-rev-1"><span>Diff: no debug/TODO/secrets</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-rev-2"><span>Security + observability checked</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-rev-3"><span>Quickstart still works for prior days</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-git-1"><span>Commits: type(scope): subject + Refs N of N</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-git-2"><span>Do not push until user says (default local only)</span></label>
+      <label class="check-item"><input type="checkbox" data-id="c-git-3"><span>If push approved: branch pushed, PR URL to user</span></label>
+    </div>
+    <p class="checklist-note">Commit format: <code>feat(scope): subject ≤50</code> — body with what/why — <code>Refs: N of N — repo — Daily Thread line</code>. Branches: <code>feat/</code>, <code>chore/</code>, <code>docs/</code> — see CHECKLIST.md.</p>
+  </section>
+
+  <!-- D. Multi-Agent Rules -->
+  <section class="checklist-section" data-section="D">
+    <h2>D. Multi-Agent Rules</h2>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="d-1"><span>Three independent agents (code, Experience, AI)</span></label>
+      <label class="check-item"><input type="checkbox" data-id="d-2"><span>Plan mode → markdown only per agent</span></label>
+      <label class="check-item"><input type="checkbox" data-id="d-3"><span>Implementation only after user approval</span></label>
+    </div>
+    <h3>Dependency matrix (today)</h3>
+    <div class="section-body">
+      <table class="check-table">
+        <thead><tr><th>If changes…</th><th>Notify…</th><th>Before…</th></tr></thead>
+        <tbody>
+          <tr><td>API / proto / schema</td><td>AI blog agent</td><td>HTML finalized</td></tr>
+          <tr><td>User-visible behavior / metric</td><td>Experience agent</td><td>HTML finalized</td></tr>
+          <tr><td>README quickstart</td><td>Both blog agents</td><td>Publish</td></tr>
+          <tr><td>Daily Thread</td><td>All agents</td><td>Publish</td></tr>
+        </tbody>
+      </table>
+      <label class="check-item"><input type="checkbox" data-id="d-dep-1"><span>Today's dependency rows filled in Phase 1</span></label>
+      <label class="check-item"><input type="checkbox" data-id="d-dep-2"><span>Code agent posts SHA/PR before blog HTML</span></label>
+      <label class="check-item"><input type="checkbox" data-id="d-art-1"><span>Shared Daily Thread in all artifacts</span></label>
+      <label class="check-item"><input type="checkbox" data-id="d-art-2"><span>Reuse this checklist daily</span></label>
+      <label class="check-item"><input type="checkbox" data-id="d-anti-1"><span>No code during blog planning</span></label>
+      <label class="check-item"><input type="checkbox" data-id="d-anti-2"><span>No HTML before draft approval</span></label>
+      <label class="check-item"><input type="checkbox" data-id="d-anti-2b"><span>No file://, localhost, or plans/drafts/ links in Profile HTML</span></label>
+      <label class="check-item"><input type="checkbox" data-id="d-anti-3"><span>Never push plan site to GitHub</span></label>
+      <label class="check-item"><input type="checkbox" data-id="d-anti-4"><span>No LinkedIn/X drafting in agent scope</span></label>
+    </div>
+  </section>
+
+  <!-- E. Plan site -->
+  <section class="checklist-section" data-section="E">
+    <h2>E. Plan Site (local only)</h2>
+    <div class="section-body">
+      <label class="check-item"><input type="checkbox" data-id="e-1"><span>Using checklist.html + CHECKLIST.md daily</span></label>
+      <label class="check-item"><input type="checkbox" data-id="e-2"><span>Nav includes Daily Checklist</span></label>
+      <label class="check-item"><input type="checkbox" data-id="e-3"><span>Plan folder not pushed to akshantvats remotes</span></label>
+    </div>
+    <p class="checklist-note">Repos: <strong>infra-ai-streaming</strong> · <strong>Profile</strong> on GitHub. This plan site stays on Desktop only.</p>
+  </section>
+</div>
+
+<footer class="site-foot">Akshant Sharma · Daily Multi-Agent Checklist · Framework Step 1</footer>
+
+<script>
+(function () {
+  const boxes = [...document.querySelectorAll('.check-item input[type=checkbox]')];
+  const metaFields = ['meta-day', 'meta-date', 'meta-repo', 'meta-branch', 'meta-thread'];
+  const progressEl = document.getElementById('progress');
+
+  function storageKey() {
+    const day = document.getElementById('meta-day').value || 'default';
+    return 'akshant-150-checklist-day-' + day;
+  }
+
+  function load() {
+    try {
+      const data = JSON.parse(localStorage.getItem(storageKey()) || '{}');
+      boxes.forEach(cb => { cb.checked = !!data.checks?.[cb.dataset.id]; });
+      metaFields.forEach(id => {
+        const el = document.getElementById(id);
+        if (data.meta?.[id] != null) el.value = data.meta[id];
+      });
+    } catch (_) {}
+    updateUI();
+  }
+
+  function save() {
+    const checks = {};
+    boxes.forEach(cb => { checks[cb.dataset.id] = cb.checked; });
+    const meta = {};
+    metaFields.forEach(id => { meta[id] = document.getElementById(id).value; });
+    localStorage.setItem(storageKey(), JSON.stringify({ checks, meta }));
+    updateUI();
+  }
+
+  function updateUI() {
+    const done = boxes.filter(cb => cb.checked).length;
+    progressEl.textContent = done + ' / ' + boxes.length + ' complete';
+    document.querySelectorAll('.check-item').forEach(label => {
+      const cb = label.querySelector('input');
+      label.classList.toggle('done', cb && cb.checked);
+    });
+  }
+
+  boxes.forEach(cb => cb.addEventListener('change', save));
+  metaFields.forEach(id => {
+    document.getElementById(id).addEventListener('change', save);
+    document.getElementById(id).addEventListener('blur', save);
+  });
+
+  document.getElementById('btn-save').addEventListener('click', save);
+  document.getElementById('btn-reset').addEventListener('click', () => {
+    if (!confirm('Reset all checkboxes for this day number?')) return;
+    boxes.forEach(cb => { cb.checked = false; });
+    save();
+  });
+  document.getElementById('btn-copy-md').addEventListener('click', () => {
+    window.open('CHECKLIST.md', '_blank');
+  });
+
+  document.getElementById('meta-day').addEventListener('change', load);
+  load();
+})();
+</script>
+</body>
+</html>

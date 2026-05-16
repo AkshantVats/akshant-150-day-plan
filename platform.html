@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Platform Vision</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item" href="index.html">Master Plan</a>
+<a class="nav-item active" href="platform.html">Platform</a>
+<a class="nav-item" href="checklist.html">Daily Checklist</a>
+<a class="nav-item" href="products/lensai.html">LensAI</a>
+<a class="nav-item" href="products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:var(--purple);border-color:rgba(167,139,250,.35);background:rgba(167,139,250,.06)">Platform</span>
+  <h1>Five products · <em>one loop</em></h1>
+  <p class="sub">LensAI observes inference → TraceForge traces agents → RouteIQ routes requests → DriftWatch detects drift → FineForge fine-tunes. Day 149 wires platform-launch into a single demo narrative.</p>
+</div>
+<div class="sec"><div class="sec-head"><h2>Products</h2><div class="sec-line"></div></div>
+<div class="grid-3"><div class="card"><div class="card-header"><div class="card-title" style="color:#00e5ff">LensAI</div><div class="card-sub">Days 0–29 · AI Inference Observability</div></div><div class="card-body"><a href="products/lensai.html">View LensAI plan →</a></div></div><div class="card"><div class="card-header"><div class="card-title" style="color:#ff6b35">TraceForge</div><div class="card-sub">Days 30–59 · AI Agent Execution Tracer</div></div><div class="card-body"><a href="products/traceforge.html">View TraceForge plan →</a></div></div><div class="card"><div class="card-header"><div class="card-title" style="color:#a78bfa">RouteIQ</div><div class="card-sub">Days 60–89 · Intelligent LLM Router</div></div><div class="card-body"><a href="products/routeiq.html">View RouteIQ plan →</a></div></div><div class="card"><div class="card-header"><div class="card-title" style="color:#ffd700">DriftWatch</div><div class="card-sub">Days 90–119 · ML Drift + Quality Monitor</div></div><div class="card-body"><a href="products/driftwatch.html">View DriftWatch plan →</a></div></div><div class="card"><div class="card-header"><div class="card-title" style="color:#00ff88">FineForge</div><div class="card-sub">Days 120–149 · Fine-Tuning Pipeline</div></div><div class="card-body"><a href="products/fineforge.html">View FineForge plan →</a></div></div></div></div>
+<div class="sec"><div class="info-box">
+<strong>Closed loop (Day 149):</strong> Telemetry from LensAI feeds DriftWatch evals; drift triggers FineForge retrain; RouteIQ registers new model weights; TraceForge validates agent behavior on shadow traffic.
+</div></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

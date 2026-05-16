@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project · distributed-flagd</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item active" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#00e5ff;border-color:#00e5ff55">distributed-flagd</span>
+  <h1><code>distributed-flagd</code></h1>
+  <p class="sub">7 build days · <a href="../index.html">Master plan</a></p>
+</div>
+<div class="sec"><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 21 · Tuesday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Create distributed-flagd + DESIGN.md: (1) Problem — commercial flag SaaS cost at scale, (2) etcd consensus + watch propagation, (3) gRPC streaming to edge clients, (4) AI model rollout flags — percentage traffic between model versions, (5) audit log design.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 22 · Wednesday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">distributed-flagd core in Go: HTTP CRUD for flags, etcd backend with watch, gRPC streaming push to clients. Flag types: boolean, string, percentage rollout. Docker Compose with etcd single-node for local dev.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 23 · Thursday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Model rollout evaluator: given tenant_id + user_id hash, resolve active model version from percentage flag. Integration hook: infra-ai-streaming ingestion adds resolved_model_id label from flagd sidecar. Tests for sticky assignment and 50/50 split stability.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 24 · Friday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Kubernetes CRD for FlagDefinition + Helm chart. HPA not required; document upgrade strategy for flag schema changes. Demo: flip 10% → 50% → 100% traffic to gpt-4o-mini vs gpt-4o with Grafana cost panel showing split.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 25 · Saturday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Audit log: append-only Kafka topic flag_audit with who changed what flag when. CLI traceforge-flagctl for emergency kill-switch on model routes. CHAOS test: etcd leader loss during rollout — clients must fail safe to last-known-good flags.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 26 · Sunday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">distributed-flagd BENCHMARKS.md: flag evaluation QPS, watch propagation latency P99, etcd write throughput. Cross-link ebpf + streaming repos in each README &#x27;Platform&#x27; section.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 27 · Monday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">distributed-flagd polish: OpenAPI spec, client SDK stub (Go), example sidecar yaml for ingestion deployment. Remove TODOs; CI with integration test against etcd + sample flags.</div></div></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

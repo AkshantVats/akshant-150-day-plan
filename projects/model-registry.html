@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project · model-registry</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item active" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#00ff88;border-color:#00ff8855">model-registry</span>
+  <h1><code>model-registry</code></h1>
+  <p class="sub">3 build days · <a href="../index.html">Master plan</a></p>
+</div>
+<div class="sec"><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 138 · Sun</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">model-registry: Implement registry API — upload artifact + metadata (eval scores, git sha, dataset hash).</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 139 · Mon</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">model-registry: Semantic versioning `major.minor.patch`; promote `staging→production` gate requiring eval threshold.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 140 · Tue</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">model-registry: DriftWatch baseline registration — push eval score vector for future CUSUM reference.</div></div></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

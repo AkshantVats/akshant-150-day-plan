@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project · drift-detector</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item active" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#ffd700;border-color:#ffd70055">drift-detector</span>
+  <h1><code>drift-detector</code></h1>
+  <p class="sub">7 build days · <a href="../index.html">Master plan</a></p>
+</div>
+<div class="sec"><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 104 · Mon</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">drift-detector: DESIGN.md — CUSUM parameters per segment, min sample size, cooldown after alert, root-cause sample query limit.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 105 · Tue</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">drift-detector: Implement CUSUM on hourly mean judge score per `query_type`; configurable `k` and `h` thresholds via env.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 106 · Wed</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">drift-detector: Per-segment drift — train separate CUSUM for top 10 query types; dashboard heatmap of segment health.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 107 · Thu</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">drift-detector: Drift alert payload — include 20 worst-scoring prompt/response pairs (redacted), suspected model version, time window.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 108 · Fri</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">drift-detector: LensAI integration — emit `drift_event` metric and log line; wire to existing anomaly panels.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 109 · Sat</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">drift-detector: Tenant-level sensitivity presets (strict/balanced/noisy); integration test injecting 15% score drop over 6 hours.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 110 · Sun</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">drift-detector: Document false-positive tuning guide; chaos replay of historical incident JSON; finalize CUSUM project blog for Day 108.</div></div></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

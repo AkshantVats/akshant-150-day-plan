@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project · prompt-fingerprinter</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item active" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#a78bfa;border-color:#a78bfa55">prompt-fingerprinter</span>
+  <h1><code>prompt-fingerprinter</code></h1>
+  <p class="sub">7 build days · <a href="../index.html">Master plan</a></p>
+</div>
+<div class="sec"><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 70 · Tuesday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">prompt-fingerprinter — DESIGN.md: normalize prompt (strip whitespace, canonical JSON), SHA-256 fingerprint, exact-match Redis cache layer before semantic cache. Sub-millisecond lookup.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 71 · Wednesday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Implement fingerprinter library in Rust: normalize(), fingerprint(), redis_key(). Property tests — equivalent prompts collide, distinct prompts rarely collide.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 72 · Thursday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Dual-layer cache stack: L1 exact Redis, L2 semantic pgvector. Metrics l1_hit, l2_hit, miss. Document stack diagram in README.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 73 · Friday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Prompt fingerprint collision drill — intentional hash clash test, verify TTL isolation.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 74 · Saturday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">prompt-fingerprinter polish: export OpenTelemetry spans for cache tier decisions. Outline model-quality-scorer scope for Week 3 (Day 75+). Cross-link RouteIQ + LensAI docs.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 75 · Sun</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">prompt-fingerprinter: Ship exact-match cache layer on SHA-256 fingerprint (normalize whitespace/case/Unicode NFC); Redis key `fp:{tenant}:{hash}` with 24h TTL; benchmark hit-rate vs semantic-only path; write BENCHMARKS.md with p50 lookup &lt;2ms; capture project-blog bullets in NOTES.md for Friday Day 87.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 76 · Mon</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">prompt-fingerprinter: Admin REST API `PUT /tenants/{id}/fingerprint-rules` (strip_punctuation, lowercase, max_prompt_bytes); integration test proving duplicate prompts skip embedding API; emit `cache_hit_type=exact` to LensAI Kafka topic.</div></div></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Local-only 150-day plan site — do not push to GitHub (akshantvats)
+# Keep master calendar, plan.json, and checklist private on this machine.
+
+.DS_Store
+__pycache__/
+*.pyc
+.Python
+.env
+.env.*
+
+# Optional: ignore generated HTML if you regenerate often (uncomment if desired)
+# index.html
+# platform.html
+# products/
+# projects/

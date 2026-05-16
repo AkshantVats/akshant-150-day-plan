@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project · tool-call-analyzer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item active" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#ff6b35;border-color:#ff6b3555">tool-call-analyzer</span>
+  <h1><code>tool-call-analyzer</code></h1>
+  <p class="sub">7 build days · <a href="../index.html">Master plan</a></p>
+</div>
+<div class="sec"><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 37 · Thursday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">tool-call-analyzer DESIGN.md — canonical ToolCall struct, adapters plan, cost per invocation including retries.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 38 · Friday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Go adapters openai/anthropic/langchain + golden JSON fixtures → Kafka tools.normalized.v1.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 39 · Saturday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Per-tool stats MVs: latency P99, error rate, cost; alert if tool &gt;40% trace duration.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 40 · Sunday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Tool dependency graph + N+1 detection; CLI traceforge graph --trace-id.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 41 · Monday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Bottleneck rank by exclusive time; Grafana tool cost waterfall.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 42 · Tuesday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Dual-write tool cost_usd to LensAI ingest; unified tenant Grafana board.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 43 · Wednesday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">tool-call-analyzer README + OpenAPI; chaos test aggregator failure → Kafka buffers spans.</div></div></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

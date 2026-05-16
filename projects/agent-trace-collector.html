@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project · agent-trace-collector</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item active" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#ff6b35;border-color:#ff6b3555">agent-trace-collector</span>
+  <h1><code>agent-trace-collector</code></h1>
+  <p class="sub">7 build days · <a href="../index.html">Master plan</a></p>
+</div>
+<div class="sec"><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 30 · Thursday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">agent-trace-collector — DESIGN.md: agent execution graph, span schema (trace_id, span_id, parent_span_id, tool_name, model, tokens, cost_usd, status, latency_ms), tool taxonomy, OTel mapping.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 31 · Friday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">OTel Collector pipeline: receivers otlp + kafka; processors batch + attributes; exporters to ClickHouse agent_spans and Kafka agent.spans.v1. Compose overlay on LensAI quickstart.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 32 · Saturday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Python SDK traceforge.wrap_openai(): emit spans per tool_call, hash arguments, record latency/tokens. Mock server test with parallel tool calls.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 33 · Sunday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Go SDK StartSpan/EndSpan + context propagation; example weather+calculator agent; Kafka producer like infra-ai-streaming.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 34 · Monday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">ClickHouse agent_spans MergeTree ORDER BY (trace_id, start_time); MV per-trace cost; Grafana waterfall panel.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 35 · Tuesday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">ReAct demo agent — reproduce silent failure on step 7; DEMO.md with screenshots.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 36 · Wednesday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Sampling head 10% + error tail; PII scrub processor; load test 5k spans/sec; BENCHMARKS.md.</div></div></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

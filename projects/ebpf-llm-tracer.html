@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project · ebpf-llm-tracer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item active" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#00e5ff;border-color:#00e5ff55">ebpf-llm-tracer</span>
+  <h1><code>ebpf-llm-tracer</code></h1>
+  <p class="sub">7 build days · <a href="../index.html">Master plan</a></p>
+</div>
+<div class="sec"><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 14 · Tuesday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Create repo ebpf-llm-tracer + DESIGN.md: zero-SDK LLM HTTP tracing via eBPF. Sections: probe attachment points (socket/connect/send), HTTP parsing for model_id and token headers, userspace agent architecture, security/CAP constraints, integration contract with infra-ai-streaming Kafka topic. Read Cilium + BCC docs; spike feasibility on local Linux VM or Docker privileged container.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 15 · Wednesday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">eBPF program v0 — trace socket syscalls for outbound HTTPS to api.openai.com / api.anthropic.com. BPF maps for connection → PID correlation. Userspace loader in Rust or Go using libbpf-rs / cilium/ebpf. Log raw connect events; no parsing yet.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 16 · Thursday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">HTTP parsing in userspace: reassemble TLS plaintext via uprobes or capture pre-TLS on localhost test server first. Extract method, path, status, Content-Length, x-request-id, model from JSON body snippets. Unit tests with canned PCAP fixtures.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 17 · Friday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Map parsed HTTP events to infra-ai-streaming ingest schema (model_id, latency_ms, prompt_tokens, completion_tokens, cost_usd, tenant_id, source=ebpf). Kafka producer from ebpf-llm-tracer userspace agent. End-to-end: curl OpenAI-compatible mock → eBPF → Kafka → existing consumer.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 18 · Saturday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Ticket G-10 pattern on ingestion path — add WAL to Rust ingestion (if not merged): append-only segments before Kafka produce, replay on startup for un-acked segments. Metrics wal_segments_pending, wal_replay_events_total. Parallel: harden ebpf-llm-tracer with rate limiting and drop policy when Kafka backpressures.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 19 · Sunday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">ebpf-llm-tracer demo harness: docker-compose sidecar deployment, capture live calls to mock LLM server with zero app SDK changes. BENCHMARKS.md for probe overhead (CPU %, P99 latency delta). Document required kernel ≥5.10 and CAP_BPF.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 20 · Monday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">OSS-02 — Kafka or Redpanda issue/PR in consumer group rebalancing or partition assignment. ebpf-llm-tracer README: architecture diagram, demo GIF, comparison table vs SDK instrumentation (Overhead, coverage, security).</div></div></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

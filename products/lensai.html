@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LensAI · Product Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item active" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#00e5ff;border-color:#00e5ff55;background:#00e5ff12">LensAI</span>
+  <h1>LensAI</h1>
+  <p class="sub">Days 0–29 · <a href="../index.html">Master calendar</a></p>
+</div>
+<div class="days-wrap">
+<article class="day-block status-done" id="day-0" data-product="lensai" data-status="done" data-repo="infra-ai-streaming">
+  <header class="day-hdr">
+    <div class="day-num">000</div>
+    <div class="day-title-wrap">
+      <div class="day-title">infra-ai-streaming</div>
+      <div class="day-meta">Tuesday · <code>infra-ai-streaming</code> · <span class="badge badge-done">Done</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Launch Day — public identity + repo scaffold. (1) Rewrite LinkedIn headline to Staff Engineer | Distributed Systems + AI Infra | Rust · Kafka · Kubernetes | ex-Agoda 1.5T/day TSDB · Delivery Hero · Walmart 7M sensors; refresh About with strongest numbers. (2) Rewrite GitHub profile README: who you are (2 lines), what you&#x27;re building (flagship project), technical bets (Rust infra + AI observability), &#x27;Currently building&#x27; placeholder. Dark-mode friendly, no emojis. (3) Create repo infra-ai-streaming: README only today — problem statement (why existing observability fails for LLM inference at scale), Mermaid architecture overview, target metrics (1M events/min, sub-100ms ingestion P99). Pin repo to profile.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">1.5 Trillion Events Per Day — Why We Couldn&#x27;t Buy Observability</div>
+        <div class="dc-sub">Agoda · WhiteFalcon TSDB · the day public building started</div>
+        <div class="dc-body"><em>Bridge → code:</em> Today I opened infra-ai-streaming because the same cardinality and throughput constraints I lived with at Agoda are now hitting every team shipping LLM inference.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 0</div>
+        <div class="dc-title">Day 0 — The Inference Problem Is a Data Plane Problem</div>
+        <div class="dc-sub">Why LLM observability belongs next to your TSDB, not your APM sidebar</div>
+        <div class="dc-body"><em>Hook → design:</em> Before KV cache math: inference telemetry is just another high-cardinality stream — and you already know how those fail.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Agoda-scale ingestion pain is the reason today&#x27;s README defines model_id × tenant_id as first-class partition keys.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-done" id="day-1" data-product="lensai" data-status="done" data-repo="infra-ai-streaming">
+  <header class="day-hdr">
+    <div class="day-num">001</div>
+    <div class="day-title-wrap">
+      <div class="day-title">infra-ai-streaming</div>
+      <div class="day-meta">Wednesday · <code>infra-ai-streaming</code> · <span class="badge badge-done">Done</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">DESIGN.md for infra-ai-streaming (Staff-level artifact before more code): (1) Problem &amp; Goals, (2) CAP — why AP over CP for ingestion, (3) Partition strategy — avoid hot partitions on model_id, (4) Backpressure — channel-based Rust ingestion, (5) Failure modes — Kafka down, ClickHouse slow, (6) Horizontal scaling plan, (7) Consistency model for analytics queries. This doc drives every later schema field.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Design Docs Beat Code on Day One</div>
+        <div class="dc-sub">Staff interviews read DESIGN.md before they read main.rs</div>
+        <div class="dc-body"><em>Bridge → code:</em> The CAP, partition, and backpressure sections I wrote today are the contract the Rust ingestion code must obey tomorrow.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 1</div>
+        <div class="dc-title">Day 1 — Transformer Inference Mechanics for Infra Engineers</div>
+        <div class="dc-sub">Prefill vs decode, KV cache, and why latency has two phases</div>
+        <div class="dc-body"><em>Hook → design:</em> Karpathy&#x27;s &#x27;build GPT&#x27; at 1.5× — skip the training; watch the autoregressive loop and memory growth per token.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">DESIGN.md&#x27;s event schema gets prefill_ms and decode_ms fields because Blog B&#x27;s two-phase latency model maps directly to observability SLOs.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-done" id="day-2" data-product="lensai" data-status="done" data-repo="infra-ai-streaming">
+  <header class="day-hdr">
+    <div class="day-num">002</div>
+    <div class="day-title-wrap">
+      <div class="day-title">infra-ai-streaming</div>
+      <div class="day-meta">Thursday · <code>infra-ai-streaming</code> · <span class="badge badge-done">Done</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Ticket G-01 — Rust ingestion core: Axum HTTP server with POST /ingest accepting batched JSON events (model_id, latency_ms, prompt_tokens, completion_tokens, cost_usd, tenant_id). Async Kafka producer via rdkafka. Channel-based backpressure with configurable buffer size. Graceful shutdown. Verify events reach Kafka topic locally. Commit messages describe design decisions, not &#x27;added ingestion&#x27;.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Ceph, POSIX, and the Lie of &#x27;Just Use a Filesystem&#x27;</div>
+        <div class="dc-sub">Agoda · storage layer · zero-copy writes in Rust</div>
+        <div class="dc-body"><em>Bridge → code:</em> Building /ingest with channel backpressure today mirrors how we avoided blocking the hot path when Ceph writes couldn&#x27;t keep up with ingest bursts.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 2</div>
+        <div class="dc-title">Day 2 — Continuous Batching in vLLM</div>
+        <div class="dc-sub">Why GPU utilization is a queueing problem, not a FLOPs problem</div>
+        <div class="dc-body"><em>Hook → design:</em> Draw static vs continuous batching as Kafka consumer poll loops — same insight, different silicon.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Kafka batching in G-01 and vLLM continuous batching share one design rule: never wait for a full batch if the queue is starving.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-done" id="day-3" data-product="lensai" data-status="done" data-repo="infra-ai-streaming">
+  <header class="day-hdr">
+    <div class="day-num">003</div>
+    <div class="day-title-wrap">
+      <div class="day-title">infra-ai-streaming</div>
+      <div class="day-meta">Friday · <code>infra-ai-streaming</code> · <span class="badge badge-done">Done</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Ticket G-01 — Rust ingestion core: Axum POST /ingest for batched JSON events (model_id, latency_ms, prompt_tokens, completion_tokens, cost_usd, tenant_id). rdkafka async producer, channel backpressure, graceful shutdown. Verify events on Kafka topic. Publish Experience blog (Agoda quantile merge) + AI Learning Day 2 (continuous batching) if not already live.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">When Percentiles Lie — Cross-Tier P95/P99 in a 1.8T/Day TSDB</div>
+        <div class="dc-sub">Agoda · histogram merge across Redis hot + S3/Parquet cold</div>
+        <div class="dc-body"><em>Bridge → code:</em> LensAI dashboards cannot average P99 across tenants — same merge discipline as WhiteFalcon quantile queries.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 2</div>
+        <div class="dc-title">Day 2 of Learning LLM Inference — Continuous Batching in vLLM</div>
+        <div class="dc-sub">GPU scheduler design as a queueing problem</div>
+        <div class="dc-body"><em>Hook → design:</em> Ingestion batching in Rust mirrors continuous batching — never starve the queue waiting for a full batch.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Rust /ingest backpressure today implements the same &#x27;keep the worker busy&#x27; rule as vLLM continuous batching.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-done" id="day-4" data-product="lensai" data-status="done" data-repo="infra-ai-streaming">
+  <header class="day-hdr">
+    <div class="day-num">004</div>
+    <div class="day-title-wrap">
+      <div class="day-title">Local dev stack + Go consumer skeleton</div>
+      <div class="day-meta">Saturday · <code>infra-ai-streaming</code> · <span class="badge badge-done">Done</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Ticket G-02 — docker-compose.yml: Redpanda, ClickHouse, Redis, Grafana, Prometheus (`docker compose up`). Go consumer reads Kafka, logs stdout (ClickHouse writer ships Day 5). Wire Rust → Kafka → Go end-to-end with test event. Publish both blogs; share URLs only.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Seven Million IoT Sensors — Failure Modes Textbooks Skip</div>
+        <div class="dc-sub">Walmart · device identity · edge filtering at scale</div>
+        <div class="dc-body"><em>Bridge → code:</em> Multi-service compose today mirrors shard isolation before you touch million-device fan-out.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 3</div>
+        <div class="dc-title">Day 3 of Learning LLM Inference — Token Budgets and Real Cost Structure</div>
+        <div class="dc-sub">Prompt vs completion pricing as capacity planning</div>
+        <div class="dc-body"><em>Hook → design:</em> Validate cost_usd + prompt vs completion token fields in event JSON against provider pricing pages.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Go consumer skeleton exists so tomorrow&#x27;s ClickHouse writer can aggregate cost_usd the way finance asks.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-5" data-product="lensai" data-status="pending" data-repo="infra-ai-streaming">
+  <header class="day-hdr">
+    <div class="day-num">005</div>
+    <div class="day-title-wrap">
+      <div class="day-title">infra-ai-streaming</div>
+      <div class="day-meta">Sunday · <code>infra-ai-streaming</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Ticket G-03 — ClickHouse batch writer: 1000 events or 500ms flush; circuit breaker; Redis overflow; DLQ after 3 retries. OBSERVABILITY.md — self-metrics for the pipeline (P50/P95/P99, lag, DLQ depth).</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Five Thousand Geo-Events Per Second — Shape of the Stream</div>
+        <div class="dc-sub">Delivery Hero · OSRM · throughput as a schema decision</div>
+        <div class="dc-body"><em>Bridge → code:</em> OTel spans on the ingestion path today tag the same dimensions I&#x27;d use to debug a map-matching pipeline under peak dinner rush.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 5</div>
+        <div class="dc-title">Day 5 — Tensor Parallelism Meets Kafka Partitions</div>
+        <div class="dc-sub">Model serving scale-out as a sharding problem</div>
+        <div class="dc-body"><em>Hook → design:</em> Triton&#x27;s model repository is just a partition assignment table with GPUs instead of brokers.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">BENCHMARKS.md numbers are meaningless without labels — today&#x27;s metrics mirror how I&#x27;d prove DH routing didn&#x27;t drop events under load.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-6" data-product="lensai" data-status="pending" data-repo="infra-ai-streaming">
+  <header class="day-hdr">
+    <div class="day-num">006</div>
+    <div class="day-title-wrap">
+      <div class="day-title">infra-ai-streaming</div>
+      <div class="day-meta">Monday · <code>infra-ai-streaming</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Ticket G-05 — Grafana dashboard (4 panels): (1) ingestion throughput events/sec by tenant, (2) P99 inference latency by model_id, (3) token cost/hour per tenant, (4) Kafka consumer lag trend. Export JSON to /dashboards; screenshot for README. Update resume Open Source section + LinkedIn Featured with infra-ai-streaming link.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Cardinality Is the Silent Killer — RoaringBitmap Lessons</div>
+        <div class="dc-sub">Agoda · Prometheus walls · model_id × tenant_id</div>
+        <div class="dc-body"><em>Bridge → code:</em> The Grafana P99-by-model_id panel only works if I refused to explode label cardinality the way we learned at Agoda scale.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 6</div>
+        <div class="dc-title">Day 6 — Sampling and Deterministic Routing</div>
+        <div class="dc-sub">Why 1% trace sampling isn&#x27;t free randomness</div>
+        <div class="dc-body"><em>Hook → design:</em> Consistent hashing for routes and consistent sampling for traces — same hash function, different failure modes.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Four Grafana panels are the user-facing proof that Blog A&#x27;s cardinality war and Blog B&#x27;s sampling discipline share one schema.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-7" data-product="lensai" data-status="pending" data-repo="infra-ai-streaming">
+  <header class="day-hdr">
+    <div class="day-num">007</div>
+    <div class="day-title-wrap">
+      <div class="day-title">infra-ai-streaming</div>
+      <div class="day-meta">Tuesday · <code>infra-ai-streaming</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Ticket G-06 — Token-bucket rate limiting in Rust ingestion per tenant_id (Redis shared counter for multi-instance). Per-tenant config: max events/sec, burst. Return 429 + Retry-After when exceeded. Write CHAOS.md: 5 failure scenarios — Kafka broker dies mid-ingest, ClickHouse timeout, Redis lost, ingestion OOM, network partition — expected behavior and recovery for each.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Supplier APIs and Token Buckets — Wayfair&#x27;s Real Circuit Breaker</div>
+        <div class="dc-sub">Rate limits that survived 10× surprise load</div>
+        <div class="dc-body"><em>Bridge → code:</em> Redis token buckets on tenant_id today are the pricing-API pattern I shipped — 429 with Retry-After, not silent drop.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 7</div>
+        <div class="dc-title">Day 7 — Quantization vs Compression Tradeoffs</div>
+        <div class="dc-sub">INT8/INT4 as Snappy-vs-Zstd for weights</div>
+        <div class="dc-body"><em>Hook → design:</em> You already pick codecs by access pattern — quantization is picking precision by deployment budget.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">CHAOS.md scenario 3 (Redis lost) exists because rate limiting without a fallback store is a decorated denial-of-service.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-8" data-product="lensai" data-status="pending" data-repo="infra-ai-streaming">
+  <header class="day-hdr">
+    <div class="day-num">008</div>
+    <div class="day-title-wrap">
+      <div class="day-title">infra-ai-streaming</div>
+      <div class="day-meta">Wednesday · <code>infra-ai-streaming</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Ticket G-07 — Helm charts for full stack: ingestion-engine HPA on custom Kafka lag metric, Redpanda, ClickHouse, Redis. Resource requests/limits, liveness/readiness probes, PodDisruptionBudget maxUnavailable:1, ConfigMap for tenant config. Deploy to local k3d; verify end-to-end. Add deploy/README.md with 3-command deploy.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Ten Thousand Concurrent Requests — EKS Patterns That Actually Helped</div>
+        <div class="dc-sub">Delivery Hero · peak · HPA limits</div>
+        <div class="dc-body"><em>Bridge → code:</em> Helm + HPA on Kafka lag is how I&#x27;d run DH peak today — scale on consumer lag, not CPU theater.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 8</div>
+        <div class="dc-title">Day 8 — Prompt Caching at the Infrastructure Layer</div>
+        <div class="dc-sub">Prefix reuse as KV-cache hit rate for dollars</div>
+        <div class="dc-body"><em>Hook → design:</em> Anthropic/OpenAI prompt cache headers are cache-control for transformers — treat them like HTTP CDN rules.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">HPA custom metric wiring is Blog A&#x27;s peak-load story applied to the ingestion Deployment Blog B&#x27;s cache economics justify.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-9" data-product="lensai" data-status="pending" data-repo="infra-ai-streaming">
+  <header class="day-hdr">
+    <div class="day-num">009</div>
+    <div class="day-title-wrap">
+      <div class="day-title">infra-ai-streaming</div>
+      <div class="day-meta">Thursday · <code>infra-ai-streaming</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Portfolio site v1 on GitHub Pages: name, positioning, 3 project cards with status badges, LinkedIn/GitHub links, Writing section. Minimal dark HTML, no frameworks. URL goes on resume header.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">250k SKUs in Sub-Second — Event-Driven vs Polling</div>
+        <div class="dc-sub">Wayfair · price propagation · why streams win</div>
+        <div class="dc-body"><em>Bridge → code:</em> Publishing the portfolio site today is shipping a read model — same as making pricing updates visible without batch lag.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 9</div>
+        <div class="dc-title">Day 9 — RAG as an Infra Pipeline</div>
+        <div class="dc-sub">Chunk → embed → index → retrieve → generate latency budget</div>
+        <div class="dc-body"><em>Hook → design:</em> RAG&#x27;s bottleneck is never the LLM first — it&#x27;s the fan-in on your vector store&#x27;s QPS.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Site &#x27;Writing&#x27; section links will point at posts that explain pipelines — today&#x27;s code is another pipeline, different payload.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-10" data-product="lensai" data-status="pending" data-repo="infra-ai-streaming">
+  <header class="day-hdr">
+    <div class="day-num">010</div>
+    <div class="day-title-wrap">
+      <div class="day-title">infra-ai-streaming</div>
+      <div class="day-meta">Friday · <code>infra-ai-streaming</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">chaos/run_chaos.sh: (1) kill Redpanda mid-ingest, restart after 30s — verify zero loss via DLQ + WAL replay, (2) throttle ClickHouse — verify circuit breaker + Redis buffer, (3) run at 10k events/sec, capture metrics. Update CHAOS.md with actual results + Grafana screenshots.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">We Killed Redpanda on Purpose — Chaos as Commit Message</div>
+        <div class="dc-sub">Agoda · Kafka · proving recovery beats claiming it</div>
+        <div class="dc-body"><em>Bridge → code:</em> run_chaos.sh results go into CHAOS.md the way we&#x27;d attach postmortems to JIRA — evidence, not vibes.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 10</div>
+        <div class="dc-title">Day 10 — GPU Memory Management for Non-CUDA Engineers</div>
+        <div class="dc-sub">VRAM, weight loading, and batch-size cliffs</div>
+        <div class="dc-body"><em>Hook → design:</em> OOM on a GPU is OOM on a JVM — someone&#x27;s batch size is a lie.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Chaos test 2 (slow ClickHouse) validates the circuit breaker Blog A lived through in tiered storage and Blog B&#x27;s memory-bound batching story predicts.</div>
+      </div>
+      <div class="detail-card extra"><div class="dc-label">Weekly · Project blog</div><div class="dc-body"><strong>Week 2 — Production Hardening: Chaos, Rate Limits, and Helm</strong><br>Why README screenshots matter more than feature lists<br></div></div>
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-11" data-product="lensai" data-status="pending" data-repo="infra-ai-streaming">
+  <header class="day-hdr">
+    <div class="day-num">011</div>
+    <div class="day-title-wrap">
+      <div class="day-title">infra-ai-streaming</div>
+      <div class="day-meta">Saturday · <code>infra-ai-streaming</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">OSS-01 — First contribution to VictoriaMetrics or Vector.dev (good-first-issue / help-wanted). Documentation example, benchmark, or reproducible bug report counts. Submit PR; link in weekly notes.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Reading VictoriaMetrics Source at 11pm — OSS as Interview Prep</div>
+        <div class="dc-sub">What production Rust teaches that tutorials skip</div>
+        <div class="dc-body"><em>Bridge → code:</em> Today&#x27;s OSS PR is practice for reading Agoda-scale codebases under time pressure — the skill transfers directly.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 11</div>
+        <div class="dc-title">Day 11 — Serving Frameworks Compared as Queue Schedulers</div>
+        <div class="dc-sub">vLLM vs TGI vs Ollama — scheduling policies, not logos</div>
+        <div class="dc-body"><em>Hook → design:</em> Ask &#x27;what&#x27;s the queue model?&#x27; before &#x27;what&#x27;s the benchmark score?&#x27;</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Anomaly detection on model_id latency is only trustworthy if you understand how each serving framework reports time (OSS reading informs that).</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-12" data-product="lensai" data-status="pending" data-repo="infra-ai-streaming">
+  <header class="day-hdr">
+    <div class="day-num">012</div>
+    <div class="day-title-wrap">
+      <div class="day-title">infra-ai-streaming</div>
+      <div class="day-meta">Sunday · <code>infra-ai-streaming</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Ticket G-09 — Anomaly detection in Go consumer: z-score on inference latency per model_id (sliding window 100 points, flag if &gt;3σ). On anomaly: Kafka topic anomalies, Prometheus anomalies_detected_total, Grafana alert rule.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">OTA at Scale — At-Least-Once Is a Feature, Not a Bug</div>
+        <div class="dc-sub">Walmart · firmware · Kafka offsets in disguise</div>
+        <div class="dc-body"><em>Bridge → code:</em> z-score anomaly detection is edge filtering moved upstream — catch the bad device before it poisons aggregates.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 12</div>
+        <div class="dc-title">Day 12 — Semantic Caching vs Exact-Match Redis</div>
+        <div class="dc-sub">Embeddings as cache keys — false positive risk as SLA</div>
+        <div class="dc-body"><em>Hook → design:</em> Semantic cache hit = approximate nearest neighbor with business consequences — tune threshold like tail latency.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">The anomalies topic is where exact rules end — semantic cache false positives will land in the same operational queue.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-13" data-product="lensai" data-status="pending" data-repo="infra-ai-streaming">
+  <header class="day-hdr">
+    <div class="day-num">013</div>
+    <div class="day-title-wrap">
+      <div class="day-title">infra-ai-streaming</div>
+      <div class="day-meta">Monday · <code>infra-ai-streaming</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Week 2 README polish for infra-ai-streaming: Excalidraw architecture PNG, Design Decisions (3 tradeoffs), Benchmarks table, Chaos Testing summary, Getting Started under 5 commands. README should stand alone for hiring committees.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Two Weeks, One README — Hiring Committees Scroll</div>
+        <div class="dc-sub">Proof beats promises · screenshots &gt; adjectives</div>
+        <div class="dc-body"><em>Bridge → code:</em> README polish today is what I&#x27;d send a Staff panel instead of a slide deck — architecture, benchmarks, chaos, quickstart.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 13</div>
+        <div class="dc-title">Day 13 — Embeddings as Dense Time-Series IDs</div>
+        <div class="dc-sub">Vectors are just high-dimensional series with ANN indexes</div>
+        <div class="dc-body"><em>Hook → design:</em> HNSW under write load feels like SSTable compaction under read pressure — you&#x27;ve already ops&#x27;d this class of problem.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Week-2 README closes infra-ai-streaming; tomorrow ebpf-llm-tracer extends observability to apps that will never install your SDK.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-14" data-product="lensai" data-status="pending" data-repo="ebpf-llm-tracer">
+  <header class="day-hdr">
+    <div class="day-num">014</div>
+    <div class="day-title-wrap">
+      <div class="day-title">ebpf-llm-tracer</div>
+      <div class="day-meta">Tuesday · <code>ebpf-llm-tracer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Create repo ebpf-llm-tracer + DESIGN.md: zero-SDK LLM HTTP tracing via eBPF. Sections: probe attachment points (socket/connect/send), HTTP parsing for model_id and token headers, userspace agent architecture, security/CAP constraints, integration contract with infra-ai-streaming Kafka topic. Read Cilium + BCC docs; spike feasibility on local Linux VM or Docker privileged container.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">High-Cardinality Metrics — The Prometheus Wall We Hit</div>
+        <div class="dc-sub">Agoda · schema design · label explosions</div>
+        <div class="dc-body"><em>Bridge → code:</em> ebpf-llm-tracer DESIGN.md caps label cardinality because I watched model_id × pod × zone destroy a metrics stack once.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 14</div>
+        <div class="dc-title">Day 14 — eBPF for AI Infrastructure</div>
+        <div class="dc-sub">Kernel probes vs SDK patches — when zero-instrumentation wins</div>
+        <div class="dc-body"><em>Hook → design:</em> Cilium proved network observability without app changes — LLM HTTP is the next syscall surface.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Zero-SDK tracing is the design decision: Blog A&#x27;s cardinality discipline meets Blog B&#x27;s probe attachment strategy in one Kafka topic.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-15" data-product="lensai" data-status="pending" data-repo="ebpf-llm-tracer">
+  <header class="day-hdr">
+    <div class="day-num">015</div>
+    <div class="day-title-wrap">
+      <div class="day-title">ebpf-llm-tracer</div>
+      <div class="day-meta">Wednesday · <code>ebpf-llm-tracer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">eBPF program v0 — trace socket syscalls for outbound HTTPS to api.openai.com / api.anthropic.com. BPF maps for connection → PID correlation. Userspace loader in Rust or Go using libbpf-rs / cilium/ebpf. Log raw connect events; no parsing yet.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Async Pipelines That Survived Dinner Rush</div>
+        <div class="dc-sub">Delivery Hero · SQS/Kinesis · decoupling notifications from analytics</div>
+        <div class="dc-body"><em>Bridge → code:</em> Socket-level probes today are the lightest-weight tap on a path that must not add milliseconds DH couldn&#x27;t afford.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 15</div>
+        <div class="dc-title">Day 15 — Multi-Model Routing Strategies</div>
+        <div class="dc-sub">Cost-first vs quality-first vs latency-first — pick two</div>
+        <div class="dc-body"><em>Hook → design:</em> Routing is policy engines — you operated feature flags for humans; models are flags with GPUs.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Syscall capture v0 is useless without a routing policy later — flagd will decide which model the probe&#x27;s latency belongs to.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-16" data-product="lensai" data-status="pending" data-repo="ebpf-llm-tracer">
+  <header class="day-hdr">
+    <div class="day-num">016</div>
+    <div class="day-title-wrap">
+      <div class="day-title">ebpf-llm-tracer</div>
+      <div class="day-meta">Thursday · <code>ebpf-llm-tracer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">HTTP parsing in userspace: reassemble TLS plaintext via uprobes or capture pre-TLS on localhost test server first. Extract method, path, status, Content-Length, x-request-id, model from JSON body snippets. Unit tests with canned PCAP fixtures.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Cross-Tier Query Latency — Hot Redis, Cold Ceph</div>
+        <div class="dc-sub">Agoda · tiering · why recent data dominates SLOs</div>
+        <div class="dc-body"><em>Bridge → code:</em> HTTP parsing in userspace mirrors separating hot path parsing from cold storage — do the minimum work before the bus.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 16</div>
+        <div class="dc-title">Day 16 — The Mental Model That Made LLM Infra Click</div>
+        <div class="dc-sub">Prefill/decode + KV cache + continuous batching in DS analogies</div>
+        <div class="dc-body"><em>Hook → design:</em> If you can explain Kafka, you can explain inference — after you name the two phases.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Parsed model_id fields in eBPF events must align with the two-phase latency columns Blog B introduced on Day 1.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-17" data-product="lensai" data-status="pending" data-repo="ebpf-llm-tracer">
+  <header class="day-hdr">
+    <div class="day-num">017</div>
+    <div class="day-title-wrap">
+      <div class="day-title">ebpf-llm-tracer</div>
+      <div class="day-meta">Friday · <code>ebpf-llm-tracer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Map parsed HTTP events to infra-ai-streaming ingest schema (model_id, latency_ms, prompt_tokens, completion_tokens, cost_usd, tenant_id, source=ebpf). Kafka producer from ebpf-llm-tracer userspace agent. End-to-end: curl OpenAI-compatible mock → eBPF → Kafka → existing consumer.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Building in Public — The Blog Post That Outlives LinkedIn</div>
+        <div class="dc-sub">Architecture posts as durable hiring signals</div>
+        <div class="dc-body"><em>Bridge → code:</em> Kafka wiring from ebpf-llm-tracer reuses the ingestion contract I benchmarked — platform thinking is reuse, not rewrite.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 17</div>
+        <div class="dc-title">Day 17 — LLM Observability — What Actually Matters</div>
+        <div class="dc-sub">Arize vs Langfuse vs Helicone — schema diff against your events</div>
+        <div class="dc-body"><em>Hook → design:</em> Add fields for tool spans and cache hits now — retrofitting schema is Agoda cardinality pain again.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">End-to-end eBPF → ClickHouse proves LensAI&#x27;s thesis: inference telemetry without vendor SDK lock-in.</div>
+      </div>
+      <div class="detail-card extra"><div class="dc-label">Weekly · Project blog</div><div class="dc-body"><strong>Week 3 — eBPF Zero-SDK Tracing for LLM HTTP</strong><br>ebpf-llm-tracer architecture and Kafka integration<br></div></div>
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-18" data-product="lensai" data-status="pending" data-repo="ebpf-llm-tracer">
+  <header class="day-hdr">
+    <div class="day-num">018</div>
+    <div class="day-title-wrap">
+      <div class="day-title">ebpf-llm-tracer</div>
+      <div class="day-meta">Saturday · <code>ebpf-llm-tracer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Ticket G-10 pattern on ingestion path — add WAL to Rust ingestion (if not merged): append-only segments before Kafka produce, replay on startup for un-acked segments. Metrics wal_segments_pending, wal_replay_events_total. Parallel: harden ebpf-llm-tracer with rate limiting and drop policy when Kafka backpressures.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Rate Limiting at the Supplier Boundary — Not the Textbook Diagram</div>
+        <div class="dc-sub">Wayfair · token bucket in production</div>
+        <div class="dc-body"><em>Bridge → code:</em> WAL on ingestion plus ebpf backpressure policy is the same &#x27;never lose the write&#x27; instinct as supplier API durability.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 18</div>
+        <div class="dc-title">Day 18 — Quantization and Model Optimization</div>
+        <div class="dc-sub">GPTQ vs AWQ vs bitsandbytes — pick variants like codec picks</div>
+        <div class="dc-body"><em>Hook → design:</em> Quantized weights are a deployment flag — infra owns the matrix of {cost, latency, quality}.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">wal_replay_events_total and probe drop counters belong in the same Grafana board — both are durability under overload.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-19" data-product="lensai" data-status="pending" data-repo="ebpf-llm-tracer">
+  <header class="day-hdr">
+    <div class="day-num">019</div>
+    <div class="day-title-wrap">
+      <div class="day-title">ebpf-llm-tracer</div>
+      <div class="day-meta">Sunday · <code>ebpf-llm-tracer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">ebpf-llm-tracer demo harness: docker-compose sidecar deployment, capture live calls to mock LLM server with zero app SDK changes. BENCHMARKS.md for probe overhead (CPU %, P99 latency delta). Document required kernel ≥5.10 and CAP_BPF.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Kafka + Redis Tiering — Query Latency by Temperature</div>
+        <div class="dc-sub">Agoda · decoupling hot reads from cold storage</div>
+        <div class="dc-body"><em>Bridge → code:</em> Demo harness with mock LLM proves the tracer without production keys — same staging discipline as Agoda load tests.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 19</div>
+        <div class="dc-title">Day 19 — Agent Infrastructure — Tools, Memory, Loops</div>
+        <div class="dc-sub">Production agents need queues, idempotency, and traces</div>
+        <div class="dc-body"><em>Hook → design:</em> Tool calling is RPC with hallucination risk — your streaming stack already handles worse RPC fan-out.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">ebpf overhead benchmarks set the budget TraceForge will need when agents make ten HTTP calls per user request.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-20" data-product="lensai" data-status="pending" data-repo="ebpf-llm-tracer">
+  <header class="day-hdr">
+    <div class="day-num">020</div>
+    <div class="day-title-wrap">
+      <div class="day-title">ebpf-llm-tracer</div>
+      <div class="day-meta">Monday · <code>ebpf-llm-tracer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">OSS-02 — Kafka or Redpanda issue/PR in consumer group rebalancing or partition assignment. ebpf-llm-tracer README: architecture diagram, demo GIF, comparison table vs SDK instrumentation (Overhead, coverage, security).</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Peak Kubernetes — HPA Reacts, It Doesn&#x27;t Predict</div>
+        <div class="dc-sub">Delivery Hero · 10k concurrent · PDBs during deploys</div>
+        <div class="dc-body"><em>Bridge → code:</em> Second OSS PR on Kafka rebalancing is credibility for the bus every LensAI component shares.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 20</div>
+        <div class="dc-title">Day 20 — Prompt Engineering as Infra Optimization</div>
+        <div class="dc-sub">Prompt cache and prefix reuse in dollars per million requests</div>
+        <div class="dc-body"><em>Hook → design:</em> Calculate savings at 1M req/day — that&#x27;s the slide your PM actually reads.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Tracer README comparison table is the buyer&#x27;s guide; prompt cache math is the CFO&#x27;s guide — same product.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-21" data-product="lensai" data-status="pending" data-repo="distributed-flagd">
+  <header class="day-hdr">
+    <div class="day-num">021</div>
+    <div class="day-title-wrap">
+      <div class="day-title">distributed-flagd</div>
+      <div class="day-meta">Tuesday · <code>distributed-flagd</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Create distributed-flagd + DESIGN.md: (1) Problem — commercial flag SaaS cost at scale, (2) etcd consensus + watch propagation, (3) gRPC streaming to edge clients, (4) AI model rollout flags — percentage traffic between model versions, (5) audit log design.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">LaunchDarkly Money — Why We Build flagd Ourselves</div>
+        <div class="dc-sub">Platform economics · control plane vs data plane</div>
+        <div class="dc-body"><em>Bridge → code:</em> etcd + gRPC streaming today is DH real-time config with a different payload — model version instead of surge multiplier.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 21</div>
+        <div class="dc-title">Day 21 — Production Reliability for LLM APIs</div>
+        <div class="dc-sub">Rate limits, provider outages, streaming disconnects — mapped to patterns you know</div>
+        <div class="dc-body"><em>Hook → design:</em> Map every provider error code to: retry, circuit break, fallback model, or fail loud.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Percentage rollout flags are how Blog B&#x27;s routing strategies become Blog A&#x27;s change-management story ops teams trust.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-22" data-product="lensai" data-status="pending" data-repo="distributed-flagd">
+  <header class="day-hdr">
+    <div class="day-num">022</div>
+    <div class="day-title-wrap">
+      <div class="day-title">distributed-flagd</div>
+      <div class="day-meta">Wednesday · <code>distributed-flagd</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">distributed-flagd core in Go: HTTP CRUD for flags, etcd backend with watch, gRPC streaming push to clients. Flag types: boolean, string, percentage rollout. Docker Compose with etcd single-node for local dev.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">H3 vs Bounding Boxes — Geospatial Indexing That Scales</div>
+        <div class="dc-sub">Delivery Hero · surge detection · why naive geo fails</div>
+        <div class="dc-body"><em>Bridge → code:</em> Sticky user hashing for model flags copies H3 cell assignment — same user, same variant, all day.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 22</div>
+        <div class="dc-title">Day 22 — Feature Flags for Model Rollouts</div>
+        <div class="dc-sub">Canary models with audit trails</div>
+        <div class="dc-body"><em>Hook → design:</em> A model rollout without audit log is a production incident waiting for a postmortem.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">resolved_model_id on ingest events closes the loop between flagd policy and ClickHouse cost attribution.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-23" data-product="lensai" data-status="pending" data-repo="distributed-flagd">
+  <header class="day-hdr">
+    <div class="day-num">023</div>
+    <div class="day-title-wrap">
+      <div class="day-title">distributed-flagd</div>
+      <div class="day-meta">Thursday · <code>distributed-flagd</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Model rollout evaluator: given tenant_id + user_id hash, resolve active model version from percentage flag. Integration hook: infra-ai-streaming ingestion adds resolved_model_id label from flagd sidecar. Tests for sticky assignment and 50/50 split stability.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">OSRM at 5000 Events/sec — When ETA Becomes Infrastructure</div>
+        <div class="dc-sub">Delivery Hero · route recompute budget</div>
+        <div class="dc-body"><em>Bridge → code:</em> CRD + Helm for flags is how platform teams let app engineers self-serve rollouts without SSH.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 23</div>
+        <div class="dc-title">Day 23 — Evaluations as Event Streams</div>
+        <div class="dc-sub">Eval harnesses are Kafka topics with scores</div>
+        <div class="dc-body"><em>Hook → design:</em> LLM-as-judge output is just another event type — store it like you store metrics.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Live demo flipping traffic between models is the TraceForge preview — multi-step workflows need the same visibility.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-24" data-product="lensai" data-status="pending" data-repo="distributed-flagd">
+  <header class="day-hdr">
+    <div class="day-num">024</div>
+    <div class="day-title-wrap">
+      <div class="day-title">distributed-flagd</div>
+      <div class="day-meta">Friday · <code>distributed-flagd</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Kubernetes CRD for FlagDefinition + Helm chart. HPA not required; document upgrade strategy for flag schema changes. Demo: flip 10% → 50% → 100% traffic to gpt-4o-mini vs gpt-4o with Grafana cost panel showing split.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">BigQuery Streaming vs Batch — Burst Traffic Truth</div>
+        <div class="dc-sub">Wayfair · data platform · slots and surprises</div>
+        <div class="dc-body"><em>Bridge → code:</em> Audit Kafka topic for flags is BigQuery streaming inserts done right — append-only, replayable, owned.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 24</div>
+        <div class="dc-title">Day 24 — GPU Scheduling as Resource Management</div>
+        <div class="dc-sub">MIG, tensor parallelism, Kubernetes extended resources</div>
+        <div class="dc-body"><em>Hook → design:</em> You don&#x27;t need CUDA — you need a scheduler that knows VRAM is finite.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">etcd leader-loss chaos test is the flag analog of a BigQuery slot exhaustion — degrade gracefully, not randomly.</div>
+      </div>
+      <div class="detail-card extra"><div class="dc-label">Weekly · Project blog</div><div class="dc-body"><strong>Week 4 — distributed-flagd and Model Rollouts</strong><br>etcd, gRPC streaming, and percentage canaries<br></div></div>
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-25" data-product="lensai" data-status="pending" data-repo="distributed-flagd">
+  <header class="day-hdr">
+    <div class="day-num">025</div>
+    <div class="day-title-wrap">
+      <div class="day-title">distributed-flagd</div>
+      <div class="day-meta">Saturday · <code>distributed-flagd</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Audit log: append-only Kafka topic flag_audit with who changed what flag when. CLI traceforge-flagctl for emergency kill-switch on model routes. CHAOS test: etcd leader loss during rollout — clients must fail safe to last-known-good flags.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Distributed Redis Rate Limits — Lua Scripts and Race Conditions</div>
+        <div class="dc-sub">Wayfair · sliding window in production</div>
+        <div class="dc-body"><em>Bridge → code:</em> flagctl kill-switch is the pricing freeze switch we wished we&#x27;d had one Black Friday.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 25</div>
+        <div class="dc-title">Day 25 — Cost Models for LLM Gateways</div>
+        <div class="dc-sub">Cache hit rate × cheaper model route × prompt cache</div>
+        <div class="dc-body"><em>Hook → design:</em> Build the spreadsheet before the Rust — numbers justify the repo.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">BENCHMARKS on flag evaluation QPS proves control-plane latency won&#x27;t starve data-plane ingestion.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-26" data-product="lensai" data-status="pending" data-repo="distributed-flagd">
+  <header class="day-hdr">
+    <div class="day-num">026</div>
+    <div class="day-title-wrap">
+      <div class="day-title">distributed-flagd</div>
+      <div class="day-meta">Sunday · <code>distributed-flagd</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">distributed-flagd BENCHMARKS.md: flag evaluation QPS, watch propagation latency P99, etcd write throughput. Cross-link ebpf + streaming repos in each README &#x27;Platform&#x27; section.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Systems That Outlast Their Architects — Walmart Lessons</div>
+        <div class="dc-sub">Documentation, simplicity, operability</div>
+        <div class="dc-body"><em>Bridge → code:</em> OpenAPI + SDK stub is writing for the team that inherits LensAI — Walmart taught me they&#x27;ll exist.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 26</div>
+        <div class="dc-title">Day 26 — Fine-Tuning vs RAG vs Prompting — Infra Cost View</div>
+        <div class="dc-sub">When to buy GPUs vs buy vectors vs buy nothing</div>
+        <div class="dc-body"><em>Hook → design:</em> Staff engineers pick the cheapest path that meets SLO — not the coolest paper.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Three-repo cross-links in READMEs are the platform story recruiters ask for in month five — start showing it now.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-27" data-product="lensai" data-status="pending" data-repo="distributed-flagd">
+  <header class="day-hdr">
+    <div class="day-num">027</div>
+    <div class="day-title-wrap">
+      <div class="day-title">distributed-flagd</div>
+      <div class="day-meta">Monday · <code>distributed-flagd</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">distributed-flagd polish: OpenAPI spec, client SDK stub (Go), example sidecar yaml for ingestion deployment. Remove TODOs; CI with integration test against etcd + sample flags.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">What I&#x27;d Redesign at Wayfair With 2026 Eyes</div>
+        <div class="dc-sub">Ownership · leading two teams · pricing platform</div>
+        <div class="dc-body"><em>Bridge → code:</em> lensai-dev org is the ownership move — public platform identity, not scattered personal repos.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 27</div>
+        <div class="dc-title">Day 27 — OpenTelemetry Collector as Integration Hub</div>
+        <div class="dc-sub">Exporters, processors, and why LensAI speaks OTel natively</div>
+        <div class="dc-body"><em>Hook → design:</em> Collector processors are middleware — you&#x27;ve shipped worse middleware under more load.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">smoke.sh exiting 0 is the integration test Blog A&#x27;s platform narrative and Blog B&#x27;s OTel lesson both require.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-28" data-product="lensai" data-status="pending" data-repo="lensai-integration">
+  <header class="day-hdr">
+    <div class="day-num">028</div>
+    <div class="day-title-wrap">
+      <div class="day-title">lensai-integration</div>
+      <div class="day-meta">Tuesday · <code>lensai-integration</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">lensai-integration Day 1 — Create lensai-dev GitHub org; transfer infra-ai-streaming, ebpf-llm-tracer, distributed-flagd under org. Unified docker-compose at lensai-integration/quickstart: all three services + Grafana pre-provisioned. Smoke test script scripts/smoke.sh exits 0 when events flow eBPF → ingest → ClickHouse.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Integration Tests — The Only Launch Criteria I Trust</div>
+        <div class="dc-sub">Agoda · staging discipline · compose on clean laptop</div>
+        <div class="dc-body"><em>Bridge → code:</em> Landing page demo GIF must show eBPF → ingest → flagd → Grafana or it&#x27;s marketing, not engineering.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 28</div>
+        <div class="dc-title">Day 28 — Competitor Teardown — LensAI Positioning</div>
+        <div class="dc-sub">Datadog LLM Observability vs Helicone vs Langfuse — honest gaps</div>
+        <div class="dc-body"><em>Hook → design:</em> Name what you don&#x27;t do yet — credibility beats feature laundry lists.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Product essay draft ties competitor gaps to today&#x27;s compose quickstart — one narrative, two audiences.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-29" data-product="lensai" data-status="pending" data-repo="lensai-integration">
+  <header class="day-hdr">
+    <div class="day-num">029</div>
+    <div class="day-title-wrap">
+      <div class="day-title">lensai-integration</div>
+      <div class="day-meta">Wednesday · <code>lensai-integration</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">lensai-integration launch — Product landing page (GitHub Pages): value prop, architecture diagram, demo GIF, install guide, comparison vs Datadog LLM Observability / Helicone / Langfuse (honest gaps). Publish product essay: &#x27;LensAI — why inference observability needs a TSDB brain, not a metrics sidecar.&#x27; HN Show HN; OSS-03 OpenTelemetry Collector PR (Kafka or batch processor). Integration test on clean machine.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Thirty Days of Building — What Shipped vs What Matter</div>
+        <div class="dc-sub">LensAI month-one · public proof</div>
+        <div class="dc-body"><em>Bridge → code:</em> Show HN and OTel PR are distribution for the integration test I can rerun — same standard as Agoda go-live checklists.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 29</div>
+        <div class="dc-title">Day 29 — The AI Infrastructure Stack — Full Map</div>
+        <div class="dc-sub">Training → inference → observability → agents — where you fit</div>
+        <div class="dc-body"><em>Hook → design:</em> Draw the map once; every month-five product snaps onto it.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">LensAI launch closes Month 1; tomorrow TraceForge starts because agents are multi-step distributed systems nobody traces well.</div>
+      </div>
+      <div class="detail-card extra"><div class="dc-label">Monthly · Product blog</div><div class="dc-body"><strong>LensAI — Why Inference Observability Needs a TSDB Brain</strong><br>Not a metrics sidecar: eBPF + streaming + flags as one product<br></div></div>
+    </div>
+  </div>
+</article></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

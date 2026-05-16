@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project · model-quality-scorer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item active" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#a78bfa;border-color:#a78bfa55">model-quality-scorer</span>
+  <h1><code>model-quality-scorer</code></h1>
+  <p class="sub">4 build days · <a href="../index.html">Master plan</a></p>
+</div>
+<div class="sec"><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 77 · Tue</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">model-quality-scorer: Write DESIGN.md — judge model (Haiku), rubric JSON schema per task_type, async queue topology, target 200 samples/hr/tenant, failure modes when judge times out.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 78 · Wed</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">model-quality-scorer: Implement Kafka consumer `judge-requests` → batched OpenAI judge calls with shared rubric template; persist raw scores + rationale to ClickHouse `quality_scores`; DLQ on malformed rubric.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 79 · Thu</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">model-quality-scorer: Normalize judge outputs to 0–1; roll up 1h/24h aggregates per `model_id×task_type`; Grafana panel wired to LensAI dashboard; add statistical noise floor doc.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 80 · Fri</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">model-quality-scorer: RouteIQ decision engine v1 — weighted utility `U = w_q·quality − w_c·cost − w_l·latency` with tenant-overridable weights; unit tests for tie-break toward cheaper model when U within ε.</div></div></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project · lora-trainer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item active" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#00ff88;border-color:#00ff8855">lora-trainer</span>
+  <h1><code>lora-trainer</code></h1>
+  <p class="sub">7 build days · <a href="../index.html">Master plan</a></p>
+</div>
+<div class="sec"><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 127 · Wed</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">lora-trainer: DESIGN.md — target modules, rank/alpha grid, QLoRA 4-bit, checkpoint policy, LensAI metrics stream.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 128 · Thu</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">lora-trainer: LoRA config generator CLI — input base model + GPU VRAM → recommended rank/alpha/batch.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 129 · Fri</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">lora-trainer: QLoRA training script (HF PEFT) on prepared JSONL; log loss/grad_norm every 50 steps to Kafka.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 130 · Sat</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">lora-trainer: Checkpoint manager — save every 500 steps to MinIO; resume from latest on crash.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 131 · Sun</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">lora-trainer: Training cost calculator — GPU $/hr × wall time → total; expose in CLI summary.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 132 · Mon</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">lora-trainer: Run first full training on 7B (4×A10 or cloud spot); capture final adapter weights.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 133 · Tue</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">lora-trainer: Post-training sanity generation samples; document hyperparameter sweep results.</div></div></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

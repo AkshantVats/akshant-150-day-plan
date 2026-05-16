@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project · semantic-cache-engine</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item active" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#a78bfa;border-color:#a78bfa55">semantic-cache-engine</span>
+  <h1><code>semantic-cache-engine</code></h1>
+  <p class="sub">5 build days · <a href="../index.html">Master plan</a></p>
+</div>
+<div class="sec"><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 60 · Saturday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">semantic-cache-engine — DESIGN.md: embedding pipeline, pgvector schema, similarity threshold per tenant, false-positive budget, integration with LensAI cache_hit events. Define TTL and freshness decay policy.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 61 · Sunday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Embedding worker: call embedding API (OpenAI text-embedding-3-small or local), batch size 32, write vectors to pgvector table prompts( tenant_id, prompt_hash, embedding, created_at ). Idempotent on prompt_hash.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 62 · Monday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Cache lookup path: cosine similarity search with threshold 0.92 default, tenant override in config. On hit: return cached completion + emit LensAI event cache_hit=true. On miss: pass through to router.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 63 · Tuesday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Cache analytics: hit rate, false positive proxy (user thumbs-down webhook stub), cost saved estimate. Grafana panel + BENCHMARKS.md sweep thresholds 0.88–0.96 on held-out prompt set.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 64 · Wednesday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">semantic-cache-engine README + docker-compose with postgres/pgvector. Load test 1k QPS lookups — p99 latency under 15ms on M1 Max baseline.</div></div></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

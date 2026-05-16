@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project · lensai-integration</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item active" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#00e5ff;border-color:#00e5ff55">lensai-integration</span>
+  <h1><code>lensai-integration</code></h1>
+  <p class="sub">2 build days · <a href="../index.html">Master plan</a></p>
+</div>
+<div class="sec"><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 28 · Tuesday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">lensai-integration Day 1 — Create lensai-dev GitHub org; transfer infra-ai-streaming, ebpf-llm-tracer, distributed-flagd under org. Unified docker-compose at lensai-integration/quickstart: all three services + Grafana pre-provisioned. Smoke test script scripts/smoke.sh exits 0 when events flow eBPF → ingest → ClickHouse.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 29 · Wednesday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">lensai-integration launch — Product landing page (GitHub Pages): value prop, architecture diagram, demo GIF, install guide, comparison vs Datadog LLM Observability / Helicone / Langfuse (honest gaps). Publish product essay: &#x27;LensAI — why inference observability needs a TSDB brain, not a metrics sidecar.&#x27; HN Show HN; OSS-03 OpenTelemetry Collector PR (Kafka or batch processor). Integration test on clean machine.</div></div></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

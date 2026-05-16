@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project · cost-budget-enforcer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item active" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#a78bfa;border-color:#a78bfa55">cost-budget-enforcer</span>
+  <h1><code>cost-budget-enforcer</code></h1>
+  <p class="sub">5 build days · <a href="../index.html">Master plan</a></p>
+</div>
+<div class="sec"><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 65 · Thursday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">cost-budget-enforcer — DESIGN.md: sliding window token budgets in Redis, hard vs soft limits, graceful degradation route to cheaper model, webhook alerts at 80% budget.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 66 · Friday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Middleware: before LLM call, check tenant budget; decrement estimated tokens; block or downgrade if exceeded. Unit tests for window rollover at UTC midnight and burst allowance.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 67 · Saturday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Admin API PATCH /tenants/{id}/budget — live budget changes without restart. Audit log to Kafka.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 68 · Sunday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">Integration: RouteIQ stub gateway calls budget enforcer then semantic cache then model. Wire spend metrics to LensAI cost_usd stream.</div></div><div class="card" style="margin-bottom:10px"><div class="card-header"><div class="card-title">Day 69 · Monday</div><div class="card-sub"><span class="badge badge-pending">Pending</span></div></div><div class="card-body">cost-budget-enforcer chaos: Redis down → fail closed with 503 vs fail open policy (document choice). BENCHMARKS.md for enforcement overhead microseconds per request.</div></div></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>

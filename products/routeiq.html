@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RouteIQ · Product Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav class="site-nav">
+<div class="nav-brand">Akshant · 150 Days</div>
+<a class="nav-item" href="../index.html">Master Plan</a>
+<a class="nav-item" href="../platform.html">Platform</a>
+<a class="nav-item" href="../checklist.html">Daily Checklist</a>
+<a class="nav-item" href="../products/lensai.html">LensAI</a>
+<a class="nav-item" href="../products/traceforge.html">TraceForge</a>
+<a class="nav-item active" href="../products/routeiq.html">RouteIQ</a>
+<a class="nav-item" href="../products/driftwatch.html">DriftWatch</a>
+<a class="nav-item" href="../products/fineforge.html">FineForge</a>
+</nav>
+
+<div class="hero">
+  <span class="tag" style="color:#a78bfa;border-color:#a78bfa55;background:#a78bfa12">RouteIQ</span>
+  <h1>RouteIQ</h1>
+  <p class="sub">Days 60–89 · <a href="../index.html">Master calendar</a></p>
+</div>
+<div class="days-wrap">
+<article class="day-block status-pending" id="day-60" data-product="routeiq" data-status="pending" data-repo="semantic-cache-engine">
+  <header class="day-hdr">
+    <div class="day-num">060</div>
+    <div class="day-title-wrap">
+      <div class="day-title">semantic-cache-engine</div>
+      <div class="day-meta">Saturday · <code>semantic-cache-engine</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">semantic-cache-engine — DESIGN.md: embedding pipeline, pgvector schema, similarity threshold per tenant, false-positive budget, integration with LensAI cache_hit events. Define TTL and freshness decay policy.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Semantic Cache — Wayfair Pricing Deja Vu</div>
+        <div class="dc-sub">Wayfair · near-duplicate SKU updates</div>
+        <div class="dc-body"><em>Bridge → code:</em> Near-duplicate prompts need the same tolerance pricing had for &#x27;almost same&#x27; supplier feeds. Today&#x27;s semantic-cache-engine work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 60</div>
+        <div class="dc-title">Day 60 — Semantic Caching Economics</div>
+        <div class="dc-sub">Threshold vs savings curve</div>
+        <div class="dc-body"><em>Hook → design:</em> Sweep 0.88–0.96 on real prompts — plot dollars, not vibes.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Semantic Cache — Wayfair Pricing Deja Vu and Semantic Caching Economics share today&#x27;s design decision in semantic-cache-engine.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-61" data-product="routeiq" data-status="pending" data-repo="semantic-cache-engine">
+  <header class="day-hdr">
+    <div class="day-num">061</div>
+    <div class="day-title-wrap">
+      <div class="day-title">semantic-cache-engine</div>
+      <div class="day-meta">Sunday · <code>semantic-cache-engine</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Embedding worker: call embedding API (OpenAI text-embedding-3-small or local), batch size 32, write vectors to pgvector table prompts( tenant_id, prompt_hash, embedding, created_at ). Idempotent on prompt_hash.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Embeddings Are Batch Jobs</div>
+        <div class="dc-sub">Agoda · compaction windows</div>
+        <div class="dc-body"><em>Bridge → code:</em> Embedding worker batching is compaction — amortize API cost, control lag. Today&#x27;s semantic-cache-engine work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 61</div>
+        <div class="dc-title">Day 61 — Embedding Pipelines</div>
+        <div class="dc-sub">Batch, idempotency, backfill</div>
+        <div class="dc-body"><em>Hook → design:</em> prompt_hash idempotency is Kafka exactly-once for vectors.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Embeddings Are Batch Jobs and Embedding Pipelines share today&#x27;s design decision in semantic-cache-engine.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-62" data-product="routeiq" data-status="pending" data-repo="semantic-cache-engine">
+  <header class="day-hdr">
+    <div class="day-num">062</div>
+    <div class="day-title-wrap">
+      <div class="day-title">semantic-cache-engine</div>
+      <div class="day-meta">Monday · <code>semantic-cache-engine</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Cache lookup path: cosine similarity search with threshold 0.92 default, tenant override in config. On hit: return cached completion + emit LensAI event cache_hit=true. On miss: pass through to router.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">False Positives Have a Dollar Cost</div>
+        <div class="dc-sub">Delivery Hero · wrong ETA</div>
+        <div class="dc-body"><em>Bridge → code:</em> A cache false positive is a wrong ETA — threshold is an SLO. Today&#x27;s semantic-cache-engine work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 62</div>
+        <div class="dc-title">Day 62 — ANN Search at QPS</div>
+        <div class="dc-sub">pgvector indexes and latency</div>
+        <div class="dc-body"><em>Hook → design:</em> IVFFlat vs HNSW — pick like pick MergeTree order key.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">False Positives Have a Dollar Cost and ANN Search at QPS share today&#x27;s design decision in semantic-cache-engine.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-63" data-product="routeiq" data-status="pending" data-repo="semantic-cache-engine">
+  <header class="day-hdr">
+    <div class="day-num">063</div>
+    <div class="day-title-wrap">
+      <div class="day-title">semantic-cache-engine</div>
+      <div class="day-meta">Tuesday · <code>semantic-cache-engine</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Cache analytics: hit rate, false positive proxy (user thumbs-down webhook stub), cost saved estimate. Grafana panel + BENCHMARKS.md sweep thresholds 0.88–0.96 on held-out prompt set.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Hit Rate Without Honesty Is Vanity</div>
+        <div class="dc-sub">Agoda · dashboard trust</div>
+        <div class="dc-body"><em>Bridge → code:</em> Cache analytics must show false-positive proxies or operators won&#x27;t trust hit rate. Today&#x27;s semantic-cache-engine work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 63</div>
+        <div class="dc-title">Day 63 — Cache Quality Metrics</div>
+        <div class="dc-sub">Hit rate, precision proxy, TTL</div>
+        <div class="dc-body"><em>Hook → design:</em> Track thumbs-down rate on cache hits if you can.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Hit Rate Without Honesty Is Vanity and Cache Quality Metrics share today&#x27;s design decision in semantic-cache-engine.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-64" data-product="routeiq" data-status="pending" data-repo="semantic-cache-engine">
+  <header class="day-hdr">
+    <div class="day-num">064</div>
+    <div class="day-title-wrap">
+      <div class="day-title">semantic-cache-engine</div>
+      <div class="day-meta">Wednesday · <code>semantic-cache-engine</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">semantic-cache-engine README + docker-compose with postgres/pgvector. Load test 1k QPS lookups — p99 latency under 15ms on M1 Max baseline.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">pgvector Under Load</div>
+        <div class="dc-sub">Agoda · index hot spots</div>
+        <div class="dc-body"><em>Bridge → code:</em> ANN index tuning is hot-partition management for vectors. Today&#x27;s semantic-cache-engine work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 64</div>
+        <div class="dc-title">Day 64 — Load Testing ANN</div>
+        <div class="dc-sub">1k QPS methodology</div>
+        <div class="dc-body"><em>Hook → design:</em> Same k6 discipline as ingestion — p99 under SLA.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">pgvector Under Load and Load Testing ANN share today&#x27;s design decision in semantic-cache-engine.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-65" data-product="routeiq" data-status="pending" data-repo="cost-budget-enforcer">
+  <header class="day-hdr">
+    <div class="day-num">065</div>
+    <div class="day-title-wrap">
+      <div class="day-title">cost-budget-enforcer</div>
+      <div class="day-meta">Thursday · <code>cost-budget-enforcer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">cost-budget-enforcer — DESIGN.md: sliding window token budgets in Redis, hard vs soft limits, graceful degradation route to cheaper model, webhook alerts at 80% budget.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Token Budgets — Finance Meets Gateway</div>
+        <div class="dc-sub">Wayfair · spend caps</div>
+        <div class="dc-body"><em>Bridge → code:</em> Budget enforcer is supplier spend caps for tokens. Today&#x27;s cost-budget-enforcer work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 65</div>
+        <div class="dc-title">Day 65 — Token Budgets as Rate Limits</div>
+        <div class="dc-sub">Sliding windows in Redis</div>
+        <div class="dc-body"><em>Hook → design:</em> Lua atomicity again — budgets race like rate limits.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Token Budgets — Finance Meets Gateway and Token Budgets as Rate Limits share today&#x27;s design decision in cost-budget-enforcer.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-66" data-product="routeiq" data-status="pending" data-repo="cost-budget-enforcer">
+  <header class="day-hdr">
+    <div class="day-num">066</div>
+    <div class="day-title-wrap">
+      <div class="day-title">cost-budget-enforcer</div>
+      <div class="day-meta">Friday · <code>cost-budget-enforcer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Middleware: before LLM call, check tenant budget; decrement estimated tokens; block or downgrade if exceeded. Unit tests for window rollover at UTC midnight and burst allowance.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Midnight Rollover Bugs</div>
+        <div class="dc-sub">Walmart · UTC boundaries</div>
+        <div class="dc-body"><em>Bridge → code:</em> Sliding window rollover tests are IoT billing boundary tests. Today&#x27;s cost-budget-enforcer work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 66</div>
+        <div class="dc-title">Day 66 — Hard vs Soft Limits</div>
+        <div class="dc-sub">Block vs downgrade</div>
+        <div class="dc-body"><em>Hook → design:</em> Soft limit routes to cheaper model — DH surge pricing analog.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Midnight Rollover Bugs and Hard vs Soft Limits share today&#x27;s design decision in cost-budget-enforcer.</div>
+      </div>
+      <div class="detail-card extra"><div class="dc-label">Weekly · Project blog</div><div class="dc-body"><strong>Week 10 — cost-budget-enforcer: Spend Limits as Middleware</strong><br>Sliding windows and graceful downgrade<br></div></div>
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-67" data-product="routeiq" data-status="pending" data-repo="cost-budget-enforcer">
+  <header class="day-hdr">
+    <div class="day-num">067</div>
+    <div class="day-title-wrap">
+      <div class="day-title">cost-budget-enforcer</div>
+      <div class="day-meta">Saturday · <code>cost-budget-enforcer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Admin API PATCH /tenants/{id}/budget — live budget changes without restart. Audit log to Kafka.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Live Budget PATCH — Ops Can&#x27;t Wait for Deploy</div>
+        <div class="dc-sub">Delivery Hero · live tuning</div>
+        <div class="dc-body"><em>Bridge → code:</em> Admin API is surge multiplier changes without redeploy. Today&#x27;s cost-budget-enforcer work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 67</div>
+        <div class="dc-title">Day 67 — Live Config for Spend</div>
+        <div class="dc-sub">Admin APIs without restart</div>
+        <div class="dc-body"><em>Hook → design:</em> Budget PATCH is feature flag for money.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Live Budget PATCH — Ops Can&#x27;t Wait for Deploy and Live Config for Spend share today&#x27;s design decision in cost-budget-enforcer.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-68" data-product="routeiq" data-status="pending" data-repo="cost-budget-enforcer">
+  <header class="day-hdr">
+    <div class="day-num">068</div>
+    <div class="day-title-wrap">
+      <div class="day-title">cost-budget-enforcer</div>
+      <div class="day-meta">Sunday · <code>cost-budget-enforcer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Integration: RouteIQ stub gateway calls budget enforcer then semantic cache then model. Wire spend metrics to LensAI cost_usd stream.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Stub Gateway — Compose Before Polish</div>
+        <div class="dc-sub">Stealth · vertical slice</div>
+        <div class="dc-body"><em>Bridge → code:</em> RouteIQ stub proves stack order: budget → cache → model. Today&#x27;s cost-budget-enforcer work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 68</div>
+        <div class="dc-title">Day 68 — Gateway Middleware Ordering</div>
+        <div class="dc-sub">Budget → cache → route</div>
+        <div class="dc-body"><em>Hook → design:</em> Order matters — wrong order leaks spend.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Stub Gateway — Compose Before Polish and Gateway Middleware Ordering share today&#x27;s design decision in cost-budget-enforcer.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-69" data-product="routeiq" data-status="pending" data-repo="cost-budget-enforcer">
+  <header class="day-hdr">
+    <div class="day-num">069</div>
+    <div class="day-title-wrap">
+      <div class="day-title">cost-budget-enforcer</div>
+      <div class="day-meta">Monday · <code>cost-budget-enforcer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">cost-budget-enforcer chaos: Redis down → fail closed with 503 vs fail open policy (document choice). BENCHMARKS.md for enforcement overhead microseconds per request.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Fail Closed vs Open — Pick and Document</div>
+        <div class="dc-sub">Agoda · outage modes</div>
+        <div class="dc-body"><em>Bridge → code:</em> Redis-down policy is the same &#x27;stop ingestion vs buffer&#x27; call. Today&#x27;s cost-budget-enforcer work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 69</div>
+        <div class="dc-title">Day 69 — Failure Policies for Budget Redis</div>
+        <div class="dc-sub">503 vs passthrough</div>
+        <div class="dc-body"><em>Hook → design:</em> Document the outage mode — auditors will ask.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Fail Closed vs Open — Pick and Document and Failure Policies for Budget Redis share today&#x27;s design decision in cost-budget-enforcer.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-70" data-product="routeiq" data-status="pending" data-repo="prompt-fingerprinter">
+  <header class="day-hdr">
+    <div class="day-num">070</div>
+    <div class="day-title-wrap">
+      <div class="day-title">prompt-fingerprinter</div>
+      <div class="day-meta">Tuesday · <code>prompt-fingerprinter</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">prompt-fingerprinter — DESIGN.md: normalize prompt (strip whitespace, canonical JSON), SHA-256 fingerprint, exact-match Redis cache layer before semantic cache. Sub-millisecond lookup.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Exact Match Before Fuzzy</div>
+        <div class="dc-sub">Agoda · tiered caches</div>
+        <div class="dc-body"><em>Bridge → code:</em> Fingerprint L1 is Redis hot tier before Ceph semantic tier. Today&#x27;s prompt-fingerprinter work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 70</div>
+        <div class="dc-title">Day 70 — Prompt Fingerprints</div>
+        <div class="dc-sub">SHA-256 of canonical form</div>
+        <div class="dc-body"><em>Hook → design:</em> Exact cache is dedup at ingress.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Exact Match Before Fuzzy and Prompt Fingerprints share today&#x27;s design decision in prompt-fingerprinter.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-71" data-product="routeiq" data-status="pending" data-repo="prompt-fingerprinter">
+  <header class="day-hdr">
+    <div class="day-num">071</div>
+    <div class="day-title-wrap">
+      <div class="day-title">prompt-fingerprinter</div>
+      <div class="day-meta">Wednesday · <code>prompt-fingerprinter</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Implement fingerprinter library in Rust: normalize(), fingerprint(), redis_key(). Property tests — equivalent prompts collide, distinct prompts rarely collide.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Normalization Is Contract Testing</div>
+        <div class="dc-sub">Wayfair · canonical keys</div>
+        <div class="dc-body"><em>Bridge → code:</em> Prompt normalize() is canonical SKU keying. Today&#x27;s prompt-fingerprinter work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 71</div>
+        <div class="dc-title">Day 71 — Canonicalization Rules</div>
+        <div class="dc-sub">Whitespace, JSON key order</div>
+        <div class="dc-body"><em>Hook → design:</em> Same rules as stable API hashing.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Normalization Is Contract Testing and Canonicalization Rules share today&#x27;s design decision in prompt-fingerprinter.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-72" data-product="routeiq" data-status="pending" data-repo="prompt-fingerprinter">
+  <header class="day-hdr">
+    <div class="day-num">072</div>
+    <div class="day-title-wrap">
+      <div class="day-title">prompt-fingerprinter</div>
+      <div class="day-meta">Thursday · <code>prompt-fingerprinter</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Dual-layer cache stack: L1 exact Redis, L2 semantic pgvector. Metrics l1_hit, l2_hit, miss. Document stack diagram in README.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Two-Tier Cache Metrics</div>
+        <div class="dc-sub">Agoda · hit ratio by tier</div>
+        <div class="dc-body"><em>Bridge → code:</em> l1_hit/l2_hit/miss is hot/cold query stats for prompts. Today&#x27;s prompt-fingerprinter work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 72</div>
+        <div class="dc-title">Day 72 — L1/L2 Stack Design</div>
+        <div class="dc-sub">Redis then pgvector</div>
+        <div class="dc-body"><em>Hook → design:</em> Two-tier is Agoda hot/cold again.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Two-Tier Cache Metrics and L1/L2 Stack Design share today&#x27;s design decision in prompt-fingerprinter.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-73" data-product="routeiq" data-status="pending" data-repo="prompt-fingerprinter">
+  <header class="day-hdr">
+    <div class="day-num">073</div>
+    <div class="day-title-wrap">
+      <div class="day-title">prompt-fingerprinter</div>
+      <div class="day-meta">Friday · <code>prompt-fingerprinter</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">Prompt fingerprint collision drill — intentional hash clash test, verify TTL isolation.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Hash Collisions Happen</div>
+        <div class="dc-sub">Walmart · OTA version mixups</div>
+        <div class="dc-body"><em>Bridge → code:</em> Collision drill is firmware version isolation testing. Today&#x27;s prompt-fingerprinter work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 73</div>
+        <div class="dc-title">Day 73 — Collision Handling</div>
+        <div class="dc-sub">TTL isolation on clash</div>
+        <div class="dc-body"><em>Hook → design:</em> Treat like rare UUID collision — isolate blast radius.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Hash Collisions Happen and Collision Handling share today&#x27;s design decision in prompt-fingerprinter.</div>
+      </div>
+      <div class="detail-card extra"><div class="dc-label">Weekly · Project blog</div><div class="dc-body"><strong>Week 11 — prompt-fingerprinter: L1 Exact Before L2 Semantic</strong><br>Dual-layer cache stack design<br></div></div>
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-74" data-product="routeiq" data-status="pending" data-repo="prompt-fingerprinter">
+  <header class="day-hdr">
+    <div class="day-num">074</div>
+    <div class="day-title-wrap">
+      <div class="day-title">prompt-fingerprinter</div>
+      <div class="day-meta">Saturday · <code>prompt-fingerprinter</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">prompt-fingerprinter polish: export OpenTelemetry spans for cache tier decisions. Outline model-quality-scorer scope for Week 3 (Day 75+). Cross-link RouteIQ + LensAI docs.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">OTel for Cache Tiers</div>
+        <div class="dc-sub">Delivery Hero · trace the decision</div>
+        <div class="dc-body"><em>Bridge → code:</em> Export spans for L1/L2/miss — RouteIQ decisions must be visible in LensAI. Today&#x27;s prompt-fingerprinter work makes that concrete.</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 74</div>
+        <div class="dc-title">Day 74 — Quality Scorer Preview</div>
+        <div class="dc-sub">Routing needs scores</div>
+        <div class="dc-body"><em>Hook → design:</em> Tomorrow model-quality-scorer closes the RouteIQ loop.</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">OTel for Cache Tiers and Quality Scorer Preview share today&#x27;s design decision in prompt-fingerprinter.</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-75" data-product="routeiq" data-status="pending" data-repo="prompt-fingerprinter">
+  <header class="day-hdr">
+    <div class="day-num">075</div>
+    <div class="day-title-wrap">
+      <div class="day-title">prompt-fingerprinter</div>
+      <div class="day-meta">Sun · <code>prompt-fingerprinter</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">prompt-fingerprinter: Ship exact-match cache layer on SHA-256 fingerprint (normalize whitespace/case/Unicode NFC); Redis key `fp:{tenant}:{hash}` with 24h TTL; benchmark hit-rate vs semantic-only path; write BENCHMARKS.md with p50 lookup &lt;2ms; capture project-blog bullets in NOTES.md for Friday Day 87.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Wayfair&#x27;s Redis Lua Token Bucket at 250k SKU Scale</div>
+        <div class="dc-sub">Atomic INCR across replicas when pricing updates flooded APIs</div>
+        <div class="dc-body"><em>Bridge → code:</em> Exact-match cache keys need the same atomic discipline—fingerprint collisions are your cardinality event</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 75</div>
+        <div class="dc-title">Day 75 of Learning LLM Inference — Prompt Fingerprinting — Canonical Forms Before Hashing</div>
+        <div class="dc-sub">Same idea as normalizing SKU keys before Redis lookup</div>
+        <div class="dc-body"><em>Hook → design:</em> Add `fingerprint_version` + `normalized_prompt` fields to cache lookup API</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Add `fingerprint_version` + `normalized_prompt` fields to cache lookup API ↔ Exact-match cache keys need the same atomic discipline—fingerprint collisions are your cardinality event</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-76" data-product="routeiq" data-status="pending" data-repo="prompt-fingerprinter">
+  <header class="day-hdr">
+    <div class="day-num">076</div>
+    <div class="day-title-wrap">
+      <div class="day-title">prompt-fingerprinter</div>
+      <div class="day-meta">Mon · <code>prompt-fingerprinter</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">prompt-fingerprinter: Admin REST API `PUT /tenants/{id}/fingerprint-rules` (strip_punctuation, lowercase, max_prompt_bytes); integration test proving duplicate prompts skip embedding API; emit `cache_hit_type=exact` to LensAI Kafka topic.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Supplier API Circuit Breakers — Half-Open State in Production</div>
+        <div class="dc-sub">Wayfair: 3 failures in 60s opened circuit; manual half-open tests before Black Friday</div>
+        <div class="dc-body"><em>Bridge → code:</em> Fingerprint rule changes are config deploys—treat breaking normalization like opening a circuit on live traffic</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 76</div>
+        <div class="dc-title">Day 76 of Learning LLM Inference — Exact-Match vs Semantic Cache — Two-Tier Memory Hierarchy</div>
+        <div class="dc-sub">L1 exact / L2 embedding like CPU cache levels</div>
+        <div class="dc-body"><em>Hook → design:</em> Router checks fingerprint table before pgvector round-trip</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Router checks fingerprint table before pgvector round-trip ↔ Fingerprint rule changes are config deploys—treat breaking normalization like opening a circuit on live traffic</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-77" data-product="routeiq" data-status="pending" data-repo="model-quality-scorer">
+  <header class="day-hdr">
+    <div class="day-num">077</div>
+    <div class="day-title-wrap">
+      <div class="day-title">model-quality-scorer</div>
+      <div class="day-meta">Tue · <code>model-quality-scorer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">model-quality-scorer: Write DESIGN.md — judge model (Haiku), rubric JSON schema per task_type, async queue topology, target 200 samples/hr/tenant, failure modes when judge times out.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Agoda P99 Cannot Be Averaged Across Tenants</div>
+        <div class="dc-sub">Quantile merge taught me per-tenant SLOs or you lie to executives</div>
+        <div class="dc-body"><em>Bridge → code:</em> Model quality scores must aggregate per tenant×task—global averages hide routing regressions</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 77</div>
+        <div class="dc-title">Day 77 of Learning LLM Inference — LLM-as-Judge — Rubrics as Structured Data</div>
+        <div class="dc-sub">Scoring rubric = JSON schema like event contracts</div>
+        <div class="dc-body"><em>Hook → design:</em> Define `JudgeRubric` protobuf with weighted criteria</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Define `JudgeRubric` protobuf with weighted criteria ↔ Model quality scores must aggregate per tenant×task—global averages hide routing regressions</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-78" data-product="routeiq" data-status="pending" data-repo="model-quality-scorer">
+  <header class="day-hdr">
+    <div class="day-num">078</div>
+    <div class="day-title-wrap">
+      <div class="day-title">model-quality-scorer</div>
+      <div class="day-meta">Wed · <code>model-quality-scorer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">model-quality-scorer: Implement Kafka consumer `judge-requests` → batched OpenAI judge calls with shared rubric template; persist raw scores + rationale to ClickHouse `quality_scores`; DLQ on malformed rubric.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Delivery Hero Async Pipelines — Why We Decoupled SQS from OSRM</div>
+        <div class="dc-sub">5k events/sec only survived because scoring work was never on the hot path</div>
+        <div class="dc-body"><em>Bridge → code:</em> LLM-as-judge belongs off the request path—same failure isolation pattern</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 78</div>
+        <div class="dc-title">Day 78 of Learning LLM Inference — Async Evaluation Pipelines — Throughput Over Latency</div>
+        <div class="dc-sub">Batch judge calls like micro-batched ClickHouse inserts</div>
+        <div class="dc-body"><em>Hook → design:</em> Kafka topic decouples scoring from user-facing path</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Kafka topic decouples scoring from user-facing path ↔ LLM-as-judge belongs off the request path—same failure isolation pattern</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-79" data-product="routeiq" data-status="pending" data-repo="model-quality-scorer">
+  <header class="day-hdr">
+    <div class="day-num">079</div>
+    <div class="day-title-wrap">
+      <div class="day-title">model-quality-scorer</div>
+      <div class="day-meta">Thu · <code>model-quality-scorer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">model-quality-scorer: Normalize judge outputs to 0–1; roll up 1h/24h aggregates per `model_id×task_type`; Grafana panel wired to LensAI dashboard; add statistical noise floor doc.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Walmart Stream Analytics Dropped Messages — Switching to Kafka</div>
+        <div class="dc-sub">7M sensors exposed bounded-window limits; we owned offset recovery</div>
+        <div class="dc-body"><em>Bridge → code:</em> Normalized judge scores need durable storage with replay—ClickHouse not in-memory averages</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 79</div>
+        <div class="dc-title">Day 79 of Learning LLM Inference — Score Normalization — Why 0–1 Beats Raw Likert</div>
+        <div class="dc-sub">Comparable units across models like z-scored metrics</div>
+        <div class="dc-body"><em>Hook → design:</em> Store both raw and normalized in `quality_scores`</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Store both raw and normalized in `quality_scores` ↔ Normalized judge scores need durable storage with replay—ClickHouse not in-memory averages</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-80" data-product="routeiq" data-status="pending" data-repo="model-quality-scorer">
+  <header class="day-hdr">
+    <div class="day-num">080</div>
+    <div class="day-title-wrap">
+      <div class="day-title">model-quality-scorer</div>
+      <div class="day-meta">Fri · <code>model-quality-scorer</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">model-quality-scorer: RouteIQ decision engine v1 — weighted utility `U = w_q·quality − w_c·cost − w_l·latency` with tenant-overridable weights; unit tests for tie-break toward cheaper model when U within ε.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Stealth Startup Saga: Compensating Transactions on Order State</div>
+        <div class="dc-sub">Multi-step ordering needed explicit rollback—not hope</div>
+        <div class="dc-body"><em>Bridge → code:</em> Routing utility function is a saga: pick model, log decision, compensate on timeout via fallback</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 80</div>
+        <div class="dc-title">Day 80 of Learning LLM Inference — Multi-Objective Routing — Scalarization and Weights</div>
+        <div class="dc-sub">Weighted sum like cost-aware load balancing</div>
+        <div class="dc-body"><em>Hook → design:</em> Expose `RoutingWeights` per tenant in RouteIQ config</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Expose `RoutingWeights` per tenant in RouteIQ config ↔ Routing utility function is a saga: pick model, log decision, compensate on timeout via fallback</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-81" data-product="routeiq" data-status="pending" data-repo="fallback-chain">
+  <header class="day-hdr">
+    <div class="day-num">081</div>
+    <div class="day-title-wrap">
+      <div class="day-title">fallback-chain</div>
+      <div class="day-meta">Sat · <code>fallback-chain</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">fallback-chain: DESIGN.md — per-tenant ordered model list, timeout cascade (2s/5s/8s), circuit-breaker states, streaming byte-buffer strategy for &lt;10ms proxy overhead.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Wayfair Sub-Second SKU Propagation — Event Ordering</div>
+        <div class="dc-sub">250k updates/day required version vectors on price events</div>
+        <div class="dc-body"><em>Bridge → code:</em> Fallback chain order is an event-sourcing problem—newer config must win consistently</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 81</div>
+        <div class="dc-title">Day 81 of Learning LLM Inference — Fallback Chains — Graceful Degradation in Inference</div>
+        <div class="dc-sub">Circuit breaker + alternate path = chain of models</div>
+        <div class="dc-body"><em>Hook → design:</em> Schema: ordered `ModelRef` list with timeout_ms each</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Schema: ordered `ModelRef` list with timeout_ms each ↔ Fallback chain order is an event-sourcing problem—newer config must win consistently</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-82" data-product="routeiq" data-status="pending" data-repo="fallback-chain">
+  <header class="day-hdr">
+    <div class="day-num">082</div>
+    <div class="day-title-wrap">
+      <div class="day-title">fallback-chain</div>
+      <div class="day-meta">Sun · <code>fallback-chain</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">fallback-chain: Implement chain executor (GPT-4o → Claude Sonnet → Llama-3-70B local); record `fallback_reason` enum; k6 test 500 RPS with injected primary failures; draft project-blog sections in NOTES.md (publish Day 87).</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Delivery Hero Peak EKS — PDB + HPA Tuning Under OSRM Load</div>
+        <div class="dc-sub">10k concurrent during lunch rush; one bad rollout took 8% error budget</div>
+        <div class="dc-body"><em>Bridge → code:</em> Friday load test on fallback chain is your pre-Black-Friday for LLM traffic</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 82</div>
+        <div class="dc-title">Day 82 of Learning LLM Inference — Measuring Proxy Overhead — p99 Not Mean</div>
+        <div class="dc-sub">Tail latency drives SLOs—same as Agoda P99 focus</div>
+        <div class="dc-body"><em>Hook → design:</em> Histogram buckets for added ms in streaming proxy</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Histogram buckets for added ms in streaming proxy ↔ Friday load test on fallback chain is your pre-Black-Friday for LLM traffic</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-83" data-product="routeiq" data-status="pending" data-repo="fallback-chain">
+  <header class="day-hdr">
+    <div class="day-num">083</div>
+    <div class="day-title-wrap">
+      <div class="day-title">fallback-chain</div>
+      <div class="day-meta">Mon · <code>fallback-chain</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">fallback-chain: Streaming passthrough proxy using chunked transfer — measure added latency (target p99 &lt;10ms); fix backpressure when downstream stalls; add Prometheus histogram `fallback_proxy_overhead_ms`.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Agoda Cross-Tier Read Latency — Snappy Hot, Zstd Cold</div>
+        <div class="dc-sub">&lt;1% regression acceptable for 18% storage savings</div>
+        <div class="dc-body"><em>Bridge → code:</em> Streaming proxy overhead is a codec tradeoff—measure p99, not mean</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 83</div>
+        <div class="dc-title">Day 83 of Learning LLM Inference — Streaming Token Delivery — Backpressure Basics</div>
+        <div class="dc-sub">TCP windowing analogy for SSE chunks</div>
+        <div class="dc-body"><em>Hook → design:</em> Buffer size ties to TTFB vs memory</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Buffer size ties to TTFB vs memory ↔ Streaming proxy overhead is a codec tradeoff—measure p99, not mean</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-84" data-product="routeiq" data-status="pending" data-repo="fallback-chain">
+  <header class="day-hdr">
+    <div class="day-num">084</div>
+    <div class="day-title-wrap">
+      <div class="day-title">fallback-chain</div>
+      <div class="day-meta">Tue · <code>fallback-chain</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">fallback-chain: Active health probes per endpoint (HEAD /v1/models) with Redis-backed unhealthy set; chain skips blacklisted models; chaos test: kill primary pod, verify auto-skip &lt;3s.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">BrowserStack Integration Test Flakiness — Health Checks That Lied</div>
+        <div class="dc-sub">Green `/health` while dependencies degraded taught synthetic probes</div>
+        <div class="dc-body"><em>Bridge → code:</em> Model endpoint health must probe real inference, not TCP connect</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 84</div>
+        <div class="dc-title">Day 84 of Learning LLM Inference — Health Checks for Model Endpoints — Active Probes</div>
+        <div class="dc-sub">Synthetic transactions vs passive metrics</div>
+        <div class="dc-body"><em>Hook → design:</em> Unhealthy set in Redis with TTL refresh</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Unhealthy set in Redis with TTL refresh ↔ Model endpoint health must probe real inference, not TCP connect</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-85" data-product="routeiq" data-status="pending" data-repo="fallback-chain">
+  <header class="day-hdr">
+    <div class="day-num">085</div>
+    <div class="day-title-wrap">
+      <div class="day-title">fallback-chain</div>
+      <div class="day-meta">Wed · <code>fallback-chain</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">fallback-chain: Emit `routing_decision` protobuf events to Kafka (chosen_model, scores, cache_hit, cost_estimate_usd); LensAI consumer writes ClickHouse `routing_log` table.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Agoda Kafka Ingestion Backpressure — Channel Depth 10k</div>
+        <div class="dc-sub">Rust producer shed load before OOM; metrics on lag saved us</div>
+        <div class="dc-body"><em>Bridge → code:</em> Routing decision events use the same backpressure discipline into LensAI</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 85</div>
+        <div class="dc-title">Day 85 of Learning LLM Inference — Routing Decision Logs — Audit Trail Design</div>
+        <div class="dc-sub">Event sourcing for which model served whom</div>
+        <div class="dc-body"><em>Hook → design:</em> `routing_log` table is source of truth for FinOps</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: `routing_log` table is source of truth for FinOps ↔ Routing decision events use the same backpressure discipline into LensAI</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-86" data-product="routeiq" data-status="pending" data-repo="fallback-chain">
+  <header class="day-hdr">
+    <div class="day-num">086</div>
+    <div class="day-title-wrap">
+      <div class="day-title">fallback-chain</div>
+      <div class="day-meta">Thu · <code>fallback-chain</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">fallback-chain: TraceForge hook — inject `traceparent` on outbound provider calls; verify span attribute `routeiq.decision_id` appears in agent-trace-collector UI.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Delivery Hero Distributed Tracing — Finding the Slow Span</div>
+        <div class="dc-sub">Geo pipeline debugging without trace IDs was blind</div>
+        <div class="dc-body"><em>Bridge → code:</em> TraceForge linkage turns routing decisions into debuggable spans</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 86</div>
+        <div class="dc-title">Day 86 of Learning LLM Inference — Trace Context Propagation — W3C traceparent</div>
+        <div class="dc-sub">Span links across services like DH geo trace</div>
+        <div class="dc-body"><em>Hook → design:</em> Inject traceparent on provider HTTP client</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Inject traceparent on provider HTTP client ↔ TraceForge linkage turns routing decisions into debuggable spans</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-87" data-product="routeiq" data-status="pending" data-repo="fallback-chain">
+  <header class="day-hdr">
+    <div class="day-num">087</div>
+    <div class="day-title-wrap">
+      <div class="day-title">fallback-chain</div>
+      <div class="day-meta">Fri · <code>fallback-chain</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">fallback-chain: docker-compose integration — LensAI + TraceForge + RouteIQ; run 10k mixed prompts; document 3-product topology in INTEGRATION.md with sequence diagram.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">OSS VictoriaMetrics PR — Reading Go Production Code</div>
+        <div class="dc-sub">First upstream PR taught me to match existing error wrapping style</div>
+        <div class="dc-body"><em>Bridge → code:</em> 3-product integration doc is your OSS-quality bar for employers</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 87</div>
+        <div class="dc-title">Day 87 of Learning LLM Inference — Integration Topology — Compose for Platform Demos</div>
+        <div class="dc-sub">Same as docker-compose quickstart pattern from LensAI</div>
+        <div class="dc-body"><em>Hook → design:</em> Document service graph for 3-product demo</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Document service graph for 3-product demo ↔ 3-product integration doc is your OSS-quality bar for employers</div>
+      </div>
+      <div class="detail-card extra"><div class="dc-label">Weekly · Project blog</div><div class="dc-body">Fallback Chains — Sub-10ms Streaming Proxy, Three-Product Integration, and RouteIQ Week-4 Architecture</div></div>
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-88" data-product="routeiq" data-status="pending" data-repo="routeiq-launch">
+  <header class="day-hdr">
+    <div class="day-num">088</div>
+    <div class="day-title-wrap">
+      <div class="day-title">routeiq-launch</div>
+      <div class="day-meta">Sat · <code>routeiq-launch</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">routeiq-launch: Polish README (architecture GIF, cost-savings table), Helm umbrella chart, `routeiq-dev` org transfer; landing page with live demo API key sandbox.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Launching WhiteFalcon Dashboards — Stakeholder Demo Prep</div>
+        <div class="dc-sub">Agoda: exec review needed one screenshot that told the story</div>
+        <div class="dc-body"><em>Bridge → code:</em> RouteIQ landing GIF must show cost↓ latency→ in 10 seconds</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 88</div>
+        <div class="dc-title">Day 88 of Learning LLM Inference — Launch Readiness — API Sandboxes and Rate Limits</div>
+        <div class="dc-sub">Public demo keys need hard spend caps</div>
+        <div class="dc-body"><em>Hook → design:</em> Sandbox tenant uses cost-budget-enforcer defaults</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Sandbox tenant uses cost-budget-enforcer defaults ↔ RouteIQ landing GIF must show cost↓ latency→ in 10 seconds</div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+<article class="day-block status-pending" id="day-89" data-product="routeiq" data-status="pending" data-repo="routeiq-launch">
+  <header class="day-hdr">
+    <div class="day-num">089</div>
+    <div class="day-title-wrap">
+      <div class="day-title">routeiq-launch</div>
+      <div class="day-meta">Sun · <code>routeiq-launch</code> · <span class="badge badge-pending">Pending</span></div>
+    </div>
+    <span class="day-chevron">▼</span>
+  </header>
+  <div class="day-body">
+    <div class="detail-grid">
+      <div class="detail-card code">
+        <div class="dc-label">Code / Repo work</div>
+        <div class="dc-body">routeiq-launch: Final integration smoke + product essay publish prep; HN Show HN checklist; tag v1.0.0 across repos; apply to 3 Portkey/Cohere-style roles.</div>
+      </div>
+      <div class="detail-card exp">
+        <div class="dc-label">Experience blog</div>
+        <div class="dc-title">Five Years of Infra Interviews — What &#x27;Staff&#x27; Signals Look Like</div>
+        <div class="dc-sub">Platform narrative beats repo count when products connect</div>
+        <div class="dc-body"><em>Bridge → code:</em> RouteIQ product essay frames three months of routing as a product, not demos</div>
+      </div>
+      <div class="detail-card ai">
+        <div class="dc-label">AI learning · Day 89</div>
+        <div class="dc-title">Day 89 of Learning LLM Inference — Product Thinking — Routers as Control Planes</div>
+        <div class="dc-sub">RouteIQ is control plane; models are data plane</div>
+        <div class="dc-body"><em>Hook → design:</em> Essay ties routing, cache, quality into one SKU</div>
+      </div>
+      <div class="detail-card thread">
+        <div class="dc-label">Daily thread</div>
+        <div class="dc-body">Today&#x27;s design thread: Essay ties routing, cache, quality into one SKU ↔ RouteIQ product essay frames three months of routing as a product, not demos</div>
+      </div>
+      <div class="detail-card extra"><div class="dc-label">Monthly · Product blog</div><div class="dc-body">RouteIQ — Why Intelligent LLM Routing Needs Cache, Budget, Quality, and Fallback as One Product</div></div>
+    </div>
+  </div>
+</article></div>
+<footer class="site-foot">Akshant Sharma · 150-Day Platform Plan · Days 0–149</footer>
+<script>
+document.querySelectorAll('.day-hdr').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-block').classList.toggle('open'));
+});
+</script>
+</body>
+</html>
