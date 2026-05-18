@@ -27,11 +27,22 @@ python3 generate_plan.py
 
 Regenerates `index.html`, product/project pages, and `data/plan.json`. Does **not** overwrite `checklist.html` or `CHECKLIST.md`. Nav includes **Daily Checklist** when using the updated `generate_plan.py`.
 
+## Set today's calendar day
+
+Edit **`data/current-day.json`** (single source of truth):
+
+```json
+{ "current_day": 6 }
+```
+
+Then run `python3 generate_plan.py`. The master table, hero stats, and day detail blocks will show days `< current_day` as **Done**, day `current_day` as **Today**, and later days as **Pending**. Marking a day `done` in `plan.json` before bumping `current_day` is preserved across regenerations.
+
 ## Files
 
 | File | Purpose |
 |------|---------|
-| `data/plan.json` | Merged 150-day source |
+| `data/current-day.json` | Which calendar day is **Today** on the site |
+| `data/plan.json` | Merged 150-day source (`current_day` + `days`) |
 | `CHECKLIST.md` | Daily multi-agent framework (source of truth) |
 | `checklist.html` | Checklist UI with local progress save |
 | `generate_plan.py` | HTML generator |

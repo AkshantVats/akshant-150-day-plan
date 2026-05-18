@@ -8,6 +8,7 @@ import time
 from pathlib import Path
 
 from plan_data import PRODUCTS, build_day
+from plan_status import apply_statuses, load_current_day, load_saved_statuses
 
 ROOT = Path(__file__).parent
 DATA = ROOT / "data"
@@ -53,21 +54,26 @@ def merge_days() -> list[dict]:
     DATA.mkdir(parents=True, exist_ok=True)
     p0, p1 = DATA / "plan-days-0-74.json", DATA / "plan-days-75-149.json"
     d0, d1 = load_half(p0), load_half(p1)
+    saved = load_saved_statuses()
 
     if d0 and d1:
         by_day = {x["day"]: x for x in d0 + d1}
         print(f"Merged JSON: {len(d0)} + {len(d1)} days")
-        return [by_day[i] for i in range(150)]
-
-    if d0 and not d1:
+        days = [by_day[i] for i in range(150)]
+    elif d0 and not d1:
         print("Merged: JSON 0-74 + plan_data 75-149")
-        return d0 + [build_day(d) for d in range(75, 150)]
-    if d1 and not d0:
+        days = d0 + [build_day(d) for d in range(75, 150)]
+    elif d1 and not d0:
         print("Merged: plan_data 0-74 + JSON 75-149")
-        return [build_day(d) for d in range(0, 75)] + d1
+        days = [build_day(d) for d in range(0, 75)] + d1
+    else:
+        print("Generated all 150 days from plan_data")
+        days = [build_day(d) for d in range(150)]
 
-    print("Generated all 150 days from plan_data")
-    return [build_day(d) for d in range(150)]
+    current = load_current_day()
+    days = apply_statuses(days, current, saved)
+    print(f"Statuses from data/current-day.json (current_day={current}) + plan.json done overrides")
+    return days
 
 
 def nav(active: str, depth: int = 0) -> str:
@@ -183,7 +189,17 @@ def render_day_block(d: dict, show_product: bool = True) -> str:
     return block
 
 
+def hero_subtitle(days: list[dict], current_day: int) -> str:
+    done = sum(1 for d in days if d.get("status") == "done")
+    if current_day <= 0:
+        return "Day 0 — set current_day in data/current-day.json"
+    if done >= current_day:
+        return f"Days 0–{current_day - 1} done · Day {current_day} is today"
+    return f"{done} days done · Day {current_day} is today"
+
+
 def generate_index(days: list[dict]) -> str:
+    current_day = load_current_day()
     rows = []
     for d in days:
         exp, ai = d.get("experience", {}), d.get("ai", {})
@@ -211,16 +227,18 @@ def generate_index(days: list[dict]) -> str:
     repos = sorted({d.get("repo", "") for d in days})
     repo_opts = "".join(f'<option value="{esc(r)}">{esc(r)}</option>' for r in repos)
     done = sum(1 for d in days if d.get("status") == "done")
+    today_count = sum(1 for d in days if d.get("status") == "today")
     details = "\n".join(render_day_block(d) for d in days)
+    sub = hero_subtitle(days, current_day)
 
     body = f"""
 <div class="hero">
   <span class="tag" style="color:var(--teal);border-color:rgba(0,229,255,.3);background:rgba(0,229,255,.06)">150-Day Master Plan</span>
   <h1>Platform build · <em>Days 0–149</em></h1>
-  <p class="sub">Two daily blogs (Experience + AI Learning) linked by a Daily Thread. Five products, ~26 repos, one platform. Days 0–4 done · Day 5 next.</p>
+  <p class="sub">Two daily blogs (Experience + AI Learning) linked by a Daily Thread. Five products, ~26 repos, one platform. {esc(sub)}</p>
   <div class="stats">
     <div class="stat"><span class="stat-v" style="color:var(--green)">{done}</span><span class="stat-l">Done</span></div>
-    <div class="stat"><span class="stat-v" style="color:var(--teal)">1</span><span class="stat-l">Today</span></div>
+    <div class="stat"><span class="stat-v" style="color:var(--teal)">{today_count}</span><span class="stat-l">Today</span></div>
     <div class="stat"><span class="stat-v">150</span><span class="stat-l">Days</span></div>
     <div class="stat"><span class="stat-v">5</span><span class="stat-l">Products</span></div>
   </div>
@@ -342,9 +360,13 @@ def generate_project(repo: str, days: list[dict]) -> str:
 
 def main() -> None:
     days = merge_days()
+    current_day = load_current_day()
     (ROOT / "data").mkdir(exist_ok=True)
     plan_path = ROOT / "data" / "plan.json"
-    plan_path.write_text(json.dumps({"days": days}, indent=2, ensure_ascii=False), encoding="utf-8")
+    plan_path.write_text(
+        json.dumps({"current_day": current_day, "days": days}, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
 
     generated: list[Path] = [plan_path, ROOT / "assets" / "style.css"]
 

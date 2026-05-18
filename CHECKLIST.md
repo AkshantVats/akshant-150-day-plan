@@ -44,15 +44,15 @@ Code execution plans list **recommended branch name(s)** per deliverable — not
 
 ## Daily header (fill each morning)
 
-_Last filled example: **Day 4** · 2026-05-16 (Saturday). Copy structure for Day 5+; do not delete future-day placeholders elsewhere._
+_Last filled example: **Day 6** · 2026-05-18 (Monday). Copy structure each morning; do not delete future-day placeholders elsewhere._
 
 | Field | Value |
 |-------|--------|
-| **Calendar day** | 4 of N _(internal calendar; public blogs use same pattern)_ |
-| **Date** | 2026-05-16 |
+| **Calendar day** | 6 of N _(set `data/current-day.json` → `current_day`; run `python3 generate_plan.py` to refresh site)_ |
+| **Date** | 2026-05-18 |
 | **Today's repo** | `infra-ai-streaming` (from `data/plan.json`) |
-| **Branch(es)** | `feat/deploy-prometheus-grafana-redpanda-init`, `feat/consumer-kafka-stdout-skeleton` → merged to `main` |
-| **Shared Daily Thread (one-liner)** | Go consumer skeleton exists so tomorrow's ClickHouse writer can aggregate cost_usd the way finance asks. |
+| **Branch(es)** | _(fill per day — e.g. `feat/grafana-dashboard-four-panels`)_ |
+| **Shared Daily Thread (one-liner)** | _(from `plan.json` `thread` for day 6)_ |
 
 ---
 
@@ -66,7 +66,7 @@ _Last filled example: **Day 4** · 2026-05-16 (Saturday). Copy structure for Day
 - [x] Confirm **Profile** repo cloned; blog folders for Experience + AI Learning series exist
 - [x] Create/checkout branch(es) per **Branching & Git Standards** (e.g. `feat/consumer-kafka-stdout-skeleton`) — never commit on `main` without approval
 - [x] Note cross-day carryover: open PRs, failing CI, draft blogs from yesterday
-- [x] Set plan.json `status` for today to `today` if not already (local only; do not push plan site)
+- [ ] Bump `data/current-day.json` `current_day` to today's calendar day; run `python3 generate_plan.py` (local only; do not push plan site)
 
 ### Phase 1 — Plan mode (3 parallel workstreams, **no implementation**)
 
@@ -104,7 +104,7 @@ Run **three independent agents** in parallel. Each outputs **markdown plan only*
 
 ### Phase 4 — End of day
 
-- [x] Mark day `done` in `data/plan.json` (and regenerate plan HTML if you use `generate_plan.py`)
+- [x] Mark day `done` in `data/plan.json` (set `status` to `done` for completed day, then bump `data/current-day.json` and run `python3 generate_plan.py`)
 - [x] Code: commit pointers in Profile blogs (commit SHA, PR link) — not full diffs in blogs
 - [x] **Distribution:** share **published blog URLs only** (site live first); no separate LinkedIn/X post drafting in agent scope
 - [x] Update master table mental note: tomorrow's pre-flight reads day N+1
@@ -146,6 +146,8 @@ Applies to **all Profile blog series** in [Profile](https://github.com/akshantva
 - If you count only **numbered curriculum days after the Day 0 roadmap** (exclude Day 0 from the count): **N − 1** posts on calendar day **N** (e.g. day 5 → Days 1–4 → **4** “learning” posts). Say which convention you mean in plans; agents default to **0-based indices including Day 0**.
 
 **Experience backlog does not change the rule.** Plan days 1–2 may still list experience titles that ship later; kickers follow **publication order in the Experience series** (1, 2, 3, …), not “which calendar day the outline was written.” On calendar day **N**, the highest Experience kicker is still **(N − 1) of N** when you ship one experience post per plan day from day 0.
+
+**Intentionally deferred (not blocking):** Experience posts for plan **days 1–2** — *Design Docs Beat Code on Day One* (day 1) and *Ceph, POSIX, and the Lie of 'Just Use a Filesystem'* (day 2). Code and AI Learning for those calendar days shipped; experience titles remain in `plan.json` for later backlog. Do not block G-tickets, checklist gates, or marking a calendar day `done` on these.
 
 **Sidebar kicker ↔ filename ↔ `plan.json` (must agree):**
 
@@ -413,6 +415,17 @@ Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `perf`.
 - [x] Daily workflow uses [checklist.html](checklist.html) (browser) + this file (copy/paste)
 - [x] Nav: **Daily Checklist** on master plan and generated pages
 - [x] **This repository is local-only** — see `.gitignore` and `README.md`; do not push to `akshantvats` remotes
+
+### Current calendar day (single knob)
+
+| File | Purpose |
+|------|---------|
+| `data/current-day.json` | `{"current_day": N}` — **only place** to set which day is **Today** on the plan site |
+| `data/plan.json` | Merged content + per-day `status`; `done` on a day is preserved when regenerating |
+| `python3 generate_plan.py` | Rebuilds `index.html`, product/project pages; applies `current_day` → `today` / prior days `done` |
+
+**Morning:** set `current_day` to today's calendar day → run generator.  
+**End of day:** set completed day `status` to `done` in `plan.json` (or rely on `current_day` > that day) → bump `current_day` to N+1 → run generator.
 
 ---
 

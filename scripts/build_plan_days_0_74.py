@@ -11,11 +11,13 @@ def weekday(d: int) -> str:
 
 
 def status(d: int) -> str:
-    if d <= 3:
-        return "done"
-    if d == 4:
-        return "today"
-    return "pending"
+    import sys
+    from pathlib import Path
+
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from plan_status import load_current_day, resolve_status
+
+    return resolve_status(d, load_current_day())
 
 
 def repo_for(day: int) -> str:

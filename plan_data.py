@@ -1,4 +1,4 @@
-"""150-day plan data: code, blogs, threads. Days 0-4 done, 5 next."""
+"""150-day plan data: code, blogs, threads. Status from plan_status + data/current-day.json."""
 
 PRODUCTS = [
     ("lensai", "LensAI", 0, 29),
@@ -216,11 +216,9 @@ def product_for(d):
     return "platform", "Platform"
 
 def status_for(d):
-    if d <= 4:
-        return "done"
-    if d == 5:
-        return "today"
-    return "pending"
+    from plan_status import load_current_day, resolve_status
+
+    return resolve_status(d, load_current_day())
 
 def code_default(d, repo):
     w = WEEKDAY[(d + 1) % 7]
