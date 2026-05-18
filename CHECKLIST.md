@@ -102,6 +102,35 @@ Run **three independent agents** in parallel. Each outputs **markdown plan only*
 - [x] Agents stay in scope; escalate blockers to user, don't silently expand scope
 - [x] Sync mid-day if code schema/API changed — notify blog agents before they finalize HTML
 
+### Phase 3.5 — Local verification & user showcase (mandatory before PR)
+
+**Order:** implement → **test locally** → **showcase to user** → **user explicitly approves** → **only then** push branch + open PR.
+
+Do **not** open a PR until the user has run (or watched) local proof and signed off. Past regret: infra PR #2 and Profile PR #1 shipped without this gate.
+
+| Surface | What to verify locally |
+|---------|-------------------------|
+| **infra-ai-streaming** | `docker compose up` (Redis, Redpanda, ClickHouse, Prometheus, Grafana healthy); consumer + ingestion running; `curl` ingest → Kafka → consumer → ClickHouse; Grafana product + E2E dashboards load with data |
+| **Profile blogs** | `python3 -m http.server` from repo root; open new post URLs, `blog/series-index.json` nav, on-page heroes, `og:image` paths (file exists; absolute URLs checked after Pages deploy) |
+| **Plan site** (optional) | `index.html` / checklist.html — calendar day row matches `data/plan.json` |
+
+**Agent showcase (required before asking for push/PR):**
+
+- Paste **exact commands** the user should run (copy-paste ready).
+- Paste **URLs** to open (Grafana UIDs, local blog paths, Prometheus targets).
+- State **what to look for** per panel/section (expected metric, row count, kicker index).
+- Note known fixes on the branch (e.g. ClickHouse datasource `jsonData.host`) if panels may be empty until compose restart.
+
+**User sign-off (explicit phrase required):**
+
+- User must say they tested locally and approve push/PR — e.g. **"approved — push and open PR"**, **"LGTM push"**, or **"merge-ready"** with scope named (infra / Profile / both).
+- **No PR** and **no `git push`** until that phrase (same as [Git & push policy](#git--push-policy) in section C).
+
+- [ ] Local verification checklist completed (infra compose + dashboards, and/or Profile `http.server` preview)
+- [ ] User received showcase (commands + URLs + pass criteria)
+- [ ] User sign-off recorded in chat
+- [ ] **Then only:** push feature branch(es) and open PR(s) — PR creation is the **last** step, not part of implementation
+
 ### Phase 4 — End of day
 
 - [x] Mark day `done` in `data/plan.json` (set `status` to `done` for completed day, then bump `data/current-day.json` and run `python3 generate_plan.py`)
@@ -365,7 +394,8 @@ Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `perf`.
 
 - [x] Commits made locally with messages above
 - [x] **Do not `git push`** until user explicitly says push (default: local only)
-- [x] If user approves push: push branch, open PR if applicable, paste PR URL to user
+- [x] Complete [Phase 3.5 — Local verification & user showcase](#phase-35--local-verification--user-showcase-mandatory-before-pr) before any push or PR
+- [x] If user approves push (sign-off phrase): push branch, **then** open PR if applicable, paste PR URL to user — never open PR before approval
 
 ---
 
@@ -406,6 +436,7 @@ Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `perf`.
 - [ ] Put `file://`, `localhost`, or `plans/drafts/` links in published Profile HTML
 - [ ] Push plan website or `data/plan.json` to public GitHub
 - [ ] Push code without user saying push
+- [ ] Open a PR before user local test + explicit sign-off ([Phase 3.5](#phase-35--local-verification--user-showcase-mandatory-before-pr))
 - [ ] Write LinkedIn/X posts in agent scope (links only after site publish)
 
 ---
