@@ -124,7 +124,7 @@
     },
     {
       "day": 5,
-      "status": "pending",
+      "status": "done",
       "weekday": "Sunday",
       "product": "lensai",
       "product_name": "LensAI",
@@ -138,8 +138,8 @@
         "bridge": "OTel spans on the ingestion path today tag the same dimensions I'd use to debug a map-matching pipeline under peak dinner rush."
       },
       "ai": {
-        "day_index": 4,
-        "title": "Day 4 — Tensor Parallelism Meets Kafka Partitions",
+        "day_index": 5,
+        "title": "Day 5 — Tensor Parallelism Meets Kafka Partitions",
         "subtitle": "Model serving scale-out as a sharding problem",
         "hook": "Triton's model repository is just a partition assignment table with GPUs instead of brokers."
       },
@@ -161,8 +161,8 @@
         "bridge": "The Grafana P99-by-model_id panel only works if I refused to explode label cardinality the way we learned at Agoda scale."
       },
       "ai": {
-        "day_index": 5,
-        "title": "Day 5 — Sampling and Deterministic Routing",
+        "day_index": 6,
+        "title": "Day 6 — Sampling and Deterministic Routing",
         "subtitle": "Why 1% trace sampling isn't free randomness",
         "hook": "Consistent hashing for routes and consistent sampling for traces — same hash function, different failure modes."
       },
@@ -184,8 +184,8 @@
         "bridge": "Redis token buckets on tenant_id today are the pricing-API pattern I shipped — 429 with Retry-After, not silent drop."
       },
       "ai": {
-        "day_index": 6,
-        "title": "Day 6 — Quantization vs Compression Tradeoffs",
+        "day_index": 7,
+        "title": "Day 7 — Quantization vs Compression Tradeoffs",
         "subtitle": "INT8/INT4 as Snappy-vs-Zstd for weights",
         "hook": "You already pick codecs by access pattern — quantization is picking precision by deployment budget."
       },
@@ -207,8 +207,8 @@
         "bridge": "Helm + HPA on Kafka lag is how I'd run DH peak today — scale on consumer lag, not CPU theater."
       },
       "ai": {
-        "day_index": 7,
-        "title": "Day 7 — Prompt Caching at the Infrastructure Layer",
+        "day_index": 8,
+        "title": "Day 8 — Prompt Caching at the Infrastructure Layer",
         "subtitle": "Prefix reuse as KV-cache hit rate for dollars",
         "hook": "Anthropic/OpenAI prompt cache headers are cache-control for transformers — treat them like HTTP CDN rules."
       },
@@ -230,8 +230,8 @@
         "bridge": "Publishing the portfolio site today is shipping a read model — same as making pricing updates visible without batch lag."
       },
       "ai": {
-        "day_index": 8,
-        "title": "Day 8 — RAG as an Infra Pipeline",
+        "day_index": 9,
+        "title": "Day 9 — RAG as an Infra Pipeline",
         "subtitle": "Chunk → embed → index → retrieve → generate latency budget",
         "hook": "RAG's bottleneck is never the LLM first — it's the fan-in on your vector store's QPS."
       },
@@ -256,8 +256,8 @@
         "bridge": "run_chaos.sh results go into CHAOS.md the way we'd attach postmortems to JIRA — evidence, not vibes."
       },
       "ai": {
-        "day_index": 9,
-        "title": "Day 9 — GPU Memory Management for Non-CUDA Engineers",
+        "day_index": 10,
+        "title": "Day 10 — GPU Memory Management for Non-CUDA Engineers",
         "subtitle": "VRAM, weight loading, and batch-size cliffs",
         "hook": "OOM on a GPU is OOM on a JVM — someone's batch size is a lie."
       },
