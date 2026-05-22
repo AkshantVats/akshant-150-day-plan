@@ -1,0 +1,38 @@
+{
+  "_comment": "Optional editorial format hints by calendar day. Not consumed by generate_plan.py. Values: incident | feature | design | deep-dive | rollout | patterns | meta. See docs/BLOG-FORMAT-MIX.md.",
+  "9": {
+    "experience": "rollout",
+    "ai": "deep-dive",
+    "note": "Wayfair SKU propagation — event-driven visibility, not outage narrative"
+  },
+  "10": {
+    "experience": "incident",
+    "ai": "deep-dive",
+    "note": "Chaos test with evidence — postmortem style; AI = GPU memory mechanism"
+  },
+  "11": {
+    "experience": "patterns",
+    "ai": "patterns",
+    "note": "OSS reading / framework queue models — no faux pager duty"
+  },
+  "12": {
+    "experience": "rollout",
+    "ai": "design",
+    "note": "Walmart OTA / at-least-once — migration lesson; AI = semantic cache tradeoffs"
+  },
+  "13": {
+    "experience": "feature",
+    "ai": "deep-dive",
+    "note": "README as shipped artifact for hiring — feature narrative"
+  },
+  "14": {
+    "experience": "design",
+    "ai": "design",
+    "note": "Cardinality schema + eBPF DESIGN — tradeoff essay both series"
+  },
+  "15": {
+    "experience": "rollout",
+    "ai": "design",
+    "note": "Order SQS → Route Consumers decoupling — topology rollout, not Kinesis incident"
+  }
+}

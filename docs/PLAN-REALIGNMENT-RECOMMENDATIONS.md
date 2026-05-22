@@ -165,3 +165,14 @@ The following **High** edits were applied in `data/plan.json` for review:
 8. **18** — Name UCMS / gst-acc-promotions in supplier rate limit post (MEDIUM)  
 9. **58–59** — Deduplicate TraceForge flight-recorder titles (MEDIUM)  
 10. **96** — "Leading two teams" → PAS + Promotions with pricing doc team boundaries (MEDIUM)
+
+---
+
+## Appendix — Format diversity (2026-05-22)
+
+**Policy:** [`docs/BLOG-FORMAT-MIX.md`](BLOG-FORMAT-MIX.md) · **hints:** [`data/blog-format-hints.json`](../data/blog-format-hints.json) · **checklist:** [`CHECKLIST.md`](../CHECKLIST.md) § Experience & AI blogs.
+
+- **Titles in this audit stay** unless listed in the change tables above; realignment fixes employer topology and duplicate peak stories, not headline rewrites for format alone.
+- **Narrative framing** is separate: agents pick `incident` | `feature` | `design` | `deep-dive` | `rollout` | `patterns` from ticket/title signals — e.g. day **9** Wayfair propagation → `rollout`, not faux outage; day **10** chaos → evidence-based `incident`; days **8/20/82** EKS/HPA → `patterns` / `rollout`, not a third identical pager-duty post.
+- **Soft cap:** ≤ ~40% incident-style posts across Experience + AI Learning over 150 days.
+- Sample hints for calendar days **9–15** are in the sidecar; extend as future days are planned.

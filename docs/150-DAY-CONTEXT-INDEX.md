@@ -7,6 +7,7 @@ Master map for agents working in `akshant-150-day-plan` and cross-repo blog/code
 | Resource | Path |
 |----------|------|
 | Context README (read first) | [`docs/context/README.md`](context/README.md) |
+| Blog format mix (editorial) | [`docs/BLOG-FORMAT-MIX.md`](BLOG-FORMAT-MIX.md) · hints [`data/blog-format-hints.json`](../data/blog-format-hints.json) |
 | Realignment audit | [`docs/PLAN-REALIGNMENT-RECOMMENDATIONS.md`](PLAN-REALIGNMENT-RECOMMENDATIONS.md) |
 | Rider tracking SOt | [`docs/delivery-hero-rider-tracking-system.md`](delivery-hero-rider-tracking-system.md) |
 | Rider diagram | [`docs/assets/delivery-hero-rider-tracking-architecture.png`](assets/delivery-hero-rider-tracking-architecture.png) |
@@ -57,7 +58,8 @@ Master map for agents working in `akshant-150-day-plan` and cross-repo blog/code
 
 ## Process (locked)
 
-1. Experience blog agent → `docs/context/README.md` + employer SOt doc.
-2. Never publish DH routing posts without Order SQS + Route Service + OSRM vocabulary.
-3. Never publish Wayfair pricing posts without at least one of: Delphi, Aletheia, PAS, supplier/UCMS, 250k SKU propagation.
-4. Do not push this plan repo to public GitHub (local-only per CHECKLIST).
+1. Experience blog agent → `docs/BLOG-FORMAT-MIX.md` (assign format) → `docs/context/README.md` + employer SOt doc.
+2. AI Learning blog agent → `docs/BLOG-FORMAT-MIX.md` (usually `deep-dive` / `design`, not faux-incident).
+3. Never publish DH routing posts without Order SQS + Route Service + OSRM vocabulary.
+4. Never publish Wayfair pricing posts without at least one of: Delphi, Aletheia, PAS, supplier/UCMS, 250k SKU propagation.
+5. Do not push this plan repo to public GitHub (local-only per CHECKLIST).

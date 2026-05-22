@@ -7,10 +7,11 @@ Canonical files for **this chat window** and future agent runs. Read before inve
 **Before generating or drafting any Experience-series blog:**
 
 1. Read this index.
-2. Read [`../delivery-hero-rider-tracking-system.md`](../delivery-hero-rider-tracking-system.md) for Delivery Hero posts.
-3. For Wayfair / pricing / supplier / PAS / promotions posts, read [`pricing-system-architecture.md`](pricing-system-architecture.md).
-4. For employer dates, scope, and metrics labeling, read [`resume-extracted.md`](resume-extracted.md).
-5. If the post blends personal narrative (applications, goals), optionally read [`cover-letter-extracted.md`](cover-letter-extracted.md).
+2. Read [`../BLOG-FORMAT-MIX.md`](../BLOG-FORMAT-MIX.md) — assign post format (not every day is an incident); check [`../../data/blog-format-hints.json`](../../data/blog-format-hints.json) for the calendar day.
+3. Read [`../delivery-hero-rider-tracking-system.md`](../delivery-hero-rider-tracking-system.md) for Delivery Hero posts.
+4. For Wayfair / pricing / supplier / PAS / promotions posts, read [`pricing-system-architecture.md`](pricing-system-architecture.md).
+5. For employer dates, scope, and metrics labeling, read [`resume-extracted.md`](resume-extracted.md).
+6. If the post blends personal narrative (applications, goals), optionally read [`cover-letter-extracted.md`](cover-letter-extracted.md).
 
 **If context is ambiguous** → ask the user OR cite only what appears in these files. Do not substitute Kinesis-only pipelines, generic “stealth startup” stories, or vendor-scale numbers without a source.
 

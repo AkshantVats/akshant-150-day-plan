@@ -159,6 +159,19 @@ Use when the day ships **code + observability + blogs** (Day 4 pattern). Do not 
 
 Applies to **all Profile blog series** in [Profile](https://github.com/akshantvats/Profile). One agent per series when multiple ship same day. **Authoritative publish detail:** [Profile `blog/NEW-POST-CHECKLIST.md`](https://github.com/akshantvats/Profile/blob/main/blog/NEW-POST-CHECKLIST.md).
 
+### Experience & AI blogs — format mix (not incident-only)
+
+Across the 150-day plan, **do not** frame every Experience or AI Learning post as a daily production incident. Mix formats per [`docs/BLOG-FORMAT-MIX.md`](docs/BLOG-FORMAT-MIX.md).
+
+| Step | Action |
+|------|--------|
+| Pre-flight | Read **BLOG-FORMAT-MIX.md** (format table + mapping from `experience.title` / `code` ticket). |
+| Assign format | Before Phase 1 blog plans: pick format ID (`incident`, `feature`, `design`, `deep-dive`, `rollout`, `patterns`, `meta`). Check [`data/blog-format-hints.json`](data/blog-format-hints.json) for calendar day **N** if present. |
+| Phase 1 plans | A2/A3 must state **format + rationale + one gold post** to emulate (paths in BLOG-FORMAT-MIX.md). |
+| Quota | Soft guideline: **≤ ~40%** `incident`-style posts across both series over 150 days — rebalance if recent posts skew outage-heavy. |
+
+`plan.json` **titles stay**; format doc controls **narrative structure** (postmortem vs shipped feature vs design essay, etc.).
+
 ### Blog numbering vs calendar day (authoritative)
 
 **Calendar day** = **N** in the 150-day plan (`plan.json` `day`, checklist “Day N”, code commit `Refs: N of N`).  
