@@ -44,7 +44,7 @@
       <div class="detail-card exp">
         <div class="dc-label">Experience blog</div>
         <div class="dc-title">Semantic Cache — Wayfair Pricing Deja Vu</div>
-        <div class="dc-sub">Wayfair · near-duplicate SKU updates</div>
+        <div class="dc-sub">Wayfair · Aletheia cache · price-change Kafka · near-duplicate SKU updates</div>
         <div class="dc-body"><em>Bridge → code:</em> Near-duplicate prompts need the same tolerance pricing had for &#x27;almost same&#x27; supplier feeds. Today&#x27;s semantic-cache-engine work makes that concrete.</div>
       </div>
       <div class="detail-card ai">
@@ -743,9 +743,9 @@
       </div>
       <div class="detail-card exp">
         <div class="dc-label">Experience blog</div>
-        <div class="dc-title">Stealth Startup Saga: Compensating Transactions on Order State</div>
-        <div class="dc-sub">Multi-step ordering needed explicit rollback—not hope</div>
-        <div class="dc-body"><em>Bridge → code:</em> Routing utility function is a saga: pick model, log decision, compensate on timeout via fallback</div>
+        <div class="dc-title">Route Revisions and Revisit Order System — Compensating Bad Polylines</div>
+        <div class="dc-sub">Delivery Hero · immutable Route { } snapshots · rollback without corrupting UI</div>
+        <div class="dc-body"><em>Bridge → code:</em> Revisit Order System and Route revision objects — compensating transactions on real DH topology, not a stealth-startup fiction.</div>
       </div>
       <div class="detail-card ai">
         <div class="dc-label">AI learning · Day 80</div>
@@ -779,8 +779,8 @@
       <div class="detail-card exp">
         <div class="dc-label">Experience blog</div>
         <div class="dc-title">Wayfair Sub-Second SKU Propagation — Event Ordering</div>
-        <div class="dc-sub">250k updates/day required version vectors on price events</div>
-        <div class="dc-body"><em>Bridge → code:</em> Fallback chain order is an event-sourcing problem—newer config must win consistently</div>
+        <div class="dc-sub">Wayfair · pricing_refresh Kafka (40 partitions) · version vectors on price events</div>
+        <div class="dc-body"><em>Bridge → code:</em> Fallback chain order mirrors Kafka pricing_refresh partitioning — newer version must win consistently across consumers.</div>
       </div>
       <div class="detail-card ai">
         <div class="dc-label">AI learning · Day 81</div>
@@ -813,9 +813,9 @@
       </div>
       <div class="detail-card exp">
         <div class="dc-label">Experience blog</div>
-        <div class="dc-title">Delivery Hero Peak EKS — PDB + HPA Tuning Under OSRM Load</div>
-        <div class="dc-sub">10k concurrent during lunch rush; one bad rollout took 8% error budget</div>
-        <div class="dc-body"><em>Bridge → code:</em> Friday load test on fallback chain is your pre-Black-Friday for LLM traffic</div>
+        <div class="dc-title">OSRM Pool Saturation — PDBs When Map-Matching Ate the Error Budget</div>
+        <div class="dc-sub">Delivery Hero · OSRM cluster · Route Service EKS · lunch-rush 8% error burn</div>
+        <div class="dc-body"><em>Bridge → code:</em> Day 8 was concurrent request patterns; day 20 was consumer-lag HPA — today is OSRM pool saturation and PDB tradeoffs under map-matching load.</div>
       </div>
       <div class="detail-card ai">
         <div class="dc-label">AI learning · Day 82</div>

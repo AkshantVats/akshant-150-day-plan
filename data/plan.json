@@ -1,5 +1,5 @@
 {
-  "current_day": 6,
+  "current_day": 8,
   "days": [
     {
       "day": 0,
@@ -142,7 +142,7 @@
     },
     {
       "day": 6,
-      "status": "today",
+      "status": "done",
       "weekday": "Monday",
       "product": "lensai",
       "product_name": "LensAI",
@@ -165,7 +165,7 @@
     },
     {
       "day": 7,
-      "status": "pending",
+      "status": "done",
       "weekday": "Tuesday",
       "product": "lensai",
       "product_name": "LensAI",
@@ -188,7 +188,7 @@
     },
     {
       "day": 8,
-      "status": "pending",
+      "status": "today",
       "weekday": "Wednesday",
       "product": "lensai",
       "product_name": "LensAI",
@@ -220,9 +220,9 @@
       "project_blog": null,
       "product_blog": null,
       "experience": {
-        "title": "250k SKUs in Sub-Second — Event-Driven vs Polling",
-        "subtitle": "Wayfair · price propagation · why streams win",
-        "bridge": "Publishing the portfolio site today is shipping a read model — same as making pricing updates visible without batch lag."
+        "title": "Delphi → Aletheia Feed — Sub-Second Price Visibility",
+        "subtitle": "Wayfair · pricing_refresh Kafka · distribution path — event-driven beats polling",
+        "bridge": "Publishing the portfolio site today is shipping a read model — same discipline as Delphi feeding Aletheia without batch lag on 250k SKUs."
       },
       "ai": {
         "day_index": 9,
@@ -361,9 +361,9 @@
       "project_blog": null,
       "product_blog": null,
       "experience": {
-        "title": "Async Pipelines That Survived Dinner Rush",
-        "subtitle": "Delivery Hero · SQS/Kinesis · decoupling notifications from analytics",
-        "bridge": "Socket-level probes today are the lightest-weight tap on a path that must not add milliseconds DH couldn't afford."
+        "title": "Order SQS → Route Consumers — Decoupling Map-Match from Status",
+        "subtitle": "Delivery Hero · Order SQS lifecycle · Route Consumers → OSRM off the status hot path",
+        "bridge": "Async notifications use SQS+Kinesis elsewhere — this post is Order SQS into Route Consumers, not a Kinesis-only map-match story."
       },
       "ai": {
         "day_index": 15,
@@ -434,8 +434,8 @@
       "product_blog": null,
       "experience": {
         "title": "Rate Limiting at the Supplier Boundary — Not the Textbook Diagram",
-        "subtitle": "Wayfair · token bucket in production",
-        "bridge": "WAL on ingestion plus ebpf backpressure policy is the same 'never lose the write' instinct as supplier API durability."
+        "subtitle": "Wayfair · UCMS · gst-acc-promotions · supplier token bucket in production",
+        "bridge": "WAL on ingestion plus ebpf backpressure policy is the same 'never lose the write' instinct as gst-acc-promotions durability at the supplier boundary."
       },
       "ai": {
         "day_index": 18,
@@ -479,9 +479,9 @@
       "project_blog": null,
       "product_blog": null,
       "experience": {
-        "title": "Peak Kubernetes — HPA Reacts, It Doesn't Predict",
-        "subtitle": "Delivery Hero · 10k concurrent · PDBs during deploys",
-        "bridge": "Second OSS PR on Kafka rebalancing is credibility for the bus every LensAI component shares."
+        "title": "Route Consumer Lag — Why CPU-Based HPA Failed at Lunch Rush",
+        "subtitle": "Delivery Hero · Route Consumers · Order SQS depth as the scale signal",
+        "bridge": "Day 8 covered generic EKS peak patterns — today is consumer lag and queue depth, not another CPU-HPA essay."
       },
       "ai": {
         "day_index": 20,
@@ -575,8 +575,8 @@
       "product_blog": null,
       "experience": {
         "title": "BigQuery Streaming vs Batch — Burst Traffic Truth",
-        "subtitle": "Wayfair · data platform · slots and surprises",
-        "bridge": "Audit Kafka topic for flags is BigQuery streaming inserts done right — append-only, replayable, owned."
+        "subtitle": "Wayfair · PAS analytics · pas-analytics Pub/Sub — slots under burst",
+        "bridge": "Audit Kafka topic for flags is pas-analytics Pub/Sub done right — append-only, replayable, owned."
       },
       "ai": {
         "day_index": 24,
@@ -1400,9 +1400,9 @@
         "subtitle": "Collector, analyzer, replay, benchmark — Month 2 product essay"
       },
       "experience": {
-        "title": "TraceForge — Agents Need a Flight Recorder",
-        "subtitle": "Delivery Hero · operations · postmortems",
-        "bridge": "Month 2 essay ties benchmark report to DH postmortem format — steps, cost, divergence. Today's code in agent-benchmark-runner implements that lesson."
+        "title": "TraceForge Launch — From Flight Recorder to Agent Ops",
+        "subtitle": "Delivery Hero · agent-benchmark-runner · launch narrative (not duplicate postmortem)",
+        "bridge": "Month 2 ships TraceForge as product — today's agent-benchmark-runner is the launch story, while day 58 kept the flight-recorder postmortem pattern."
       },
       "ai": {
         "day_index": 59,
@@ -1424,7 +1424,7 @@
       "product_blog": null,
       "experience": {
         "title": "Semantic Cache — Wayfair Pricing Deja Vu",
-        "subtitle": "Wayfair · near-duplicate SKU updates",
+        "subtitle": "Wayfair · Aletheia cache · price-change Kafka · near-duplicate SKU updates",
         "bridge": "Near-duplicate prompts need the same tolerance pricing had for 'almost same' supplier feeds. Today's semantic-cache-engine work makes that concrete."
       },
       "ai": {
@@ -1887,9 +1887,9 @@
       "repo": "model-quality-scorer",
       "code": "model-quality-scorer: RouteIQ decision engine v1 — weighted utility `U = w_q·quality − w_c·cost − w_l·latency` with tenant-overridable weights; unit tests for tie-break toward cheaper model when U within ε.",
       "experience": {
-        "title": "Stealth Startup Saga: Compensating Transactions on Order State",
-        "subtitle": "Multi-step ordering needed explicit rollback—not hope",
-        "bridge": "Routing utility function is a saga: pick model, log decision, compensate on timeout via fallback"
+        "title": "Route Revisions and Revisit Order System — Compensating Bad Polylines",
+        "subtitle": "Delivery Hero · immutable Route { } snapshots · rollback without corrupting UI",
+        "bridge": "Revisit Order System and Route revision objects — compensating transactions on real DH topology, not a stealth-startup fiction."
       },
       "ai": {
         "day_index": 80,
@@ -1911,8 +1911,8 @@
       "code": "fallback-chain: DESIGN.md — per-tenant ordered model list, timeout cascade (2s/5s/8s), circuit-breaker states, streaming byte-buffer strategy for <10ms proxy overhead.",
       "experience": {
         "title": "Wayfair Sub-Second SKU Propagation — Event Ordering",
-        "subtitle": "250k updates/day required version vectors on price events",
-        "bridge": "Fallback chain order is an event-sourcing problem—newer config must win consistently"
+        "subtitle": "Wayfair · pricing_refresh Kafka (40 partitions) · version vectors on price events",
+        "bridge": "Fallback chain order mirrors Kafka pricing_refresh partitioning — newer version must win consistently across consumers."
       },
       "ai": {
         "day_index": 81,
@@ -1933,9 +1933,9 @@
       "repo": "fallback-chain",
       "code": "fallback-chain: Implement chain executor (GPT-4o → Claude Sonnet → Llama-3-70B local); record `fallback_reason` enum; k6 test 500 RPS with injected primary failures; draft project-blog sections in NOTES.md (publish Day 87).",
       "experience": {
-        "title": "Delivery Hero Peak EKS — PDB + HPA Tuning Under OSRM Load",
-        "subtitle": "10k concurrent during lunch rush; one bad rollout took 8% error budget",
-        "bridge": "Friday load test on fallback chain is your pre-Black-Friday for LLM traffic"
+        "title": "OSRM Pool Saturation — PDBs When Map-Matching Ate the Error Budget",
+        "subtitle": "Delivery Hero · OSRM cluster · Route Service EKS · lunch-rush 8% error burn",
+        "bridge": "Day 8 was concurrent request patterns; day 20 was consumer-lag HPA — today is OSRM pool saturation and PDB tradeoffs under map-matching load."
       },
       "ai": {
         "day_index": 82,
@@ -2232,9 +2232,9 @@
       "repo": "shadow-traffic-router",
       "code": "shadow-traffic-router: S3/MinIO archival for long-term paired responses; partition by date; PII scrub job before persist.",
       "experience": {
-        "title": "BigQuery Streaming vs Batch — Wayfair Cost Lesson",
-        "subtitle": "Streaming inserts 3× cost for 2× freshness—not always worth it",
-        "bridge": "Archiving shadow pairs to S3 is the cold tier for eval—not hot ClickHouse forever"
+        "title": "ScheduledReader at TB Scale — BigQuery Slot Economics",
+        "subtitle": "Wayfair · Delphi ScheduledReader · batch analytics vs streaming insert cost",
+        "bridge": "Archiving shadow pairs to S3 is the cold tier for eval; ScheduledReader owns TB-scale BQ slots separate from day 24 PAS streaming analytics."
       },
       "ai": {
         "day_index": 95,
@@ -2255,9 +2255,9 @@
       "repo": "shadow-traffic-router",
       "code": "shadow-traffic-router: End-to-end demo script + BENCHMARKS.md; polish README diagrams; confirm project blog ready for Day 94 publish.",
       "experience": {
-        "title": "Leading Two Teams at Wayfair — Documentation as Ownership",
-        "subtitle": "Architecture docs outlasted reorganizations",
-        "bridge": "Shadow traffic project blog is the handoff doc for Month 4 you"
+        "title": "Leading PAS and Promotions — Two Teams, One Pricing Platform",
+        "subtitle": "Wayfair · PAS Core + PromoSvc · team boundaries from pricing architecture",
+        "bridge": "Shadow traffic project blog doubles as handoff doc — same ownership clarity PAS and Promotions needed across Delphi, Aletheia, and Pub/Sub simulation."
       },
       "ai": {
         "day_index": 96,
@@ -3290,9 +3290,9 @@
       "repo": "vllm-deploy-kit",
       "code": "vllm-deploy-kit: DESIGN.md — Helm values for tensor parallel, KV cache, HPA on GPU utilization.",
       "experience": {
-        "title": "Helm at Delivery Hero — Values File Sprawl",
-        "subtitle": "12 envs × values—templated with helmfile",
-        "bridge": "vLLM chart inherits Helm lessons from ingestion month"
+        "title": "Helm for Route Service on EKS — Values File Sprawl",
+        "subtitle": "Delivery Hero · Route Service chart · 12 envs × helmfile",
+        "bridge": "vLLM chart inherits Helm lessons from Route Service EKS values — not a generic cluster template."
       },
       "ai": {
         "day_index": 141,

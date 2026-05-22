@@ -1,1727 +1,1729 @@
-[
-  {
-    "day": 75,
-    "status": "pending",
-    "weekday": "Sun",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "prompt-fingerprinter",
-    "code": "prompt-fingerprinter: Ship exact-match cache layer on SHA-256 fingerprint (normalize whitespace/case/Unicode NFC); Redis key `fp:{tenant}:{hash}` with 24h TTL; benchmark hit-rate vs semantic-only path; write BENCHMARKS.md with p50 lookup <2ms; capture project-blog bullets in NOTES.md for Friday Day 87.",
-    "experience": {
-      "title": "Wayfair's Redis Lua Token Bucket at 250k SKU Scale",
-      "subtitle": "Atomic INCR across replicas when pricing updates flooded APIs",
-      "bridge": "Exact-match cache keys need the same atomic discipline—fingerprint collisions are your cardinality event"
-    },
-    "ai": {
-      "day_index": 75,
-      "title": "Day 75 of Learning LLM Inference — Prompt Fingerprinting — Canonical Forms Before Hashing",
-      "subtitle": "Same idea as normalizing SKU keys before Redis lookup",
-      "hook": "Add `fingerprint_version` + `normalized_prompt` fields to cache lookup API"
-    },
-    "thread": "Today's design thread: Add `fingerprint_version` + `normalized_prompt` fields to cache lookup API ↔ Exact-match cache keys need the same atomic discipline—fingerprint collisions are your cardinality event",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 76,
-    "status": "pending",
-    "weekday": "Mon",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "prompt-fingerprinter",
-    "code": "prompt-fingerprinter: Admin REST API `PUT /tenants/{id}/fingerprint-rules` (strip_punctuation, lowercase, max_prompt_bytes); integration test proving duplicate prompts skip embedding API; emit `cache_hit_type=exact` to LensAI Kafka topic.",
-    "experience": {
-      "title": "Supplier API Circuit Breakers — Half-Open State in Production",
-      "subtitle": "Wayfair: 3 failures in 60s opened circuit; manual half-open tests before Black Friday",
-      "bridge": "Fingerprint rule changes are config deploys—treat breaking normalization like opening a circuit on live traffic"
-    },
-    "ai": {
-      "day_index": 76,
-      "title": "Day 76 of Learning LLM Inference — Exact-Match vs Semantic Cache — Two-Tier Memory Hierarchy",
-      "subtitle": "L1 exact / L2 embedding like CPU cache levels",
-      "hook": "Router checks fingerprint table before pgvector round-trip"
-    },
-    "thread": "Today's design thread: Router checks fingerprint table before pgvector round-trip ↔ Fingerprint rule changes are config deploys—treat breaking normalization like opening a circuit on live traffic",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 77,
-    "status": "pending",
-    "weekday": "Tue",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "model-quality-scorer",
-    "code": "model-quality-scorer: Write DESIGN.md — judge model (Haiku), rubric JSON schema per task_type, async queue topology, target 200 samples/hr/tenant, failure modes when judge times out.",
-    "experience": {
-      "title": "Agoda P99 Cannot Be Averaged Across Tenants",
-      "subtitle": "Quantile merge taught me per-tenant SLOs or you lie to executives",
-      "bridge": "Model quality scores must aggregate per tenant×task—global averages hide routing regressions"
-    },
-    "ai": {
-      "day_index": 77,
-      "title": "Day 77 of Learning LLM Inference — LLM-as-Judge — Rubrics as Structured Data",
-      "subtitle": "Scoring rubric = JSON schema like event contracts",
-      "hook": "Define `JudgeRubric` protobuf with weighted criteria"
-    },
-    "thread": "Today's design thread: Define `JudgeRubric` protobuf with weighted criteria ↔ Model quality scores must aggregate per tenant×task—global averages hide routing regressions",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 78,
-    "status": "pending",
-    "weekday": "Wed",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "model-quality-scorer",
-    "code": "model-quality-scorer: Implement Kafka consumer `judge-requests` → batched OpenAI judge calls with shared rubric template; persist raw scores + rationale to ClickHouse `quality_scores`; DLQ on malformed rubric.",
-    "experience": {
-      "title": "Delivery Hero Async Pipelines — Why We Decoupled SQS from OSRM",
-      "subtitle": "5k events/sec only survived because scoring work was never on the hot path",
-      "bridge": "LLM-as-judge belongs off the request path—same failure isolation pattern"
-    },
-    "ai": {
-      "day_index": 78,
-      "title": "Day 78 of Learning LLM Inference — Async Evaluation Pipelines — Throughput Over Latency",
-      "subtitle": "Batch judge calls like micro-batched ClickHouse inserts",
-      "hook": "Kafka topic decouples scoring from user-facing path"
-    },
-    "thread": "Today's design thread: Kafka topic decouples scoring from user-facing path ↔ LLM-as-judge belongs off the request path—same failure isolation pattern",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 79,
-    "status": "pending",
-    "weekday": "Thu",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "model-quality-scorer",
-    "code": "model-quality-scorer: Normalize judge outputs to 0–1; roll up 1h/24h aggregates per `model_id×task_type`; Grafana panel wired to LensAI dashboard; add statistical noise floor doc.",
-    "experience": {
-      "title": "Walmart Stream Analytics Dropped Messages — Switching to Kafka",
-      "subtitle": "7M sensors exposed bounded-window limits; we owned offset recovery",
-      "bridge": "Normalized judge scores need durable storage with replay—ClickHouse not in-memory averages"
-    },
-    "ai": {
-      "day_index": 79,
-      "title": "Day 79 of Learning LLM Inference — Score Normalization — Why 0–1 Beats Raw Likert",
-      "subtitle": "Comparable units across models like z-scored metrics",
-      "hook": "Store both raw and normalized in `quality_scores`"
-    },
-    "thread": "Today's design thread: Store both raw and normalized in `quality_scores` ↔ Normalized judge scores need durable storage with replay—ClickHouse not in-memory averages",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 80,
-    "status": "pending",
-    "weekday": "Fri",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "model-quality-scorer",
-    "code": "model-quality-scorer: RouteIQ decision engine v1 — weighted utility `U = w_q·quality − w_c·cost − w_l·latency` with tenant-overridable weights; unit tests for tie-break toward cheaper model when U within ε.",
-    "experience": {
-      "title": "Stealth Startup Saga: Compensating Transactions on Order State",
-      "subtitle": "Multi-step ordering needed explicit rollback—not hope",
-      "bridge": "Routing utility function is a saga: pick model, log decision, compensate on timeout via fallback"
-    },
-    "ai": {
-      "day_index": 80,
-      "title": "Day 80 of Learning LLM Inference — Multi-Objective Routing — Scalarization and Weights",
-      "subtitle": "Weighted sum like cost-aware load balancing",
-      "hook": "Expose `RoutingWeights` per tenant in RouteIQ config"
-    },
-    "thread": "Today's design thread: Expose `RoutingWeights` per tenant in RouteIQ config ↔ Routing utility function is a saga: pick model, log decision, compensate on timeout via fallback",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 81,
-    "status": "pending",
-    "weekday": "Sat",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "fallback-chain",
-    "code": "fallback-chain: DESIGN.md — per-tenant ordered model list, timeout cascade (2s/5s/8s), circuit-breaker states, streaming byte-buffer strategy for <10ms proxy overhead.",
-    "experience": {
-      "title": "Wayfair Sub-Second SKU Propagation — Event Ordering",
-      "subtitle": "250k updates/day required version vectors on price events",
-      "bridge": "Fallback chain order is an event-sourcing problem—newer config must win consistently"
-    },
-    "ai": {
-      "day_index": 81,
-      "title": "Day 81 of Learning LLM Inference — Fallback Chains — Graceful Degradation in Inference",
-      "subtitle": "Circuit breaker + alternate path = chain of models",
-      "hook": "Schema: ordered `ModelRef` list with timeout_ms each"
-    },
-    "thread": "Today's design thread: Schema: ordered `ModelRef` list with timeout_ms each ↔ Fallback chain order is an event-sourcing problem—newer config must win consistently",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 82,
-    "status": "pending",
-    "weekday": "Sun",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "fallback-chain",
-    "code": "fallback-chain: Implement chain executor (GPT-4o → Claude Sonnet → Llama-3-70B local); record `fallback_reason` enum; k6 test 500 RPS with injected primary failures; draft project-blog sections in NOTES.md (publish Day 87).",
-    "experience": {
-      "title": "Delivery Hero Peak EKS — PDB + HPA Tuning Under OSRM Load",
-      "subtitle": "10k concurrent during lunch rush; one bad rollout took 8% error budget",
-      "bridge": "Friday load test on fallback chain is your pre-Black-Friday for LLM traffic"
-    },
-    "ai": {
-      "day_index": 82,
-      "title": "Day 82 of Learning LLM Inference — Measuring Proxy Overhead — p99 Not Mean",
-      "subtitle": "Tail latency drives SLOs—same as Agoda P99 focus",
-      "hook": "Histogram buckets for added ms in streaming proxy"
-    },
-    "thread": "Today's design thread: Histogram buckets for added ms in streaming proxy ↔ Friday load test on fallback chain is your pre-Black-Friday for LLM traffic",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 83,
-    "status": "pending",
-    "weekday": "Mon",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "fallback-chain",
-    "code": "fallback-chain: Streaming passthrough proxy using chunked transfer — measure added latency (target p99 <10ms); fix backpressure when downstream stalls; add Prometheus histogram `fallback_proxy_overhead_ms`.",
-    "experience": {
-      "title": "Agoda Cross-Tier Read Latency — Snappy Hot, Zstd Cold",
-      "subtitle": "<1% regression acceptable for 18% storage savings",
-      "bridge": "Streaming proxy overhead is a codec tradeoff—measure p99, not mean"
-    },
-    "ai": {
-      "day_index": 83,
-      "title": "Day 83 of Learning LLM Inference — Streaming Token Delivery — Backpressure Basics",
-      "subtitle": "TCP windowing analogy for SSE chunks",
-      "hook": "Buffer size ties to TTFB vs memory"
-    },
-    "thread": "Today's design thread: Buffer size ties to TTFB vs memory ↔ Streaming proxy overhead is a codec tradeoff—measure p99, not mean",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 84,
-    "status": "pending",
-    "weekday": "Tue",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "fallback-chain",
-    "code": "fallback-chain: Active health probes per endpoint (HEAD /v1/models) with Redis-backed unhealthy set; chain skips blacklisted models; chaos test: kill primary pod, verify auto-skip <3s.",
-    "experience": {
-      "title": "BrowserStack Integration Test Flakiness — Health Checks That Lied",
-      "subtitle": "Green `/health` while dependencies degraded taught synthetic probes",
-      "bridge": "Model endpoint health must probe real inference, not TCP connect"
-    },
-    "ai": {
-      "day_index": 84,
-      "title": "Day 84 of Learning LLM Inference — Health Checks for Model Endpoints — Active Probes",
-      "subtitle": "Synthetic transactions vs passive metrics",
-      "hook": "Unhealthy set in Redis with TTL refresh"
-    },
-    "thread": "Today's design thread: Unhealthy set in Redis with TTL refresh ↔ Model endpoint health must probe real inference, not TCP connect",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 85,
-    "status": "pending",
-    "weekday": "Wed",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "fallback-chain",
-    "code": "fallback-chain: Emit `routing_decision` protobuf events to Kafka (chosen_model, scores, cache_hit, cost_estimate_usd); LensAI consumer writes ClickHouse `routing_log` table.",
-    "experience": {
-      "title": "Agoda Kafka Ingestion Backpressure — Channel Depth 10k",
-      "subtitle": "Rust producer shed load before OOM; metrics on lag saved us",
-      "bridge": "Routing decision events use the same backpressure discipline into LensAI"
-    },
-    "ai": {
-      "day_index": 85,
-      "title": "Day 85 of Learning LLM Inference — Routing Decision Logs — Audit Trail Design",
-      "subtitle": "Event sourcing for which model served whom",
-      "hook": "`routing_log` table is source of truth for FinOps"
-    },
-    "thread": "Today's design thread: `routing_log` table is source of truth for FinOps ↔ Routing decision events use the same backpressure discipline into LensAI",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 86,
-    "status": "pending",
-    "weekday": "Thu",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "fallback-chain",
-    "code": "fallback-chain: TraceForge hook — inject `traceparent` on outbound provider calls; verify span attribute `routeiq.decision_id` appears in agent-trace-collector UI.",
-    "experience": {
-      "title": "Delivery Hero Distributed Tracing — Finding the Slow Span",
-      "subtitle": "Geo pipeline debugging without trace IDs was blind",
-      "bridge": "TraceForge linkage turns routing decisions into debuggable spans"
-    },
-    "ai": {
-      "day_index": 86,
-      "title": "Day 86 of Learning LLM Inference — Trace Context Propagation — W3C traceparent",
-      "subtitle": "Span links across services like DH geo trace",
-      "hook": "Inject traceparent on provider HTTP client"
-    },
-    "thread": "Today's design thread: Inject traceparent on provider HTTP client ↔ TraceForge linkage turns routing decisions into debuggable spans",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 87,
-    "status": "pending",
-    "weekday": "Fri",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "fallback-chain",
-    "code": "fallback-chain: docker-compose integration — LensAI + TraceForge + RouteIQ; run 10k mixed prompts; document 3-product topology in INTEGRATION.md with sequence diagram.",
-    "experience": {
-      "title": "OSS VictoriaMetrics PR — Reading Go Production Code",
-      "subtitle": "First upstream PR taught me to match existing error wrapping style",
-      "bridge": "3-product integration doc is your OSS-quality bar for employers"
-    },
-    "ai": {
-      "day_index": 87,
-      "title": "Day 87 of Learning LLM Inference — Integration Topology — Compose for Platform Demos",
-      "subtitle": "Same as docker-compose quickstart pattern from LensAI",
-      "hook": "Document service graph for 3-product demo"
-    },
-    "thread": "Today's design thread: Document service graph for 3-product demo ↔ 3-product integration doc is your OSS-quality bar for employers",
-    "project_blog": "Fallback Chains — Sub-10ms Streaming Proxy, Three-Product Integration, and RouteIQ Week-4 Architecture",
-    "product_blog": null
-  },
-  {
-    "day": 88,
-    "status": "pending",
-    "weekday": "Sat",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "routeiq-launch",
-    "code": "routeiq-launch: Polish README (architecture GIF, cost-savings table), Helm umbrella chart, `routeiq-dev` org transfer; landing page with live demo API key sandbox.",
-    "experience": {
-      "title": "Launching WhiteFalcon Dashboards — Stakeholder Demo Prep",
-      "subtitle": "Agoda: exec review needed one screenshot that told the story",
-      "bridge": "RouteIQ landing GIF must show cost↓ latency→ in 10 seconds"
-    },
-    "ai": {
-      "day_index": 88,
-      "title": "Day 88 of Learning LLM Inference — Launch Readiness — API Sandboxes and Rate Limits",
-      "subtitle": "Public demo keys need hard spend caps",
-      "hook": "Sandbox tenant uses cost-budget-enforcer defaults"
-    },
-    "thread": "Today's design thread: Sandbox tenant uses cost-budget-enforcer defaults ↔ RouteIQ landing GIF must show cost↓ latency→ in 10 seconds",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 89,
-    "status": "pending",
-    "weekday": "Sun",
-    "product": "routeiq",
-    "product_name": "RouteIQ",
-    "repo": "routeiq-launch",
-    "code": "routeiq-launch: Final integration smoke + product essay publish prep; HN Show HN checklist; tag v1.0.0 across repos; apply to 3 Portkey/Cohere-style roles.",
-    "experience": {
-      "title": "Five Years of Infra Interviews — What 'Staff' Signals Look Like",
-      "subtitle": "Platform narrative beats repo count when products connect",
-      "bridge": "RouteIQ product essay frames three months of routing as a product, not demos"
-    },
-    "ai": {
-      "day_index": 89,
-      "title": "Day 89 of Learning LLM Inference — Product Thinking — Routers as Control Planes",
-      "subtitle": "RouteIQ is control plane; models are data plane",
-      "hook": "Essay ties routing, cache, quality into one SKU"
-    },
-    "thread": "Today's design thread: Essay ties routing, cache, quality into one SKU ↔ RouteIQ product essay frames three months of routing as a product, not demos",
-    "project_blog": null,
-    "product_blog": "RouteIQ — Why Intelligent LLM Routing Needs Cache, Budget, Quality, and Fallback as One Product"
-  },
-  {
-    "day": 90,
-    "status": "pending",
-    "weekday": "Mon",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "shadow-traffic-router",
-    "code": "shadow-traffic-router: DESIGN.md — mirror 1% traffic fire-and-forget, zero user latency budget, Kafka topic `shadow-eval`, paired response storage schema.",
-    "experience": {
-      "title": "Netflix Shadow Traffic Talk — Applying to LLM Eval",
-      "subtitle": "Mirroring without user impact is an old SRE pattern",
-      "bridge": "Shadow router design inherits DH async decoupling—never block prod path"
-    },
-    "ai": {
-      "day_index": 90,
-      "title": "Day 90 of Learning LLM Inference — Shadow Deployments for ML — Statistical Power",
-      "subtitle": "1% sample variance—need enough N",
-      "hook": "Configure `shadow_percent` with min daily volume guard"
-    },
-    "thread": "Today's design thread: Configure `shadow_percent` with min daily volume guard ↔ Shadow router design inherits DH async decoupling—never block prod path",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 91,
-    "status": "pending",
-    "weekday": "Tue",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "shadow-traffic-router",
-    "code": "shadow-traffic-router: Implement mirroring middleware after RouteIQ decision — clone request body + headers to eval queue without awaiting shadow model.",
-    "experience": {
-      "title": "Delivery Hero Fire-and-Forget Geocoding Retries",
-      "subtitle": "Client timeout 200ms; server work continued—users never waited",
-      "bridge": "Shadow Kafka produce must be async with bounded drop on overload"
-    },
-    "ai": {
-      "day_index": 91,
-      "title": "Day 91 of Learning LLM Inference — Fire-and-Forget Async — At-Most-Once vs Loss",
-      "subtitle": "Dropping shadow under load is acceptable tradeoff",
-      "hook": "Bounded channel drop metric for shadow producer"
-    },
-    "thread": "Today's design thread: Bounded channel drop metric for shadow producer ↔ Shadow Kafka produce must be async with bounded drop on overload",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 92,
-    "status": "pending",
-    "weekday": "Wed",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "shadow-traffic-router",
-    "code": "shadow-traffic-router: RouteIQ plugin hook `shadow_percent` per tenant; default 1%; feature-flag via distributed-flagd from LensAI month.",
-    "experience": {
-      "title": "Walmart Feature Flags on Firmware Channels",
-      "subtitle": "OTA used % rollout by device cohort—same mental model as 1% shadow",
-      "bridge": "Connect shadow_percent to distributed-flagd patterns from LensAI week"
-    },
-    "ai": {
-      "day_index": 92,
-      "title": "Day 92 of Learning LLM Inference — Feature Flags Driving Experiments",
-      "subtitle": "% rollout connects to flagd from Month 1",
-      "hook": "Shadow percent as flag variant"
-    },
-    "thread": "Today's design thread: Shadow percent as flag variant ↔ Connect shadow_percent to distributed-flagd patterns from LensAI week",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 93,
-    "status": "pending",
-    "weekday": "Thu",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "shadow-traffic-router",
-    "code": "shadow-traffic-router: Kafka producer for shadow requests with keys `tenant_id`; consumer skeleton storing prod vs shadow response pairs in ClickHouse.",
-    "experience": {
-      "title": "Agoda Exactly-Once Illusion — Idempotent Consumers",
-      "subtitle": "We used dedup keys on `(tenant, event_id)` not wishful thinking",
-      "bridge": "Paired response storage needs idempotent writes on shadow completion"
-    },
-    "ai": {
-      "day_index": 93,
-      "title": "Day 93 of Learning LLM Inference — Paired Observability — Prod vs Shadow Storage",
-      "subtitle": "Diff storage like A/B event pairing",
-      "hook": "ClickHouse table keyed by `request_id` pair"
-    },
-    "thread": "Today's design thread: ClickHouse table keyed by `request_id` pair ↔ Paired response storage needs idempotent writes on shadow completion",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 94,
-    "status": "pending",
-    "weekday": "Fri",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "shadow-traffic-router",
-    "code": "shadow-traffic-router: Prove zero added latency — compare p99 with shadow on/off under k6 1k RPS; document sampling bias risks in DESIGN addendum.",
-    "experience": {
-      "title": "Chaos Day: Kafka Broker Kill at Agoda",
-      "subtitle": "Verified DLQ + replay restored 99.95% within 20m",
-      "bridge": "Zero-latency claim needs chaos proof—shadow off/on under load"
-    },
-    "ai": {
-      "day_index": 94,
-      "title": "Day 94 of Learning LLM Inference — Latency SLO Verification — A/B Instrumentation",
-      "subtitle": "Measure with identical load profiles",
-      "hook": "k6 scenario tags shadow on/off runs"
-    },
-    "thread": "Today's design thread: k6 scenario tags shadow on/off runs ↔ Zero-latency claim needs chaos proof—shadow off/on under load",
-    "project_blog": "Shadow Traffic Router — Zero-Latency Mirroring and Paired-Response Storage for LLM Evaluation",
-    "product_blog": null
-  },
-  {
-    "day": 95,
-    "status": "pending",
-    "weekday": "Sat",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "shadow-traffic-router",
-    "code": "shadow-traffic-router: S3/MinIO archival for long-term paired responses; partition by date; PII scrub job before persist.",
-    "experience": {
-      "title": "BigQuery Streaming vs Batch — Wayfair Cost Lesson",
-      "subtitle": "Streaming inserts 3× cost for 2× freshness—not always worth it",
-      "bridge": "Archiving shadow pairs to S3 is the cold tier for eval—not hot ClickHouse forever"
-    },
-    "ai": {
-      "day_index": 95,
-      "title": "Day 95 of Learning LLM Inference — Cold Storage for ML Artifacts — Tiering",
-      "subtitle": "S3 glacier for training pairs like Agoda cold tier",
-      "hook": "Archive job moves pairs older than 30d"
-    },
-    "thread": "Today's design thread: Archive job moves pairs older than 30d ↔ Archiving shadow pairs to S3 is the cold tier for eval—not hot ClickHouse forever",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 96,
-    "status": "pending",
-    "weekday": "Sun",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "shadow-traffic-router",
-    "code": "shadow-traffic-router: End-to-end demo script + BENCHMARKS.md; polish README diagrams; confirm project blog ready for Day 94 publish.",
-    "experience": {
-      "title": "Leading Two Teams at Wayfair — Documentation as Ownership",
-      "subtitle": "Architecture docs outlasted reorganizations",
-      "bridge": "Shadow traffic project blog is the handoff doc for Month 4 you"
-    },
-    "ai": {
-      "day_index": 96,
-      "title": "Day 96 of Learning LLM Inference — Shadow Traffic — Ethics and Sampling Bias",
-      "subtitle": "Non-representative 1% can lie—document bias",
-      "hook": "Project blog concept: when shadow misleads"
-    },
-    "thread": "Today's design thread: Project blog concept: when shadow misleads ↔ Shadow traffic project blog is the handoff doc for Month 4 you",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 97,
-    "status": "pending",
-    "weekday": "Mon",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "llm-judge-eval",
-    "code": "llm-judge-eval: DESIGN.md — rubric templates per task_type (support, codegen, summarization), judge model cost cap, batch size 16, significance test method.",
-    "experience": {
-      "title": "Agoda Anomaly on Latency — z-Score Per Shard",
-      "subtitle": "Global mean missed shard 7 degradation for 6 hours",
-      "bridge": "Judge score baselines must be per-segment like per-shard TSDB"
-    },
-    "ai": {
-      "day_index": 97,
-      "title": "Day 97 of Learning LLM Inference — Rubric Engineering — Criteria Weighting",
-      "subtitle": "Weighted rubric like composite SLO breach",
-      "hook": "Version rubrics—breaking change = new id"
-    },
-    "thread": "Today's design thread: Version rubrics—breaking change = new id ↔ Judge score baselines must be per-segment like per-shard TSDB",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 98,
-    "status": "pending",
-    "weekday": "Tue",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "llm-judge-eval",
-    "code": "llm-judge-eval: Build rubric CRUD API + versioned YAML storage; example rubric with 5 criteria weighted sum.",
-    "experience": {
-      "title": "Walmart Rubric-Less Alerts — Why Thresholds Failed IoT",
-      "subtitle": "Single metric alerts cried wolf until we added context payloads",
-      "bridge": "Rubric CRUD is how engineers encode domain judgment into infra"
-    },
-    "ai": {
-      "day_index": 98,
-      "title": "Day 98 of Learning LLM Inference — Judge Model Selection — Cost vs Capability",
-      "subtitle": "Haiku judges Sonnet—economic hierarchy",
-      "hook": "Config `judge_model` separate from prod model"
-    },
-    "thread": "Today's design thread: Config `judge_model` separate from prod model ↔ Rubric CRUD is how engineers encode domain judgment into infra",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 99,
-    "status": "pending",
-    "weekday": "Wed",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "llm-judge-eval",
-    "code": "llm-judge-eval: Async judge worker — cheap model scores shadow vs prod responses; store `judge_score`, `criteria_json`, `confidence` in ClickHouse.",
-    "experience": {
-      "title": "Using GPT to Grade GPT — BrowserStack Skepticism",
-      "subtitle": "We demanded human-labeled gold set before trusting automation",
-      "bridge": "Judge worker stores rationale text for later human audit sample"
-    },
-    "ai": {
-      "day_index": 99,
-      "title": "Day 99 of Learning LLM Inference — LLM Eval Bias — Position and Length Effects",
-      "subtitle": "Known judge biases require blind ordering",
-      "hook": "Randomize A/B order in judge prompt"
-    },
-    "thread": "Today's design thread: Randomize A/B order in judge prompt ↔ Judge worker stores rationale text for later human audit sample",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 100,
-    "status": "pending",
-    "weekday": "Thu",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "llm-judge-eval",
-    "code": "llm-judge-eval: Score normalization pipeline (z-score within tenant) and rolling 7d baseline; alert when 24h mean drops >2σ.",
-    "experience": {
-      "title": "Agoda Cold Start After Deploy — Baseline Reset",
-      "subtitle": "New binary shifted latency 40ms—alerts fired until baseline aged",
-      "bridge": "Rolling 7d baseline needs warmup window after model deploy"
-    },
-    "ai": {
-      "day_index": 100,
-      "title": "Day 100 of Learning LLM Inference — Rolling Baselines — Non-Stationary Series",
-      "subtitle": "Time-series non-stationarity after deploys",
-      "hook": "7d rolling mean with warmup flag"
-    },
-    "thread": "Today's design thread: 7d rolling mean with warmup flag ↔ Rolling 7d baseline needs warmup window after model deploy",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 101,
-    "status": "pending",
-    "weekday": "Fri",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "llm-judge-eval",
-    "code": "llm-judge-eval: Implement two-proportion z-test helper — expose `is_significant(drop, n)` in Go lib; unit tests with known p-values.",
-    "experience": {
-      "title": "Statistics for Infra Engineers — A/B at Delivery Hero",
-      "subtitle": "We almost shipped a map change on 200-sample 'win'",
-      "bridge": "z-test helper prevents routing wins declared on noise"
-    },
-    "ai": {
-      "day_index": 101,
-      "title": "Day 101 of Learning LLM Inference — Hypothesis Testing for Model Drops",
-      "subtitle": "Two-proportion z-test for conversion-like metrics",
-      "hook": "Expose significance in drift API response"
-    },
-    "thread": "Today's design thread: Expose significance in drift API response ↔ z-test helper prevents routing wins declared on noise",
-    "project_blog": "LLM-as-Judge — Rubrics, Significance Testing, and When Automated Scoring Lies",
-    "product_blog": null
-  },
-  {
-    "day": 102,
-    "status": "pending",
-    "weekday": "Sat",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "llm-judge-eval",
-    "code": "llm-judge-eval: Historical trends API `GET /tenants/{id}/quality-trend`; Grafana time-series panel; load test judge queue backlog recovery.",
-    "experience": {
-      "title": "Executive Dashboards — One Chart, One Question",
-      "subtitle": "Agoda VP wanted 'are we slower than last week' not 40 panels",
-      "bridge": "Quality trend API answers one question: is this model still good"
-    },
-    "ai": {
-      "day_index": 102,
-      "title": "Day 102 of Learning LLM Inference — Quality Time Series — Dashboard Design",
-      "subtitle": "Single trend line beats 12 gauges",
-      "hook": "Grafana panel queries normalized hourly mean"
-    },
-    "thread": "Today's design thread: Grafana panel queries normalized hourly mean ↔ Quality trend API answers one question: is this model still good",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 103,
-    "status": "pending",
-    "weekday": "Sun",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "llm-judge-eval",
-    "code": "llm-judge-eval: Cost dashboard for judge spend vs drift detection value; BENCHMARKS.md; finalize judge pitfalls section for Day 101 project blog.",
-    "experience": {
-      "title": "FinOps at Scale — Token Cost Visibility",
-      "subtitle": "First time finance asked which team burned $50k/mo on inference",
-      "bridge": "Judge cost dashboard proves DriftWatch ROI before Month 5 train"
-    },
-    "ai": {
-      "day_index": 103,
-      "title": "Day 103 of Learning LLM Inference — Eval Economics — When Judges Pay Off",
-      "subtitle": "ROI = prevented bad deploy cost − judge spend",
-      "hook": "Cost dashboard completes FinOps story"
-    },
-    "thread": "Today's design thread: Cost dashboard completes FinOps story ↔ Judge cost dashboard proves DriftWatch ROI before Month 5 train",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 104,
-    "status": "pending",
-    "weekday": "Mon",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "drift-detector",
-    "code": "drift-detector: DESIGN.md — CUSUM parameters per segment, min sample size, cooldown after alert, root-cause sample query limit.",
-    "experience": {
-      "title": "CUSUM in Manufacturing IoT — Walmart Inspiration",
-      "subtitle": "Control charts detected HVAC drift days before ticket",
-      "bridge": "CUSUM on judge scores is SPC for language models"
-    },
-    "ai": {
-      "day_index": 104,
-      "title": "Day 104 of Learning LLM Inference — CUSUM — Detecting Sustained Shifts",
-      "subtitle": "SPC from manufacturing applied to LLM scores",
-      "hook": "Parameters `k`, `h` in drift detector config"
-    },
-    "thread": "Today's design thread: Parameters `k`, `h` in drift detector config ↔ CUSUM on judge scores is SPC for language models",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 105,
-    "status": "pending",
-    "weekday": "Tue",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "drift-detector",
-    "code": "drift-detector: Implement CUSUM on hourly mean judge score per `query_type`; configurable `k` and `h` thresholds via env.",
-    "experience": {
-      "title": "Alert Fatigue at Agoda — 300 Pages in One Night",
-      "subtitle": "Dedup + severity routing cut pages 80%",
-      "bridge": "Drift detector cooldown inherits on-call lessons"
-    },
-    "ai": {
-      "day_index": 105,
-      "title": "Day 105 of Learning LLM Inference — CUSUM vs Simple Thresholds",
-      "subtitle": "Thresholds cry wolf; CUSUM finds persistence",
-      "hook": "Implement cumulative sum update in Go"
-    },
-    "thread": "Today's design thread: Implement cumulative sum update in Go ↔ Drift detector cooldown inherits on-call lessons",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 106,
-    "status": "pending",
-    "weekday": "Wed",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "drift-detector",
-    "code": "drift-detector: Per-segment drift — train separate CUSUM for top 10 query types; dashboard heatmap of segment health.",
-    "experience": {
-      "title": "Segmented SLOs — Delivery Hero Peak Zones",
-      "subtitle": "Bangkok lunch ≠ rural night—aggregates lied",
-      "bridge": "Per-query-type CUSUM catches localized model rot"
-    },
-    "ai": {
-      "day_index": 106,
-      "title": "Day 106 of Learning LLM Inference — Hierarchical Drift — Global vs Segment",
-      "subtitle": "Multi-dimensional cardinality again",
-      "hook": "Heatmap query groups by `query_type`"
-    },
-    "thread": "Today's design thread: Heatmap query groups by `query_type` ↔ Per-query-type CUSUM catches localized model rot",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 107,
-    "status": "pending",
-    "weekday": "Thu",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "drift-detector",
-    "code": "drift-detector: Drift alert payload — include 20 worst-scoring prompt/response pairs (redacted), suspected model version, time window.",
-    "experience": {
-      "title": "Postmortem Culture — Root Cause Samples Required",
-      "subtitle": "Blameless but must include exemplar traces",
-      "bridge": "Drift alert ships worst prompts—same postmortem ergonomics"
-    },
-    "ai": {
-      "day_index": 107,
-      "title": "Day 107 of Learning LLM Inference — Explainable Alerts — Sampled Evidence",
-      "subtitle": "Alerts need exemplars like trace exemplars",
-      "hook": "Attach top-k worst prompts to payload"
-    },
-    "thread": "Today's design thread: Attach top-k worst prompts to payload ↔ Drift alert ships worst prompts—same postmortem ergonomics",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 108,
-    "status": "pending",
-    "weekday": "Fri",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "drift-detector",
-    "code": "drift-detector: LensAI integration — emit `drift_event` metric and log line; wire to existing anomaly panels.",
-    "experience": {
-      "title": "Grafana as Communication — LensAI Month Reflection",
-      "subtitle": "Dashboards aligned eng + PM on 'what is broken'",
-      "bridge": "Drift events on LensAI tie observability to action"
-    },
-    "ai": {
-      "day_index": 108,
-      "title": "Day 108 of Learning LLM Inference — Metrics vs Logs for Drift Events",
-      "subtitle": "Counter for fires, log for debug",
-      "hook": "`drift_event` metric + structured log"
-    },
-    "thread": "Today's design thread: `drift_event` metric + structured log ↔ Drift events on LensAI tie observability to action",
-    "project_blog": "CUSUM Drift Detection — Statistical Process Control for Production Judge Scores",
-    "product_blog": null
-  },
-  {
-    "day": 109,
-    "status": "pending",
-    "weekday": "Sat",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "drift-detector",
-    "code": "drift-detector: Tenant-level sensitivity presets (strict/balanced/noisy); integration test injecting 15% score drop over 6 hours.",
-    "experience": {
-      "title": "Multi-Tenant Noisy Neighbor — Stealth Ordering Burst",
-      "subtitle": "One franchise DDoS'd our API via legitimate lunch rush",
-      "bridge": "Tenant sensitivity presets encode fairness under drift"
-    },
-    "ai": {
-      "day_index": 109,
-      "title": "Day 109 of Learning LLM Inference — Sensitivity Tuning — Precision/Recall Tradeoff",
-      "subtitle": "Strict vs noisy tenant personas",
-      "hook": "Preset maps to CUSUM `h` multiplier"
-    },
-    "thread": "Today's design thread: Preset maps to CUSUM `h` multiplier ↔ Tenant sensitivity presets encode fairness under drift",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 110,
-    "status": "pending",
-    "weekday": "Sun",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "drift-detector",
-    "code": "drift-detector: Document false-positive tuning guide; chaos replay of historical incident JSON; finalize CUSUM project blog for Day 108.",
-    "experience": {
-      "title": "Game Day: Replay Production Incident JSON",
-      "subtitle": "Agoda rehearsed broker failure quarterly",
-      "bridge": "Injected 15% score drop validates detector before launch"
-    },
-    "ai": {
-      "day_index": 110,
-      "title": "Day 110 of Learning LLM Inference — Chaos for ML Systems — Injected Degradation",
-      "subtitle": "Game day for models not just brokers",
-      "hook": "Replay JSON defines expected alert latency"
-    },
-    "thread": "Today's design thread: Replay JSON defines expected alert latency ↔ Injected 15% score drop validates detector before launch",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 111,
-    "status": "pending",
-    "weekday": "Mon",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "alert-rule-engine",
-    "code": "alert-rule-engine: DESIGN.md — rule DSL (threshold, duration, escalation), webhook contracts, FineForge stub endpoint.",
-    "experience": {
-      "title": "PagerDuty Routing Trees — Wayfair On-Call",
-      "subtitle": "Escalation paths differed supplier vs internal",
-      "bridge": "Alert rule DSL models escalation, not just thresholds"
-    },
-    "ai": {
-      "day_index": 111,
-      "title": "Day 111 of Learning LLM Inference — Alert DSL — Rules as Data",
-      "subtitle": "PromQL-style expressiveness for quality",
-      "hook": "YAML compiled to evaluator bytecode"
-    },
-    "thread": "Today's design thread: YAML compiled to evaluator bytecode ↔ Alert rule DSL models escalation, not just thresholds",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 112,
-    "status": "pending",
-    "weekday": "Tue",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "alert-rule-engine",
-    "code": "alert-rule-engine: Rule engine evaluator — YAML rules → state machine; debounce duplicate alerts within 30m window.",
-    "experience": {
-      "title": "Debounce Duplicate Alerts — Agoda Kafka Consumer Bug",
-      "subtitle": "Same lag alert 400× in 10m—added silencing window",
-      "bridge": "30m dedupe on drift prevents webhook storms to FineForge"
-    },
-    "ai": {
-      "day_index": 112,
-      "title": "Day 112 of Learning LLM Inference — Alert Deduplication — State Machines",
-      "subtitle": "Debounce windows like rate limiters",
-      "hook": "State keyed by `rule_id+tenant`"
-    },
-    "thread": "Today's design thread: State keyed by `rule_id+tenant` ↔ 30m dedupe on drift prevents webhook storms to FineForge",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 113,
-    "status": "pending",
-    "weekday": "Wed",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "alert-rule-engine",
-    "code": "alert-rule-engine: Auto-retrain webhook POST to FineForge `/hooks/retrain` with dataset window + model_id; retry with exponential backoff.",
-    "experience": {
-      "title": "Webhook Retries — Stripe-Style at Stealth Payments",
-      "subtitle": "Exponential backoff + idempotency keys mandatory",
-      "bridge": "Auto-retrain webhook spec copies payment webhook hardening"
-    },
-    "ai": {
-      "day_index": 113,
-      "title": "Day 113 of Learning LLM Inference — Webhooks — Contract for Auto-Retrain",
-      "subtitle": "POST body schema triggers FineForge pipeline",
-      "hook": "OpenAPI spec for `/hooks/retrain`"
-    },
-    "thread": "Today's design thread: OpenAPI spec for `/hooks/retrain` ↔ Auto-retrain webhook spec copies payment webhook hardening",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 114,
-    "status": "pending",
-    "weekday": "Thu",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "alert-rule-engine",
-    "code": "alert-rule-engine: A/B live comparison mode — route 5% traffic to candidate model when drift detected; collect paired scores.",
-    "experience": {
-      "title": "Wayfair A/B Price Tests — Ethical Holdouts",
-      "subtitle": "Holdout group size ethics translated to model experiments",
-      "bridge": "5% candidate traffic mirror is a controlled experiment"
-    },
-    "ai": {
-      "day_index": 114,
-      "title": "Day 114 of Learning LLM Inference — Live A/B — Traffic Splitting for Models",
-      "subtitle": "5% canary like feature flags",
-      "hook": "Candidate model id in routing config"
-    },
-    "thread": "Today's design thread: Candidate model id in routing config ↔ 5% candidate traffic mirror is a controlled experiment",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 115,
-    "status": "pending",
-    "weekday": "Fri",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "alert-rule-engine",
-    "code": "alert-rule-engine: 4-product integration test — LensAI metrics → TraceForge trace → DriftWatch alert → webhook 202.",
-    "experience": {
-      "title": "Integration Testing Pyramid — BrowserStack CI",
-      "subtitle": "E2E few, contract many—saved hours daily",
-      "bridge": "4-product test is the capstone E2E for platform credibility"
-    },
-    "ai": {
-      "day_index": 115,
-      "title": "Day 115 of Learning LLM Inference — Platform E2E — Closing the Loop Diagram",
-      "subtitle": "Five products one diagram for interviews",
-      "hook": "Integration test asserts webhook 202"
-    },
-    "thread": "Today's design thread: Integration test asserts webhook 202 ↔ 4-product test is the capstone E2E for platform credibility",
-    "project_blog": "Alert Rule Engine — Dedup, Escalation, and the Auto-Retrain Webhook Contract",
-    "product_blog": null
-  },
-  {
-    "day": 116,
-    "status": "pending",
-    "weekday": "Sat",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "alert-rule-engine",
-    "code": "alert-rule-engine: PagerDuty/Slack notification adapters; on-call runbook in RUNBOOK.md.",
-    "experience": {
-      "title": "Runbooks That Get Used — Slack Link Previews",
-      "subtitle": "Runbook in alert footer reduced MTTR 25%",
-      "bridge": "RUNBOOK.md linked from every DriftWatch notification"
-    },
-    "ai": {
-      "day_index": 116,
-      "title": "Day 116 of Learning LLM Inference — On-Call Interfaces — Slack vs PagerDuty",
-      "subtitle": "Severity routing is product design",
-      "hook": "Adapter interface in alert engine"
-    },
-    "thread": "Today's design thread: Adapter interface in alert engine ↔ RUNBOOK.md linked from every DriftWatch notification",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 117,
-    "status": "pending",
-    "weekday": "Sun",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "alert-rule-engine",
-    "code": "alert-rule-engine: Load test alert storm (100 rules firing); verify dedupe; extend RUNBOOK.md with storm-test results (project blog published Day 115).",
-    "experience": {
-      "title": "Load Test Alert Storm — Agoda Black Friday Prep",
-      "subtitle": "Validated alert pipeline at 10× normal cardinality",
-      "bridge": "100-rule storm test before DriftWatch launch week"
-    },
-    "ai": {
-      "day_index": 117,
-      "title": "Day 117 of Learning LLM Inference — Alert Storms — Backpressure on Notifications",
-      "subtitle": "Protect humans and downstream webhooks",
-      "hook": "Load test validates dedupe under storm"
-    },
-    "thread": "Today's design thread: Load test validates dedupe under storm ↔ 100-rule storm test before DriftWatch launch week",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 118,
-    "status": "pending",
-    "weekday": "Mon",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "driftwatch-launch",
-    "code": "driftwatch-launch: README + demo GIF of drift alert → webhook; Helm chart; org `driftwatch-dev` branding.",
-    "experience": {
-      "title": "Open Source Launch Checklist — First Repo Public",
-      "subtitle": "README, LICENSE, CONTRIBUTING before HN or critics arrive",
-      "bridge": "driftwatch-dev org polish mirrors LensAI launch discipline"
-    },
-    "ai": {
-      "day_index": 118,
-      "title": "Day 118 of Learning LLM Inference — MLOps Launch — Baseline + Monitor + Act",
-      "subtitle": "Ship detector before auto-action",
-      "hook": "Launch README lists 4-product wiring"
-    },
-    "thread": "Today's design thread: Launch README lists 4-product wiring ↔ driftwatch-dev org polish mirrors LensAI launch discipline",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 119,
-    "status": "pending",
-    "weekday": "Tue",
-    "product": "driftwatch",
-    "product_name": "DriftWatch",
-    "repo": "driftwatch-launch",
-    "code": "driftwatch-launch: Product essay + HN launch; tag v1.0.0; apply Arize/WhyLabs/Modal; 4-product compose verification.",
-    "experience": {
-      "title": "Month 4 Recap — Platform Story for Recruiters",
-      "subtitle": "Four connected products > four READMEs",
-      "bridge": "DriftWatch product essay positions auto-retrain as Staff judgment"
-    },
-    "ai": {
-      "day_index": 119,
-      "title": "Day 119 of Learning LLM Inference — Auto-Retrain Loops — Platform Closure",
-      "subtitle": "DriftWatch→FineForge is event-driven architecture",
-      "hook": "Product essay narrates closed loop"
-    },
-    "thread": "Today's design thread: Product essay narrates closed loop ↔ DriftWatch product essay positions auto-retrain as Staff judgment",
-    "project_blog": null,
-    "product_blog": "DriftWatch — Closing the MLOps Loop with Shadow Traffic, Judges, and Auto-Retrain Webhooks"
-  },
-  {
-    "day": 120,
-    "status": "pending",
-    "weekday": "Wed",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "data-prep-pipeline",
-    "code": "data-prep-pipeline: DESIGN.md — ClickHouse source tables, PII fields, dedup keys, Alpaca vs ShareGPT export, train/eval stratification.",
-    "experience": {
-      "title": "Training Data Is Production Data — Legal at Walmart",
-      "subtitle": "PII in logs almost shipped to vendor—legal review caught",
-      "bridge": "PII scrubber fail-closed before any Parquet export"
-    },
-    "ai": {
-      "day_index": 120,
-      "title": "Day 120 of Learning LLM Inference — Instruction Tuning Formats — Alpaca vs ShareGPT",
-      "subtitle": "Schema choice affects tokenizer efficiency",
-      "hook": "Export CLI supports both formats"
-    },
-    "thread": "Today's design thread: Export CLI supports both formats ↔ PII scrubber fail-closed before any Parquet export",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 121,
-    "status": "pending",
-    "weekday": "Thu",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "data-prep-pipeline",
-    "code": "data-prep-pipeline: LensAI ClickHouse connector — SQL pull last 30d high-quality conversations (`judge_score>0.8`).",
-    "experience": {
-      "title": "ClickHouse at Agoda — Why We Left Pure Prometheus",
-      "subtitle": "High-cardinality queries needed columnar rollups",
-      "bridge": "FineForge pulls training rows from same ClickHouse spine as LensAI"
-    },
-    "ai": {
-      "day_index": 121,
-      "title": "Day 121 of Learning LLM Inference — Mining Production Logs for SFT Data",
-      "subtitle": "ClickHouse SQL as feature store",
-      "hook": "Connector query filters high judge_score"
-    },
-    "thread": "Today's design thread: Connector query filters high judge_score ↔ FineForge pulls training rows from same ClickHouse spine as LensAI",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 122,
-    "status": "pending",
-    "weekday": "Fri",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "data-prep-pipeline",
-    "code": "data-prep-pipeline: PII scrubber — regex + NER pass for emails/phones; audit log of redactions; fail closed on high-risk rows.",
-    "experience": {
-      "title": "GDPR Delete Requests — Delivery Hero User Erasure",
-      "subtitle": "Had to cascade delete across 4 stores",
-      "bridge": "PII audit log proves compliance for fine-tune datasets"
-    },
-    "ai": {
-      "day_index": 122,
-      "title": "Day 122 of Learning LLM Inference — PII in Training Data — NER + Regex",
-      "subtitle": "Fail closed like PCI scrubbers",
-      "hook": "Redaction audit table schema"
-    },
-    "thread": "Today's design thread: Redaction audit table schema ↔ PII audit log proves compliance for fine-tune datasets",
-    "project_blog": "Data Prep Pipeline — ClickHouse → PII Scrub → Dedup → Instruction-Tuning JSONL",
-    "product_blog": null
-  },
-  {
-    "day": 123,
-    "status": "pending",
-    "weekday": "Sat",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "data-prep-pipeline",
-    "code": "data-prep-pipeline: Dedup via MinHash on prompt text; quality filter drop bottom quartile; output Parquet shards.",
-    "experience": {
-      "title": "Dedup at 1.5T/day — Bloom vs MinHash Tradeoff",
-      "subtitle": "False positive rate budgeted per query cost",
-      "bridge": "MinHash dedup chooses cheap approximate duplicate detection"
-    },
-    "ai": {
-      "day_index": 123,
-      "title": "Day 123 of Learning LLM Inference — MinHash Dedup — Near-Duplicate Prompts",
-      "subtitle": "Similar to SimHash for docs",
-      "hook": "Hamming threshold config in prep pipeline"
-    },
-    "thread": "Today's design thread: Hamming threshold config in prep pipeline ↔ MinHash dedup chooses cheap approximate duplicate detection",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 124,
-    "status": "pending",
-    "weekday": "Sun",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "data-prep-pipeline",
-    "code": "data-prep-pipeline: Convert to instruction-tuning JSONL (Alpaca format); stratified 90/10 split by task_type; stats notebook.",
-    "experience": {
-      "title": "Stratified Sampling — A/B Analysis at Wayfair",
-      "subtitle": "Random split biased weekend traffic—stratify by segment",
-      "bridge": "Train/eval split stratified by task_type avoids leakage"
-    },
-    "ai": {
-      "day_index": 124,
-      "title": "Day 124 of Learning LLM Inference — Train/Eval Leakage — Stratified Splits",
-      "subtitle": "Same prompt different split = leakage",
-      "hook": "Stratify on `task_type` hash"
-    },
-    "thread": "Today's design thread: Stratify on `task_type` hash ↔ Train/eval split stratified by task_type avoids leakage",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 125,
-    "status": "pending",
-    "weekday": "Mon",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "data-prep-pipeline",
-    "code": "data-prep-pipeline: Dataset dashboard — token histogram, language mix, label distribution; export `dataset_manifest.json`.",
-    "experience": {
-      "title": "Data Quality Dashboards — Walmart Sensor Null Rates",
-      "subtitle": "Null spike predicted firmware bug 48h early",
-      "bridge": "Token histogram catches broken tokenizer in export"
-    },
-    "ai": {
-      "day_index": 125,
-      "title": "Day 125 of Learning LLM Inference — Dataset Statistics — Shift Before Train",
-      "subtitle": "EDA prevents day-4 loss flatline",
-      "hook": "Manifest JSON captures distributions"
-    },
-    "thread": "Today's design thread: Manifest JSON captures distributions ↔ Token histogram catches broken tokenizer in export",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 126,
-    "status": "pending",
-    "weekday": "Tue",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "data-prep-pipeline",
-    "code": "data-prep-pipeline: End-to-end dry run 10k rows; BENCHMARKS.md; publish Day 122 project blog on production data pitfalls.",
-    "experience": {
-      "title": "90% of ML Is Data — Manager Quote I Now Believe",
-      "subtitle": "Spent 3 weeks on features, 3 days on model",
-      "bridge": "Data prep project blog documents the real calendar time"
-    },
-    "ai": {
-      "day_index": 126,
-      "title": "Day 126 of Learning LLM Inference — Data-Centric AI — Labels from Judges",
-      "subtitle": "Use Month 4 judge scores as quality filter",
-      "hook": "Filter `judge_score>0.8` in export"
-    },
-    "thread": "Today's design thread: Filter `judge_score>0.8` in export ↔ Data prep project blog documents the real calendar time",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 127,
-    "status": "pending",
-    "weekday": "Wed",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "lora-trainer",
-    "code": "lora-trainer: DESIGN.md — target modules, rank/alpha grid, QLoRA 4-bit, checkpoint policy, LensAI metrics stream.",
-    "experience": {
-      "title": "GPU Cluster Quotas — First Cloud Train Job",
-      "subtitle": "Preemptible VMs taught checkpoint obsession",
-      "bridge": "LoRA DESIGN starts with VRAM budget like Kafka disk budget"
-    },
-    "ai": {
-      "day_index": 127,
-      "title": "Day 127 of Learning LLM Inference — LoRA — Low-Rank Adaptation Intuition",
-      "subtitle": "Rank decomposition like compressed sensing",
-      "hook": "Target modules list in trainer config"
-    },
-    "thread": "Today's design thread: Target modules list in trainer config ↔ LoRA DESIGN starts with VRAM budget like Kafka disk budget",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 128,
-    "status": "pending",
-    "weekday": "Thu",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "lora-trainer",
-    "code": "lora-trainer: LoRA config generator CLI — input base model + GPU VRAM → recommended rank/alpha/batch.",
-    "experience": {
-      "title": "Hyperparameter Grids — Wayfair Price Model Tuning",
-      "subtitle": "Grid search automated but needed guardrails",
-      "bridge": "Config generator prevents illegal rank for 7B on 24GB"
-    },
-    "ai": {
-      "day_index": 128,
-      "title": "Day 128 of Learning LLM Inference — Rank and Alpha — Capacity vs Overfit",
-      "subtitle": "Higher rank = more capacity, more VRAM",
-      "hook": "CLI prints recommended rank for GPU"
-    },
-    "thread": "Today's design thread: CLI prints recommended rank for GPU ↔ Config generator prevents illegal rank for 7B on 24GB",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 129,
-    "status": "pending",
-    "weekday": "Fri",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "lora-trainer",
-    "code": "lora-trainer: QLoRA training script (HF PEFT) on prepared JSONL; log loss/grad_norm every 50 steps to Kafka.",
-    "experience": {
-      "title": "Training Metrics — Agoda Ingestion Lag Analogy",
-      "subtitle": "Watch consumer lag not just loss curve",
-      "bridge": "Stream loss to LensAI like ingestion metrics"
-    },
-    "ai": {
-      "day_index": 129,
-      "title": "Day 129 of Learning LLM Inference — QLoRA — 4-bit Training",
-      "subtitle": "Quantized base weights save memory",
-      "hook": "bitsandbytes config in training script"
-    },
-    "thread": "Today's design thread: bitsandbytes config in training script ↔ Stream loss to LensAI like ingestion metrics",
-    "project_blog": "LoRA Trainer — QLoRA on 7B, Checkpoint WAL, and Real GPU Dollar Costs",
-    "product_blog": null
-  },
-  {
-    "day": 130,
-    "status": "pending",
-    "weekday": "Sat",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "lora-trainer",
-    "code": "lora-trainer: Checkpoint manager — save every 500 steps to MinIO; resume from latest on crash.",
-    "experience": {
-      "title": "Checkpoint Corruption — Resume After Spot Kill",
-      "subtitle": "Lost 6h once without step checkpoints",
-      "bridge": "MinIO checkpoint every 500 steps is WAL for training"
-    },
-    "ai": {
-      "day_index": 130,
-      "title": "Day 130 of Learning LLM Inference — Checkpointing — WAL for Gradients",
-      "subtitle": "Resume training like Kafka offset commit",
-      "hook": "Checkpoint metadata in MinIO manifest"
-    },
-    "thread": "Today's design thread: Checkpoint metadata in MinIO manifest ↔ MinIO checkpoint every 500 steps is WAL for training",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 131,
-    "status": "pending",
-    "weekday": "Sun",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "lora-trainer",
-    "code": "lora-trainer: Training cost calculator — GPU $/hr × wall time → total; expose in CLI summary.",
-    "experience": {
-      "title": "FinOps GPU — Finance Asked for Cost Per Model",
-      "subtitle": "Tagged cloud resources by `model_id` label",
-      "bridge": "Training cost CLI answers 'what did this adapter cost'"
-    },
-    "ai": {
-      "day_index": 131,
-      "title": "Day 131 of Learning LLM Inference — GPU Cost Accounting — $/1M Tokens Trained",
-      "subtitle": "FinOps for training not just inference",
-      "hook": "CLI prints total $ from wall×$/hr"
-    },
-    "thread": "Today's design thread: CLI prints total $ from wall×$/hr ↔ Training cost CLI answers 'what did this adapter cost'",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 132,
-    "status": "pending",
-    "weekday": "Mon",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "lora-trainer",
-    "code": "lora-trainer: Run first full training on 7B (4×A10 or cloud spot); capture final adapter weights.",
-    "experience": {
-      "title": "First Successful Train — Emotional Milestone",
-      "subtitle": "Loss flatlined day 1—bad data; day 4 clicked",
-      "bridge": "Full 7B run is your 'pipeline works' moment"
-    },
-    "ai": {
-      "day_index": 132,
-      "title": "Day 132 of Learning LLM Inference — Training Curves — Loss vs Generalization",
-      "subtitle": "Watch eval loss not train loss",
-      "hook": "Log eval every N steps to Kafka"
-    },
-    "thread": "Today's design thread: Log eval every N steps to Kafka ↔ Full 7B run is your 'pipeline works' moment",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 133,
-    "status": "pending",
-    "weekday": "Tue",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "lora-trainer",
-    "code": "lora-trainer: Post-training sanity generation samples; document hyperparameter sweep results.",
-    "experience": {
-      "title": "Sanity Generations — Smell Test Before Eval",
-      "subtitle": "Model spewing JSON meant broken template",
-      "bridge": "Sample outputs before expensive eval harness"
-    },
-    "ai": {
-      "day_index": 133,
-      "title": "Day 133 of Learning LLM Inference — Qualitative Eval — Smell Tests",
-      "subtitle": "Human scan before harness",
-      "hook": "Sample generation script output"
-    },
-    "thread": "Today's design thread: Sample generation script output ↔ Sample outputs before expensive eval harness",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 134,
-    "status": "pending",
-    "weekday": "Wed",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "eval-harness",
-    "code": "eval-harness: DESIGN.md — held-out test set, metrics (exact match, judge score, latency), baseline models list.",
-    "experience": {
-      "title": "Leakage — Train/Test Contamination Postmortem",
-      "subtitle": "Near-duplicate prompts inflated eval 20 points",
-      "bridge": "Eval harness DESIGN starts with leakage checks"
-    },
-    "ai": {
-      "day_index": 134,
-      "title": "Day 134 of Learning LLM Inference — Eval Harness Design — Held-Out Sets",
-      "subtitle": "Never tune on eval set",
-      "hook": "Lock test set hash in registry metadata"
-    },
-    "thread": "Today's design thread: Lock test set hash in registry metadata ↔ Eval harness DESIGN starts with leakage checks",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 135,
-    "status": "pending",
-    "weekday": "Thu",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "eval-harness",
-    "code": "eval-harness: Batch inference runner for base vs LoRA vs GPT-4o on same prompts; store results Parquet.",
-    "experience": {
-      "title": "Benchmark Honesty — Don't Cherry-Pick 10 Prompts",
-      "subtitle": "Wayfair pricing eval used 2k SKU sample minimum",
-      "bridge": "Batch runner uses full held-out set, not demos"
-    },
-    "ai": {
-      "day_index": 135,
-      "title": "Day 135 of Learning LLM Inference — Batch Inference — Throughput for Eval",
-      "subtitle": "vLLM batch mode for eval runs",
-      "hook": "Runner uses shared prompt batch API"
-    },
-    "thread": "Today's design thread: Runner uses shared prompt batch API ↔ Batch runner uses full held-out set, not demos",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 136,
-    "status": "pending",
-    "weekday": "Fri",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "eval-harness",
-    "code": "eval-harness: Aggregate metrics table — win-rate per task_type; statistical significance vs base.",
-    "experience": {
-      "title": "Win-Rate vs Accuracy — Stakeholder Language",
-      "subtitle": "PM understood win-rate; not F1",
-      "bridge": "Aggregate table speaks product language for fine-tune"
-    },
-    "ai": {
-      "day_index": 136,
-      "title": "Day 136 of Learning LLM Inference — Comparing Models — Win-Rate and CI",
-      "subtitle": "Confidence intervals on win-rate",
-      "hook": "Report Wilson interval in results"
-    },
-    "thread": "Today's design thread: Report Wilson interval in results ↔ Aggregate table speaks product language for fine-tune",
-    "project_blog": "Eval Harness + Model Registry — Honest Win-Rates Before Production Promotion",
-    "product_blog": null
-  },
-  {
-    "day": 137,
-    "status": "pending",
-    "weekday": "Sat",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "eval-harness",
-    "code": "eval-harness: HTML report generator with failure case gallery; wire worst cases to DriftWatch samples.",
-    "experience": {
-      "title": "Failure Galleries — How Support Triages Tickets",
-      "subtitle": "Worst examples taught more than mean metric",
-      "bridge": "HTML report gallery is support-triage for models"
-    },
-    "ai": {
-      "day_index": 137,
-      "title": "Day 137 of Learning LLM Inference — Error Analysis — Failure Taxonomies",
-      "subtitle": "Cluster failures like incident tags",
-      "hook": "Gallery groups by error type"
-    },
-    "thread": "Today's design thread: Gallery groups by error type ↔ HTML report gallery is support-triage for models",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 138,
-    "status": "pending",
-    "weekday": "Sun",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "model-registry",
-    "code": "model-registry: Implement registry API — upload artifact + metadata (eval scores, git sha, dataset hash).",
-    "experience": {
-      "title": "Artifact Storage — Wayfair Model Pickle Incidents",
-      "subtitle": "Unversioned blobs caused rollback panic",
-      "bridge": "Registry API is S3 + metadata, not shared folder"
-    },
-    "ai": {
-      "day_index": 138,
-      "title": "Day 138 of Learning LLM Inference — Model Registry — Artifacts + Metadata",
-      "subtitle": "Git for weights with semver tags",
-      "hook": "Registry row: artifact_uri, eval_scores"
-    },
-    "thread": "Today's design thread: Registry row: artifact_uri, eval_scores ↔ Registry API is S3 + metadata, not shared folder",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 139,
-    "status": "pending",
-    "weekday": "Mon",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "model-registry",
-    "code": "model-registry: Semantic versioning `major.minor.patch`; promote `staging→production` gate requiring eval threshold.",
-    "experience": {
-      "title": "Semantic Versioning for Config — Agoda Flag Drama",
-      "subtitle": "Breaking flag schema needed major bump",
-      "bridge": "promote staging→prod gate mirrors semver discipline"
-    },
-    "ai": {
-      "day_index": 139,
-      "title": "Day 139 of Learning LLM Inference — Promotion Gates — Staging to Production",
-      "subtitle": "CI gate on eval threshold",
-      "hook": "Promotion API checks min win-rate"
-    },
-    "thread": "Today's design thread: Promotion API checks min win-rate ↔ promote staging→prod gate mirrors semver discipline",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 140,
-    "status": "pending",
-    "weekday": "Tue",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "model-registry",
-    "code": "model-registry: DriftWatch baseline registration — push eval score vector for future CUSUM reference.",
-    "experience": {
-      "title": "Baseline Registration — Drift Needs a Reference",
-      "subtitle": "Can't detect drift day 1 without day 0 score",
-      "bridge": "Push eval vector to DriftWatch when registering model"
-    },
-    "ai": {
-      "day_index": 140,
-      "title": "Day 140 of Learning LLM Inference — Baselines for Drift — Register at Deploy",
-      "subtitle": "CUSUM needs μ0 from eval harness",
-      "hook": "Webhook pushes baseline vector on promote"
-    },
-    "thread": "Today's design thread: Webhook pushes baseline vector on promote ↔ Push eval vector to DriftWatch when registering model",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 141,
-    "status": "pending",
-    "weekday": "Wed",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "vllm-deploy-kit",
-    "code": "vllm-deploy-kit: DESIGN.md — Helm values for tensor parallel, KV cache, HPA on GPU utilization.",
-    "experience": {
-      "title": "Helm at Delivery Hero — Values File Sprawl",
-      "subtitle": "12 envs × values—templated with helmfile",
-      "bridge": "vLLM chart inherits Helm lessons from ingestion month"
-    },
-    "ai": {
-      "day_index": 141,
-      "title": "Day 141 of Learning LLM Inference — vLLM Architecture — PagedAttention Refresher",
-      "subtitle": "KV cache paging like OS virtual memory",
-      "hook": "Helm values set max_num_seqs"
-    },
-    "thread": "Today's design thread: Helm values set max_num_seqs ↔ vLLM chart inherits Helm lessons from ingestion month",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 142,
-    "status": "pending",
-    "weekday": "Thu",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "vllm-deploy-kit",
-    "code": "vllm-deploy-kit: Helm chart deploying vLLM with LoRA adapter mount; readiness on `/health`.",
-    "experience": {
-      "title": "GPU Node Pools — Taints and Tolerations",
-      "subtitle": "CPU pods scheduling on GPU nodes wasted $$$",
-      "bridge": "nodeAffinity for vLLM prevents expensive mistakes"
-    },
-    "ai": {
-      "day_index": 142,
-      "title": "Day 142 of Learning LLM Inference — Tensor Parallel — Multi-GPU Serving",
-      "subtitle": "Split layers across GPUs",
-      "hook": "tensor_parallel_size in chart values"
-    },
-    "thread": "Today's design thread: tensor_parallel_size in chart values ↔ nodeAffinity for vLLM prevents expensive mistakes",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 143,
-    "status": "pending",
-    "weekday": "Fri",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "vllm-deploy-kit",
-    "code": "vllm-deploy-kit: RouteIQ auto-register new model endpoint on promotion; weighted routing trial 10% traffic.",
-    "experience": {
-      "title": "Canary Routing — Agoda 5% Feature Rollout",
-      "subtitle": "Percent traffic matched error budget math",
-      "bridge": "10% RouteIQ trial on fine-tuned model copies flag rollout"
-    },
-    "ai": {
-      "day_index": 143,
-      "title": "Day 143 of Learning LLM Inference — Routing Fine-Tuned Models — Registry Integration",
-      "subtitle": "RouteIQ reads registry for endpoints",
-      "hook": "Auto-register on promotion event"
-    },
-    "thread": "Today's design thread: Auto-register on promotion event ↔ 10% RouteIQ trial on fine-tuned model copies flag rollout",
-    "project_blog": "vLLM Deploy Kit — GPU Helm, RouteIQ Registration, and the Closed-Loop Demo",
-    "product_blog": null
-  },
-  {
-    "day": 144,
-    "status": "pending",
-    "weekday": "Sat",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "vllm-deploy-kit",
-    "code": "vllm-deploy-kit: LensAI monitors fine-tuned model from first request — dashboards cloned from base model.",
-    "experience": {
-      "title": "Day-1 Monitoring — New Service Checklist",
-      "subtitle": "Dashboard cloned before launch, not after incident",
-      "bridge": "Clone LensAI dashboards for fine-tuned endpoint immediately"
-    },
-    "ai": {
-      "day_index": 144,
-      "title": "Day 144 of Learning LLM Inference — Observing Custom Models — LensAI Labels",
-      "subtitle": "model_id label on all metrics",
-      "hook": "Dashboard variables for adapter version"
-    },
-    "thread": "Today's design thread: Dashboard variables for adapter version ↔ Clone LensAI dashboards for fine-tuned endpoint immediately",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 145,
-    "status": "pending",
-    "weekday": "Sun",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "vllm-deploy-kit",
-    "code": "vllm-deploy-kit: Simulate DriftWatch alert → webhook → retrain stub → redeploy; document loop in LOOP.md.",
-    "experience": {
-      "title": "Closed Loop Demo — The North Star Slide",
-      "subtitle": "Drew this architecture on whiteboard in interview",
-      "bridge": "Simulated retrain loop is the 5-month story in code"
-    },
-    "ai": {
-      "day_index": 145,
-      "title": "Day 145 of Learning LLM Inference — Closed-Loop MLOps — Event-Driven Retrain",
-      "subtitle": "Alert→train→deploy sequence",
-      "hook": "LOOP.md sequence diagram"
-    },
-    "thread": "Today's design thread: LOOP.md sequence diagram ↔ Simulated retrain loop is the 5-month story in code",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 146,
-    "status": "pending",
-    "weekday": "Mon",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "vllm-deploy-kit",
-    "code": "vllm-deploy-kit: Load test fine-tuned endpoint vs GPT-4o on cost/latency/quality triangle.",
-    "experience": {
-      "title": "Cost/Latency/Quality Triangle — Executive Frame",
-      "subtitle": "Pick two—engineering makes the third explicit",
-      "bridge": "Load test documents triangle numbers for platform essay"
-    },
-    "ai": {
-      "day_index": 146,
-      "title": "Day 146 of Learning LLM Inference — Pareto Frontier — Cost Latency Quality",
-      "subtitle": "Plot empirical frontier from load test",
-      "hook": "CSV export for platform essay chart"
-    },
-    "thread": "Today's design thread: CSV export for platform essay chart ↔ Load test documents triangle numbers for platform essay",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 147,
-    "status": "pending",
-    "weekday": "Tue",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "vllm-deploy-kit",
-    "code": "vllm-deploy-kit: Production hardening — PDB, GPU node affinity, graceful rollout; BENCHMARKS.md.",
-    "experience": {
-      "title": "Graceful Rollout — Wayfair Zero-Downtime Price Push",
-      "subtitle": "Blue/green for config, not big bang",
-      "bridge": "PDB + rolling update on GPU workloads"
-    },
-    "ai": {
-      "day_index": 147,
-      "title": "Day 147 of Learning LLM Inference — GPU Rollouts — Surge During Deploy",
-      "subtitle": "Rolling update avoids all GPUs busy",
-      "hook": "maxUnavailable=1 on GPU deployment"
-    },
-    "thread": "Today's design thread: maxUnavailable=1 on GPU deployment ↔ PDB + rolling update on GPU workloads",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 148,
-    "status": "pending",
-    "weekday": "Wed",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "platform-launch",
-    "code": "platform-launch: Unified landing page linking 5 products; architecture video script; compose `platform-quickstart`.",
-    "experience": {
-      "title": "Portfolio Launch — Cohesive Narrative",
-      "subtitle": "Five repos without story = confusion",
-      "bridge": "Unified landing is recruiter UX"
-    },
-    "ai": {
-      "day_index": 148,
-      "title": "Day 148 of Learning LLM Inference — Platform Architecture — Five Products One Story",
-      "subtitle": "Interview whiteboard in HTML",
-      "hook": "Landing page copy ties north star"
-    },
-    "thread": "Today's design thread: Landing page copy ties north star ↔ Unified landing is recruiter UX",
-    "project_blog": null,
-    "product_blog": null
-  },
-  {
-    "day": 149,
-    "status": "pending",
-    "weekday": "Thu",
-    "product": "fineforge",
-    "product_name": "FineForge",
-    "repo": "platform-launch",
-    "code": "platform-launch: Platform product essay + HN Show HN; tag platform-v1.0.0; 5-product integration demo recording; aggressive apply list (Anthropic, OpenAI, Modal, Together, Cohere).",
-    "experience": {
-      "title": "150 Days — What I'd Tell Day-0 Me",
-      "subtitle": "Consistency beat intensity; public build attracted inbound",
-      "bridge": "Platform essay closes loop: observability→route→drift→retrain"
-    },
-    "ai": {
-      "day_index": 149,
-      "title": "Day 149 of Learning LLM Inference — 150 Days of LLM Inference — Curriculum Recap",
-      "subtitle": "Spine: observe→trace→route→drift→retrain",
-      "hook": "Final essay links AI Day 0–149 themes"
-    },
-    "thread": "Today's design thread: Final essay links AI Day 0–149 themes ↔ Platform essay closes loop: observability→route→drift→retrain",
-    "project_blog": null,
-    "product_blog": "The Self-Healing AI Infrastructure Platform — Five Products, One Loop, 150 Days"
-  }
-]
+{
+  "days": [
+    {
+      "day": 75,
+      "status": "pending",
+      "weekday": "Sun",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "prompt-fingerprinter",
+      "code": "prompt-fingerprinter: Ship exact-match cache layer on SHA-256 fingerprint (normalize whitespace/case/Unicode NFC); Redis key `fp:{tenant}:{hash}` with 24h TTL; benchmark hit-rate vs semantic-only path; write BENCHMARKS.md with p50 lookup <2ms; capture project-blog bullets in NOTES.md for Friday Day 87.",
+      "experience": {
+        "title": "Wayfair's Redis Lua Token Bucket at 250k SKU Scale",
+        "subtitle": "Atomic INCR across replicas when pricing updates flooded APIs",
+        "bridge": "Exact-match cache keys need the same atomic discipline\u2014fingerprint collisions are your cardinality event"
+      },
+      "ai": {
+        "day_index": 75,
+        "title": "Day 75 of Learning LLM Inference \u2014 Prompt Fingerprinting \u2014 Canonical Forms Before Hashing",
+        "subtitle": "Same idea as normalizing SKU keys before Redis lookup",
+        "hook": "Add `fingerprint_version` + `normalized_prompt` fields to cache lookup API"
+      },
+      "thread": "Today's design thread: Add `fingerprint_version` + `normalized_prompt` fields to cache lookup API \u2194 Exact-match cache keys need the same atomic discipline\u2014fingerprint collisions are your cardinality event",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 76,
+      "status": "pending",
+      "weekday": "Mon",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "prompt-fingerprinter",
+      "code": "prompt-fingerprinter: Admin REST API `PUT /tenants/{id}/fingerprint-rules` (strip_punctuation, lowercase, max_prompt_bytes); integration test proving duplicate prompts skip embedding API; emit `cache_hit_type=exact` to LensAI Kafka topic.",
+      "experience": {
+        "title": "Supplier API Circuit Breakers \u2014 Half-Open State in Production",
+        "subtitle": "Wayfair: 3 failures in 60s opened circuit; manual half-open tests before Black Friday",
+        "bridge": "Fingerprint rule changes are config deploys\u2014treat breaking normalization like opening a circuit on live traffic"
+      },
+      "ai": {
+        "day_index": 76,
+        "title": "Day 76 of Learning LLM Inference \u2014 Exact-Match vs Semantic Cache \u2014 Two-Tier Memory Hierarchy",
+        "subtitle": "L1 exact / L2 embedding like CPU cache levels",
+        "hook": "Router checks fingerprint table before pgvector round-trip"
+      },
+      "thread": "Today's design thread: Router checks fingerprint table before pgvector round-trip \u2194 Fingerprint rule changes are config deploys\u2014treat breaking normalization like opening a circuit on live traffic",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 77,
+      "status": "pending",
+      "weekday": "Tue",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "model-quality-scorer",
+      "code": "model-quality-scorer: Write DESIGN.md \u2014 judge model (Haiku), rubric JSON schema per task_type, async queue topology, target 200 samples/hr/tenant, failure modes when judge times out.",
+      "experience": {
+        "title": "Agoda P99 Cannot Be Averaged Across Tenants",
+        "subtitle": "Quantile merge taught me per-tenant SLOs or you lie to executives",
+        "bridge": "Model quality scores must aggregate per tenant\u00d7task\u2014global averages hide routing regressions"
+      },
+      "ai": {
+        "day_index": 77,
+        "title": "Day 77 of Learning LLM Inference \u2014 LLM-as-Judge \u2014 Rubrics as Structured Data",
+        "subtitle": "Scoring rubric = JSON schema like event contracts",
+        "hook": "Define `JudgeRubric` protobuf with weighted criteria"
+      },
+      "thread": "Today's design thread: Define `JudgeRubric` protobuf with weighted criteria \u2194 Model quality scores must aggregate per tenant\u00d7task\u2014global averages hide routing regressions",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 78,
+      "status": "pending",
+      "weekday": "Wed",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "model-quality-scorer",
+      "code": "model-quality-scorer: Implement Kafka consumer `judge-requests` \u2192 batched OpenAI judge calls with shared rubric template; persist raw scores + rationale to ClickHouse `quality_scores`; DLQ on malformed rubric.",
+      "experience": {
+        "title": "Delivery Hero Async Pipelines \u2014 Why We Decoupled SQS from OSRM",
+        "subtitle": "5k events/sec only survived because scoring work was never on the hot path",
+        "bridge": "LLM-as-judge belongs off the request path\u2014same failure isolation pattern"
+      },
+      "ai": {
+        "day_index": 78,
+        "title": "Day 78 of Learning LLM Inference \u2014 Async Evaluation Pipelines \u2014 Throughput Over Latency",
+        "subtitle": "Batch judge calls like micro-batched ClickHouse inserts",
+        "hook": "Kafka topic decouples scoring from user-facing path"
+      },
+      "thread": "Today's design thread: Kafka topic decouples scoring from user-facing path \u2194 LLM-as-judge belongs off the request path\u2014same failure isolation pattern",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 79,
+      "status": "pending",
+      "weekday": "Thu",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "model-quality-scorer",
+      "code": "model-quality-scorer: Normalize judge outputs to 0\u20131; roll up 1h/24h aggregates per `model_id\u00d7task_type`; Grafana panel wired to LensAI dashboard; add statistical noise floor doc.",
+      "experience": {
+        "title": "Walmart Stream Analytics Dropped Messages \u2014 Switching to Kafka",
+        "subtitle": "7M sensors exposed bounded-window limits; we owned offset recovery",
+        "bridge": "Normalized judge scores need durable storage with replay\u2014ClickHouse not in-memory averages"
+      },
+      "ai": {
+        "day_index": 79,
+        "title": "Day 79 of Learning LLM Inference \u2014 Score Normalization \u2014 Why 0\u20131 Beats Raw Likert",
+        "subtitle": "Comparable units across models like z-scored metrics",
+        "hook": "Store both raw and normalized in `quality_scores`"
+      },
+      "thread": "Today's design thread: Store both raw and normalized in `quality_scores` \u2194 Normalized judge scores need durable storage with replay\u2014ClickHouse not in-memory averages",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 80,
+      "status": "pending",
+      "weekday": "Fri",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "model-quality-scorer",
+      "code": "model-quality-scorer: RouteIQ decision engine v1 \u2014 weighted utility `U = w_q\u00b7quality \u2212 w_c\u00b7cost \u2212 w_l\u00b7latency` with tenant-overridable weights; unit tests for tie-break toward cheaper model when U within \u03b5.",
+      "experience": {
+        "title": "Route Revisions and Revisit Order System \u2014 Compensating Bad Polylines",
+        "subtitle": "Delivery Hero \u00b7 immutable Route { } snapshots \u00b7 rollback without corrupting UI",
+        "bridge": "Revisit Order System and Route revision objects \u2014 compensating transactions on real DH topology, not a stealth-startup fiction."
+      },
+      "ai": {
+        "day_index": 80,
+        "title": "Day 80 of Learning LLM Inference \u2014 Multi-Objective Routing \u2014 Scalarization and Weights",
+        "subtitle": "Weighted sum like cost-aware load balancing",
+        "hook": "Expose `RoutingWeights` per tenant in RouteIQ config"
+      },
+      "thread": "Today's design thread: Expose `RoutingWeights` per tenant in RouteIQ config \u2194 Routing utility function is a saga: pick model, log decision, compensate on timeout via fallback",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 81,
+      "status": "pending",
+      "weekday": "Sat",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "fallback-chain",
+      "code": "fallback-chain: DESIGN.md \u2014 per-tenant ordered model list, timeout cascade (2s/5s/8s), circuit-breaker states, streaming byte-buffer strategy for <10ms proxy overhead.",
+      "experience": {
+        "title": "Wayfair Sub-Second SKU Propagation \u2014 Event Ordering",
+        "subtitle": "Wayfair \u00b7 pricing_refresh Kafka (40 partitions) \u00b7 version vectors on price events",
+        "bridge": "Fallback chain order mirrors Kafka pricing_refresh partitioning \u2014 newer version must win consistently across consumers."
+      },
+      "ai": {
+        "day_index": 81,
+        "title": "Day 81 of Learning LLM Inference \u2014 Fallback Chains \u2014 Graceful Degradation in Inference",
+        "subtitle": "Circuit breaker + alternate path = chain of models",
+        "hook": "Schema: ordered `ModelRef` list with timeout_ms each"
+      },
+      "thread": "Today's design thread: Schema: ordered `ModelRef` list with timeout_ms each \u2194 Fallback chain order is an event-sourcing problem\u2014newer config must win consistently",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 82,
+      "status": "pending",
+      "weekday": "Sun",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "fallback-chain",
+      "code": "fallback-chain: Implement chain executor (GPT-4o \u2192 Claude Sonnet \u2192 Llama-3-70B local); record `fallback_reason` enum; k6 test 500 RPS with injected primary failures; draft project-blog sections in NOTES.md (publish Day 87).",
+      "experience": {
+        "title": "OSRM Pool Saturation \u2014 PDBs When Map-Matching Ate the Error Budget",
+        "subtitle": "Delivery Hero \u00b7 OSRM cluster \u00b7 Route Service EKS \u00b7 lunch-rush 8% error burn",
+        "bridge": "Day 8 was concurrent request patterns; day 20 was consumer-lag HPA \u2014 today is OSRM pool saturation and PDB tradeoffs under map-matching load."
+      },
+      "ai": {
+        "day_index": 82,
+        "title": "Day 82 of Learning LLM Inference \u2014 Measuring Proxy Overhead \u2014 p99 Not Mean",
+        "subtitle": "Tail latency drives SLOs\u2014same as Agoda P99 focus",
+        "hook": "Histogram buckets for added ms in streaming proxy"
+      },
+      "thread": "Today's design thread: Histogram buckets for added ms in streaming proxy \u2194 Friday load test on fallback chain is your pre-Black-Friday for LLM traffic",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 83,
+      "status": "pending",
+      "weekday": "Mon",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "fallback-chain",
+      "code": "fallback-chain: Streaming passthrough proxy using chunked transfer \u2014 measure added latency (target p99 <10ms); fix backpressure when downstream stalls; add Prometheus histogram `fallback_proxy_overhead_ms`.",
+      "experience": {
+        "title": "Agoda Cross-Tier Read Latency \u2014 Snappy Hot, Zstd Cold",
+        "subtitle": "<1% regression acceptable for 18% storage savings",
+        "bridge": "Streaming proxy overhead is a codec tradeoff\u2014measure p99, not mean"
+      },
+      "ai": {
+        "day_index": 83,
+        "title": "Day 83 of Learning LLM Inference \u2014 Streaming Token Delivery \u2014 Backpressure Basics",
+        "subtitle": "TCP windowing analogy for SSE chunks",
+        "hook": "Buffer size ties to TTFB vs memory"
+      },
+      "thread": "Today's design thread: Buffer size ties to TTFB vs memory \u2194 Streaming proxy overhead is a codec tradeoff\u2014measure p99, not mean",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 84,
+      "status": "pending",
+      "weekday": "Tue",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "fallback-chain",
+      "code": "fallback-chain: Active health probes per endpoint (HEAD /v1/models) with Redis-backed unhealthy set; chain skips blacklisted models; chaos test: kill primary pod, verify auto-skip <3s.",
+      "experience": {
+        "title": "BrowserStack Integration Test Flakiness \u2014 Health Checks That Lied",
+        "subtitle": "Green `/health` while dependencies degraded taught synthetic probes",
+        "bridge": "Model endpoint health must probe real inference, not TCP connect"
+      },
+      "ai": {
+        "day_index": 84,
+        "title": "Day 84 of Learning LLM Inference \u2014 Health Checks for Model Endpoints \u2014 Active Probes",
+        "subtitle": "Synthetic transactions vs passive metrics",
+        "hook": "Unhealthy set in Redis with TTL refresh"
+      },
+      "thread": "Today's design thread: Unhealthy set in Redis with TTL refresh \u2194 Model endpoint health must probe real inference, not TCP connect",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 85,
+      "status": "pending",
+      "weekday": "Wed",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "fallback-chain",
+      "code": "fallback-chain: Emit `routing_decision` protobuf events to Kafka (chosen_model, scores, cache_hit, cost_estimate_usd); LensAI consumer writes ClickHouse `routing_log` table.",
+      "experience": {
+        "title": "Agoda Kafka Ingestion Backpressure \u2014 Channel Depth 10k",
+        "subtitle": "Rust producer shed load before OOM; metrics on lag saved us",
+        "bridge": "Routing decision events use the same backpressure discipline into LensAI"
+      },
+      "ai": {
+        "day_index": 85,
+        "title": "Day 85 of Learning LLM Inference \u2014 Routing Decision Logs \u2014 Audit Trail Design",
+        "subtitle": "Event sourcing for which model served whom",
+        "hook": "`routing_log` table is source of truth for FinOps"
+      },
+      "thread": "Today's design thread: `routing_log` table is source of truth for FinOps \u2194 Routing decision events use the same backpressure discipline into LensAI",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 86,
+      "status": "pending",
+      "weekday": "Thu",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "fallback-chain",
+      "code": "fallback-chain: TraceForge hook \u2014 inject `traceparent` on outbound provider calls; verify span attribute `routeiq.decision_id` appears in agent-trace-collector UI.",
+      "experience": {
+        "title": "Delivery Hero Distributed Tracing \u2014 Finding the Slow Span",
+        "subtitle": "Geo pipeline debugging without trace IDs was blind",
+        "bridge": "TraceForge linkage turns routing decisions into debuggable spans"
+      },
+      "ai": {
+        "day_index": 86,
+        "title": "Day 86 of Learning LLM Inference \u2014 Trace Context Propagation \u2014 W3C traceparent",
+        "subtitle": "Span links across services like DH geo trace",
+        "hook": "Inject traceparent on provider HTTP client"
+      },
+      "thread": "Today's design thread: Inject traceparent on provider HTTP client \u2194 TraceForge linkage turns routing decisions into debuggable spans",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 87,
+      "status": "pending",
+      "weekday": "Fri",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "fallback-chain",
+      "code": "fallback-chain: docker-compose integration \u2014 LensAI + TraceForge + RouteIQ; run 10k mixed prompts; document 3-product topology in INTEGRATION.md with sequence diagram.",
+      "experience": {
+        "title": "OSS VictoriaMetrics PR \u2014 Reading Go Production Code",
+        "subtitle": "First upstream PR taught me to match existing error wrapping style",
+        "bridge": "3-product integration doc is your OSS-quality bar for employers"
+      },
+      "ai": {
+        "day_index": 87,
+        "title": "Day 87 of Learning LLM Inference \u2014 Integration Topology \u2014 Compose for Platform Demos",
+        "subtitle": "Same as docker-compose quickstart pattern from LensAI",
+        "hook": "Document service graph for 3-product demo"
+      },
+      "thread": "Today's design thread: Document service graph for 3-product demo \u2194 3-product integration doc is your OSS-quality bar for employers",
+      "project_blog": "Fallback Chains \u2014 Sub-10ms Streaming Proxy, Three-Product Integration, and RouteIQ Week-4 Architecture",
+      "product_blog": null
+    },
+    {
+      "day": 88,
+      "status": "pending",
+      "weekday": "Sat",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "routeiq-launch",
+      "code": "routeiq-launch: Polish README (architecture GIF, cost-savings table), Helm umbrella chart, `routeiq-dev` org transfer; landing page with live demo API key sandbox.",
+      "experience": {
+        "title": "Launching WhiteFalcon Dashboards \u2014 Stakeholder Demo Prep",
+        "subtitle": "Agoda: exec review needed one screenshot that told the story",
+        "bridge": "RouteIQ landing GIF must show cost\u2193 latency\u2192 in 10 seconds"
+      },
+      "ai": {
+        "day_index": 88,
+        "title": "Day 88 of Learning LLM Inference \u2014 Launch Readiness \u2014 API Sandboxes and Rate Limits",
+        "subtitle": "Public demo keys need hard spend caps",
+        "hook": "Sandbox tenant uses cost-budget-enforcer defaults"
+      },
+      "thread": "Today's design thread: Sandbox tenant uses cost-budget-enforcer defaults \u2194 RouteIQ landing GIF must show cost\u2193 latency\u2192 in 10 seconds",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 89,
+      "status": "pending",
+      "weekday": "Sun",
+      "product": "routeiq",
+      "product_name": "RouteIQ",
+      "repo": "routeiq-launch",
+      "code": "routeiq-launch: Final integration smoke + product essay publish prep; HN Show HN checklist; tag v1.0.0 across repos; apply to 3 Portkey/Cohere-style roles.",
+      "experience": {
+        "title": "Five Years of Infra Interviews \u2014 What 'Staff' Signals Look Like",
+        "subtitle": "Platform narrative beats repo count when products connect",
+        "bridge": "RouteIQ product essay frames three months of routing as a product, not demos"
+      },
+      "ai": {
+        "day_index": 89,
+        "title": "Day 89 of Learning LLM Inference \u2014 Product Thinking \u2014 Routers as Control Planes",
+        "subtitle": "RouteIQ is control plane; models are data plane",
+        "hook": "Essay ties routing, cache, quality into one SKU"
+      },
+      "thread": "Today's design thread: Essay ties routing, cache, quality into one SKU \u2194 RouteIQ product essay frames three months of routing as a product, not demos",
+      "project_blog": null,
+      "product_blog": "RouteIQ \u2014 Why Intelligent LLM Routing Needs Cache, Budget, Quality, and Fallback as One Product"
+    },
+    {
+      "day": 90,
+      "status": "pending",
+      "weekday": "Mon",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "shadow-traffic-router",
+      "code": "shadow-traffic-router: DESIGN.md \u2014 mirror 1% traffic fire-and-forget, zero user latency budget, Kafka topic `shadow-eval`, paired response storage schema.",
+      "experience": {
+        "title": "Netflix Shadow Traffic Talk \u2014 Applying to LLM Eval",
+        "subtitle": "Mirroring without user impact is an old SRE pattern",
+        "bridge": "Shadow router design inherits DH async decoupling\u2014never block prod path"
+      },
+      "ai": {
+        "day_index": 90,
+        "title": "Day 90 of Learning LLM Inference \u2014 Shadow Deployments for ML \u2014 Statistical Power",
+        "subtitle": "1% sample variance\u2014need enough N",
+        "hook": "Configure `shadow_percent` with min daily volume guard"
+      },
+      "thread": "Today's design thread: Configure `shadow_percent` with min daily volume guard \u2194 Shadow router design inherits DH async decoupling\u2014never block prod path",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 91,
+      "status": "pending",
+      "weekday": "Tue",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "shadow-traffic-router",
+      "code": "shadow-traffic-router: Implement mirroring middleware after RouteIQ decision \u2014 clone request body + headers to eval queue without awaiting shadow model.",
+      "experience": {
+        "title": "Delivery Hero Fire-and-Forget Geocoding Retries",
+        "subtitle": "Client timeout 200ms; server work continued\u2014users never waited",
+        "bridge": "Shadow Kafka produce must be async with bounded drop on overload"
+      },
+      "ai": {
+        "day_index": 91,
+        "title": "Day 91 of Learning LLM Inference \u2014 Fire-and-Forget Async \u2014 At-Most-Once vs Loss",
+        "subtitle": "Dropping shadow under load is acceptable tradeoff",
+        "hook": "Bounded channel drop metric for shadow producer"
+      },
+      "thread": "Today's design thread: Bounded channel drop metric for shadow producer \u2194 Shadow Kafka produce must be async with bounded drop on overload",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 92,
+      "status": "pending",
+      "weekday": "Wed",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "shadow-traffic-router",
+      "code": "shadow-traffic-router: RouteIQ plugin hook `shadow_percent` per tenant; default 1%; feature-flag via distributed-flagd from LensAI month.",
+      "experience": {
+        "title": "Walmart Feature Flags on Firmware Channels",
+        "subtitle": "OTA used % rollout by device cohort\u2014same mental model as 1% shadow",
+        "bridge": "Connect shadow_percent to distributed-flagd patterns from LensAI week"
+      },
+      "ai": {
+        "day_index": 92,
+        "title": "Day 92 of Learning LLM Inference \u2014 Feature Flags Driving Experiments",
+        "subtitle": "% rollout connects to flagd from Month 1",
+        "hook": "Shadow percent as flag variant"
+      },
+      "thread": "Today's design thread: Shadow percent as flag variant \u2194 Connect shadow_percent to distributed-flagd patterns from LensAI week",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 93,
+      "status": "pending",
+      "weekday": "Thu",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "shadow-traffic-router",
+      "code": "shadow-traffic-router: Kafka producer for shadow requests with keys `tenant_id`; consumer skeleton storing prod vs shadow response pairs in ClickHouse.",
+      "experience": {
+        "title": "Agoda Exactly-Once Illusion \u2014 Idempotent Consumers",
+        "subtitle": "We used dedup keys on `(tenant, event_id)` not wishful thinking",
+        "bridge": "Paired response storage needs idempotent writes on shadow completion"
+      },
+      "ai": {
+        "day_index": 93,
+        "title": "Day 93 of Learning LLM Inference \u2014 Paired Observability \u2014 Prod vs Shadow Storage",
+        "subtitle": "Diff storage like A/B event pairing",
+        "hook": "ClickHouse table keyed by `request_id` pair"
+      },
+      "thread": "Today's design thread: ClickHouse table keyed by `request_id` pair \u2194 Paired response storage needs idempotent writes on shadow completion",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 94,
+      "status": "pending",
+      "weekday": "Fri",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "shadow-traffic-router",
+      "code": "shadow-traffic-router: Prove zero added latency \u2014 compare p99 with shadow on/off under k6 1k RPS; document sampling bias risks in DESIGN addendum.",
+      "experience": {
+        "title": "Chaos Day: Kafka Broker Kill at Agoda",
+        "subtitle": "Verified DLQ + replay restored 99.95% within 20m",
+        "bridge": "Zero-latency claim needs chaos proof\u2014shadow off/on under load"
+      },
+      "ai": {
+        "day_index": 94,
+        "title": "Day 94 of Learning LLM Inference \u2014 Latency SLO Verification \u2014 A/B Instrumentation",
+        "subtitle": "Measure with identical load profiles",
+        "hook": "k6 scenario tags shadow on/off runs"
+      },
+      "thread": "Today's design thread: k6 scenario tags shadow on/off runs \u2194 Zero-latency claim needs chaos proof\u2014shadow off/on under load",
+      "project_blog": "Shadow Traffic Router \u2014 Zero-Latency Mirroring and Paired-Response Storage for LLM Evaluation",
+      "product_blog": null
+    },
+    {
+      "day": 95,
+      "status": "pending",
+      "weekday": "Sat",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "shadow-traffic-router",
+      "code": "shadow-traffic-router: S3/MinIO archival for long-term paired responses; partition by date; PII scrub job before persist.",
+      "experience": {
+        "title": "ScheduledReader at TB Scale \u2014 BigQuery Slot Economics",
+        "subtitle": "Wayfair \u00b7 Delphi ScheduledReader \u00b7 batch analytics vs streaming insert cost",
+        "bridge": "Archiving shadow pairs to S3 is the cold tier for eval; ScheduledReader owns TB-scale BQ slots separate from day 24 PAS streaming analytics."
+      },
+      "ai": {
+        "day_index": 95,
+        "title": "Day 95 of Learning LLM Inference \u2014 Cold Storage for ML Artifacts \u2014 Tiering",
+        "subtitle": "S3 glacier for training pairs like Agoda cold tier",
+        "hook": "Archive job moves pairs older than 30d"
+      },
+      "thread": "Today's design thread: Archive job moves pairs older than 30d \u2194 Archiving shadow pairs to S3 is the cold tier for eval\u2014not hot ClickHouse forever",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 96,
+      "status": "pending",
+      "weekday": "Sun",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "shadow-traffic-router",
+      "code": "shadow-traffic-router: End-to-end demo script + BENCHMARKS.md; polish README diagrams; confirm project blog ready for Day 94 publish.",
+      "experience": {
+        "title": "Leading PAS and Promotions \u2014 Two Teams, One Pricing Platform",
+        "subtitle": "Wayfair \u00b7 PAS Core + PromoSvc \u00b7 team boundaries from pricing architecture",
+        "bridge": "Shadow traffic project blog doubles as handoff doc \u2014 same ownership clarity PAS and Promotions needed across Delphi, Aletheia, and Pub/Sub simulation."
+      },
+      "ai": {
+        "day_index": 96,
+        "title": "Day 96 of Learning LLM Inference \u2014 Shadow Traffic \u2014 Ethics and Sampling Bias",
+        "subtitle": "Non-representative 1% can lie\u2014document bias",
+        "hook": "Project blog concept: when shadow misleads"
+      },
+      "thread": "Today's design thread: Project blog concept: when shadow misleads \u2194 Shadow traffic project blog is the handoff doc for Month 4 you",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 97,
+      "status": "pending",
+      "weekday": "Mon",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "llm-judge-eval",
+      "code": "llm-judge-eval: DESIGN.md \u2014 rubric templates per task_type (support, codegen, summarization), judge model cost cap, batch size 16, significance test method.",
+      "experience": {
+        "title": "Agoda Anomaly on Latency \u2014 z-Score Per Shard",
+        "subtitle": "Global mean missed shard 7 degradation for 6 hours",
+        "bridge": "Judge score baselines must be per-segment like per-shard TSDB"
+      },
+      "ai": {
+        "day_index": 97,
+        "title": "Day 97 of Learning LLM Inference \u2014 Rubric Engineering \u2014 Criteria Weighting",
+        "subtitle": "Weighted rubric like composite SLO breach",
+        "hook": "Version rubrics\u2014breaking change = new id"
+      },
+      "thread": "Today's design thread: Version rubrics\u2014breaking change = new id \u2194 Judge score baselines must be per-segment like per-shard TSDB",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 98,
+      "status": "pending",
+      "weekday": "Tue",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "llm-judge-eval",
+      "code": "llm-judge-eval: Build rubric CRUD API + versioned YAML storage; example rubric with 5 criteria weighted sum.",
+      "experience": {
+        "title": "Walmart Rubric-Less Alerts \u2014 Why Thresholds Failed IoT",
+        "subtitle": "Single metric alerts cried wolf until we added context payloads",
+        "bridge": "Rubric CRUD is how engineers encode domain judgment into infra"
+      },
+      "ai": {
+        "day_index": 98,
+        "title": "Day 98 of Learning LLM Inference \u2014 Judge Model Selection \u2014 Cost vs Capability",
+        "subtitle": "Haiku judges Sonnet\u2014economic hierarchy",
+        "hook": "Config `judge_model` separate from prod model"
+      },
+      "thread": "Today's design thread: Config `judge_model` separate from prod model \u2194 Rubric CRUD is how engineers encode domain judgment into infra",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 99,
+      "status": "pending",
+      "weekday": "Wed",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "llm-judge-eval",
+      "code": "llm-judge-eval: Async judge worker \u2014 cheap model scores shadow vs prod responses; store `judge_score`, `criteria_json`, `confidence` in ClickHouse.",
+      "experience": {
+        "title": "Using GPT to Grade GPT \u2014 BrowserStack Skepticism",
+        "subtitle": "We demanded human-labeled gold set before trusting automation",
+        "bridge": "Judge worker stores rationale text for later human audit sample"
+      },
+      "ai": {
+        "day_index": 99,
+        "title": "Day 99 of Learning LLM Inference \u2014 LLM Eval Bias \u2014 Position and Length Effects",
+        "subtitle": "Known judge biases require blind ordering",
+        "hook": "Randomize A/B order in judge prompt"
+      },
+      "thread": "Today's design thread: Randomize A/B order in judge prompt \u2194 Judge worker stores rationale text for later human audit sample",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 100,
+      "status": "pending",
+      "weekday": "Thu",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "llm-judge-eval",
+      "code": "llm-judge-eval: Score normalization pipeline (z-score within tenant) and rolling 7d baseline; alert when 24h mean drops >2\u03c3.",
+      "experience": {
+        "title": "Agoda Cold Start After Deploy \u2014 Baseline Reset",
+        "subtitle": "New binary shifted latency 40ms\u2014alerts fired until baseline aged",
+        "bridge": "Rolling 7d baseline needs warmup window after model deploy"
+      },
+      "ai": {
+        "day_index": 100,
+        "title": "Day 100 of Learning LLM Inference \u2014 Rolling Baselines \u2014 Non-Stationary Series",
+        "subtitle": "Time-series non-stationarity after deploys",
+        "hook": "7d rolling mean with warmup flag"
+      },
+      "thread": "Today's design thread: 7d rolling mean with warmup flag \u2194 Rolling 7d baseline needs warmup window after model deploy",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 101,
+      "status": "pending",
+      "weekday": "Fri",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "llm-judge-eval",
+      "code": "llm-judge-eval: Implement two-proportion z-test helper \u2014 expose `is_significant(drop, n)` in Go lib; unit tests with known p-values.",
+      "experience": {
+        "title": "Statistics for Infra Engineers \u2014 A/B at Delivery Hero",
+        "subtitle": "We almost shipped a map change on 200-sample 'win'",
+        "bridge": "z-test helper prevents routing wins declared on noise"
+      },
+      "ai": {
+        "day_index": 101,
+        "title": "Day 101 of Learning LLM Inference \u2014 Hypothesis Testing for Model Drops",
+        "subtitle": "Two-proportion z-test for conversion-like metrics",
+        "hook": "Expose significance in drift API response"
+      },
+      "thread": "Today's design thread: Expose significance in drift API response \u2194 z-test helper prevents routing wins declared on noise",
+      "project_blog": "LLM-as-Judge \u2014 Rubrics, Significance Testing, and When Automated Scoring Lies",
+      "product_blog": null
+    },
+    {
+      "day": 102,
+      "status": "pending",
+      "weekday": "Sat",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "llm-judge-eval",
+      "code": "llm-judge-eval: Historical trends API `GET /tenants/{id}/quality-trend`; Grafana time-series panel; load test judge queue backlog recovery.",
+      "experience": {
+        "title": "Executive Dashboards \u2014 One Chart, One Question",
+        "subtitle": "Agoda VP wanted 'are we slower than last week' not 40 panels",
+        "bridge": "Quality trend API answers one question: is this model still good"
+      },
+      "ai": {
+        "day_index": 102,
+        "title": "Day 102 of Learning LLM Inference \u2014 Quality Time Series \u2014 Dashboard Design",
+        "subtitle": "Single trend line beats 12 gauges",
+        "hook": "Grafana panel queries normalized hourly mean"
+      },
+      "thread": "Today's design thread: Grafana panel queries normalized hourly mean \u2194 Quality trend API answers one question: is this model still good",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 103,
+      "status": "pending",
+      "weekday": "Sun",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "llm-judge-eval",
+      "code": "llm-judge-eval: Cost dashboard for judge spend vs drift detection value; BENCHMARKS.md; finalize judge pitfalls section for Day 101 project blog.",
+      "experience": {
+        "title": "FinOps at Scale \u2014 Token Cost Visibility",
+        "subtitle": "First time finance asked which team burned $50k/mo on inference",
+        "bridge": "Judge cost dashboard proves DriftWatch ROI before Month 5 train"
+      },
+      "ai": {
+        "day_index": 103,
+        "title": "Day 103 of Learning LLM Inference \u2014 Eval Economics \u2014 When Judges Pay Off",
+        "subtitle": "ROI = prevented bad deploy cost \u2212 judge spend",
+        "hook": "Cost dashboard completes FinOps story"
+      },
+      "thread": "Today's design thread: Cost dashboard completes FinOps story \u2194 Judge cost dashboard proves DriftWatch ROI before Month 5 train",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 104,
+      "status": "pending",
+      "weekday": "Mon",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "drift-detector",
+      "code": "drift-detector: DESIGN.md \u2014 CUSUM parameters per segment, min sample size, cooldown after alert, root-cause sample query limit.",
+      "experience": {
+        "title": "CUSUM in Manufacturing IoT \u2014 Walmart Inspiration",
+        "subtitle": "Control charts detected HVAC drift days before ticket",
+        "bridge": "CUSUM on judge scores is SPC for language models"
+      },
+      "ai": {
+        "day_index": 104,
+        "title": "Day 104 of Learning LLM Inference \u2014 CUSUM \u2014 Detecting Sustained Shifts",
+        "subtitle": "SPC from manufacturing applied to LLM scores",
+        "hook": "Parameters `k`, `h` in drift detector config"
+      },
+      "thread": "Today's design thread: Parameters `k`, `h` in drift detector config \u2194 CUSUM on judge scores is SPC for language models",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 105,
+      "status": "pending",
+      "weekday": "Tue",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "drift-detector",
+      "code": "drift-detector: Implement CUSUM on hourly mean judge score per `query_type`; configurable `k` and `h` thresholds via env.",
+      "experience": {
+        "title": "Alert Fatigue at Agoda \u2014 300 Pages in One Night",
+        "subtitle": "Dedup + severity routing cut pages 80%",
+        "bridge": "Drift detector cooldown inherits on-call lessons"
+      },
+      "ai": {
+        "day_index": 105,
+        "title": "Day 105 of Learning LLM Inference \u2014 CUSUM vs Simple Thresholds",
+        "subtitle": "Thresholds cry wolf; CUSUM finds persistence",
+        "hook": "Implement cumulative sum update in Go"
+      },
+      "thread": "Today's design thread: Implement cumulative sum update in Go \u2194 Drift detector cooldown inherits on-call lessons",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 106,
+      "status": "pending",
+      "weekday": "Wed",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "drift-detector",
+      "code": "drift-detector: Per-segment drift \u2014 train separate CUSUM for top 10 query types; dashboard heatmap of segment health.",
+      "experience": {
+        "title": "Segmented SLOs \u2014 Delivery Hero Peak Zones",
+        "subtitle": "Bangkok lunch \u2260 rural night\u2014aggregates lied",
+        "bridge": "Per-query-type CUSUM catches localized model rot"
+      },
+      "ai": {
+        "day_index": 106,
+        "title": "Day 106 of Learning LLM Inference \u2014 Hierarchical Drift \u2014 Global vs Segment",
+        "subtitle": "Multi-dimensional cardinality again",
+        "hook": "Heatmap query groups by `query_type`"
+      },
+      "thread": "Today's design thread: Heatmap query groups by `query_type` \u2194 Per-query-type CUSUM catches localized model rot",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 107,
+      "status": "pending",
+      "weekday": "Thu",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "drift-detector",
+      "code": "drift-detector: Drift alert payload \u2014 include 20 worst-scoring prompt/response pairs (redacted), suspected model version, time window.",
+      "experience": {
+        "title": "Postmortem Culture \u2014 Root Cause Samples Required",
+        "subtitle": "Blameless but must include exemplar traces",
+        "bridge": "Drift alert ships worst prompts\u2014same postmortem ergonomics"
+      },
+      "ai": {
+        "day_index": 107,
+        "title": "Day 107 of Learning LLM Inference \u2014 Explainable Alerts \u2014 Sampled Evidence",
+        "subtitle": "Alerts need exemplars like trace exemplars",
+        "hook": "Attach top-k worst prompts to payload"
+      },
+      "thread": "Today's design thread: Attach top-k worst prompts to payload \u2194 Drift alert ships worst prompts\u2014same postmortem ergonomics",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 108,
+      "status": "pending",
+      "weekday": "Fri",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "drift-detector",
+      "code": "drift-detector: LensAI integration \u2014 emit `drift_event` metric and log line; wire to existing anomaly panels.",
+      "experience": {
+        "title": "Grafana as Communication \u2014 LensAI Month Reflection",
+        "subtitle": "Dashboards aligned eng + PM on 'what is broken'",
+        "bridge": "Drift events on LensAI tie observability to action"
+      },
+      "ai": {
+        "day_index": 108,
+        "title": "Day 108 of Learning LLM Inference \u2014 Metrics vs Logs for Drift Events",
+        "subtitle": "Counter for fires, log for debug",
+        "hook": "`drift_event` metric + structured log"
+      },
+      "thread": "Today's design thread: `drift_event` metric + structured log \u2194 Drift events on LensAI tie observability to action",
+      "project_blog": "CUSUM Drift Detection \u2014 Statistical Process Control for Production Judge Scores",
+      "product_blog": null
+    },
+    {
+      "day": 109,
+      "status": "pending",
+      "weekday": "Sat",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "drift-detector",
+      "code": "drift-detector: Tenant-level sensitivity presets (strict/balanced/noisy); integration test injecting 15% score drop over 6 hours.",
+      "experience": {
+        "title": "Multi-Tenant Noisy Neighbor \u2014 Stealth Ordering Burst",
+        "subtitle": "One franchise DDoS'd our API via legitimate lunch rush",
+        "bridge": "Tenant sensitivity presets encode fairness under drift"
+      },
+      "ai": {
+        "day_index": 109,
+        "title": "Day 109 of Learning LLM Inference \u2014 Sensitivity Tuning \u2014 Precision/Recall Tradeoff",
+        "subtitle": "Strict vs noisy tenant personas",
+        "hook": "Preset maps to CUSUM `h` multiplier"
+      },
+      "thread": "Today's design thread: Preset maps to CUSUM `h` multiplier \u2194 Tenant sensitivity presets encode fairness under drift",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 110,
+      "status": "pending",
+      "weekday": "Sun",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "drift-detector",
+      "code": "drift-detector: Document false-positive tuning guide; chaos replay of historical incident JSON; finalize CUSUM project blog for Day 108.",
+      "experience": {
+        "title": "Game Day: Replay Production Incident JSON",
+        "subtitle": "Agoda rehearsed broker failure quarterly",
+        "bridge": "Injected 15% score drop validates detector before launch"
+      },
+      "ai": {
+        "day_index": 110,
+        "title": "Day 110 of Learning LLM Inference \u2014 Chaos for ML Systems \u2014 Injected Degradation",
+        "subtitle": "Game day for models not just brokers",
+        "hook": "Replay JSON defines expected alert latency"
+      },
+      "thread": "Today's design thread: Replay JSON defines expected alert latency \u2194 Injected 15% score drop validates detector before launch",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 111,
+      "status": "pending",
+      "weekday": "Mon",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "alert-rule-engine",
+      "code": "alert-rule-engine: DESIGN.md \u2014 rule DSL (threshold, duration, escalation), webhook contracts, FineForge stub endpoint.",
+      "experience": {
+        "title": "PagerDuty Routing Trees \u2014 Wayfair On-Call",
+        "subtitle": "Escalation paths differed supplier vs internal",
+        "bridge": "Alert rule DSL models escalation, not just thresholds"
+      },
+      "ai": {
+        "day_index": 111,
+        "title": "Day 111 of Learning LLM Inference \u2014 Alert DSL \u2014 Rules as Data",
+        "subtitle": "PromQL-style expressiveness for quality",
+        "hook": "YAML compiled to evaluator bytecode"
+      },
+      "thread": "Today's design thread: YAML compiled to evaluator bytecode \u2194 Alert rule DSL models escalation, not just thresholds",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 112,
+      "status": "pending",
+      "weekday": "Tue",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "alert-rule-engine",
+      "code": "alert-rule-engine: Rule engine evaluator \u2014 YAML rules \u2192 state machine; debounce duplicate alerts within 30m window.",
+      "experience": {
+        "title": "Debounce Duplicate Alerts \u2014 Agoda Kafka Consumer Bug",
+        "subtitle": "Same lag alert 400\u00d7 in 10m\u2014added silencing window",
+        "bridge": "30m dedupe on drift prevents webhook storms to FineForge"
+      },
+      "ai": {
+        "day_index": 112,
+        "title": "Day 112 of Learning LLM Inference \u2014 Alert Deduplication \u2014 State Machines",
+        "subtitle": "Debounce windows like rate limiters",
+        "hook": "State keyed by `rule_id+tenant`"
+      },
+      "thread": "Today's design thread: State keyed by `rule_id+tenant` \u2194 30m dedupe on drift prevents webhook storms to FineForge",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 113,
+      "status": "pending",
+      "weekday": "Wed",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "alert-rule-engine",
+      "code": "alert-rule-engine: Auto-retrain webhook POST to FineForge `/hooks/retrain` with dataset window + model_id; retry with exponential backoff.",
+      "experience": {
+        "title": "Webhook Retries \u2014 Stripe-Style at Stealth Payments",
+        "subtitle": "Exponential backoff + idempotency keys mandatory",
+        "bridge": "Auto-retrain webhook spec copies payment webhook hardening"
+      },
+      "ai": {
+        "day_index": 113,
+        "title": "Day 113 of Learning LLM Inference \u2014 Webhooks \u2014 Contract for Auto-Retrain",
+        "subtitle": "POST body schema triggers FineForge pipeline",
+        "hook": "OpenAPI spec for `/hooks/retrain`"
+      },
+      "thread": "Today's design thread: OpenAPI spec for `/hooks/retrain` \u2194 Auto-retrain webhook spec copies payment webhook hardening",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 114,
+      "status": "pending",
+      "weekday": "Thu",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "alert-rule-engine",
+      "code": "alert-rule-engine: A/B live comparison mode \u2014 route 5% traffic to candidate model when drift detected; collect paired scores.",
+      "experience": {
+        "title": "Wayfair A/B Price Tests \u2014 Ethical Holdouts",
+        "subtitle": "Holdout group size ethics translated to model experiments",
+        "bridge": "5% candidate traffic mirror is a controlled experiment"
+      },
+      "ai": {
+        "day_index": 114,
+        "title": "Day 114 of Learning LLM Inference \u2014 Live A/B \u2014 Traffic Splitting for Models",
+        "subtitle": "5% canary like feature flags",
+        "hook": "Candidate model id in routing config"
+      },
+      "thread": "Today's design thread: Candidate model id in routing config \u2194 5% candidate traffic mirror is a controlled experiment",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 115,
+      "status": "pending",
+      "weekday": "Fri",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "alert-rule-engine",
+      "code": "alert-rule-engine: 4-product integration test \u2014 LensAI metrics \u2192 TraceForge trace \u2192 DriftWatch alert \u2192 webhook 202.",
+      "experience": {
+        "title": "Integration Testing Pyramid \u2014 BrowserStack CI",
+        "subtitle": "E2E few, contract many\u2014saved hours daily",
+        "bridge": "4-product test is the capstone E2E for platform credibility"
+      },
+      "ai": {
+        "day_index": 115,
+        "title": "Day 115 of Learning LLM Inference \u2014 Platform E2E \u2014 Closing the Loop Diagram",
+        "subtitle": "Five products one diagram for interviews",
+        "hook": "Integration test asserts webhook 202"
+      },
+      "thread": "Today's design thread: Integration test asserts webhook 202 \u2194 4-product test is the capstone E2E for platform credibility",
+      "project_blog": "Alert Rule Engine \u2014 Dedup, Escalation, and the Auto-Retrain Webhook Contract",
+      "product_blog": null
+    },
+    {
+      "day": 116,
+      "status": "pending",
+      "weekday": "Sat",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "alert-rule-engine",
+      "code": "alert-rule-engine: PagerDuty/Slack notification adapters; on-call runbook in RUNBOOK.md.",
+      "experience": {
+        "title": "Runbooks That Get Used \u2014 Slack Link Previews",
+        "subtitle": "Runbook in alert footer reduced MTTR 25%",
+        "bridge": "RUNBOOK.md linked from every DriftWatch notification"
+      },
+      "ai": {
+        "day_index": 116,
+        "title": "Day 116 of Learning LLM Inference \u2014 On-Call Interfaces \u2014 Slack vs PagerDuty",
+        "subtitle": "Severity routing is product design",
+        "hook": "Adapter interface in alert engine"
+      },
+      "thread": "Today's design thread: Adapter interface in alert engine \u2194 RUNBOOK.md linked from every DriftWatch notification",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 117,
+      "status": "pending",
+      "weekday": "Sun",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "alert-rule-engine",
+      "code": "alert-rule-engine: Load test alert storm (100 rules firing); verify dedupe; extend RUNBOOK.md with storm-test results (project blog published Day 115).",
+      "experience": {
+        "title": "Load Test Alert Storm \u2014 Agoda Black Friday Prep",
+        "subtitle": "Validated alert pipeline at 10\u00d7 normal cardinality",
+        "bridge": "100-rule storm test before DriftWatch launch week"
+      },
+      "ai": {
+        "day_index": 117,
+        "title": "Day 117 of Learning LLM Inference \u2014 Alert Storms \u2014 Backpressure on Notifications",
+        "subtitle": "Protect humans and downstream webhooks",
+        "hook": "Load test validates dedupe under storm"
+      },
+      "thread": "Today's design thread: Load test validates dedupe under storm \u2194 100-rule storm test before DriftWatch launch week",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 118,
+      "status": "pending",
+      "weekday": "Mon",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "driftwatch-launch",
+      "code": "driftwatch-launch: README + demo GIF of drift alert \u2192 webhook; Helm chart; org `driftwatch-dev` branding.",
+      "experience": {
+        "title": "Open Source Launch Checklist \u2014 First Repo Public",
+        "subtitle": "README, LICENSE, CONTRIBUTING before HN or critics arrive",
+        "bridge": "driftwatch-dev org polish mirrors LensAI launch discipline"
+      },
+      "ai": {
+        "day_index": 118,
+        "title": "Day 118 of Learning LLM Inference \u2014 MLOps Launch \u2014 Baseline + Monitor + Act",
+        "subtitle": "Ship detector before auto-action",
+        "hook": "Launch README lists 4-product wiring"
+      },
+      "thread": "Today's design thread: Launch README lists 4-product wiring \u2194 driftwatch-dev org polish mirrors LensAI launch discipline",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 119,
+      "status": "pending",
+      "weekday": "Tue",
+      "product": "driftwatch",
+      "product_name": "DriftWatch",
+      "repo": "driftwatch-launch",
+      "code": "driftwatch-launch: Product essay + HN launch; tag v1.0.0; apply Arize/WhyLabs/Modal; 4-product compose verification.",
+      "experience": {
+        "title": "Month 4 Recap \u2014 Platform Story for Recruiters",
+        "subtitle": "Four connected products > four READMEs",
+        "bridge": "DriftWatch product essay positions auto-retrain as Staff judgment"
+      },
+      "ai": {
+        "day_index": 119,
+        "title": "Day 119 of Learning LLM Inference \u2014 Auto-Retrain Loops \u2014 Platform Closure",
+        "subtitle": "DriftWatch\u2192FineForge is event-driven architecture",
+        "hook": "Product essay narrates closed loop"
+      },
+      "thread": "Today's design thread: Product essay narrates closed loop \u2194 DriftWatch product essay positions auto-retrain as Staff judgment",
+      "project_blog": null,
+      "product_blog": "DriftWatch \u2014 Closing the MLOps Loop with Shadow Traffic, Judges, and Auto-Retrain Webhooks"
+    },
+    {
+      "day": 120,
+      "status": "pending",
+      "weekday": "Wed",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "data-prep-pipeline",
+      "code": "data-prep-pipeline: DESIGN.md \u2014 ClickHouse source tables, PII fields, dedup keys, Alpaca vs ShareGPT export, train/eval stratification.",
+      "experience": {
+        "title": "Training Data Is Production Data \u2014 Legal at Walmart",
+        "subtitle": "PII in logs almost shipped to vendor\u2014legal review caught",
+        "bridge": "PII scrubber fail-closed before any Parquet export"
+      },
+      "ai": {
+        "day_index": 120,
+        "title": "Day 120 of Learning LLM Inference \u2014 Instruction Tuning Formats \u2014 Alpaca vs ShareGPT",
+        "subtitle": "Schema choice affects tokenizer efficiency",
+        "hook": "Export CLI supports both formats"
+      },
+      "thread": "Today's design thread: Export CLI supports both formats \u2194 PII scrubber fail-closed before any Parquet export",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 121,
+      "status": "pending",
+      "weekday": "Thu",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "data-prep-pipeline",
+      "code": "data-prep-pipeline: LensAI ClickHouse connector \u2014 SQL pull last 30d high-quality conversations (`judge_score>0.8`).",
+      "experience": {
+        "title": "ClickHouse at Agoda \u2014 Why We Left Pure Prometheus",
+        "subtitle": "High-cardinality queries needed columnar rollups",
+        "bridge": "FineForge pulls training rows from same ClickHouse spine as LensAI"
+      },
+      "ai": {
+        "day_index": 121,
+        "title": "Day 121 of Learning LLM Inference \u2014 Mining Production Logs for SFT Data",
+        "subtitle": "ClickHouse SQL as feature store",
+        "hook": "Connector query filters high judge_score"
+      },
+      "thread": "Today's design thread: Connector query filters high judge_score \u2194 FineForge pulls training rows from same ClickHouse spine as LensAI",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 122,
+      "status": "pending",
+      "weekday": "Fri",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "data-prep-pipeline",
+      "code": "data-prep-pipeline: PII scrubber \u2014 regex + NER pass for emails/phones; audit log of redactions; fail closed on high-risk rows.",
+      "experience": {
+        "title": "GDPR Delete Requests \u2014 Delivery Hero User Erasure",
+        "subtitle": "Had to cascade delete across 4 stores",
+        "bridge": "PII audit log proves compliance for fine-tune datasets"
+      },
+      "ai": {
+        "day_index": 122,
+        "title": "Day 122 of Learning LLM Inference \u2014 PII in Training Data \u2014 NER + Regex",
+        "subtitle": "Fail closed like PCI scrubbers",
+        "hook": "Redaction audit table schema"
+      },
+      "thread": "Today's design thread: Redaction audit table schema \u2194 PII audit log proves compliance for fine-tune datasets",
+      "project_blog": "Data Prep Pipeline \u2014 ClickHouse \u2192 PII Scrub \u2192 Dedup \u2192 Instruction-Tuning JSONL",
+      "product_blog": null
+    },
+    {
+      "day": 123,
+      "status": "pending",
+      "weekday": "Sat",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "data-prep-pipeline",
+      "code": "data-prep-pipeline: Dedup via MinHash on prompt text; quality filter drop bottom quartile; output Parquet shards.",
+      "experience": {
+        "title": "Dedup at 1.5T/day \u2014 Bloom vs MinHash Tradeoff",
+        "subtitle": "False positive rate budgeted per query cost",
+        "bridge": "MinHash dedup chooses cheap approximate duplicate detection"
+      },
+      "ai": {
+        "day_index": 123,
+        "title": "Day 123 of Learning LLM Inference \u2014 MinHash Dedup \u2014 Near-Duplicate Prompts",
+        "subtitle": "Similar to SimHash for docs",
+        "hook": "Hamming threshold config in prep pipeline"
+      },
+      "thread": "Today's design thread: Hamming threshold config in prep pipeline \u2194 MinHash dedup chooses cheap approximate duplicate detection",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 124,
+      "status": "pending",
+      "weekday": "Sun",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "data-prep-pipeline",
+      "code": "data-prep-pipeline: Convert to instruction-tuning JSONL (Alpaca format); stratified 90/10 split by task_type; stats notebook.",
+      "experience": {
+        "title": "Stratified Sampling \u2014 A/B Analysis at Wayfair",
+        "subtitle": "Random split biased weekend traffic\u2014stratify by segment",
+        "bridge": "Train/eval split stratified by task_type avoids leakage"
+      },
+      "ai": {
+        "day_index": 124,
+        "title": "Day 124 of Learning LLM Inference \u2014 Train/Eval Leakage \u2014 Stratified Splits",
+        "subtitle": "Same prompt different split = leakage",
+        "hook": "Stratify on `task_type` hash"
+      },
+      "thread": "Today's design thread: Stratify on `task_type` hash \u2194 Train/eval split stratified by task_type avoids leakage",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 125,
+      "status": "pending",
+      "weekday": "Mon",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "data-prep-pipeline",
+      "code": "data-prep-pipeline: Dataset dashboard \u2014 token histogram, language mix, label distribution; export `dataset_manifest.json`.",
+      "experience": {
+        "title": "Data Quality Dashboards \u2014 Walmart Sensor Null Rates",
+        "subtitle": "Null spike predicted firmware bug 48h early",
+        "bridge": "Token histogram catches broken tokenizer in export"
+      },
+      "ai": {
+        "day_index": 125,
+        "title": "Day 125 of Learning LLM Inference \u2014 Dataset Statistics \u2014 Shift Before Train",
+        "subtitle": "EDA prevents day-4 loss flatline",
+        "hook": "Manifest JSON captures distributions"
+      },
+      "thread": "Today's design thread: Manifest JSON captures distributions \u2194 Token histogram catches broken tokenizer in export",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 126,
+      "status": "pending",
+      "weekday": "Tue",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "data-prep-pipeline",
+      "code": "data-prep-pipeline: End-to-end dry run 10k rows; BENCHMARKS.md; publish Day 122 project blog on production data pitfalls.",
+      "experience": {
+        "title": "90% of ML Is Data \u2014 Manager Quote I Now Believe",
+        "subtitle": "Spent 3 weeks on features, 3 days on model",
+        "bridge": "Data prep project blog documents the real calendar time"
+      },
+      "ai": {
+        "day_index": 126,
+        "title": "Day 126 of Learning LLM Inference \u2014 Data-Centric AI \u2014 Labels from Judges",
+        "subtitle": "Use Month 4 judge scores as quality filter",
+        "hook": "Filter `judge_score>0.8` in export"
+      },
+      "thread": "Today's design thread: Filter `judge_score>0.8` in export \u2194 Data prep project blog documents the real calendar time",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 127,
+      "status": "pending",
+      "weekday": "Wed",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "lora-trainer",
+      "code": "lora-trainer: DESIGN.md \u2014 target modules, rank/alpha grid, QLoRA 4-bit, checkpoint policy, LensAI metrics stream.",
+      "experience": {
+        "title": "GPU Cluster Quotas \u2014 First Cloud Train Job",
+        "subtitle": "Preemptible VMs taught checkpoint obsession",
+        "bridge": "LoRA DESIGN starts with VRAM budget like Kafka disk budget"
+      },
+      "ai": {
+        "day_index": 127,
+        "title": "Day 127 of Learning LLM Inference \u2014 LoRA \u2014 Low-Rank Adaptation Intuition",
+        "subtitle": "Rank decomposition like compressed sensing",
+        "hook": "Target modules list in trainer config"
+      },
+      "thread": "Today's design thread: Target modules list in trainer config \u2194 LoRA DESIGN starts with VRAM budget like Kafka disk budget",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 128,
+      "status": "pending",
+      "weekday": "Thu",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "lora-trainer",
+      "code": "lora-trainer: LoRA config generator CLI \u2014 input base model + GPU VRAM \u2192 recommended rank/alpha/batch.",
+      "experience": {
+        "title": "Hyperparameter Grids \u2014 Wayfair Price Model Tuning",
+        "subtitle": "Grid search automated but needed guardrails",
+        "bridge": "Config generator prevents illegal rank for 7B on 24GB"
+      },
+      "ai": {
+        "day_index": 128,
+        "title": "Day 128 of Learning LLM Inference \u2014 Rank and Alpha \u2014 Capacity vs Overfit",
+        "subtitle": "Higher rank = more capacity, more VRAM",
+        "hook": "CLI prints recommended rank for GPU"
+      },
+      "thread": "Today's design thread: CLI prints recommended rank for GPU \u2194 Config generator prevents illegal rank for 7B on 24GB",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 129,
+      "status": "pending",
+      "weekday": "Fri",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "lora-trainer",
+      "code": "lora-trainer: QLoRA training script (HF PEFT) on prepared JSONL; log loss/grad_norm every 50 steps to Kafka.",
+      "experience": {
+        "title": "Training Metrics \u2014 Agoda Ingestion Lag Analogy",
+        "subtitle": "Watch consumer lag not just loss curve",
+        "bridge": "Stream loss to LensAI like ingestion metrics"
+      },
+      "ai": {
+        "day_index": 129,
+        "title": "Day 129 of Learning LLM Inference \u2014 QLoRA \u2014 4-bit Training",
+        "subtitle": "Quantized base weights save memory",
+        "hook": "bitsandbytes config in training script"
+      },
+      "thread": "Today's design thread: bitsandbytes config in training script \u2194 Stream loss to LensAI like ingestion metrics",
+      "project_blog": "LoRA Trainer \u2014 QLoRA on 7B, Checkpoint WAL, and Real GPU Dollar Costs",
+      "product_blog": null
+    },
+    {
+      "day": 130,
+      "status": "pending",
+      "weekday": "Sat",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "lora-trainer",
+      "code": "lora-trainer: Checkpoint manager \u2014 save every 500 steps to MinIO; resume from latest on crash.",
+      "experience": {
+        "title": "Checkpoint Corruption \u2014 Resume After Spot Kill",
+        "subtitle": "Lost 6h once without step checkpoints",
+        "bridge": "MinIO checkpoint every 500 steps is WAL for training"
+      },
+      "ai": {
+        "day_index": 130,
+        "title": "Day 130 of Learning LLM Inference \u2014 Checkpointing \u2014 WAL for Gradients",
+        "subtitle": "Resume training like Kafka offset commit",
+        "hook": "Checkpoint metadata in MinIO manifest"
+      },
+      "thread": "Today's design thread: Checkpoint metadata in MinIO manifest \u2194 MinIO checkpoint every 500 steps is WAL for training",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 131,
+      "status": "pending",
+      "weekday": "Sun",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "lora-trainer",
+      "code": "lora-trainer: Training cost calculator \u2014 GPU $/hr \u00d7 wall time \u2192 total; expose in CLI summary.",
+      "experience": {
+        "title": "FinOps GPU \u2014 Finance Asked for Cost Per Model",
+        "subtitle": "Tagged cloud resources by `model_id` label",
+        "bridge": "Training cost CLI answers 'what did this adapter cost'"
+      },
+      "ai": {
+        "day_index": 131,
+        "title": "Day 131 of Learning LLM Inference \u2014 GPU Cost Accounting \u2014 $/1M Tokens Trained",
+        "subtitle": "FinOps for training not just inference",
+        "hook": "CLI prints total $ from wall\u00d7$/hr"
+      },
+      "thread": "Today's design thread: CLI prints total $ from wall\u00d7$/hr \u2194 Training cost CLI answers 'what did this adapter cost'",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 132,
+      "status": "pending",
+      "weekday": "Mon",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "lora-trainer",
+      "code": "lora-trainer: Run first full training on 7B (4\u00d7A10 or cloud spot); capture final adapter weights.",
+      "experience": {
+        "title": "First Successful Train \u2014 Emotional Milestone",
+        "subtitle": "Loss flatlined day 1\u2014bad data; day 4 clicked",
+        "bridge": "Full 7B run is your 'pipeline works' moment"
+      },
+      "ai": {
+        "day_index": 132,
+        "title": "Day 132 of Learning LLM Inference \u2014 Training Curves \u2014 Loss vs Generalization",
+        "subtitle": "Watch eval loss not train loss",
+        "hook": "Log eval every N steps to Kafka"
+      },
+      "thread": "Today's design thread: Log eval every N steps to Kafka \u2194 Full 7B run is your 'pipeline works' moment",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 133,
+      "status": "pending",
+      "weekday": "Tue",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "lora-trainer",
+      "code": "lora-trainer: Post-training sanity generation samples; document hyperparameter sweep results.",
+      "experience": {
+        "title": "Sanity Generations \u2014 Smell Test Before Eval",
+        "subtitle": "Model spewing JSON meant broken template",
+        "bridge": "Sample outputs before expensive eval harness"
+      },
+      "ai": {
+        "day_index": 133,
+        "title": "Day 133 of Learning LLM Inference \u2014 Qualitative Eval \u2014 Smell Tests",
+        "subtitle": "Human scan before harness",
+        "hook": "Sample generation script output"
+      },
+      "thread": "Today's design thread: Sample generation script output \u2194 Sample outputs before expensive eval harness",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 134,
+      "status": "pending",
+      "weekday": "Wed",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "eval-harness",
+      "code": "eval-harness: DESIGN.md \u2014 held-out test set, metrics (exact match, judge score, latency), baseline models list.",
+      "experience": {
+        "title": "Leakage \u2014 Train/Test Contamination Postmortem",
+        "subtitle": "Near-duplicate prompts inflated eval 20 points",
+        "bridge": "Eval harness DESIGN starts with leakage checks"
+      },
+      "ai": {
+        "day_index": 134,
+        "title": "Day 134 of Learning LLM Inference \u2014 Eval Harness Design \u2014 Held-Out Sets",
+        "subtitle": "Never tune on eval set",
+        "hook": "Lock test set hash in registry metadata"
+      },
+      "thread": "Today's design thread: Lock test set hash in registry metadata \u2194 Eval harness DESIGN starts with leakage checks",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 135,
+      "status": "pending",
+      "weekday": "Thu",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "eval-harness",
+      "code": "eval-harness: Batch inference runner for base vs LoRA vs GPT-4o on same prompts; store results Parquet.",
+      "experience": {
+        "title": "Benchmark Honesty \u2014 Don't Cherry-Pick 10 Prompts",
+        "subtitle": "Wayfair pricing eval used 2k SKU sample minimum",
+        "bridge": "Batch runner uses full held-out set, not demos"
+      },
+      "ai": {
+        "day_index": 135,
+        "title": "Day 135 of Learning LLM Inference \u2014 Batch Inference \u2014 Throughput for Eval",
+        "subtitle": "vLLM batch mode for eval runs",
+        "hook": "Runner uses shared prompt batch API"
+      },
+      "thread": "Today's design thread: Runner uses shared prompt batch API \u2194 Batch runner uses full held-out set, not demos",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 136,
+      "status": "pending",
+      "weekday": "Fri",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "eval-harness",
+      "code": "eval-harness: Aggregate metrics table \u2014 win-rate per task_type; statistical significance vs base.",
+      "experience": {
+        "title": "Win-Rate vs Accuracy \u2014 Stakeholder Language",
+        "subtitle": "PM understood win-rate; not F1",
+        "bridge": "Aggregate table speaks product language for fine-tune"
+      },
+      "ai": {
+        "day_index": 136,
+        "title": "Day 136 of Learning LLM Inference \u2014 Comparing Models \u2014 Win-Rate and CI",
+        "subtitle": "Confidence intervals on win-rate",
+        "hook": "Report Wilson interval in results"
+      },
+      "thread": "Today's design thread: Report Wilson interval in results \u2194 Aggregate table speaks product language for fine-tune",
+      "project_blog": "Eval Harness + Model Registry \u2014 Honest Win-Rates Before Production Promotion",
+      "product_blog": null
+    },
+    {
+      "day": 137,
+      "status": "pending",
+      "weekday": "Sat",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "eval-harness",
+      "code": "eval-harness: HTML report generator with failure case gallery; wire worst cases to DriftWatch samples.",
+      "experience": {
+        "title": "Failure Galleries \u2014 How Support Triages Tickets",
+        "subtitle": "Worst examples taught more than mean metric",
+        "bridge": "HTML report gallery is support-triage for models"
+      },
+      "ai": {
+        "day_index": 137,
+        "title": "Day 137 of Learning LLM Inference \u2014 Error Analysis \u2014 Failure Taxonomies",
+        "subtitle": "Cluster failures like incident tags",
+        "hook": "Gallery groups by error type"
+      },
+      "thread": "Today's design thread: Gallery groups by error type \u2194 HTML report gallery is support-triage for models",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 138,
+      "status": "pending",
+      "weekday": "Sun",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "model-registry",
+      "code": "model-registry: Implement registry API \u2014 upload artifact + metadata (eval scores, git sha, dataset hash).",
+      "experience": {
+        "title": "Artifact Storage \u2014 Wayfair Model Pickle Incidents",
+        "subtitle": "Unversioned blobs caused rollback panic",
+        "bridge": "Registry API is S3 + metadata, not shared folder"
+      },
+      "ai": {
+        "day_index": 138,
+        "title": "Day 138 of Learning LLM Inference \u2014 Model Registry \u2014 Artifacts + Metadata",
+        "subtitle": "Git for weights with semver tags",
+        "hook": "Registry row: artifact_uri, eval_scores"
+      },
+      "thread": "Today's design thread: Registry row: artifact_uri, eval_scores \u2194 Registry API is S3 + metadata, not shared folder",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 139,
+      "status": "pending",
+      "weekday": "Mon",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "model-registry",
+      "code": "model-registry: Semantic versioning `major.minor.patch`; promote `staging\u2192production` gate requiring eval threshold.",
+      "experience": {
+        "title": "Semantic Versioning for Config \u2014 Agoda Flag Drama",
+        "subtitle": "Breaking flag schema needed major bump",
+        "bridge": "promote staging\u2192prod gate mirrors semver discipline"
+      },
+      "ai": {
+        "day_index": 139,
+        "title": "Day 139 of Learning LLM Inference \u2014 Promotion Gates \u2014 Staging to Production",
+        "subtitle": "CI gate on eval threshold",
+        "hook": "Promotion API checks min win-rate"
+      },
+      "thread": "Today's design thread: Promotion API checks min win-rate \u2194 promote staging\u2192prod gate mirrors semver discipline",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 140,
+      "status": "pending",
+      "weekday": "Tue",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "model-registry",
+      "code": "model-registry: DriftWatch baseline registration \u2014 push eval score vector for future CUSUM reference.",
+      "experience": {
+        "title": "Baseline Registration \u2014 Drift Needs a Reference",
+        "subtitle": "Can't detect drift day 1 without day 0 score",
+        "bridge": "Push eval vector to DriftWatch when registering model"
+      },
+      "ai": {
+        "day_index": 140,
+        "title": "Day 140 of Learning LLM Inference \u2014 Baselines for Drift \u2014 Register at Deploy",
+        "subtitle": "CUSUM needs \u03bc0 from eval harness",
+        "hook": "Webhook pushes baseline vector on promote"
+      },
+      "thread": "Today's design thread: Webhook pushes baseline vector on promote \u2194 Push eval vector to DriftWatch when registering model",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 141,
+      "status": "pending",
+      "weekday": "Wed",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "vllm-deploy-kit",
+      "code": "vllm-deploy-kit: DESIGN.md \u2014 Helm values for tensor parallel, KV cache, HPA on GPU utilization.",
+      "experience": {
+        "title": "Helm for Route Service on EKS \u2014 Values File Sprawl",
+        "subtitle": "Delivery Hero \u00b7 Route Service chart \u00b7 12 envs \u00d7 helmfile",
+        "bridge": "vLLM chart inherits Helm lessons from Route Service EKS values \u2014 not a generic cluster template."
+      },
+      "ai": {
+        "day_index": 141,
+        "title": "Day 141 of Learning LLM Inference \u2014 vLLM Architecture \u2014 PagedAttention Refresher",
+        "subtitle": "KV cache paging like OS virtual memory",
+        "hook": "Helm values set max_num_seqs"
+      },
+      "thread": "Today's design thread: Helm values set max_num_seqs \u2194 vLLM chart inherits Helm lessons from ingestion month",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 142,
+      "status": "pending",
+      "weekday": "Thu",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "vllm-deploy-kit",
+      "code": "vllm-deploy-kit: Helm chart deploying vLLM with LoRA adapter mount; readiness on `/health`.",
+      "experience": {
+        "title": "GPU Node Pools \u2014 Taints and Tolerations",
+        "subtitle": "CPU pods scheduling on GPU nodes wasted $$$",
+        "bridge": "nodeAffinity for vLLM prevents expensive mistakes"
+      },
+      "ai": {
+        "day_index": 142,
+        "title": "Day 142 of Learning LLM Inference \u2014 Tensor Parallel \u2014 Multi-GPU Serving",
+        "subtitle": "Split layers across GPUs",
+        "hook": "tensor_parallel_size in chart values"
+      },
+      "thread": "Today's design thread: tensor_parallel_size in chart values \u2194 nodeAffinity for vLLM prevents expensive mistakes",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 143,
+      "status": "pending",
+      "weekday": "Fri",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "vllm-deploy-kit",
+      "code": "vllm-deploy-kit: RouteIQ auto-register new model endpoint on promotion; weighted routing trial 10% traffic.",
+      "experience": {
+        "title": "Canary Routing \u2014 Agoda 5% Feature Rollout",
+        "subtitle": "Percent traffic matched error budget math",
+        "bridge": "10% RouteIQ trial on fine-tuned model copies flag rollout"
+      },
+      "ai": {
+        "day_index": 143,
+        "title": "Day 143 of Learning LLM Inference \u2014 Routing Fine-Tuned Models \u2014 Registry Integration",
+        "subtitle": "RouteIQ reads registry for endpoints",
+        "hook": "Auto-register on promotion event"
+      },
+      "thread": "Today's design thread: Auto-register on promotion event \u2194 10% RouteIQ trial on fine-tuned model copies flag rollout",
+      "project_blog": "vLLM Deploy Kit \u2014 GPU Helm, RouteIQ Registration, and the Closed-Loop Demo",
+      "product_blog": null
+    },
+    {
+      "day": 144,
+      "status": "pending",
+      "weekday": "Sat",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "vllm-deploy-kit",
+      "code": "vllm-deploy-kit: LensAI monitors fine-tuned model from first request \u2014 dashboards cloned from base model.",
+      "experience": {
+        "title": "Day-1 Monitoring \u2014 New Service Checklist",
+        "subtitle": "Dashboard cloned before launch, not after incident",
+        "bridge": "Clone LensAI dashboards for fine-tuned endpoint immediately"
+      },
+      "ai": {
+        "day_index": 144,
+        "title": "Day 144 of Learning LLM Inference \u2014 Observing Custom Models \u2014 LensAI Labels",
+        "subtitle": "model_id label on all metrics",
+        "hook": "Dashboard variables for adapter version"
+      },
+      "thread": "Today's design thread: Dashboard variables for adapter version \u2194 Clone LensAI dashboards for fine-tuned endpoint immediately",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 145,
+      "status": "pending",
+      "weekday": "Sun",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "vllm-deploy-kit",
+      "code": "vllm-deploy-kit: Simulate DriftWatch alert \u2192 webhook \u2192 retrain stub \u2192 redeploy; document loop in LOOP.md.",
+      "experience": {
+        "title": "Closed Loop Demo \u2014 The North Star Slide",
+        "subtitle": "Drew this architecture on whiteboard in interview",
+        "bridge": "Simulated retrain loop is the 5-month story in code"
+      },
+      "ai": {
+        "day_index": 145,
+        "title": "Day 145 of Learning LLM Inference \u2014 Closed-Loop MLOps \u2014 Event-Driven Retrain",
+        "subtitle": "Alert\u2192train\u2192deploy sequence",
+        "hook": "LOOP.md sequence diagram"
+      },
+      "thread": "Today's design thread: LOOP.md sequence diagram \u2194 Simulated retrain loop is the 5-month story in code",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 146,
+      "status": "pending",
+      "weekday": "Mon",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "vllm-deploy-kit",
+      "code": "vllm-deploy-kit: Load test fine-tuned endpoint vs GPT-4o on cost/latency/quality triangle.",
+      "experience": {
+        "title": "Cost/Latency/Quality Triangle \u2014 Executive Frame",
+        "subtitle": "Pick two\u2014engineering makes the third explicit",
+        "bridge": "Load test documents triangle numbers for platform essay"
+      },
+      "ai": {
+        "day_index": 146,
+        "title": "Day 146 of Learning LLM Inference \u2014 Pareto Frontier \u2014 Cost Latency Quality",
+        "subtitle": "Plot empirical frontier from load test",
+        "hook": "CSV export for platform essay chart"
+      },
+      "thread": "Today's design thread: CSV export for platform essay chart \u2194 Load test documents triangle numbers for platform essay",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 147,
+      "status": "pending",
+      "weekday": "Tue",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "vllm-deploy-kit",
+      "code": "vllm-deploy-kit: Production hardening \u2014 PDB, GPU node affinity, graceful rollout; BENCHMARKS.md.",
+      "experience": {
+        "title": "Graceful Rollout \u2014 Wayfair Zero-Downtime Price Push",
+        "subtitle": "Blue/green for config, not big bang",
+        "bridge": "PDB + rolling update on GPU workloads"
+      },
+      "ai": {
+        "day_index": 147,
+        "title": "Day 147 of Learning LLM Inference \u2014 GPU Rollouts \u2014 Surge During Deploy",
+        "subtitle": "Rolling update avoids all GPUs busy",
+        "hook": "maxUnavailable=1 on GPU deployment"
+      },
+      "thread": "Today's design thread: maxUnavailable=1 on GPU deployment \u2194 PDB + rolling update on GPU workloads",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 148,
+      "status": "pending",
+      "weekday": "Wed",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "platform-launch",
+      "code": "platform-launch: Unified landing page linking 5 products; architecture video script; compose `platform-quickstart`.",
+      "experience": {
+        "title": "Portfolio Launch \u2014 Cohesive Narrative",
+        "subtitle": "Five repos without story = confusion",
+        "bridge": "Unified landing is recruiter UX"
+      },
+      "ai": {
+        "day_index": 148,
+        "title": "Day 148 of Learning LLM Inference \u2014 Platform Architecture \u2014 Five Products One Story",
+        "subtitle": "Interview whiteboard in HTML",
+        "hook": "Landing page copy ties north star"
+      },
+      "thread": "Today's design thread: Landing page copy ties north star \u2194 Unified landing is recruiter UX",
+      "project_blog": null,
+      "product_blog": null
+    },
+    {
+      "day": 149,
+      "status": "pending",
+      "weekday": "Thu",
+      "product": "fineforge",
+      "product_name": "FineForge",
+      "repo": "platform-launch",
+      "code": "platform-launch: Platform product essay + HN Show HN; tag platform-v1.0.0; 5-product integration demo recording; aggressive apply list (Anthropic, OpenAI, Modal, Together, Cohere).",
+      "experience": {
+        "title": "150 Days \u2014 What I'd Tell Day-0 Me",
+        "subtitle": "Consistency beat intensity; public build attracted inbound",
+        "bridge": "Platform essay closes loop: observability\u2192route\u2192drift\u2192retrain"
+      },
+      "ai": {
+        "day_index": 149,
+        "title": "Day 149 of Learning LLM Inference \u2014 150 Days of LLM Inference \u2014 Curriculum Recap",
+        "subtitle": "Spine: observe\u2192trace\u2192route\u2192drift\u2192retrain",
+        "hook": "Final essay links AI Day 0\u2013149 themes"
+      },
+      "thread": "Today's design thread: Final essay links AI Day 0\u2013149 themes \u2194 Platform essay closes loop: observability\u2192route\u2192drift\u2192retrain",
+      "project_blog": null,
+      "product_blog": "The Self-Healing AI Infrastructure Platform \u2014 Five Products, One Loop, 150 Days"
+    }
+  ]
+}

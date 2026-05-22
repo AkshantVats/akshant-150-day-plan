@@ -236,12 +236,12 @@
     </div>
   </div>
 </article>
-<article class="day-block status-today" id="day-6" data-product="lensai" data-status="today" data-repo="infra-ai-streaming">
+<article class="day-block status-done" id="day-6" data-product="lensai" data-status="done" data-repo="infra-ai-streaming">
   <header class="day-hdr">
     <div class="day-num">006</div>
     <div class="day-title-wrap">
       <div class="day-title">infra-ai-streaming</div>
-      <div class="day-meta">Monday · <code>infra-ai-streaming</code> · <span class="badge badge-today">Today</span></div>
+      <div class="day-meta">Monday · <code>infra-ai-streaming</code> · <span class="badge badge-done">Done</span></div>
     </div>
     <span class="day-chevron">▼</span>
   </header>
@@ -271,12 +271,12 @@
     </div>
   </div>
 </article>
-<article class="day-block status-pending" id="day-7" data-product="lensai" data-status="pending" data-repo="infra-ai-streaming">
+<article class="day-block status-done" id="day-7" data-product="lensai" data-status="done" data-repo="infra-ai-streaming">
   <header class="day-hdr">
     <div class="day-num">007</div>
     <div class="day-title-wrap">
       <div class="day-title">infra-ai-streaming</div>
-      <div class="day-meta">Tuesday · <code>infra-ai-streaming</code> · <span class="badge badge-pending">Pending</span></div>
+      <div class="day-meta">Tuesday · <code>infra-ai-streaming</code> · <span class="badge badge-done">Done</span></div>
     </div>
     <span class="day-chevron">▼</span>
   </header>
@@ -306,12 +306,12 @@
     </div>
   </div>
 </article>
-<article class="day-block status-pending" id="day-8" data-product="lensai" data-status="pending" data-repo="infra-ai-streaming">
+<article class="day-block status-today" id="day-8" data-product="lensai" data-status="today" data-repo="infra-ai-streaming">
   <header class="day-hdr">
     <div class="day-num">008</div>
     <div class="day-title-wrap">
       <div class="day-title">infra-ai-streaming</div>
-      <div class="day-meta">Wednesday · <code>infra-ai-streaming</code> · <span class="badge badge-pending">Pending</span></div>
+      <div class="day-meta">Wednesday · <code>infra-ai-streaming</code> · <span class="badge badge-today">Today</span></div>
     </div>
     <span class="day-chevron">▼</span>
   </header>
@@ -358,9 +358,9 @@
       </div>
       <div class="detail-card exp">
         <div class="dc-label">Experience blog</div>
-        <div class="dc-title">250k SKUs in Sub-Second — Event-Driven vs Polling</div>
-        <div class="dc-sub">Wayfair · price propagation · why streams win</div>
-        <div class="dc-body"><em>Bridge → code:</em> Publishing the portfolio site today is shipping a read model — same as making pricing updates visible without batch lag.</div>
+        <div class="dc-title">Delphi → Aletheia Feed — Sub-Second Price Visibility</div>
+        <div class="dc-sub">Wayfair · pricing_refresh Kafka · distribution path — event-driven beats polling</div>
+        <div class="dc-body"><em>Bridge → code:</em> Publishing the portfolio site today is shipping a read model — same discipline as Delphi feeding Aletheia without batch lag on 250k SKUs.</div>
       </div>
       <div class="detail-card ai">
         <div class="dc-label">AI learning · Day 9</div>
@@ -568,9 +568,9 @@
       </div>
       <div class="detail-card exp">
         <div class="dc-label">Experience blog</div>
-        <div class="dc-title">Async Pipelines That Survived Dinner Rush</div>
-        <div class="dc-sub">Delivery Hero · SQS/Kinesis · decoupling notifications from analytics</div>
-        <div class="dc-body"><em>Bridge → code:</em> Socket-level probes today are the lightest-weight tap on a path that must not add milliseconds DH couldn&#x27;t afford.</div>
+        <div class="dc-title">Order SQS → Route Consumers — Decoupling Map-Match from Status</div>
+        <div class="dc-sub">Delivery Hero · Order SQS lifecycle · Route Consumers → OSRM off the status hot path</div>
+        <div class="dc-body"><em>Bridge → code:</em> Async notifications use SQS+Kinesis elsewhere — this post is Order SQS into Route Consumers, not a Kinesis-only map-match story.</div>
       </div>
       <div class="detail-card ai">
         <div class="dc-label">AI learning · Day 15</div>
@@ -674,8 +674,8 @@
       <div class="detail-card exp">
         <div class="dc-label">Experience blog</div>
         <div class="dc-title">Rate Limiting at the Supplier Boundary — Not the Textbook Diagram</div>
-        <div class="dc-sub">Wayfair · token bucket in production</div>
-        <div class="dc-body"><em>Bridge → code:</em> WAL on ingestion plus ebpf backpressure policy is the same &#x27;never lose the write&#x27; instinct as supplier API durability.</div>
+        <div class="dc-sub">Wayfair · UCMS · gst-acc-promotions · supplier token bucket in production</div>
+        <div class="dc-body"><em>Bridge → code:</em> WAL on ingestion plus ebpf backpressure policy is the same &#x27;never lose the write&#x27; instinct as gst-acc-promotions durability at the supplier boundary.</div>
       </div>
       <div class="detail-card ai">
         <div class="dc-label">AI learning · Day 18</div>
@@ -743,9 +743,9 @@
       </div>
       <div class="detail-card exp">
         <div class="dc-label">Experience blog</div>
-        <div class="dc-title">Peak Kubernetes — HPA Reacts, It Doesn&#x27;t Predict</div>
-        <div class="dc-sub">Delivery Hero · 10k concurrent · PDBs during deploys</div>
-        <div class="dc-body"><em>Bridge → code:</em> Second OSS PR on Kafka rebalancing is credibility for the bus every LensAI component shares.</div>
+        <div class="dc-title">Route Consumer Lag — Why CPU-Based HPA Failed at Lunch Rush</div>
+        <div class="dc-sub">Delivery Hero · Route Consumers · Order SQS depth as the scale signal</div>
+        <div class="dc-body"><em>Bridge → code:</em> Day 8 covered generic EKS peak patterns — today is consumer lag and queue depth, not another CPU-HPA essay.</div>
       </div>
       <div class="detail-card ai">
         <div class="dc-label">AI learning · Day 20</div>
@@ -884,8 +884,8 @@
       <div class="detail-card exp">
         <div class="dc-label">Experience blog</div>
         <div class="dc-title">BigQuery Streaming vs Batch — Burst Traffic Truth</div>
-        <div class="dc-sub">Wayfair · data platform · slots and surprises</div>
-        <div class="dc-body"><em>Bridge → code:</em> Audit Kafka topic for flags is BigQuery streaming inserts done right — append-only, replayable, owned.</div>
+        <div class="dc-sub">Wayfair · PAS analytics · pas-analytics Pub/Sub — slots under burst</div>
+        <div class="dc-body"><em>Bridge → code:</em> Audit Kafka topic for flags is pas-analytics Pub/Sub done right — append-only, replayable, owned.</div>
       </div>
       <div class="detail-card ai">
         <div class="dc-label">AI learning · Day 24</div>
