@@ -129,7 +129,17 @@ Do **not** open a PR until the user has run (or watched) local proof and signed 
 - [ ] Local verification checklist completed (infra compose + dashboards, and/or Profile `http.server` preview)
 - [ ] User received showcase (commands + URLs + pass criteria)
 - [ ] User sign-off recorded in chat
-- [ ] **Then only:** push feature branch(es) and open PR(s) — PR creation is the **last** step, not part of implementation
+
+### Pre-push — sync with `main` & resolve conflicts
+
+Before `git push` or opening/updating a PR on **infra-ai-streaming** or **Profile**:
+
+- [ ] `git fetch origin` — remotes up to date
+- [ ] Merge or rebase `origin/main` onto the feature branch (rebase if solo; merge if others use the branch)
+- [ ] Check mergeability: clean `git merge origin/main` locally, or GitHub PR shows no conflicts
+- [ ] Resolve conflicts if any — common hotspots: `blog/series-index.json`, shared scripts, `deploy/docker-compose.yml`, dashboard JSON under `dashboards/`
+- [ ] Re-run local verification / preview ([Phase 3.5](#phase-35--local-verification--user-showcase-mandatory-before-pr) table) after conflict resolution
+- [ ] **Then only:** push feature branch(es) and open/update PR(s) — PR creation is the **last** step, not part of implementation
 
 ### Phase 4 — End of day
 
@@ -408,6 +418,7 @@ Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `perf`.
 - [x] Commits made locally with messages above
 - [x] **Do not `git push`** until user explicitly says push (default: local only)
 - [x] Complete [Phase 3.5 — Local verification & user showcase](#phase-35--local-verification--user-showcase-mandatory-before-pr) before any push or PR
+- [ ] **Pre-push:** fetch `origin`, merge/rebase `origin/main`, resolve conflicts, re-verify locally ([Pre-push — sync with `main`](#pre-push--sync-with-main--resolve-conflicts))
 - [x] If user approves push (sign-off phrase): push branch, **then** open PR if applicable, paste PR URL to user — never open PR before approval
 
 ---
@@ -450,6 +461,7 @@ Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `perf`.
 - [ ] Push plan website or `data/plan.json` to public GitHub
 - [ ] Push code without user saying push
 - [ ] Open a PR before user local test + explicit sign-off ([Phase 3.5](#phase-35--local-verification--user-showcase-mandatory-before-pr))
+- [ ] Push or open/update a PR without syncing `main` and resolving merge conflicts first
 - [ ] Write LinkedIn/X posts in agent scope (links only after site publish)
 
 ---

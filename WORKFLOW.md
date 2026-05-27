@@ -58,6 +58,17 @@ plan.json + CHECKLIST.md
 
 Implementation agents must **re-open the approved md** before coding or publishing — not rely on chat memory alone.
 
+### Before push or PR (code / Profile)
+
+After implementation and user sign-off ([CHECKLIST.md](CHECKLIST.md) Phase 3.5), and **before** `git push` or opening/updating a PR:
+
+1. `git fetch origin`
+2. Merge or rebase `origin/main` onto the feature branch
+3. Confirm mergeable locally (`git merge origin/main` clean) or on GitHub (no conflicts)
+4. Resolve conflicts if any (`series-index.json`, shared scripts, compose, dashboards, etc.)
+5. Re-run local verification / preview from Phase 3.5
+6. Push, then open or update the PR
+
 ### Scope changes during review
 
 1. Edit the appropriate `plans/day-NN-*.md`.
