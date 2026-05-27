@@ -249,6 +249,7 @@ Pre-flight on calendar day **N**: highest AI file should be `day-(N-1)-*.html` w
 
 ### Workflow (strict)
 
+- [ ] **Diagrams:** follow Profile [`blog/DIAGRAM-STYLE.md`](https://github.com/akshantvats/Profile/blob/main/blog/DIAGRAM-STYLE.md); run `node scripts/verify-blog-diagrams.mjs --slug <slug>` before PR
 - [x] **Draft in chat first** (outline + key paragraphs + mermaid source)
 - [x] User review & approval on draft
 - [x] **NO HTML file** until user explicitly approves draft
