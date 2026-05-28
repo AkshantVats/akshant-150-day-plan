@@ -26,3 +26,4 @@ scripts/cover_generated/
 
 # Node modules
 node_modules/
+config/
