@@ -1,5 +1,5 @@
 {
-  "current_day": 12,
+  "current_day": 13,
   "days": [
     {
       "day": 0,
@@ -283,7 +283,7 @@
     },
     {
       "day": 12,
-      "status": "today",
+      "status": "done",
       "weekday": "Sunday",
       "product": "lensai",
       "product_name": "LensAI",
@@ -306,7 +306,7 @@
     },
     {
       "day": 13,
-      "status": "pending",
+      "status": "today",
       "weekday": "Monday",
       "product": "lensai",
       "product_name": "LensAI",
