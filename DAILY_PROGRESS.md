@@ -7,5 +7,5 @@
   "ai_blog_pr": "merged",
   "ci_status": "passing",
   "issue_url": "https://github.com/AkshantVats/infra-ai-streaming/issues/27",
-  "notes": "BENCHMARKS.md + README polish (design decisions, benchmarks table, chaos summary) in PR #26. Both blog HTML files (Experience 12 of N, AI Day 12 of N) already merged to Profile main. Review issue #27 created with daily-review label. plan.json updated to awaiting_review."
+  "notes": "All CI green (shell, go, rust, secrets, helm). BENCHMARKS.md + README polish in PR #26. Experience 12 and AI Day 12 already merged to Profile main. Review issue #27 created. plan.json day 13 -> awaiting_review."
 }
