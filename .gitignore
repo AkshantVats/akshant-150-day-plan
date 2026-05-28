@@ -13,3 +13,16 @@ __pycache__/
 # platform.html
 # products/
 # projects/
+
+# Keep draft blog content local — only plan.json, CHECKLIST.md, WORKFLOW.md go to GitHub
+plans/drafts/
+plans/day-*-IMPLEMENT-*.md
+plans/day-*-APPROVAL-GATE.md
+
+# Cover image generation temp files
+tmp-*.png
+tmp-*/
+scripts/cover_generated/
+
+# Node modules
+node_modules/
