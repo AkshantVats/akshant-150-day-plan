@@ -329,7 +329,7 @@
     },
     {
       "day": 14,
-      "status": "today",
+      "status": "awaiting_review",
       "weekday": "Tuesday",
       "product": "lensai",
       "product_name": "LensAI",
