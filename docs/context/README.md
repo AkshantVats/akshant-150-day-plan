@@ -25,6 +25,7 @@ Canonical files for **this chat window** and future agent runs. Read before inve
 | [`resume.pdf`](resume.pdf) / [`resume-extracted.md`](resume-extracted.md) | Employers, tenure, headline metrics (1.5T/day Agoda, 5k geo/sec DH, 7M sensors Walmart, 250k SKU Wayfair). Label team vs personal scope in prose. |
 | [`cover-letter.pdf`](cover-letter.pdf) / [`cover-letter-extracted.md`](cover-letter-extracted.md) | Narrative tone, Staff/AI-infra positioning — not system topology. |
 | [`../assets/delivery-hero-rider-tracking-architecture.png`](../assets/delivery-hero-rider-tracking-architecture.png) | Whiteboard topology (2026-05-22). Pair with rider-tracking doc. |
+| [`agoda-whitefalcon-tsdb-architecture.md`](agoda-whitefalcon-tsdb-architecture.md) | **Source of truth** for Agoda: WhiteFalcon TSDB, 1.5T events/day, Kafka→Rust→Redis→Ceph/S3→Scala query, RoaringBitmap index, cross-tier quantile merge, cardinality incident, attribution boundary. |
 | [`../delivery-hero-rider-tracking-system.md`](../delivery-hero-rider-tracking-system.md) | **Source of truth** for DH: Order Service, Order SQS, Route Service (EKS), Route Consumers, OSRM, Route `{ }` object, Revisit Order System, GBQ. |
 
 ---
@@ -35,7 +36,7 @@ Canonical files for **this chat window** and future agent runs. Read before inve
 |----------|-------------|-----------|
 | Delivery Hero | `delivery-hero-rider-tracking-system.md` | Resume (SQS+Kinesis decoupling for notifications, not map hot path) |
 | Wayfair | `pricing-system-architecture.md` | Resume (team lead, 250k SKU, sub-second propagation) |
-| Agoda | Resume + plan days 0–6 shipped posts | WhiteFalcon / cardinality / cross-tier quantiles |
+| Agoda | `agoda-whitefalcon-tsdb-architecture.md` | Resume (scale/tenure), shipped posts (building-tsdb, cardinality, when-percentiles-lie) |
 | Walmart Labs | Resume | IoT / Azure Hub / stream analytics |
 | BrowserStack | Resume | Device instrumentation, CI flakiness (sparse in plan) |
 | LensAI / infra-ai-streaming | `data/plan.json` code threads | Agoda cardinality bridge in DESIGN.md |
