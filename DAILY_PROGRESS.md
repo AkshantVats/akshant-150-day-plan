@@ -1,1 +1,1 @@
-{"day": 16, "phase": "code_done", "code_pr": "https://github.com/AkshantVats/ebpf-llm-tracer/pull/3", "experience_pr": null, "ai_blog_pr": null, "morning_email_sent": false, "date_utc": "2026-06-01T17:00:00Z"}
+{"day": 16, "phase": "experience_done", "code_pr": "https://github.com/AkshantVats/ebpf-llm-tracer/pull/3", "experience_pr": "merged-direct", "ai_blog_pr": null, "morning_email_sent": false, "date_utc": "2026-06-01T17:30:00Z"}
