@@ -1,8 +1,12 @@
 {
   "day": 15,
-  "date": "2026-06-01",
-  "run": "1pm-continuation",
-  "phase": "awaiting_approval",
+  "date": "2026-06-02",
+  "run": "10pm-ist-run1",
+  "phase": "morning_email_sent",
+  "morning_email_sent": true,
+  "code_pr": "https://github.com/AkshantVats/ebpf-llm-tracer/pull/2",
+  "experience_pr": "merged-direct",
+  "ai_blog_pr": "merged-direct",
   "phases": {
     "planning": {"status": "done"},
     "code": {
@@ -31,7 +35,8 @@
     "notify": {
       "status": "done",
       "review_issue": "https://github.com/AkshantVats/infra-ai-streaming/issues/31",
-      "email": "draft_created"
+      "email": "sent_via_gmail_send_sh",
+      "email_sent_at": "2026-06-02T22:00:00+05:30"
     }
   },
   "plan_json_awaiting": "awaiting_review",
