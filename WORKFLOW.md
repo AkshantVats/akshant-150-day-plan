@@ -7,7 +7,7 @@ This document defines how **markdown plan files**, **agent chats**, and **plan m
 ## Canonical source
 
 | What | Where |
-|------|--------|
+|------|-------|
 | **Day execution plans** | `plans/day-NN-*.md` in this repo (`akshant-150-day-plan`) |
 | **Daily orchestration** | [CHECKLIST.md](CHECKLIST.md) |
 | **Day metadata** | `data/plan.json` |
@@ -39,7 +39,7 @@ plan.json + CHECKLIST.md
 - Agents **read** the relevant `day-NN-*.md` (and CHECKLIST) at **session start**.
 - Agents **write or update** those files during plan mode — not only in chat.
 
-### Chat “plan mode”
+### Chat "plan mode"
 
 - **Plan mode** = no implementation artifacts: no commits, no HTML, no Profile repo writes until approval.
 - Chat is for **human review**: summaries, questions, diffs discussed in thread.
@@ -49,8 +49,8 @@ plan.json + CHECKLIST.md
 ### After approval
 
 | User command | Agent reads | Then implements |
-|--------------|-------------|-----------------|
-| `approve code` | `plans/day-NN-code-plan.md` | infra-ai-streaming (or day’s code repo) |
+|--------------|-------------|----------------|
+| `approve code` | `plans/day-NN-code-plan.md` | infra-ai-streaming (or day's code repo) |
 | `approve experience` | `plans/day-NN-experience-blog-plan.md` | Draft in chat → HTML in Profile after approve |
 | `approve ai` | `plans/day-NN-ai-learning-blog-plan.md` | AI Learning HTML in Profile |
 
@@ -77,7 +77,9 @@ After implementation and user sign-off ([CHECKLIST.md](CHECKLIST.md) Phase 3.5),
 
 ---
 
-## Per workstream files (Day 4 example)
+## Per workstream files
+
+### Days 1–10 (legacy pattern — `plans/` directory)
 
 | File | Agent | Workstream |
 |------|-------|------------|
@@ -85,20 +87,34 @@ After implementation and user sign-off ([CHECKLIST.md](CHECKLIST.md) Phase 3.5),
 | `plans/day-04-experience-blog-plan.md` | A2 | Experience blog — outline, Walmart §1b, Mermaid, bridge |
 | `plans/day-04-ai-learning-blog-plan.md` | A3 | AI Learning blog — title format, DS analogy, schema refs |
 
-Naming pattern for other days: `day-NN-code-plan.md`, `day-NN-experience-blog-plan.md`, `day-NN-ai-learning-blog-plan.md`.
+Naming pattern: `day-NN-code-plan.md`, `day-NN-experience-blog-plan.md`, `day-NN-ai-learning-blog-plan.md`.
+
+### Days 11+ (current pattern — `docs/daily-plans/` directory)
+
+From Day 11 onward, plans live in `docs/daily-plans/` using a three-file-per-day split:
+
+| File | Agent | Workstream |
+|------|-------|------------|
+| `docs/daily-plans/day-NN-CODE.md` | A1 | Code — day repo, tests, PR |
+| `docs/daily-plans/day-NN-EXPERIENCE.md` | A2 | Experience blog — outline, employer context, Mermaid |
+| `docs/daily-plans/day-NN-AI-LEARNING.md` | A3 | AI Learning blog — title format, DS analogy, diagrams |
+
+Naming pattern: `day-NN-AI-LEARNING.md`, `day-NN-CODE.md`, `day-NN-EXPERIENCE.md` (uppercase workstream suffix).
+
+**Rule:** Always check `docs/daily-plans/` first for Day 11+. Fall back to `plans/` only for days 1–10.
 
 ---
 
 ## What agents should do (recommended)
 
-| Do | Don’t |
-|----|--------|
-| Read `plans/day-NN-*.md` at session start | Treat chat-only summaries as the contract |
+| Do | Don't |
+|----|-------|
+| Read `plans/day-NN-*.md` (days 1–10) or `docs/daily-plans/day-NN-*.md` (days 11+) at session start | Treat chat-only summaries as the contract |
 | Update md when the plan changes | Implement code/HTML while still in plan mode |
 | Re-read md after `approve *` | Use `day-004-*` branch names (see CHECKLIST **Branching & Git Standards**) |
 | Put Daily Thread in commit bodies | Put calendar day in branch names |
 
-**Plan mode ≠ “only talk in chat.”** Plan mode means **no implementation** until approve; the **md files are the contract**.
+**Plan mode ≠ "only talk in chat."** Plan mode means **no implementation** until approve; the **md files are the contract**.
 
 ---
 
