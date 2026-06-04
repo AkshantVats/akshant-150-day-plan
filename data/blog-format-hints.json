@@ -34,5 +34,15 @@
     "experience": "rollout",
     "ai": "design",
     "note": "Order SQS → Route Consumers decoupling — topology rollout, not Kinesis incident"
+  },
+  "16": {
+    "experience": "deep-dive",
+    "ai": "deep-dive",
+    "note": "The Mental Model That Made LLM Infra Click — deep-dive both series"
+  },
+  "17": {
+    "experience": "deep-dive",
+    "ai": "deep-dive",
+    "note": "LLM Observability: What Actually Matters — deep-dive both series"
   }
 }
