@@ -8,7 +8,7 @@ This document defines how **markdown plan files**, **agent chats**, and **plan m
 
 | What | Where |
 |------|-------|
-| **Day execution plans** | `plans/day-NN-*.md` (Days 1–10) or `docs/daily-plans/day-NN-*.md` (Days 11+) in this repo (`akshant-150-day-plan`) |
+| **Day execution plans** | `plans/day-NN-*.md` in this repo (`akshant-150-day-plan`) |
 | **Daily orchestration** | [CHECKLIST.md](CHECKLIST.md) |
 | **Day metadata** | `data/plan.json` |
 | **Local only** | Plan repo and `plans/` are **not pushed** to GitHub — they are your private contract with agents |
@@ -35,7 +35,7 @@ plan.json + CHECKLIST.md
 
 ### Planning phase
 
-- Plans live in markdown under `plans/` (Days 1–10) or `docs/daily-plans/` (Days 11+).
+- Plans live in markdown under `plans/`.
 - Agents **read** the relevant `day-NN-*.md` (and CHECKLIST) at **session start**.
 - Agents **write or update** those files during plan mode — not only in chat.
 
@@ -91,15 +91,17 @@ Naming pattern: `day-NN-code-plan.md`, `day-NN-experience-blog-plan.md`, `day-NN
 
 ### Days 11+ (current pattern — `docs/daily-plans/` directory)
 
-From Day 11 onward, plan files live in `docs/daily-plans/` using SCREAMING-KEBAB workstream suffixes:
+From Day 11 onward, plans live in `docs/daily-plans/` using a three-file-per-day split:
 
 | File | Agent | Workstream |
 |------|-------|------------|
-| `docs/daily-plans/day-NN-CODE.md` | A1 | Code — branches, infra, tests |
-| `docs/daily-plans/day-NN-EXPERIENCE.md` | A2 | Experience blog — outline, company context, Mermaid, bridge |
-| `docs/daily-plans/day-NN-AI-LEARNING.md` | A3 | AI Learning blog — title format, DS analogy, schema refs |
+| `docs/daily-plans/day-NN-CODE.md` | A1 | Code — day repo, tests, PR |
+| `docs/daily-plans/day-NN-EXPERIENCE.md` | A2 | Experience blog — outline, employer context, Mermaid |
+| `docs/daily-plans/day-NN-AI-LEARNING.md` | A3 | AI Learning blog — title format, DS analogy, diagrams |
 
-Example for Day 16: `docs/daily-plans/day-16-CODE.md`, `docs/daily-plans/day-16-EXPERIENCE.md`, `docs/daily-plans/day-16-AI-LEARNING.md`.
+Naming pattern: `day-NN-AI-LEARNING.md`, `day-NN-CODE.md`, `day-NN-EXPERIENCE.md` (uppercase workstream suffix).
+
+**Rule:** Always check `docs/daily-plans/` first for Day 11+. Fall back to `plans/` only for days 1–10.
 
 ---
 
@@ -107,7 +109,7 @@ Example for Day 16: `docs/daily-plans/day-16-CODE.md`, `docs/daily-plans/day-16-
 
 | Do | Don't |
 |----|-------|
-| Read `plans/day-NN-*.md` (Days 1–10) or `docs/daily-plans/day-NN-*.md` (Days 11+) at session start | Treat chat-only summaries as the contract |
+| Read `plans/day-NN-*.md` (days 1–10) or `docs/daily-plans/day-NN-*.md` (days 11+) at session start | Treat chat-only summaries as the contract |
 | Update md when the plan changes | Implement code/HTML while still in plan mode |
 | Re-read md after `approve *` | Use `day-004-*` branch names (see CHECKLIST **Branching & Git Standards**) |
 | Put Daily Thread in commit bodies | Put calendar day in branch names |
