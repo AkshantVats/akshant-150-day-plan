@@ -19,6 +19,6 @@
     "status": "open"
   },
   "oss_polish_pr": null,
-  "email_sent": false,
+  "email_sent": true,
   "feedback_applied": false
 }
