@@ -38,6 +38,18 @@
     {
       "timestamp": "2026-06-06T22:25:00+05:30",
       "error": "gmail_send.sh exit 22 — Gmail OAuth token invalid_grant: Token has been expired or revoked. Retry on next run after token refresh."
+    },
+    {
+      "timestamp": "2026-06-06T23:00:00+05:30",
+      "error": "11pm polish agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant. Could not send 'code PRs not merged' notification. Both PR #7 (Day 19) and PR #9 (Day 20) are still open/draft. OSS polish skipped. Gmail credentials need refresh."
     }
-  ]
+  ],
+  "11pm_polish_check": {
+    "timestamp": "2026-06-06T23:00:00+05:30",
+    "day19_pr": "https://github.com/AkshantVats/ebpf-llm-tracer/pull/7",
+    "day19_pr_state": "open_draft",
+    "day20_pr": "https://github.com/AkshantVats/ebpf-llm-tracer/pull/9",
+    "day20_pr_state": "open_draft",
+    "action": "polish_skipped_prs_not_merged"
+  }
 }
