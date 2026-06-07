@@ -2,7 +2,7 @@
   "current_day": 19,
   "next_day": 20,
   "phase": "morning_complete",
-  "last_run": "2026-06-07T03:05:00+05:30",
+  "last_run": "2026-06-07T08:00:00+05:30",
   "blog_prs": {
     "ai_learning": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/23",
@@ -46,13 +46,17 @@
     {
       "timestamp": "2026-06-07T03:05:00+05:30",
       "error": "3am retry agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (persistent across 3 runs). Email body ready at /tmp/email-body.html for manual send. GMAIL CREDENTIALS NEED REFRESH — see action_required below."
+    },
+    {
+      "timestamp": "2026-06-07T08:00:00+05:30",
+      "error": "8am implementation run 3: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (4th consecutive failure). Email HTML at /tmp/email-body.html. Credential re-authorization required."
     }
   ],
   "action_required": {
     "priority": "HIGH",
-    "item": "Gmail OAuth refresh token has been permanently revoked (invalid_grant across 3 runs since 10pm IST). Morning email for Day 20 has NOT been sent. To fix: (1) Re-authorize the Gmail OAuth app at Google Cloud Console, (2) Get a new refresh_token, (3) Update GMAIL_REFRESH_TOKEN in akshant-agent/.agent/credentials.env, (4) The next scheduled run will retry the email automatically.",
+    "item": "Gmail OAuth refresh token has been permanently revoked (invalid_grant across 4 runs since 10pm IST 2026-06-06). Morning email for Day 20 has NOT been sent. To fix: (1) Re-authorize the Gmail OAuth app at Google Cloud Console, (2) Get a new refresh_token, (3) Update GMAIL_REFRESH_TOKEN in akshant-agent/.agent/credentials.env, (4) The next scheduled run will retry the email automatically.",
     "day20_summary": "Day 20 complete: 2 blogs live, code PR #9 open (CI passing). PR #7 (Day 19) and PR #9 (Day 20) both await merge. Merge PR #9 to advance to Day 21.",
-    "manual_email_subject": "Day 20 ✅ — Prompt Engineering as Infra Optimization + Route Consumer Lag",
+    "manual_email_subject": "[Inferix · LensAI · Day 20] Prompt Engineering as Infra Optimization + Route Consumer Lag ✅",
     "manual_email_links": {
       "ai_blog": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-20-prompt-engineering-infra-optimization.html",
       "experience_blog": "https://akshantvats.github.io/Profile/blog/series/experience/day-20-route-consumer-lag-keda.html",
@@ -60,6 +64,15 @@
       "ai_blog_pr": "https://github.com/AkshantVats/Profile/pull/23",
       "experience_blog_pr": "https://github.com/AkshantVats/Profile/pull/22"
     }
+  },
+  "8am_run3_check": {
+    "timestamp": "2026-06-07T08:00:00+05:30",
+    "state": "email_only_run",
+    "note": "Day 20 content already complete from prior runs. Email send attempted, failed with invalid_grant (4th attempt). No new content changes needed.",
+    "email_html_ready": "/tmp/email-body.html",
+    "day20_pr9_state": "open_draft",
+    "day20_pr9_ci": "passing (from DAILY_PROGRESS.md)",
+    "next_step": "Refresh Gmail OAuth credentials, then 4pm run will re-attempt email"
   },
   "3am_check": {
     "timestamp": "2026-06-07T03:05:00+05:30",
