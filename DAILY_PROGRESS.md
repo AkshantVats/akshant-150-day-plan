@@ -2,7 +2,7 @@
   "current_day": 20,
   "next_day": 21,
   "phase": "day21_morning_complete",
-  "last_run": "2026-06-07T17:15:00+05:30",
+  "last_run": "2026-06-08T03:00:00+05:30",
   "blog_prs": {
     "ai_learning": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/23",
@@ -32,6 +32,7 @@
   "code_pr": {
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/43",
     "status": "open_draft",
+    "ci": "6/6 passing",
     "day": 21,
     "note": "distributed-flagd scaffold in infra-ai-streaming/distributed-flagd/ — merge to advance to Day 22"
   },
@@ -53,20 +54,28 @@
     "series_index_updated": true,
     "email_status": "pending"
   },
+  "day21_3am_run": {
+    "timestamp": "2026-06-08T03:00:00+05:30",
+    "action": "Attempted morning email send for Day 21",
+    "ci_check": "PR #43 infra-ai-streaming: 6/6 checks passing (go, rust, helm, secrets, shell, e2e-k3d)",
+    "email_attempt": "gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (8th consecutive failure)",
+    "email_html_built": true,
+    "status": "blocked_on_gmail_oauth"
+  },
   "oss_polish_pr": null,
   "email_sent": false,
   "morning_email_sent": false,
   "feedback_applied": false,
   "covers_status": "pillow_generated",
   "action_required": {
-    "priority": "HIGH",
+    "priority": "CRITICAL",
     "items": [
-      "1. MERGE PR #43 (Day 21 code — distributed-flagd) in infra-ai-streaming to advance: https://github.com/AkshantVats/infra-ai-streaming/pull/43",
-      "2. GMAIL OAUTH STILL BROKEN (6th+ consecutive failure) — morning email cannot be sent. Re-authorize at Google Cloud Console, update GMAIL_REFRESH_TOKEN in akshant-agent/.agent/credentials.env",
+      "1. FIX GMAIL OAUTH (8th consecutive failure) — Re-authorize at Google Cloud Console → update GMAIL_REFRESH_TOKEN in akshant-agent/.agent/credentials.env. No emails can be sent until this is resolved.",
+      "2. MERGE PR #43 (Day 21 code — distributed-flagd) in infra-ai-streaming to advance to Day 22: https://github.com/AkshantVats/infra-ai-streaming/pull/43",
       "3. Day 20 code PR #9 (ebpf-llm-tracer) also still open: https://github.com/AkshantVats/ebpf-llm-tracer/pull/9",
-      "4. DALL-E billing limit reached — covers generated with Pillow fallback (gradient + text). Upload real covers when billing restored or send via email reply."
+      "4. DALL-E billing limit reached — covers are Pillow-generated placeholders. Send PNG covers via email reply when billing restored."
     ],
-    "day21_summary": "Day 21 morning run complete. Both blogs live. distributed-flagd scaffold code PR open in infra-ai-streaming. Covers: Pillow fallback (DALL-E billing limit hit). Gmail OAuth still broken — morning email not sent.",
+    "day21_summary": "Day 21 complete. Both blogs live. CI: 6/6 passing on PR #43. Gmail OAuth broken — morning email not delivered after 8 attempts spanning 2+ days.",
     "manual_links": {
       "ai_blog_day21": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-21-production-reliability-llm-apis.html",
       "experience_blog_day21": "https://akshantvats.github.io/Profile/blog/series/experience/day-21-launchdarkly-build-vs-buy-flagd.html",
@@ -105,7 +114,11 @@
     },
     {
       "timestamp": "2026-06-07T23:00:00+05:30",
-      "error": "11pm OSS polish agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (7th consecutive failure). 'Code PRs not merged' notification NOT sent. Day 21 PR #43 (infra-ai-streaming) and Day 20 PR #9 (ebpf-llm-tracer) still open."
+      "error": "11pm OSS polish agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (7th consecutive failure)."
+    },
+    {
+      "timestamp": "2026-06-08T03:00:00+05:30",
+      "error": "3am run (IMPLEMENTATION RUN 2): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (8th consecutive failure). Morning email HTML built but NOT delivered."
     }
   ],
   "day21_10pm_run": {
