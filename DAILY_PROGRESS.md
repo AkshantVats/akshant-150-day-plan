@@ -102,6 +102,10 @@
     {
       "timestamp": "2026-06-07T17:15:00+05:30",
       "error": "10pm Day 21 run: gmail_send.sh expected to fail (6th+ failure). Skipping email send — Gmail OAuth still broken."
+    },
+    {
+      "timestamp": "2026-06-07T23:00:00+05:30",
+      "error": "11pm OSS polish agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (7th consecutive failure). 'Code PRs not merged' notification NOT sent. Day 21 PR #43 (infra-ai-streaming) and Day 20 PR #9 (ebpf-llm-tracer) still open."
     }
   ],
   "day21_10pm_run": {
