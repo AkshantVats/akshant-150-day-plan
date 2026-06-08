@@ -84,13 +84,13 @@
   "action_required": {
     "priority": "CRITICAL",
     "items": [
-      "1. FIX GMAIL OAUTH (9 consecutive failures) — Re-authorize at Google Cloud Console → update GMAIL_REFRESH_TOKEN in akshant-agent/.agent/credentials.env. Until fixed, NO emails can be delivered.",
+      "1. FIX GMAIL OAUTH (11 consecutive failures) — Re-authorize at Google Cloud Console → update GMAIL_REFRESH_TOKEN in akshant-agent/.agent/credentials.env. Until fixed, NO emails can be delivered.",
       "2. VIEW DAY 21 SUMMARY directly in repo: https://github.com/AkshantVats/akshant-agent/blob/main/.agent/pending-emails/day-21-morning-email.html",
       "3. MERGE PR #43 (Day 21 code — distributed-flagd) to advance to Day 22: https://github.com/AkshantVats/infra-ai-streaming/pull/43",
       "4. Day 20 code PR #9 (ebpf-llm-tracer) also still open: https://github.com/AkshantVats/ebpf-llm-tracer/pull/9",
       "5. DALL-E billing limit reached — covers are Pillow-generated placeholders. Send PNG covers via email reply when billing restored."
     ],
-    "day21_summary": "Day 21 COMPLETE. Both blogs live. CI: 6/6 passing on PR #43 (+742 lines, 13 files, distributed-flagd scaffold). Gmail OAuth broken for 9 consecutive runs spanning 3+ days. Email HTML saved to agent repo for manual review.",
+    "day21_summary": "Day 21 COMPLETE. Both blogs live. CI: 6/6 passing on PR #43 (+742 lines, 13 files, distributed-flagd scaffold). Gmail OAuth broken for 11 consecutive runs spanning 3+ days. Email HTML saved to agent repo for manual review.",
     "day22_preview": {
       "ai_learning": "Day 22 — Feature Flags for Model Rollouts — Canary models with audit trails",
       "experience": "H3 vs Bounding Boxes — Geospatial Indexing That Scales (Delivery Hero surge detection)",
@@ -107,6 +107,15 @@
       "experience_blog_day20": "https://akshantvats.github.io/Profile/blog/series/experience/day-20-route-consumer-lag-keda.html",
       "code_pr_day20": "https://github.com/AkshantVats/ebpf-llm-tracer/pull/9"
     }
+  },
+  "day21_11pm_polish_run": {
+    "timestamp": "2026-06-08T23:00:00+05:30",
+    "action": "11PM OSS POLISH — scope check",
+    "pr43_status": "open_draft — not merged. Day 21 distributed-flagd PR still open.",
+    "pr9_status": "open_draft — not merged. Day 20 ebpf-llm-tracer README PR still open.",
+    "polish_action": "SKIPPED — neither code PR merged. Polish requires merged PR.",
+    "email_attempt": "gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (11th consecutive failure). 'Code PR not merged' notification NOT delivered.",
+    "status": "blocked_on_gmail_oauth — both code PRs open — polish skipped"
   },
   "## Email Errors": [
     {
@@ -148,6 +157,10 @@
     {
       "timestamp": "2026-06-08T13:00:00+05:30",
       "error": "1pm finalize run: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (10th consecutive failure). Waiting email NOT sent. No approval found in Gmail. Code PR #43 still open draft."
+    },
+    {
+      "timestamp": "2026-06-08T23:00:00+05:30",
+      "error": "11pm polish agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (11th consecutive failure). 'Code PR not merged' notification NOT delivered. Both PR #43 (infra-ai-streaming) and PR #9 (ebpf-llm-tracer) still open draft."
     }
   ],
   "day21_1pm_run": {
