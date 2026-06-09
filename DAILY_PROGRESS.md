@@ -1,8 +1,8 @@
 {
-  "current_day": 20,
-  "next_day": 21,
-  "phase": "day23_morning_complete",
-  "last_run": "2026-06-09T23:00:00+05:30",
+  "current_day": 24,
+  "next_day": 25,
+  "phase": "day24_morning_complete",
+  "last_run": "2026-06-10T03:00:00+05:30",
   "blog_prs": {
     "ai_learning": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/23",
@@ -51,6 +51,18 @@
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-23-osrm-5000-events-eta-infrastructure.html",
       "status": "live",
       "day": 23
+    },
+    "ai_learning_day24": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/31",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-24-gpu-scheduling-resource-management.html",
+      "status": "live",
+      "day": 24
+    },
+    "experience_day24": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/30",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-24-bigquery-streaming-batch-burst-truth.html",
+      "status": "live",
+      "day": 24
     }
   },
   "code_pr": {
@@ -58,7 +70,7 @@
     "status": "open_draft",
     "ci": "6/6 passing",
     "day": 21,
-    "note": "distributed-flagd scaffold — merge to advance to Day 22"
+    "note": "distributed-flagd scaffold \u2014 merge to advance to Day 22"
   },
   "code_pr_day22": {
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/44",
@@ -80,14 +92,14 @@
   },
   "day23_11pm_polish_run": {
     "timestamp": "2026-06-09T23:00:00+05:30",
-    "result": "skipped — code PRs not merged",
+    "result": "skipped \u2014 code PRs not merged",
     "prs_checked": {
-      "pr_43": "open_draft (Day 21 scaffold — must merge first)",
-      "pr_44": "open_draft (Day 22 HTTP CRUD — depends on #43)",
-      "pr_45": "open_draft (Day 23 evaluator — depends on #44)",
-      "pr_9_ebpf": "open_draft (Day 20 — independent)"
+      "pr_43": "open_draft (Day 21 scaffold \u2014 must merge first)",
+      "pr_44": "open_draft (Day 22 HTTP CRUD \u2014 depends on #43)",
+      "pr_45": "open_draft (Day 23 evaluator \u2014 depends on #44)",
+      "pr_9_ebpf": "open_draft (Day 20 \u2014 independent)"
     },
-    "email_attempt": "failed — gmail_send.sh exit 22 (14th consecutive failure)"
+    "email_attempt": "failed \u2014 gmail_send.sh exit 22 (14th consecutive failure)"
   },
   "day23_morning_run": {
     "timestamp": "2026-06-09T22:00:00+05:30",
@@ -96,7 +108,7 @@
     "experience_pr": "https://github.com/AkshantVats/Profile/pull/28",
     "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/45",
     "covers_status": "pillow_generated",
-    "covers_note": "DALL-E billing limit hit — Pillow fallback used.",
+    "covers_note": "DALL-E billing limit hit \u2014 Pillow fallback used.",
     "retrofix": "Day 22 AI Learning footer updated with Day 23 link; Day 23 Experience sibling link updated to live AI URL",
     "series_index_updated": true,
     "email_status": "pending_oauth_fix"
@@ -109,28 +121,19 @@
   "action_required": {
     "priority": "CRITICAL",
     "items": [
-      "1. FIX GMAIL OAUTH (14 consecutive failures) — Re-authorize at Google Cloud Console → update GMAIL_REFRESH_TOKEN in akshant-agent/.agent/credentials.env. Until fixed, NO emails can be delivered.",
-      "2. VIEW DAY 21–23 SUMMARIES directly in repo: https://github.com/AkshantVats/akshant-agent/blob/main/.agent/pending-emails/",
-      "3. MERGE PR #43 FIRST (Day 21 code — distributed-flagd scaffold): https://github.com/AkshantVats/infra-ai-streaming/pull/43",
-      "4. THEN MERGE PR #44 (Day 22 code — distributed-flagd HTTP+etcd+gRPC): https://github.com/AkshantVats/infra-ai-streaming/pull/44",
-      "5. THEN MERGE PR #45 (Day 23 code — model evaluator + resolved_model_id): https://github.com/AkshantVats/infra-ai-streaming/pull/45",
-      "6. Day 20 code PR #9 (ebpf-llm-tracer) also still open (independent): https://github.com/AkshantVats/ebpf-llm-tracer/pull/9",
-      "7. DALL-E billing limit reached — covers are Pillow-generated placeholders. Send PNG covers via email reply when billing restored."
+      "1. FIX GMAIL OAUTH (15 consecutive failures) \u2014 Re-authorize at Google Cloud Console",
+      "2. MERGE PR #43 FIRST (Day 21 code): https://github.com/AkshantVats/infra-ai-streaming/pull/43",
+      "3. THEN MERGE PR #44 (Day 22 code): https://github.com/AkshantVats/infra-ai-streaming/pull/44",
+      "4. THEN MERGE PR #45 (Day 23 code): https://github.com/AkshantVats/infra-ai-streaming/pull/45",
+      "5. THEN MERGE PR #46 (Day 24 code \u2014 CRD+Helm): https://github.com/AkshantVats/infra-ai-streaming/pull/46",
+      "6. Day 20 code PR #9 (ebpf-llm-tracer) also still open: https://github.com/AkshantVats/ebpf-llm-tracer/pull/9",
+      "7. Day 24 complete: 2 blogs live, code PR #46 open"
     ],
-    "day23_summary": "Day 23 COMPLETE. Both blogs live. AI Learning: Evaluations as Event Streams (PR #29 merged). Experience: OSRM at 5000 Events/sec (PR #28 merged). Code PR #45 open (model evaluator + resolved_model_id). Gmail OAuth broken for 14 consecutive runs.",
+    "day24_summary": "Day 24 COMPLETE. AI Learning: GPU Scheduling as Resource Management (PR #31). Experience: BigQuery Streaming vs Batch (PR #30). Code PR #46 open (CRD + Helm chart + canary demo).",
     "manual_links": {
-      "ai_blog_day23": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-23-evaluations-as-event-streams.html",
-      "experience_blog_day23": "https://akshantvats.github.io/Profile/blog/series/experience/day-23-osrm-5000-events-eta-infrastructure.html",
-      "code_pr_day23": "https://github.com/AkshantVats/infra-ai-streaming/pull/45",
-      "ai_blog_pr_merged": "https://github.com/AkshantVats/Profile/pull/29",
-      "experience_blog_pr_merged": "https://github.com/AkshantVats/Profile/pull/28",
-      "ai_blog_day22": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-22-feature-flags-model-rollouts.html",
-      "experience_blog_day22": "https://akshantvats.github.io/Profile/blog/series/experience/day-22-h3-geospatial-indexing-surge-detection.html",
-      "ai_blog_day21": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-21-production-reliability-llm-apis.html",
-      "experience_blog_day21": "https://akshantvats.github.io/Profile/blog/series/experience/day-21-launchdarkly-build-vs-buy-flagd.html",
-      "code_pr_day21": "https://github.com/AkshantVats/infra-ai-streaming/pull/43",
-      "code_pr_day22": "https://github.com/AkshantVats/infra-ai-streaming/pull/44",
-      "code_pr_day20": "https://github.com/AkshantVats/ebpf-llm-tracer/pull/9"
+      "ai_blog_day24": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-24-gpu-scheduling-resource-management.html",
+      "experience_blog_day24": "https://akshantvats.github.io/Profile/blog/series/experience/day-24-bigquery-streaming-batch-burst-truth.html",
+      "code_pr_day24": "https://github.com/AkshantVats/infra-ai-streaming/pull/46"
     }
   },
   "day21_morning_run": {
@@ -147,65 +150,85 @@
       "DAILY_PROGRESS.md updated"
     ],
     "pending": [
-      "Morning email (Gmail OAuth broken — 14 consecutive failures as of 2026-06-09T23:00 IST)"
+      "Morning email (Gmail OAuth broken \u2014 14 consecutive failures as of 2026-06-09T23:00 IST)"
     ]
   },
   "## Email Errors": [
     {
       "timestamp": "2026-06-06T22:25:00+05:30",
-      "error": "gmail_send.sh exit 22 — Gmail OAuth token invalid_grant: Token has been expired or revoked."
+      "error": "gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant: Token has been expired or revoked."
     },
     {
       "timestamp": "2026-06-06T23:00:00+05:30",
-      "error": "11pm polish agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant. Could not send code PRs not merged notification."
+      "error": "11pm polish agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant. Could not send code PRs not merged notification."
     },
     {
       "timestamp": "2026-06-07T03:05:00+05:30",
-      "error": "3am retry agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (3rd failure). GMAIL CREDENTIALS NEED REFRESH."
+      "error": "3am retry agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (3rd failure). GMAIL CREDENTIALS NEED REFRESH."
     },
     {
       "timestamp": "2026-06-07T08:00:00+05:30",
-      "error": "8am run: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (4th failure). Credential re-authorization required."
+      "error": "8am run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (4th failure). Credential re-authorization required."
     },
     {
       "timestamp": "2026-06-07T13:00:00+05:30",
-      "error": "1pm finalize run: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (5th failure). Waiting email NOT sent."
+      "error": "1pm finalize run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (5th failure). Waiting email NOT sent."
     },
     {
       "timestamp": "2026-06-07T17:15:00+05:30",
-      "error": "10pm Day 21 run: gmail_send.sh expected to fail (6th+ failure). Skipping email send — Gmail OAuth still broken."
+      "error": "10pm Day 21 run: gmail_send.sh expected to fail (6th+ failure). Skipping email send \u2014 Gmail OAuth still broken."
     },
     {
       "timestamp": "2026-06-07T23:00:00+05:30",
-      "error": "11pm OSS polish agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (7th consecutive failure)."
+      "error": "11pm OSS polish agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (7th consecutive failure)."
     },
     {
       "timestamp": "2026-06-08T03:00:00+05:30",
-      "error": "3am run (IMPLEMENTATION RUN 2): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (8th consecutive failure). Morning email HTML built but NOT delivered."
+      "error": "3am run (IMPLEMENTATION RUN 2): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (8th consecutive failure). Morning email HTML built but NOT delivered."
     },
     {
       "timestamp": "2026-06-08T08:00:00+05:30",
-      "error": "8am run (IMPLEMENTATION RUN 3 — FINAL): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (9th consecutive failure). Email HTML saved to akshant-agent/.agent/pending-emails/day-21-morning-email.html for manual review."
+      "error": "8am run (IMPLEMENTATION RUN 3 \u2014 FINAL): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (9th consecutive failure). Email HTML saved to akshant-agent/.agent/pending-emails/day-21-morning-email.html for manual review."
     },
     {
       "timestamp": "2026-06-08T13:00:00+05:30",
-      "error": "1pm finalize run: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (10th consecutive failure). Waiting email NOT sent. No approval found in Gmail. Code PR #43 still open draft."
+      "error": "1pm finalize run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (10th consecutive failure). Waiting email NOT sent. No approval found in Gmail. Code PR #43 still open draft."
     },
     {
       "timestamp": "2026-06-08T23:00:00+05:30",
-      "error": "11pm polish agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (11th consecutive failure). 'Code PR not merged' notification NOT delivered. Both PR #43 (infra-ai-streaming) and PR #9 (ebpf-llm-tracer) still open draft."
+      "error": "11pm polish agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (11th consecutive failure). 'Code PR not merged' notification NOT delivered. Both PR #43 (infra-ai-streaming) and PR #9 (ebpf-llm-tracer) still open draft."
     },
     {
       "timestamp": "2026-06-09T13:00:00+05:30",
-      "error": "1pm finalize run (2026-06-09): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (12th consecutive failure). Waiting email NOT delivered. No approval found. PR #43 still open draft."
+      "error": "1pm finalize run (2026-06-09): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (12th consecutive failure). Waiting email NOT delivered. No approval found. PR #43 still open draft."
     },
     {
       "timestamp": "2026-06-09T22:00:00+05:30",
-      "error": "10pm Day 23 implementation run: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (13th consecutive failure). Day 23 morning email NOT delivered. Email HTML saved to akshant-agent/.agent/pending-emails/ for manual review."
+      "error": "10pm Day 23 implementation run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (13th consecutive failure). Day 23 morning email NOT delivered. Email HTML saved to akshant-agent/.agent/pending-emails/ for manual review."
     },
     {
       "timestamp": "2026-06-09T23:00:00+05:30",
-      "error": "11pm OSS polish agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (14th consecutive failure). 'Code PRs not merged' notification NOT delivered. PRs #43, #44, #45 (infra-ai-streaming) and #9 (ebpf-llm-tracer) all still open draft."
+      "error": "11pm OSS polish agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (14th consecutive failure). 'Code PRs not merged' notification NOT delivered. PRs #43, #44, #45 (infra-ai-streaming) and #9 (ebpf-llm-tracer) all still open draft."
+    },
+    {
+      "timestamp": "2026-06-10T03:00:00+05:30",
+      "error": "3am Day 24 implementation run (IMPLEMENTATION RUN 2): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (15th consecutive failure). Day 24 morning email NOT delivered. Email HTML saved to akshant-agent/.agent/pending-emails/day-24-morning-email.html."
     }
-  ]
+  ],
+  "code_pr_day24": {
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/46",
+    "status": "open_draft",
+    "day": 24,
+    "note": "distributed-flagd K8s CRD FlagDefinition + Helm chart + canary demo"
+  },
+  "day24_morning_run": {
+    "timestamp": "2026-06-10T03:00:00+05:30",
+    "blogs_live": true,
+    "ai_learning_pr": "https://github.com/AkshantVats/Profile/pull/31",
+    "experience_pr": "https://github.com/AkshantVats/Profile/pull/30",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/46",
+    "covers_status": "pillow_generated",
+    "series_index_updated": true,
+    "email_status": "pending"
+  }
 }
