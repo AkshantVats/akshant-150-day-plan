@@ -2,8 +2,8 @@
   "current_day": 27,
   "next_day": 28,
   "phase": "morning_complete",
-  "last_run": "2026-06-10T21:58:00+05:30",
-  "last_run_agent": "3am_implementation_run2_day27",
+  "last_run": "2026-06-11T08:06:00+05:30",
+  "last_run_agent": "8am_implementation_run3_day27",
   "blog_prs": {
     "ai_learning": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/23",
@@ -171,7 +171,7 @@
   "action_required": {
     "priority": "CRITICAL",
     "items": [
-      "1. FIX GMAIL OAUTH (20 consecutive failures) — Re-authorize at Google Cloud Console",
+      "1. FIX GMAIL OAUTH (21 consecutive failures — CRITICAL) — Re-authorize at Google Cloud Console → OAuth 2.0 → regenerate refresh token → update GMAIL_REFRESH_TOKEN in akshant-agent/.agent/credentials.env",
       "2. MERGE PR #43 FIRST (Day 21 code): https://github.com/AkshantVats/infra-ai-streaming/pull/43",
       "3. THEN MERGE PR #44 (Day 22 code): https://github.com/AkshantVats/infra-ai-streaming/pull/44",
       "4. THEN MERGE PR #45 (Day 23 code): https://github.com/AkshantVats/infra-ai-streaming/pull/45",
@@ -268,6 +268,15 @@
     {
       "timestamp": "2026-06-10T21:58:00+05:30",
       "error": "3am Day 27 implementation run (IMPLEMENTATION RUN 2): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (20th consecutive failure). Day 27 morning email NOT delivered."
+    },
+    {
+      "timestamp": "2026-06-11T08:06:00+05:30",
+      "error": "8am Day 27 implementation run (IMPLEMENTATION RUN 3): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (21st consecutive failure). GMAIL OAUTH PERMANENTLY BROKEN — refresh token revoked. User must re-authorize at Google Cloud Console and update GMAIL_REFRESH_TOKEN in .agent/credentials.env."
     }
-  ]
+  ],
+  "email_content_available": {
+    "note": "Day 27 morning email HTML written to /tmp/day27-morning-email.html in the last session. Content delivered via chat session instead.",
+    "timestamp": "2026-06-11T08:06:00+05:30",
+    "subject": "[Inferix · LensAI · Day 27] OpenTelemetry + Wayfair Redesign live ✅"
+  }
 }
