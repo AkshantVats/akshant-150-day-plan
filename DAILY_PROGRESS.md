@@ -2,8 +2,8 @@
   "current_day": 27,
   "next_day": 28,
   "phase": "morning_complete",
-  "last_run": "2026-06-11T13:00:00+05:30",
-  "last_run_agent": "1pm_finalize_day27",
+  "last_run": "2026-06-11T23:00:00+05:30",
+  "last_run_agent": "11pm_oss_polish_day27",
   "blog_prs": {
     "ai_learning": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/23",
@@ -176,10 +176,17 @@
     "email_attempt": "failed_exit22_22nd_consecutive",
     "outcome": "waiting — no advancement"
   },
+  "day27_11pm_polish": {
+    "timestamp": "2026-06-11T23:00:00+05:30",
+    "outcome": "skipped — code PR #51 not merged (state: open, draft: true)",
+    "code_pr_url": "https://github.com/AkshantVats/infra-ai-streaming/pull/51",
+    "email_attempt": "failed_exit22_23rd_consecutive",
+    "note": "OSS polish (clippy, docs, README) will run automatically after PR #51 is merged. No blocking action needed."
+  },
   "action_required": {
     "priority": "CRITICAL",
     "items": [
-      "1. FIX GMAIL OAUTH (22 consecutive failures — CRITICAL) — Re-authorize at Google Cloud Console → OAuth 2.0 → regenerate refresh token → update GMAIL_REFRESH_TOKEN in akshant-agent/.agent/credentials.env",
+      "1. FIX GMAIL OAUTH (23 consecutive failures — CRITICAL) — Re-authorize at Google Cloud Console → OAuth 2.0 → regenerate refresh token → update GMAIL_REFRESH_TOKEN in akshant-agent/.agent/credentials.env",
       "2. MERGE PRs in order to advance days (all stacked on infra-ai-streaming):",
       "   PR #43 (Day 21): https://github.com/AkshantVats/infra-ai-streaming/pull/43",
       "   PR #44 (Day 22): https://github.com/AkshantVats/infra-ai-streaming/pull/44",
@@ -285,6 +292,10 @@
     {
       "timestamp": "2026-06-11T13:00:00+05:30",
       "error": "1pm finalize run (Day 27): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (22nd consecutive failure). Waiting email NOT sent. No approval found — plan not advanced."
+    },
+    {
+      "timestamp": "2026-06-11T23:00:00+05:30",
+      "error": "11pm polish agent (Day 27): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (23rd consecutive failure). 'Code PR not merged' notification NOT sent. OSS polish skipped (PR #51 still draft/open)."
     }
   ],
   "email_content_available": {
