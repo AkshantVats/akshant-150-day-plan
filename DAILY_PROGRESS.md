@@ -2,8 +2,8 @@
   "current_day": 27,
   "next_day": 28,
   "phase": "morning_complete",
-  "last_run": "2026-06-11T23:00:00+05:30",
-  "last_run_agent": "11pm_oss_polish_day27",
+  "last_run": "2026-06-12T08:10:00+05:30",
+  "last_run_agent": "8am_day28_implementation_run3",
   "blog_prs": {
     "ai_learning": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/23",
@@ -100,6 +100,18 @@
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-27-redesign-wayfair-2026-eyes.html",
       "status": "live",
       "day": 27
+    },
+    "ai_learning_day28": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/0efa04a",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-28-competitor-teardown-lensai-positioning.html",
+      "status": "live",
+      "day": 28
+    },
+    "experience_day28": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/0efa04a",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-28-integration-tests-launch-criteria.html",
+      "status": "live",
+      "day": 28
     }
   },
   "code_pr": {
@@ -107,7 +119,7 @@
     "status": "open_draft",
     "ci": "6/6 passing",
     "day": 21,
-    "note": "distributed-flagd scaffold — merge to advance"
+    "note": "distributed-flagd scaffold \u2014 merge to advance"
   },
   "code_pr_day22": {
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/44",
@@ -156,7 +168,7 @@
   "morning_email_sent": false,
   "feedback_applied": false,
   "covers_status": "pillow_generated",
-  "covers_note": "DALL-E billing limit reached — Pillow fallback covers uploaded. Replace with user-supplied images at 4pm.",
+  "covers_note": "DALL-E billing limit reached \u2014 Pillow fallback covers uploaded. Replace with user-supplied images at 4pm.",
   "day27_morning_run": {
     "timestamp": "2026-06-10T21:58:00+05:30",
     "blogs_live": true,
@@ -171,14 +183,18 @@
   "day27_1pm_finalize": {
     "timestamp": "2026-06-11T13:00:00+05:30",
     "approval_check": "no_approval_found",
-    "gmail_search_methods": ["from:to same-day after:2026/06/11", "approve day after:2026/06/11", "subject approved newer_than:2d"],
+    "gmail_search_methods": [
+      "from:to same-day after:2026/06/11",
+      "approve day after:2026/06/11",
+      "subject approved newer_than:2d"
+    ],
     "blog_feedback": "none",
     "email_attempt": "failed_exit22_22nd_consecutive",
-    "outcome": "waiting — no advancement"
+    "outcome": "waiting \u2014 no advancement"
   },
   "day27_11pm_polish": {
     "timestamp": "2026-06-11T23:00:00+05:30",
-    "outcome": "skipped — code PR #51 not merged (state: open, draft: true)",
+    "outcome": "skipped \u2014 code PR #51 not merged (state: open, draft: true)",
     "code_pr_url": "https://github.com/AkshantVats/infra-ai-streaming/pull/51",
     "email_attempt": "failed_exit22_23rd_consecutive",
     "note": "OSS polish (clippy, docs, README) will run automatically after PR #51 is merged. No blocking action needed."
@@ -186,7 +202,7 @@
   "action_required": {
     "priority": "CRITICAL",
     "items": [
-      "1. FIX GMAIL OAUTH (23 consecutive failures — CRITICAL) — Re-authorize at Google Cloud Console → OAuth 2.0 → regenerate refresh token → update GMAIL_REFRESH_TOKEN in akshant-agent/.agent/credentials.env",
+      "1. FIX GMAIL OAUTH (23 consecutive failures \u2014 CRITICAL) \u2014 Re-authorize at Google Cloud Console \u2192 OAuth 2.0 \u2192 regenerate refresh token \u2192 update GMAIL_REFRESH_TOKEN in akshant-agent/.agent/credentials.env",
       "2. MERGE PRs in order to advance days (all stacked on infra-ai-streaming):",
       "   PR #43 (Day 21): https://github.com/AkshantVats/infra-ai-streaming/pull/43",
       "   PR #44 (Day 22): https://github.com/AkshantVats/infra-ai-streaming/pull/44",
@@ -207,100 +223,121 @@
   "## Email Errors": [
     {
       "timestamp": "2026-06-06T22:25:00+05:30",
-      "error": "gmail_send.sh exit 22 — Gmail OAuth token invalid_grant: Token has been expired or revoked."
+      "error": "gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant: Token has been expired or revoked."
     },
     {
       "timestamp": "2026-06-06T23:00:00+05:30",
-      "error": "11pm polish agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant. Could not send code PRs not merged notification."
+      "error": "11pm polish agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant. Could not send code PRs not merged notification."
     },
     {
       "timestamp": "2026-06-07T03:05:00+05:30",
-      "error": "3am retry agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (3rd failure). GMAIL CREDENTIALS NEED REFRESH."
+      "error": "3am retry agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (3rd failure). GMAIL CREDENTIALS NEED REFRESH."
     },
     {
       "timestamp": "2026-06-07T08:00:00+05:30",
-      "error": "8am run: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (4th failure). Credential re-authorization required."
+      "error": "8am run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (4th failure). Credential re-authorization required."
     },
     {
       "timestamp": "2026-06-07T13:00:00+05:30",
-      "error": "1pm finalize run: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (5th failure). Waiting email NOT sent."
+      "error": "1pm finalize run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (5th failure). Waiting email NOT sent."
     },
     {
       "timestamp": "2026-06-07T17:15:00+05:30",
-      "error": "10pm Day 21 run: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (6th+ failure). Skipping email send — Gmail OAuth still broken."
+      "error": "10pm Day 21 run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (6th+ failure). Skipping email send \u2014 Gmail OAuth still broken."
     },
     {
       "timestamp": "2026-06-07T23:00:00+05:30",
-      "error": "11pm OSS polish agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (7th consecutive failure)."
+      "error": "11pm OSS polish agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (7th consecutive failure)."
     },
     {
       "timestamp": "2026-06-08T03:00:00+05:30",
-      "error": "3am Day 24 run (IMPLEMENTATION RUN 2): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (8th consecutive failure)."
+      "error": "3am Day 24 run (IMPLEMENTATION RUN 2): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (8th consecutive failure)."
     },
     {
       "timestamp": "2026-06-08T08:00:00+05:30",
-      "error": "8am Day 25 run (IMPLEMENTATION RUN 3): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (9th consecutive failure)."
+      "error": "8am Day 25 run (IMPLEMENTATION RUN 3): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (9th consecutive failure)."
     },
     {
       "timestamp": "2026-06-08T13:00:00+05:30",
-      "error": "1pm finalize run: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (10th consecutive failure)."
+      "error": "1pm finalize run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (10th consecutive failure)."
     },
     {
       "timestamp": "2026-06-08T23:00:00+05:30",
-      "error": "11pm polish agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (11th consecutive failure)."
+      "error": "11pm polish agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (11th consecutive failure)."
     },
     {
       "timestamp": "2026-06-09T13:00:00+05:30",
-      "error": "1pm finalize run (2026-06-09): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (12th consecutive failure)."
+      "error": "1pm finalize run (2026-06-09): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (12th consecutive failure)."
     },
     {
       "timestamp": "2026-06-09T22:00:00+05:30",
-      "error": "10pm Day 23 implementation run: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (13th consecutive failure)."
+      "error": "10pm Day 23 implementation run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (13th consecutive failure)."
     },
     {
       "timestamp": "2026-06-09T23:00:00+05:30",
-      "error": "11pm OSS polish agent: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (14th consecutive failure)."
+      "error": "11pm OSS polish agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (14th consecutive failure)."
     },
     {
       "timestamp": "2026-06-10T03:00:00+05:30",
-      "error": "3am Day 24 implementation run (IMPLEMENTATION RUN 2): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (15th consecutive failure)."
+      "error": "3am Day 24 implementation run (IMPLEMENTATION RUN 2): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (15th consecutive failure)."
     },
     {
       "timestamp": "2026-06-10T08:23:34+05:30",
-      "error": "8am Day 25 implementation run (IMPLEMENTATION RUN 3): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (16th consecutive failure)."
+      "error": "8am Day 25 implementation run (IMPLEMENTATION RUN 3): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (16th consecutive failure)."
     },
     {
       "timestamp": "2026-06-10T13:00:00+05:30",
-      "error": "1pm finalize run (Day 25): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (17th consecutive failure)."
+      "error": "1pm finalize run (Day 25): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (17th consecutive failure)."
     },
     {
       "timestamp": "2026-06-11T00:30:00+05:30",
-      "error": "10pm Day 26 implementation run: gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (18th consecutive failure)."
+      "error": "10pm Day 26 implementation run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (18th consecutive failure)."
     },
     {
       "timestamp": "2026-06-11T01:00:00+05:30",
-      "error": "11pm OSS polish agent (Day 26): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (19th consecutive failure)."
+      "error": "11pm OSS polish agent (Day 26): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (19th consecutive failure)."
     },
     {
       "timestamp": "2026-06-10T21:58:00+05:30",
-      "error": "3am Day 27 implementation run (IMPLEMENTATION RUN 2): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (20th consecutive failure). Day 27 morning email NOT delivered."
+      "error": "3am Day 27 implementation run (IMPLEMENTATION RUN 2): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (20th consecutive failure). Day 27 morning email NOT delivered."
     },
     {
       "timestamp": "2026-06-11T08:06:00+05:30",
-      "error": "8am Day 27 implementation run (IMPLEMENTATION RUN 3): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (21st consecutive failure). GMAIL OAUTH PERMANENTLY BROKEN — refresh token revoked. User must re-authorize at Google Cloud Console and update GMAIL_REFRESH_TOKEN in .agent/credentials.env."
+      "error": "8am Day 27 implementation run (IMPLEMENTATION RUN 3): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (21st consecutive failure). GMAIL OAUTH PERMANENTLY BROKEN \u2014 refresh token revoked. User must re-authorize at Google Cloud Console and update GMAIL_REFRESH_TOKEN in .agent/credentials.env."
     },
     {
       "timestamp": "2026-06-11T13:00:00+05:30",
-      "error": "1pm finalize run (Day 27): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (22nd consecutive failure). Waiting email NOT sent. No approval found — plan not advanced."
+      "error": "1pm finalize run (Day 27): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (22nd consecutive failure). Waiting email NOT sent. No approval found \u2014 plan not advanced."
     },
     {
       "timestamp": "2026-06-11T23:00:00+05:30",
-      "error": "11pm polish agent (Day 27): gmail_send.sh exit 22 — Gmail OAuth token invalid_grant (23rd consecutive failure). 'Code PR not merged' notification NOT sent. OSS polish skipped (PR #51 still draft/open)."
+      "error": "11pm polish agent (Day 27): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (23rd consecutive failure). 'Code PR not merged' notification NOT sent. OSS polish skipped (PR #51 still draft/open)."
+    },
+    {
+      "timestamp": "2026-06-12T08:10:00+05:30",
+      "error": "8am Day 28 implementation run (IMPLEMENTATION RUN 3): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (24th consecutive failure). Day 28 morning email NOT delivered. Gmail credentials require re-authorization."
     }
   ],
   "email_content_available": {
-    "note": "Day 27 morning email HTML written to /tmp/day27-morning-email.html in the last session. Content delivered via chat session instead.",
-    "timestamp": "2026-06-11T08:06:00+05:30",
-    "subject": "[Inferix · LensAI · Day 27] OpenTelemetry + Wayfair Redesign live ✅"
+    "note": "Day 28 morning email HTML written to /tmp/day28-email.html. Content visible in chat session instead.",
+    "timestamp": "2026-06-12T08:10:00+05:30",
+    "subject": "[Inferix \u00b7 LensAI \u00b7 Day 28] Competitor Teardown + lensai-integration quickstart live"
+  },
+  "code_pr_day28": {
+    "url": "https://github.com/AkshantVats/lensai-integration/pull/2",
+    "status": "open_draft",
+    "day": 28,
+    "note": "lensai-integration Day 1 \u2014 unified docker-compose quickstart + smoke.sh"
+  },
+  "day28_morning_run": {
+    "timestamp": "2026-06-12T08:10:00+05:30",
+    "blogs_live": true,
+    "ai_learning_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-28-competitor-teardown-lensai-positioning.html",
+    "experience_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-28-integration-tests-launch-criteria.html",
+    "code_pr": "https://github.com/AkshantVats/lensai-integration/pull/2",
+    "covers_status": "placeholder_in_series_index",
+    "series_index_updated": true,
+    "retrofix": "Day 27 AI Learning + Experience footers linked to Day 28 (in commit 0efa04a)",
+    "email_status": "failed_gmail_oauth_exit22_24th_consecutive"
   }
 }
