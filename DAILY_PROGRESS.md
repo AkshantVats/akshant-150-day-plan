@@ -1,9 +1,9 @@
 {
   "current_day": 29,
   "next_day": 30,
-  "phase": "day_advanced",
-  "last_run": "2026-07-02T22:00:00+05:30",
-  "last_run_agent": "11pm_night_check",
+  "phase": "morning_complete",
+  "last_run": "2026-07-02T02:30:00+05:30",
+  "last_run_agent": "2am_overnight_build",
   "blog_prs": {
     "ai_learning": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/23",
@@ -112,6 +112,20 @@
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-28-integration-tests-launch-criteria.html",
       "status": "live",
       "day": 28
+    },
+    "ai_learning_day29": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/36",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-29-ai-infrastructure-stack-full-map.html",
+      "status": "live",
+      "day": 29,
+      "title": "Day 29 — The AI Infrastructure Stack — Full Map"
+    },
+    "experience_day29": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/37",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-29-thirty-days-lensai-month-one.html",
+      "status": "live",
+      "day": 29,
+      "title": "Day 29 — Thirty Days of Building — What Shipped vs What Matters"
     }
   },
   "code_pr": {
@@ -165,12 +179,31 @@
     "day": 20,
     "ci": "passing"
   },
+  "code_pr_day28": {
+    "url": "https://github.com/AkshantVats/lensai-integration/pull/2",
+    "status": "merged",
+    "day": 28,
+    "note": "lensai-integration Day 1 — unified docker-compose quickstart + smoke.sh",
+    "merged_at": "2026-06-12T00:00:00Z",
+    "merged_by": "AkshantVats"
+  },
+  "code_pr_day29": {
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/64",
+    "status": "open",
+    "day": 29,
+    "note": "OSS-03: OpenTelemetry Collector integration — OTLP receiver + transform/lensai_schema processor + file WAL queue + docker-compose sidecar + docs/otel-integration.md. Branch: feat/oss-03-otel-collector-integration. Merge to advance to Day 30.",
+    "lensai_integration_note": "Landing page (docs/index.html) and Show HN draft (docs/hn-show-hn.md) committed locally on feat/day-29-landing-page branch. Push blocked in this session (lensai-integration not in allowed repo list). Push manually or wait for next session with access."
+  },
   "oss_polish_pr": null,
   "email_sent": true,
   "morning_email_sent": false,
   "feedback_applied": false,
-  "covers_status": "pillow_generated",
-  "covers_note": "DALL-E billing limit reached — Pillow fallback covers uploaded. Replace with user-supplied images at 4pm.",
+  "covers_status": "waiting_for_reply",
+  "covers_note": "Day 29 covers not yet uploaded — no email reply received. Will upload at 11pm Night Check when reply arrives.",
+  "## Pre-Push Issues": [
+    "Day 29 AI Learning + Experience: github.com links return HTTP 403 in pre-push-check due to egress proxy policy (not real broken links). Same restriction affects all existing posts. Accepted as environment artifact per CLAUDE.md Section 6."
+  ],
+  "## Email Errors": [],
   "day27_morning_run": {
     "timestamp": "2026-06-10T21:58:00+05:30",
     "blogs_live": true,
@@ -202,22 +235,15 @@
     "note": "OSS polish (clippy, docs, README) will run automatically after PR #51 is merged. No blocking action needed."
   },
   "action_required": {
-    "priority": "NONE",
-    "note": "Gmail OAuth fixed 2026-07-02. Day 28 complete. Day 29 Overnight Build queued for 2am IST."
+    "priority": "HIGH",
+    "action": "MERGE CODE PR TO ADVANCE TO DAY 30",
+    "code_pr_url": "https://github.com/AkshantVats/infra-ai-streaming/pull/64",
+    "note": "Day 29 blogs live. Merge PR #64 (OSS-03 OTel Collector) to unlock Day 30 (TraceForge — agent trace collection)."
   },
-  "## Email Errors": [],
   "email_content_available": {
     "note": "Gmail OAuth re-authorized 2026-07-02. Email sending now operational.",
     "timestamp": "2026-06-12T08:10:00+05:30",
     "subject": "[Inferix · LensAI · Day 28] Competitor Teardown + lensai-integration quickstart live"
-  },
-  "code_pr_day28": {
-    "url": "https://github.com/AkshantVats/lensai-integration/pull/2",
-    "status": "merged",
-    "day": 28,
-    "note": "lensai-integration Day 1 — unified docker-compose quickstart + smoke.sh",
-    "merged_at": "2026-06-12T00:00:00Z",
-    "merged_by": "AkshantVats"
   },
   "day28_morning_run": {
     "timestamp": "2026-06-12T08:10:00+05:30",
@@ -256,5 +282,20 @@
     "email_subject": "[Inferix · LensAI · Day 29] unlocked ✅ — Overnight Build starts at 2am",
     "gmail_oauth_status": "FIXED — re-authorized 2026-07-02",
     "outcome": "advanced_28_to_29 — Day 29: LensAI Launch Day"
+  },
+  "day29_morning_run": {
+    "timestamp": "2026-07-02T02:30:00+05:30",
+    "blogs_live": true,
+    "ai_learning_pr": "https://github.com/AkshantVats/Profile/pull/36",
+    "ai_learning_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-29-ai-infrastructure-stack-full-map.html",
+    "experience_pr": "https://github.com/AkshantVats/Profile/pull/37",
+    "experience_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-29-thirty-days-lensai-month-one.html",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/64",
+    "covers_status": "waiting_for_reply",
+    "series_index_updated": true,
+    "retrofix": "Day 28 AI Learning + Experience footers linked to Day 29",
+    "pre_push_issues": "github.com links 403 in proxy — environment artifact, accepted",
+    "lensai_integration_note": "Landing page and Show HN draft committed locally on feat/day-29-landing-page; push blocked (lensai-integration not in session allow-list). Files ready to push when access restored.",
+    "morning_email_status": "pending"
   }
 }
