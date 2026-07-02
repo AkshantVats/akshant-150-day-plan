@@ -196,10 +196,11 @@
   },
   "oss_polish_pr": null,
   "email_sent": true,
-  "morning_email_sent": false,
+  "morning_email_sent": true,
+  "morning_email_subject": "[Inferix · LensAI · Day 29] LensAI Launch — AI Infra Stack Map + Month-One Retrospective ✅",
   "feedback_applied": false,
   "covers_status": "waiting_for_reply",
-  "covers_note": "Day 29 covers not yet uploaded — no email reply received. Will upload at 11pm Night Check when reply arrives.",
+  "covers_note": "Day 29 covers not yet uploaded — waiting for email reply with PNG attachments. Will upload at 11pm Night Check.",
   "## Pre-Push Issues": [
     "Day 29 AI Learning + Experience: github.com links return HTTP 403 in pre-push-check due to egress proxy policy (not real broken links). Same restriction affects all existing posts. Accepted as environment artifact per CLAUDE.md Section 6."
   ],
@@ -296,6 +297,7 @@
     "retrofix": "Day 28 AI Learning + Experience footers linked to Day 29",
     "pre_push_issues": "github.com links 403 in proxy — environment artifact, accepted",
     "lensai_integration_note": "Landing page and Show HN draft committed locally on feat/day-29-landing-page; push blocked (lensai-integration not in session allow-list). Files ready to push when access restored.",
-    "morning_email_status": "pending"
+    "morning_email_status": "sent",
+    "morning_email_subject": "[Inferix · LensAI · Day 29] LensAI Launch — AI Infra Stack Map + Month-One Retrospective ✅"
   }
 }
