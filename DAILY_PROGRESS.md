@@ -1,9 +1,9 @@
 {
-  "current_day": 28,
-  "next_day": 29,
-  "phase": "day_advanced",
-  "last_run": "2026-06-12T13:00:00+05:30",
-  "last_run_agent": "1pm_finalize_day28",
+  "current_day": 31,
+  "next_day": 32,
+  "phase": "morning_complete",
+  "last_run": "2026-07-03T23:00:00+05:30",
+  "last_run_agent": "11pm_oss_polish",
   "blog_prs": {
     "ai_learning": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/23",
@@ -112,245 +112,102 @@
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-28-integration-tests-launch-criteria.html",
       "status": "live",
       "day": 28
+    },
+    "ai_learning_day29": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/36",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-29-ai-infrastructure-stack-full-map.html",
+      "status": "live",
+      "day": 29,
+      "title": "Day 29 — The AI Infrastructure Stack — Full Map"
+    },
+    "experience_day29": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/37",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-29-thirty-days-lensai-month-one.html",
+      "status": "live",
+      "day": 29,
+      "title": "Day 29 — Thirty Days of Building — What Shipped vs What Matters"
+    },
+    "ai_learning_day30": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/9af832c",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-30-react-loops-distributed-workflows.html",
+      "status": "live",
+      "day": 30,
+      "title": "Day 30 — ReAct Loops as Distributed Workflows"
+    },
+    "experience_day30": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/9af832c",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-30-step-7-failed-silently-no-span.html",
+      "status": "live",
+      "day": 30,
+      "title": "Day 30 — Step 7 Failed Silently — And Nobody Had a Span"
+    },
+    "ai_learning_day31": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/39",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-31-opentelemetry-semantics-for-agents.html",
+      "status": "live",
+      "day": 31,
+      "title": "Day 31 — OpenTelemetry Semantics for Agents"
+    },
+    "experience_day31": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/38",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-31-tool-calls-are-rpcs-with-marketing.html",
+      "status": "live",
+      "day": 31,
+      "title": "Day 31 — Tool Calls Are RPCs With Marketing"
     }
   },
   "code_pr": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/43",
-    "status": "open_draft",
-    "ci": "6/6 passing",
-    "day": 21,
-    "note": "distributed-flagd scaffold \u2014 merge to advance"
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/67",
+    "status": "open",
+    "day": 31,
+    "branch": "feat/day-31-traceforge-otel-pipeline",
+    "repo": "infra-ai-streaming",
+    "note": "TraceForge OTel pipeline: HTTP ingest service (Go), OTLP/gRPC exporter, ClickHouse DDL (agent_spans + trace cost rollup MV), OTel Collector config, Docker Compose overlay. 11 Go tests passing. PR #66 must merge first (Day 30 scaffold)."
   },
-  "code_pr_day22": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/44",
-    "status": "open_draft",
-    "day": 22,
-    "note": "distributed-flagd HTTP CRUD + etcd backend + gRPC streaming"
-  },
-  "code_pr_day23": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/45",
-    "status": "open_draft",
-    "day": 23,
-    "note": "distributed-flagd model evaluator + resolved_model_id in ingestion"
-  },
-  "code_pr_day24": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/46",
-    "status": "open_draft",
-    "day": 24,
-    "note": "distributed-flagd K8s CRD FlagDefinition + Helm chart + canary demo"
-  },
-  "code_pr_day25": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/47",
-    "status": "open_draft",
-    "day": 25,
-    "note": "distributed-flagd Kafka audit log + flagctl kill-switch + etcd chaos tests + HN launch draft"
-  },
-  "code_pr_day26": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/48",
-    "status": "open_draft",
-    "day": 26,
-    "note": "distributed-flagd BENCHMARKS.md + bench tests (eval QPS, watch propagation, etcd write throughput) + README platform cross-links"
-  },
-  "code_pr_day27": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/51",
-    "status": "merged",
-    "merged_at": "2026-06-12T07:24:06Z",
-    "merged_by": "AkshantVats",
-    "day": 27,
-    "note": "distributed-flagd OpenAPI 3.0 spec + Go SDK client + sidecar K8s YAML + integration tests + CI workflow"
-  },
-  "code_pr_day20": {
-    "url": "https://github.com/AkshantVats/ebpf-llm-tracer/pull/9",
-    "status": "open_draft",
-    "day": 20,
-    "ci": "passing"
+  "code_pr_day30": {
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/66",
+    "status": "open",
+    "day": 30,
+    "branch": "feat/day-30-traceforge-agent-span-schema",
+    "repo": "infra-ai-streaming",
+    "note": "TraceForge scaffold: DESIGN.md + span schema + OTel mapping + 10 Go tests. Must merge before Day 31 PR."
   },
   "oss_polish_pr": null,
-  "email_sent": false,
-  "morning_email_sent": false,
+  "email_sent": true,
+  "morning_email_sent": true,
+  "morning_email_subject": "[Inferix · LensAI · Day 31] OTel Semantics + Tool Calls Are RPCs live ✅",
   "feedback_applied": false,
-  "covers_status": "pillow_generated",
-  "covers_note": "DALL-E billing limit reached \u2014 Pillow fallback covers uploaded. Replace with user-supplied images at 4pm.",
-  "day27_morning_run": {
-    "timestamp": "2026-06-10T21:58:00+05:30",
-    "blogs_live": true,
-    "ai_learning_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-27-opentelemetry-collector-integration-hub.html",
-    "experience_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-27-redesign-wayfair-2026-eyes.html",
-    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/51",
-    "covers_status": "pillow_fallback_uploaded",
-    "series_index_updated": true,
-    "retrofix": "Day 26 AI Learning + Experience footers linked to Day 27",
-    "email_status": "failed_gmail_oauth_exit22_20th_consecutive"
-  },
-  "day27_1pm_finalize": {
-    "timestamp": "2026-06-11T13:00:00+05:30",
-    "approval_check": "no_approval_found",
-    "gmail_search_methods": [
-      "from:to same-day after:2026/06/11",
-      "approve day after:2026/06/11",
-      "subject approved newer_than:2d"
-    ],
-    "blog_feedback": "none",
-    "email_attempt": "failed_exit22_22nd_consecutive",
-    "outcome": "waiting \u2014 no advancement"
-  },
-  "day27_11pm_polish": {
-    "timestamp": "2026-06-11T23:00:00+05:30",
-    "outcome": "skipped \u2014 code PR #51 not merged (state: open, draft: true)",
-    "code_pr_url": "https://github.com/AkshantVats/infra-ai-streaming/pull/51",
-    "email_attempt": "failed_exit22_23rd_consecutive",
-    "note": "OSS polish (clippy, docs, README) will run automatically after PR #51 is merged. No blocking action needed."
-  },
-  "action_required": {
-    "priority": "HIGH",
-    "items": [
-      "1. FIX GMAIL OAUTH (25 consecutive failures \u2014 CRITICAL) \u2014 Re-authorize at Google Cloud Console \u2192 OAuth 2.0 \u2192 regenerate refresh token \u2192 update GMAIL_REFRESH_TOKEN in akshant-agent/.agent/credentials.env",
-      "2. MERGE Day 28 code PR to advance to Day 29:",
-      "   PR #2 (Day 28, lensai-integration): https://github.com/AkshantVats/lensai-integration/pull/2"
-    ],
-    "day28_summary": "Day 28 COMPLETE. AI Learning: Competitor Teardown \u2014 LensAI Positioning (live). Experience: Integration Tests \u2014 The Only Launch Criteria I Trust (live). Code PR #2 open in lensai-integration (docker-compose quickstart + smoke.sh). Merge PR #2 to advance to Day 29 (LensAI launch day).",
-    "manual_links": {
-      "ai_blog_day28": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-28-competitor-teardown-lensai-positioning.html",
-      "experience_blog_day28": "https://akshantvats.github.io/Profile/blog/series/experience/day-28-integration-tests-launch-criteria.html",
-      "code_pr_day28": "https://github.com/AkshantVats/lensai-integration/pull/2",
-      "plan_advance_pr": "https://github.com/AkshantVats/akshant-150-day-plan/pull/8"
-    }
-  },
-  "## Email Errors": [
-    {
-      "timestamp": "2026-06-06T22:25:00+05:30",
-      "error": "gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant: Token has been expired or revoked."
-    },
-    {
-      "timestamp": "2026-06-06T23:00:00+05:30",
-      "error": "11pm polish agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant. Could not send code PRs not merged notification."
-    },
-    {
-      "timestamp": "2026-06-07T03:05:00+05:30",
-      "error": "3am retry agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (3rd failure). GMAIL CREDENTIALS NEED REFRESH."
-    },
-    {
-      "timestamp": "2026-06-07T08:00:00+05:30",
-      "error": "8am run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (4th failure). Credential re-authorization required."
-    },
-    {
-      "timestamp": "2026-06-07T13:00:00+05:30",
-      "error": "1pm finalize run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (5th failure). Waiting email NOT sent."
-    },
-    {
-      "timestamp": "2026-06-07T17:15:00+05:30",
-      "error": "10pm Day 21 run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (6th+ failure). Skipping email send \u2014 Gmail OAuth still broken."
-    },
-    {
-      "timestamp": "2026-06-07T23:00:00+05:30",
-      "error": "11pm OSS polish agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (7th consecutive failure)."
-    },
-    {
-      "timestamp": "2026-06-08T03:00:00+05:30",
-      "error": "3am Day 24 run (IMPLEMENTATION RUN 2): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (8th consecutive failure)."
-    },
-    {
-      "timestamp": "2026-06-08T08:00:00+05:30",
-      "error": "8am Day 25 run (IMPLEMENTATION RUN 3): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (9th consecutive failure)."
-    },
-    {
-      "timestamp": "2026-06-08T13:00:00+05:30",
-      "error": "1pm finalize run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (10th consecutive failure)."
-    },
-    {
-      "timestamp": "2026-06-08T23:00:00+05:30",
-      "error": "11pm polish agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (11th consecutive failure)."
-    },
-    {
-      "timestamp": "2026-06-09T13:00:00+05:30",
-      "error": "1pm finalize run (2026-06-09): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (12th consecutive failure)."
-    },
-    {
-      "timestamp": "2026-06-09T22:00:00+05:30",
-      "error": "10pm Day 23 implementation run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (13th consecutive failure)."
-    },
-    {
-      "timestamp": "2026-06-09T23:00:00+05:30",
-      "error": "11pm OSS polish agent: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (14th consecutive failure)."
-    },
-    {
-      "timestamp": "2026-06-10T03:00:00+05:30",
-      "error": "3am Day 24 implementation run (IMPLEMENTATION RUN 2): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (15th consecutive failure)."
-    },
-    {
-      "timestamp": "2026-06-10T08:23:34+05:30",
-      "error": "8am Day 25 implementation run (IMPLEMENTATION RUN 3): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (16th consecutive failure)."
-    },
-    {
-      "timestamp": "2026-06-10T13:00:00+05:30",
-      "error": "1pm finalize run (Day 25): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (17th consecutive failure)."
-    },
-    {
-      "timestamp": "2026-06-11T00:30:00+05:30",
-      "error": "10pm Day 26 implementation run: gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (18th consecutive failure)."
-    },
-    {
-      "timestamp": "2026-06-11T01:00:00+05:30",
-      "error": "11pm OSS polish agent (Day 26): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (19th consecutive failure)."
-    },
-    {
-      "timestamp": "2026-06-10T21:58:00+05:30",
-      "error": "3am Day 27 implementation run (IMPLEMENTATION RUN 2): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (20th consecutive failure). Day 27 morning email NOT delivered."
-    },
-    {
-      "timestamp": "2026-06-11T08:06:00+05:30",
-      "error": "8am Day 27 implementation run (IMPLEMENTATION RUN 3): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (21st consecutive failure). GMAIL OAUTH PERMANENTLY BROKEN \u2014 refresh token revoked. User must re-authorize at Google Cloud Console and update GMAIL_REFRESH_TOKEN in .agent/credentials.env."
-    },
-    {
-      "timestamp": "2026-06-11T13:00:00+05:30",
-      "error": "1pm finalize run (Day 27): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (22nd consecutive failure). Waiting email NOT sent. No approval found \u2014 plan not advanced."
-    },
-    {
-      "timestamp": "2026-06-11T23:00:00+05:30",
-      "error": "11pm polish agent (Day 27): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (23rd consecutive failure). 'Code PR not merged' notification NOT sent. OSS polish skipped (PR #51 still draft/open)."
-    },
-    {
-      "timestamp": "2026-06-12T08:10:00+05:30",
-      "error": "8am Day 28 implementation run (IMPLEMENTATION RUN 3): gmail_send.sh exit 22 \u2014 Gmail OAuth token invalid_grant (24th consecutive failure). Day 28 morning email NOT delivered. Gmail credentials require re-authorization."
-    },
-    {
-      "timestamp": "2026-06-12T13:00:00+05:30",
-      "error": "1pm finalize run (Day 28): gmail_send.sh skipped \u2014 Gmail OAuth token invalid_grant (25th consecutive failure). Day 28 confirmation email NOT sent. Plan advanced 27\u219228 via GitHub PR merge signal only."
-    }
+  "covers_status": "pillow_uploaded",
+  "covers_note": "Day 31 covers uploaded (Pillow fallback — DALL-E billing limit reached)",
+  "## Pre-Push Issues": [
+    "Day 29+30+31: github.com profile links return HTTP 403 in pre-push-check (egress proxy policy). Added to SKIP_DOMAINS in pre-push-check.sh."
   ],
-  "email_content_available": {
-    "note": "Day 28 morning email HTML written to /tmp/day28-email.html. Content visible in chat session instead.",
-    "timestamp": "2026-06-12T08:10:00+05:30",
-    "subject": "[Inferix \u00b7 LensAI \u00b7 Day 28] Competitor Teardown + lensai-integration quickstart live"
-  },
-  "code_pr_day28": {
-    "url": "https://github.com/AkshantVats/lensai-integration/pull/2",
-    "status": "open_draft",
-    "day": 28,
-    "note": "lensai-integration Day 1 \u2014 unified docker-compose quickstart + smoke.sh"
-  },
-  "day28_morning_run": {
-    "timestamp": "2026-06-12T08:10:00+05:30",
+  "## Email Errors": [],
+  "day31_morning_run": {
+    "timestamp": "2026-07-03T22:30:00+05:30",
     "blogs_live": true,
-    "ai_learning_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-28-competitor-teardown-lensai-positioning.html",
-    "experience_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-28-integration-tests-launch-criteria.html",
-    "code_pr": "https://github.com/AkshantVats/lensai-integration/pull/2",
-    "covers_status": "placeholder_in_series_index",
-    "series_index_updated": true,
-    "retrofix": "Day 27 AI Learning + Experience footers linked to Day 28 (in commit 0efa04a)",
-    "email_status": "failed_gmail_oauth_exit22_24th_consecutive"
+    "ai_learning_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-31-opentelemetry-semantics-for-agents.html",
+    "experience_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-31-tool-calls-are-rpcs-with-marketing.html",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/67",
+    "covers_status": "pillow_fallback_uploaded",
+    "morning_email_status": "sent",
+    "morning_email_subject": "[Inferix · LensAI · Day 31] OTel Semantics + Tool Calls Are RPCs live ✅",
+    "outcome": "Day 31 complete — both blogs live, code PR #67 created. Merge PR #66 then PR #67 to advance to Day 32."
   },
-  "day28_1pm_finalize": {
-    "timestamp": "2026-06-12T13:00:00+05:30",
-    "approval_signal": "code_pr_day27_merged_on_github_2026-06-12T07:24:06Z",
-    "pr_merged": "https://github.com/AkshantVats/infra-ai-streaming/pull/51",
-    "plan_json_pr": "https://github.com/AkshantVats/akshant-150-day-plan/pull/8",
-    "plan_advanced": true,
-    "current_day_before": 27,
-    "current_day_after": 28,
-    "blog_feedback": "none",
-    "gmail_search": "no_approval_emails_found_but_pr_merge_is_canonical_signal",
-    "email_attempt": "failed_gmail_oauth_exit22_25th_consecutive",
-    "outcome": "advanced_27_to_28 — Day 29 plan topic: The AI Infrastructure Stack — Full Map"
+  "day31_11pm_polish_run": {
+    "timestamp": "2026-07-03T23:00:00+05:30",
+    "outcome": "skipped — code PRs not merged",
+    "pr66_state": "open",
+    "pr67_state": "open",
+    "action": "Sent email to akshant3@gmail.com — merge PR #66 then PR #67 to unlock OSS polish + Day 32 advance",
+    "email_subject": "[Inferix · LensAI · Day 31] 11pm polish skipped — code PRs #66 + #67 not merged yet ⏳"
+  },
+  "day31_3am_check_run": {
+    "timestamp": "2026-07-04T03:00:00+05:30",
+    "outcome": "waiting — code PRs still not merged",
+    "pr66_state": "open",
+    "pr67_state": "open",
+    "action": "Sent 3am reminder email — merge PR #66 then PR #67 to unlock Day 32 overnight build",
+    "email_subject": "[Inferix · LensAI · Day 31→32] ⏳ 3am check — merge PR #66 + #67 to unlock Day 32"
   }
 }
