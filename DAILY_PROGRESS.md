@@ -228,5 +228,37 @@
     "pr67_state": "open",
     "action": "Sent 1pm waiting email — approve blogs + merge PR #66 + #67 to unlock Day 32",
     "email_subject": "1pm: Day 32 waiting — approve blogs + merge PR #66 + #67"
+  },
+  "ai_learning_day32": {
+    "pr_url": "https://github.com/AkshantVats/Profile/pull/41",
+    "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-32-tool-calling-protocols-openai-vs-anthropic.html",
+    "status": "live",
+    "day": 32,
+    "title": "Day 32 — Tool Calling Protocols — OpenAI vs Anthropic"
+  },
+  "experience_day32": {
+    "pr_url": "https://github.com/AkshantVats/Profile/pull/40",
+    "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-32-when-the-collector-is-the-product.html",
+    "status": "live",
+    "day": 32,
+    "title": "Day 32 — When the Collector Is the Product"
+  },
+  "code_pr_day32": {
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/68",
+    "status": "open",
+    "day": 32,
+    "branch": "feat/day-32-traceforge-python-sdk",
+    "repo": "infra-ai-streaming",
+    "note": "TraceForge Python SDK: traceforge.wrap_openai() proxy client, fire-and-forget span emitter, SHA-256 arg hashing, 8 pytest tests all passing."
+  },
+  "day32_morning_run": {
+    "timestamp": "2026-07-04T22:00:00+05:30",
+    "blogs_live": true,
+    "ai_learning_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-32-tool-calling-protocols-openai-vs-anthropic.html",
+    "experience_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-32-when-the-collector-is-the-product.html",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/68",
+    "covers_status": "pillow_fallback_uploaded",
+    "morning_email_status": "sending",
+    "note": "Day 32 implementation run complete. Built on top of Day 31 without waiting for PR #66/#67 merge — code PRs still open. Day counter remains at 31 until PRs merged."
   }
 }
