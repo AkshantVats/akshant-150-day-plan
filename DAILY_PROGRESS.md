@@ -258,7 +258,8 @@
     "experience_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-32-when-the-collector-is-the-product.html",
     "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/68",
     "covers_status": "pillow_fallback_uploaded",
-    "morning_email_status": "sending",
+    "morning_email_status": "sent",
+    "morning_email_subject": "[Inferix · LensAI · Day 32] Python SDK + Tool Protocols + Walmart Collector live ✅",
     "note": "Day 32 implementation run complete. Built on top of Day 31 without waiting for PR #66/#67 merge — code PRs still open. Day counter remains at 31 until PRs merged."
   }
 }
