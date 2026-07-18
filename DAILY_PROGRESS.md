@@ -710,5 +710,20 @@
     "action": "Sent waiting email — no approval found. Day advance blocked.",
     "email_subject": "1pm: Day 32 waiting for approval",
     "next_action": "Reply 'approved' to morning email or click the green Approve button. After approval, 1pm agent will merge #66 → #67 → #68 and advance to Day 33."
+  },
+  "6pm_planning_july18": {
+    "timestamp": "2026-07-18T18:00:00+05:30",
+    "outcome": "plans_created",
+    "planning_day": 41,
+    "action": "Day 41 plans created and pushed to main. Three files: CODE.md (exclusive time computation per span, bottleneck rank, Grafana waterfall JSON payload, traceforge bottleneck + waterfall subcommands, 18+ tests), AI-LEARNING.md (Cost Waterfalls — CFO-Friendly Visuals, stacked cost by tool per trace, exclusive time as flame-graph-for-money), EXPERIENCE.md (Exclusive Time — Flame Graphs for Money, Delivery Hero OSRM critical path, fanout bottleneck in Route Consumer, P99 improvement).",
+    "day41_plans": {
+      "code": "Go pkg/graph/exclusive_time.go (ExclusiveTimeResult, ComputeExclusiveTimes) + pkg/waterfall/waterfall.go (Build, WaterfallPayload) + cmd/traceforge/bottleneck.go + cmd/traceforge/waterfall.go; 18+ tests; builds on Day 40 graph package",
+      "ai_learning": "Day 41 — Cost Waterfalls — CFO-Friendly Visuals (exclusive time formula, waterfall chart as cost flame graph, Grafana Bar Gauge wiring, CFO vs engineer view)",
+      "experience": "Exclusive Time — Flame Graphs for Money (Delivery Hero OSRM ETA pipeline, Route Consumer fanout bottleneck hidden by total-duration metrics, exclusive time revealed rank-1, fix dropped P99 340ms→118ms)",
+      "repo": "tool-call-analyzer",
+      "employer": "Delivery Hero"
+    },
+    "buffer_status": "Plans ready through Day 41 (9 days ahead of current_day=32). Day 42 plans not yet created.",
+    "next_run": "11pm Night Check (CI, email reply check, code PR status)"
   }
 }
