@@ -514,5 +514,15 @@
       "repo": "agent-trace-collector"
     },
     "next_action": "Merge PRs in order: #66 → #67 → #68 at https://github.com/AkshantVats/infra-ai-streaming to unblock Day 33 Overnight Build."
+  },
+  "11pm_oss_polish_july21": {
+    "timestamp": "2026-07-21T23:00:00+05:30",
+    "outcome": "oss_polish_skipped",
+    "pr66_state": "open (mergeable_state: blocked — 19 days old, +517 lines, 7 files, CI green)",
+    "pr67_state": "open (mergeable_state: blocked — 19 days old, +1395 lines, 16 files, CI green)",
+    "pr68_state": "open (mergeable_state: blocked — 18 days old, +433 lines, 8 files, CI green)",
+    "action": "All 3 code PRs still open. OSS polish skipped per Step 1 gate. Sent polish-skipped email.",
+    "email_subject": "11pm polish: Day 31 code PRs not merged yet — polish skipped",
+    "next_action": "Merge #66 → #67 → #68 at https://github.com/AkshantVats/infra-ai-streaming. After all three merged, OSS polish will run on next scheduled check."
   }
 }
