@@ -2,8 +2,8 @@
   "current_day": 31,
   "next_day": 32,
   "phase": "morning_complete",
-  "last_run": "2026-07-21T22:10:00+05:30",
-  "last_run_agent": "10pm_night_check_july21",
+  "last_run": "2026-07-22T18:00:00+05:30",
+  "last_run_agent": "6pm_planning_july22",
   "blog_prs": {
     "ai_learning": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/23",
@@ -206,323 +206,19 @@
     "Day 29+30+31: github.com profile links return HTTP 403 in pre-push-check (egress proxy policy). Added to SKIP_DOMAINS in pre-push-check.sh."
   ],
   "## Email Errors": [],
-  "1pm_finalize_july15": {
-    "timestamp": "2026-07-15T13:00:00+05:30",
-    "outcome": "waiting_for_approval",
-    "pr66_state": "open (mergeable_state: blocked, open 12 days — created 2026-07-03, +517 lines, 7 files)",
-    "pr67_state": "open (mergeable_state: blocked, open 12 days)",
-    "pr68_state": "open (mergeable_state: blocked, open 11 days)",
-    "email_reply_check": "no replies to morning email, no approval button click found",
-    "blog_feedback_check": "no feedback in any today emails",
-    "action": "Sent waiting email — no approval found. Day advance blocked.",
-    "email_subject": "1pm: Day 32 waiting for approval",
-    "next_action": "Reply 'approved' to morning email or click the green Approve button. After approval, 1pm agent will merge #66 → #67 → #68 and advance to Day 33."
-  },
-  "10pm_impl_run1_july15": {
-    "timestamp": "2026-07-15T22:00:00+05:30",
-    "outcome": "exited — morning_email_sent=true, all 3 PRs still blocked (12-13 days open)",
-    "pr66_state": "open (mergeable_state: blocked, open 12 days — created 2026-07-03, +517 lines, 7 files)",
-    "pr67_state": "open (mergeable_state: blocked, open 12 days — created 2026-07-03, +1395 lines, 16 files)",
-    "pr68_state": "open (mergeable_state: blocked, open 11 days — created 2026-07-04, +433 lines, 8 files)",
-    "action": "State check: morning_email_sent=true, no PR merges detected. EXIT per STEP 1. Day 32 content already live.",
-    "next_action": "Merge PR #66 first (https://github.com/AkshantVats/infra-ai-streaming/pull/66), then #67, then #68. After all 3 merged, next 11pm run advances to Day 33 + builds Day 33 content."
-  },
-  "6pm_planning_july15": {
-    "timestamp": "2026-07-15T18:00:00+05:30",
+  "6pm_planning_july22": {
+    "timestamp": "2026-07-22T18:00:00+05:30",
     "outcome": "plans_created",
-    "planning_day": 38,
-    "action": "Day 38 plans created and pushed to main.",
-    "day38_plans": {
-      "code": "Go adapters openai/anthropic/langchain + golden JSON fixtures → Kafka tools.normalized.v1",
-      "ai_learning": "Day 38 — Adapter Pattern for Vendor Drift",
-      "experience": "Golden Files — How Platforms Survive API Drift (Wayfair PAS)",
-      "repo": "tool-call-analyzer",
+    "planning_day": 44,
+    "action": "Day 44 plans created and pushed to main (PR #15, squash-merged).",
+    "day44_plans": {
+      "code": "agent-replay-engine new repo: DESIGN.md + pkg/eventlog (AgentEvent, EventLog, JSON Lines read/write) + pkg/mocker (ToolMocker, frozen response lookup, CallHistory) + go.mod stdlib-only; ≥12 Go tests",
+      "ai_learning": "Day 44 — Event Sourcing for Agent Runs (Kafka log compaction analogy, append-only event log, ToolMocker architecture, determinism rules)",
+      "experience": "Day 44 — Event Sourcing — But the Events Hallucinate (Wayfair PAS: Delphi idempotency, pricing simulation frozen inputs via BigQuery time travel + Bigtable snapshots, pricing_refresh Kafka event-sourcing pattern)",
+      "repo": "agent-replay-engine",
       "employer": "Wayfair"
     },
     "next_run": "11pm Night Check"
-  },
-  "day32_8am_impl_run3_july9": {
-    "timestamp": "2026-07-09T08:00:00+05:30",
-    "outcome": "morning email sent (ALWAYS send override — new calendar day, Run 20)",
-    "pr66_state": "open",
-    "pr67_state": "open",
-    "pr68_state": "open",
-    "action": "Sent fresh Day 32 morning email — blogs live, 3 PRs pending (#66→#67→#68), Day 33 preview included",
-    "email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + When the Collector Is the Product ✅"
-  },
-  "11pm_polish_july9": {
-    "timestamp": "2026-07-09T23:00:00+05:30",
-    "outcome": "oss_polish_skipped",
-    "action": "All 3 code PRs still open. OSS polish skipped. Waiting email sent.",
-    "email_subject": "[Inferix · LensAI · Day 32] ⏳ merge code PRs to continue (#66 → #67 → #68)"
-  },
-  "day32_8am_impl_run3_july10": {
-    "timestamp": "2026-07-10T08:00:00+05:30",
-    "outcome": "morning email sent (ALWAYS send override — new calendar day Jul 10)",
-    "action": "Sent Day 32 status email — blogs live, 3 PRs still open, Day 33 preview.",
-    "email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + When the Collector Is the Product ✅ (Jul 10 status)",
-    "day33_preview": {
-      "ai": "Day 33 — Context Propagation in Polyglot Agents",
-      "experience": "SDK Wrappers — The Last Resort That Ships",
-      "repo": "agent-trace-collector"
-    }
-  },
-  "day32_8am_impl_run3_july11": {
-    "timestamp": "2026-07-11T08:00:00+05:30",
-    "outcome": "morning email sent (ALWAYS send override — new calendar day Jul 11)",
-    "action": "Sent Day 32 status email.",
-    "email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + When the Collector Is the Product ✅ (Jul 11 status)"
-  },
-  "day32_8am_impl_run3_july12": {
-    "timestamp": "2026-07-12T08:00:00+05:30",
-    "outcome": "morning email sent (ALWAYS send override — new calendar day Jul 12, Run 3)",
-    "action": "Sent Day 32 status email. PRs open 10 days.",
-    "email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + When the Collector Is the Product ✅ (Jul 12 status)"
-  },
-  "day32_8am_impl_run3_july13": {
-    "timestamp": "2026-07-13T08:00:00+05:30",
-    "outcome": "morning email sent (ALWAYS send override — new calendar day Jul 13, Run 3)",
-    "action": "Sent Day 32 status email. PRs open 11 days.",
-    "email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + When the Collector Is the Product ✅ (Jul 13 status)"
-  },
-  "day32_8am_impl_run3_july14": {
-    "timestamp": "2026-07-14T08:00:00+05:30",
-    "outcome": "morning email sent (ALWAYS send override — new calendar day Jul 14, Run 3)",
-    "pr66_state": "open (mergeable_state: blocked, open 12 days — created 2026-07-03, +517 lines, 7 files)",
-    "pr67_state": "open (mergeable_state: blocked, open 12 days — created 2026-07-03, +1395 lines, 16 files)",
-    "pr68_state": "open (mergeable_state: blocked, open 11 days — created 2026-07-04, +433 lines, 8 files)",
-    "action": "Sent Day 32 status email. PRs open 12 days.",
-    "email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + When the Collector Is the Product ✅ (Jul 14 status)",
-    "day33_preview": {
-      "ai": "Day 33 — Context Propagation in Polyglot Agents",
-      "experience": "SDK Wrappers — The Last Resort That Ships",
-      "repo": "infra-ai-streaming"
-    }
-  },
-  "day32_8am_impl_run3_july15": {
-    "timestamp": "2026-07-15T08:00:00+05:30",
-    "outcome": "morning email sent (ALWAYS send override — new calendar day Jul 15, Run 3)",
-    "pr66_state": "open (mergeable_state: blocked, open 12 days — created 2026-07-03, +517 lines, 7 files)",
-    "pr67_state": "open (mergeable_state: blocked, open 12 days — created 2026-07-03, +1395 lines, 16 files)",
-    "pr68_state": "open (mergeable_state: blocked, open 11 days — created 2026-07-04, +433 lines, 8 files)",
-    "action": "Sent Day 32 status email. PRs open 12-13 days.",
-    "email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + When the Collector Is the Product ✅ (Jul 15 status)",
-    "day33_preview": {
-      "ai": "Day 33 — Context Propagation in Polyglot Agents",
-      "experience": "SDK Wrappers — The Last Resort That Ships",
-      "repo": "infra-ai-streaming"
-    }
-  },
-  "day32_8am_impl_run3_july16": {
-    "timestamp": "2026-07-16T08:00:00+05:30",
-    "outcome": "morning email sent (ALWAYS send override — new calendar day Jul 16, Run 3)",
-    "pr66_state": "open (mergeable_state: blocked, open 13 days — created 2026-07-03, +517 lines, 7 files)",
-    "pr67_state": "open (mergeable_state: blocked, open 13 days — created 2026-07-03, +1395 lines, 16 files)",
-    "pr68_state": "open (mergeable_state: blocked, open 12 days — created 2026-07-04, +433 lines, 8 files)",
-    "action": "Sent Day 32 status email. PRs open 13 days.",
-    "email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + When the Collector Is the Product ✅ (Jul 16 status)"
-  },
-  "6pm_planning_july16": {
-    "timestamp": "2026-07-16T18:00:00+05:30",
-    "outcome": "plans_created",
-    "planning_day": 39,
-    "action": "Day 39 plans created.",
-    "day39_plans": {
-      "code": "ClickHouse MVs + Go HTTP writer + stats aggregator",
-      "ai_learning": "Day 39 — Exclusive Time vs Wall Time",
-      "experience": "The Tool That Ate Your Margin (Agoda)",
-      "repo": "tool-call-analyzer",
-      "employer": "Agoda"
-    }
-  },
-  "day32_8am_impl_run3_july17": {
-    "timestamp": "2026-07-17T08:00:00+05:30",
-    "outcome": "morning email sent (ALWAYS send override — new calendar day Jul 17, Run 3)",
-    "pr66_state": "open (mergeable_state: blocked, open 14 days — created 2026-07-03, +517 lines, 7 files)",
-    "pr67_state": "open (mergeable_state: blocked, open 14 days — created 2026-07-03, +1395 lines, 16 files)",
-    "pr68_state": "open (mergeable_state: blocked, open 13 days — created 2026-07-04, +433 lines, 8 files)",
-    "action": "Sent Day 32 status email. PRs open 14 days.",
-    "email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + When the Collector Is the Product ✅ (Jul 17 status)",
-    "day33_preview": {
-      "ai": "Day 33 — Context Propagation in Polyglot Agents",
-      "experience": "SDK Wrappers — The Last Resort That Ships",
-      "repo": "infra-ai-streaming"
-    }
-  },
-  "6pm_planning_july17": {
-    "timestamp": "2026-07-17T18:00:00+05:30",
-    "outcome": "plans_created",
-    "planning_day": 40,
-    "action": "Day 40 plans created.",
-    "day40_plans": {
-      "code": "Go pkg/graph: DependencyGraph, HasCycle, TopologicalSort, DetectN1, ToDOT",
-      "ai_learning": "Day 40 — Graph Algorithms on Traces",
-      "experience": "N+1 Tool Calls — The SELECT * of Agents (Walmart)",
-      "repo": "tool-call-analyzer",
-      "employer": "Walmart Labs"
-    }
-  },
-  "day32_8am_impl_run3_july18": {
-    "timestamp": "2026-07-18T08:00:00+05:30",
-    "outcome": "morning email sent (ALWAYS send override — new calendar day Jul 18, Run 3)",
-    "pr66_state": "open (mergeable_state: blocked, open 15 days — created 2026-07-03, +517 lines, 7 files)",
-    "pr67_state": "open (mergeable_state: blocked, open 15 days — created 2026-07-03, +1395 lines, 16 files)",
-    "pr68_state": "open (mergeable_state: blocked, open 14 days — created 2026-07-04, +433 lines, 8 files)",
-    "action": "Sent Day 32 status email. PRs open 14-15 days.",
-    "email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + When the Collector Is the Product ✅ (Jul 18 status)",
-    "day33_preview": {
-      "ai": "Day 33 — Context Propagation in Polyglot Agents",
-      "experience": "SDK Wrappers — The Last Resort That Ships",
-      "repo": "infra-ai-streaming"
-    }
-  },
-  "6pm_planning_july18": {
-    "timestamp": "2026-07-18T18:00:00+05:30",
-    "outcome": "plans_created",
-    "planning_day": 41,
-    "action": "Day 41 plans created.",
-    "day41_plans": {
-      "code": "Go exclusive time + waterfall + traceforge CLI subcommands; 18+ tests",
-      "ai_learning": "Day 41 — Cost Waterfalls — CFO-Friendly Visuals",
-      "experience": "Exclusive Time — Flame Graphs for Money (Delivery Hero)",
-      "repo": "tool-call-analyzer",
-      "employer": "Delivery Hero"
-    }
-  },
-  "day32_8am_impl_run3_july19": {
-    "timestamp": "2026-07-19T08:00:00+05:30",
-    "outcome": "morning email sent (ALWAYS send override — new calendar day Jul 19, Run 3)",
-    "pr66_state": "open (mergeable_state: blocked, open 16 days — created 2026-07-03, +517 lines, 7 files)",
-    "pr67_state": "open (mergeable_state: blocked, open 16 days — created 2026-07-03, +1395 lines, 16 files)",
-    "pr68_state": "open (mergeable_state: blocked, open 15 days — created 2026-07-04, +433 lines, 8 files)",
-    "action": "Sent Day 32 status email. PRs open 15-16 days.",
-    "email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + When the Collector Is the Product ✅ (Jul 19 status)",
-    "day33_preview": {
-      "ai": "Day 33 — Context Propagation in Polyglot Agents",
-      "experience": "SDK Wrappers — The Last Resort That Ships",
-      "repo": "infra-ai-streaming"
-    }
-  },
-  "3am_impl_run2_july20": {
-    "timestamp": "2026-07-20T03:00:00+05:30",
-    "outcome": "exited — morning_email_sent=true, all 3 PRs confirmed still blocked (16-17 days open)",
-    "pr66_state": "open (mergeable_state: blocked, open 17 days — confirmed live check)",
-    "pr67_state": "open (mergeable_state: blocked, open 17 days — confirmed live check)",
-    "pr68_state": "open (mergeable_state: blocked, open 16 days — confirmed live check)",
-    "action": "Checked all 3 PRs via GitHub MCP. None merged. morning_email_sent=true → EXIT per state machine rule.",
-    "next_action": "Merge PR #66 first (https://github.com/AkshantVats/infra-ai-streaming/pull/66), then #67, then #68. After all 3 merged, next 11pm run advances to Day 33."
-  },
-  "day32_8am_impl_run3_july20": {
-    "timestamp": "2026-07-20T08:00:00+05:30",
-    "outcome": "morning email sent (ALWAYS send override — new calendar day Jul 20, Run 3)",
-    "pr66_state": "open (mergeable_state: blocked, open 17 days — created 2026-07-03, +517 lines, 7 files)",
-    "pr67_state": "open (mergeable_state: blocked, open 17 days — created 2026-07-03, +1395 lines, 16 files)",
-    "pr68_state": "open (mergeable_state: blocked, open 16 days — created 2026-07-04, +433 lines, 8 files)",
-    "action": "Sent Day 32 status email — blogs live, 3 PRs still open (#66→#67→#68), Day 33 preview (Context Propagation + SDK Wrappers). PRs open 16-17 days.",
-    "email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + When the Collector Is the Product ✅ (Jul 20 status)",
-    "note": "Implementation Run 3 (8am IST, July 20). All Day 32 content complete and live. Merge order: #66 → #67 → #68. After all three merged, 11pm run advances to Day 33 + OSS polish.",
-    "day33_preview": {
-      "ai": "Day 33 — Context Propagation in Polyglot Agents",
-      "experience": "SDK Wrappers — The Last Resort That Ships",
-      "repo": "infra-ai-streaming"
-    }
-  },
-  "1pm_finalize_july20": {
-    "timestamp": "2026-07-20T13:00:00+05:30",
-    "outcome": "waiting_for_approval",
-    "pr66_state": "open (mergeable_state: blocked — all CI green, needs review approval)",
-    "pr67_state": "open (mergeable_state: blocked — all CI green)",
-    "pr68_state": "open (mergeable_state: blocked — all CI green)",
-    "email_reply_check": "no replies to morning email, no approval button click found",
-    "blog_feedback_check": "no feedback in today's emails",
-    "action": "Sent waiting email — no approval found. Day advance blocked.",
-    "email_subject": "1pm: Day 32 waiting for your approval ⏳",
-    "next_action": "Reply 'approved' to morning email or click the green Approve button. After approval, 1pm agent merges #66 → #67 → #68 and advances to Day 33."
-  },
-  "6pm_planning_july20": {
-    "timestamp": "2026-07-20T18:00:00+05:30",
-    "outcome": "plans_created",
-    "planning_day": 42,
-    "action": "Day 42 plans created and pushed to main.",
-    "day42_plans": {
-      "code": "pkg/dualwrite (BillingEvent envelope + fire-and-forget LensAI POST) + pkg/grafana (unified Grafana board JSON generator) + traceforge dualwrite/board CLI subcommands; ≥14 tests",
-      "ai_learning": "Day 42 — Unified Billing Events — One Envelope",
-      "experience": "One Dashboard for Inference and Tools (Agoda WhiteFalcon: one query face, two storage tiers)",
-      "repo": "tool-call-analyzer",
-      "employer": "Agoda"
-    },
-    "next_run": "11pm Night Check"
-  },
-  "3am_impl_run2_july20_v2": {
-    "timestamp": "2026-07-20T03:15:00+05:30",
-    "outcome": "exited — morning_email_sent=true, PRs #66/#67/#68 all confirmed open+blocked via live GitHub MCP check",
-    "pr66_state": "open, mergeable_state: blocked, 17 days, +517 lines, 7 files",
-    "pr67_state": "open, mergeable_state: blocked, 17 days, +1395 lines, 16 files",
-    "pr68_state": "open, mergeable_state: blocked, 16 days, +433 lines, 8 files",
-    "action": "Live PR check via GitHub MCP confirmed no merges. morning_email_sent=true → EXIT per state machine. No new work possible until PRs merged.",
-    "next_action": "Merge #66 → #67 → #68 at https://github.com/AkshantVats/infra-ai-streaming to unblock Day 33 build."
-  },
-  "day32_8am_impl_run3_july21": {
-    "timestamp": "2026-07-21T08:00:00+05:30",
-    "outcome": "morning email sent (ALWAYS send override — new calendar day Jul 21, Run 3)",
-    "pr66_state": "open (mergeable_state: blocked — 18 days old, +517 lines)",
-    "pr67_state": "open (mergeable_state: blocked — 18 days old, +1395 lines)",
-    "pr68_state": "open (mergeable_state: blocked — 17 days old, +433 lines)",
-    "action": "Sent Day 32 status email. All 3 PRs still blocked, awaiting review approval.",
-    "email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + Collector Is the Product ✅ (Jul 21 status)"
-  },
-  "1pm_finalize_july21": {
-    "timestamp": "2026-07-21T13:00:00+05:30",
-    "outcome": "waiting_for_approval",
-    "pr66_state": "open (all CI green — 7/7 checks pass, mergeable_state: blocked — needs review approval, 18 days old)",
-    "pr67_state": "open (mergeable_state: blocked — all CI green, 18 days old)",
-    "pr68_state": "open (mergeable_state: blocked — all CI green, 17 days old)",
-    "email_reply_check": "no replies to morning email found, no approval button click email found",
-    "blog_feedback_check": "thread has only the agent's morning email — no replies, no feedback",
-    "action": "Sent waiting email — no approval found. Day advance blocked.",
-    "email_subject": "1pm: Day 32 waiting for your approval ⏳",
-    "next_action": "Reply 'approved' to email or click the green Approve button. After approval, 1pm agent merges #66 → #67 → #68 in sequence and advances plan to Day 33."
-  },
-  "6pm_planning_july21": {
-    "timestamp": "2026-07-21T18:00:00+05:30",
-    "outcome": "plans_created",
-    "planning_day": 43,
-    "action": "Day 43 plans created and pushed to main.",
-    "day43_plans": {
-      "code": "tool-call-analyzer README + OpenAPI spec (api/openapi.yaml) + pkg/kafka producer + chaos test proving Kafka buffers spans when ClickHouse aggregator is slow",
-      "ai_learning": "Day 43 — Backpressure on Analytics Pipelines (Kafka consumer lag, split topics, chaos testing)",
-      "experience": "Kafka as Shock Absorber — Again (Agoda WhiteFalcon: Kafka absorbing Redis hot-tier slowness; maps to tool-call-analyzer chaos test)",
-      "repo": "tool-call-analyzer",
-      "employer": "Agoda"
-    },
-    "next_run": "11pm Night Check"
-  },
-  "10pm_night_check_july21": {
-    "timestamp": "2026-07-21T22:10:00+05:30",
-    "outcome": "waiting_for_pr_merge",
-    "cover_check": "exit 2 — no image attachments found in today's email thread",
-    "covers_status": "waiting_for_reply",
-    "email_reply_check": "no replies with feedback found",
-    "pr66_state": "open (mergeable_state: blocked — 19 days old, +517 lines, 7 files, CI green)",
-    "pr67_state": "open (mergeable_state: blocked — 19 days old, +1395 lines, 16 files, CI green)",
-    "pr68_state": "open (mergeable_state: blocked — 18 days old, +433 lines, 8 files, CI green)",
-    "action": "Sent 10pm waiting email — PRs still blocked. No advance. No covers uploaded.",
-    "email_subject": "[Inferix · LensAI · Day 32] ⏳ merge code PRs to unlock Day 33",
-    "day33_preview": {
-      "ai": "Day 33 — Context Propagation in Polyglot Agents",
-      "experience": "SDK Wrappers — The Last Resort That Ships",
-      "repo": "agent-trace-collector"
-    },
-    "next_action": "Merge PRs in order: #66 → #67 → #68 at https://github.com/AkshantVats/infra-ai-streaming to unblock Day 33 Overnight Build."
-  },
-  "3am_impl_run2_july22": {
-    "timestamp": "2026-07-22T03:00:00+05:30",
-    "outcome": "exited — morning_email_sent=true, all 3 PRs confirmed still open+blocked (19-20 days old)",
-    "pr66_state": "open, mergeable_state: blocked, +517 lines, 7 files (created 2026-07-03)",
-    "pr67_state": "open, mergeable_state: blocked, +1395 lines, 16 files (created 2026-07-03)",
-    "pr68_state": "open, mergeable_state: blocked, +433 lines, 8 files (created 2026-07-04)",
-    "action": "Live PR check via GitHub MCP confirmed no merges. morning_email_sent=true → EXIT per state machine. No Overnight Build possible.",
-    "next_action": "Merge #66 → #67 → #68 at https://github.com/AkshantVats/infra-ai-streaming to unblock Day 33 Overnight Build."
   },
   "1pm_finalize_july22": {
     "timestamp": "2026-07-22T13:00:00+05:30",
@@ -549,5 +245,41 @@
       "experience": "SDK Wrappers — The Last Resort That Ships",
       "repo": "agent-trace-collector"
     }
+  },
+  "3am_impl_run2_july22": {
+    "timestamp": "2026-07-22T03:00:00+05:30",
+    "outcome": "exited — morning_email_sent=true, all 3 PRs confirmed still open+blocked (19-20 days old)",
+    "pr66_state": "open, mergeable_state: blocked, +517 lines, 7 files (created 2026-07-03)",
+    "pr67_state": "open, mergeable_state: blocked, +1395 lines, 16 files (created 2026-07-03)",
+    "pr68_state": "open, mergeable_state: blocked, +433 lines, 8 files (created 2026-07-04)",
+    "action": "Live PR check via GitHub MCP confirmed no merges. morning_email_sent=true → EXIT per state machine. No Overnight Build possible.",
+    "next_action": "Merge #66 → #67 → #68 at https://github.com/AkshantVats/infra-ai-streaming to unblock Day 33 Overnight Build."
+  },
+  "10pm_night_check_july21": {
+    "timestamp": "2026-07-21T22:10:00+05:30",
+    "outcome": "waiting_for_pr_merge",
+    "cover_check": "exit 2 — no image attachments found in today's email thread",
+    "covers_status": "waiting_for_reply",
+    "email_reply_check": "no replies with feedback found",
+    "pr66_state": "open (mergeable_state: blocked — 19 days old, +517 lines, 7 files, CI green)",
+    "pr67_state": "open (mergeable_state: blocked — 19 days old, +1395 lines, 16 files, CI green)",
+    "pr68_state": "open (mergeable_state: blocked — 18 days old, +433 lines, 8 files, CI green)",
+    "action": "Sent 10pm waiting email — PRs still blocked. No advance. No covers uploaded.",
+    "email_subject": "[Inferix · LensAI · Day 32] ⏳ merge code PRs to unlock Day 33",
+    "next_action": "Merge PRs in order: #66 → #67 → #68 at https://github.com/AkshantVats/infra-ai-streaming to unblock Day 33 Overnight Build."
+  },
+  "6pm_planning_july21": {
+    "timestamp": "2026-07-21T18:00:00+05:30",
+    "outcome": "plans_created",
+    "planning_day": 43,
+    "action": "Day 43 plans created and pushed to main.",
+    "day43_plans": {
+      "code": "tool-call-analyzer README + OpenAPI spec (api/openapi.yaml) + pkg/kafka producer + chaos test proving Kafka buffers spans when ClickHouse aggregator is slow",
+      "ai_learning": "Day 43 — Backpressure on Analytics Pipelines (Kafka consumer lag, split topics, chaos testing)",
+      "experience": "Kafka as Shock Absorber — Again (Agoda WhiteFalcon: Kafka absorbing Redis hot-tier slowness; maps to tool-call-analyzer chaos test)",
+      "repo": "tool-call-analyzer",
+      "employer": "Agoda"
+    },
+    "next_run": "11pm Night Check"
   }
 }
