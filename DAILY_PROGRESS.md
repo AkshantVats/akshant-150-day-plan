@@ -1,9 +1,9 @@
 {
-  "current_day": 31,
-  "next_day": 32,
+  "current_day": 33,
+  "next_day": 34,
   "phase": "morning_complete",
-  "last_run": "2026-07-22T18:00:00+05:30",
-  "last_run_agent": "6pm_planning_july22",
+  "last_run": "2026-07-22T22:30:00+05:30",
+  "last_run_agent": "10pm_impl_run1_july22",
   "blog_prs": {
     "ai_learning": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/23",
@@ -117,169 +117,91 @@
       "pr_url": "https://github.com/AkshantVats/Profile/pull/36",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-29-ai-infrastructure-stack-full-map.html",
       "status": "live",
-      "day": 29,
-      "title": "Day 29 — The AI Infrastructure Stack — Full Map"
+      "day": 29
     },
     "experience_day29": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/37",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-29-thirty-days-lensai-month-one.html",
       "status": "live",
-      "day": 29,
-      "title": "Day 29 — Thirty Days of Building — What Shipped vs What Matters"
+      "day": 29
     },
     "ai_learning_day30": {
       "commit": "https://github.com/AkshantVats/Profile/commit/9af832c",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-30-react-loops-distributed-workflows.html",
       "status": "live",
-      "day": 30,
-      "title": "Day 30 — ReAct Loops as Distributed Workflows"
+      "day": 30
     },
     "experience_day30": {
       "commit": "https://github.com/AkshantVats/Profile/commit/9af832c",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-30-step-7-failed-silently-no-span.html",
       "status": "live",
-      "day": 30,
-      "title": "Day 30 — Step 7 Failed Silently — And Nobody Had a Span"
+      "day": 30
     },
     "ai_learning_day31": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/39",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-31-opentelemetry-semantics-for-agents.html",
       "status": "live",
-      "day": 31,
-      "title": "Day 31 — OpenTelemetry Semantics for Agents"
+      "day": 31
     },
     "experience_day31": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/38",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-31-tool-calls-are-rpcs-with-marketing.html",
       "status": "live",
-      "day": 31,
-      "title": "Day 31 — Tool Calls Are RPCs With Marketing"
+      "day": 31
     },
     "ai_learning_day32": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/41",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-32-tool-calling-protocols-openai-vs-anthropic.html",
       "status": "live",
-      "day": 32,
-      "title": "Day 32 — Tool Calling Protocols — OpenAI vs Anthropic"
+      "day": 32
     },
     "experience_day32": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/40",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-32-when-the-collector-is-the-product.html",
       "status": "live",
-      "day": 32,
-      "title": "Day 32 — When the Collector Is the Product"
+      "day": 32
+    },
+    "ai_learning_day33": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/43",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-33-context-propagation-polyglot-agents.html",
+      "status": "live",
+      "day": 33,
+      "title": "Day 33 — Context Propagation in Polyglot Agents"
+    },
+    "experience_day33": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/42",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-33-sdk-wrappers-last-resort-that-ships.html",
+      "status": "live",
+      "day": 33,
+      "title": "Day 33 — SDK Wrappers: The Last Resort That Ships"
     }
   },
   "code_pr": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/67",
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/71",
     "status": "open",
-    "day": 31,
-    "branch": "feat/day-31-traceforge-otel-pipeline",
+    "day": 33,
+    "branch": "feat/day-33-traceforge-go-sdk",
     "repo": "infra-ai-streaming",
-    "note": "TraceForge OTel pipeline: HTTP ingest service (Go), OTLP/gRPC exporter, ClickHouse DDL (agent_spans + trace cost rollup MV), OTel Collector config, Docker Compose overlay. 11 Go tests passing. PR #66 must merge first (Day 30 scaffold)."
+    "note": "TraceForge Go SDK: StartSpan/EndSpan with context propagation, W3C TraceContext inject/extract, fire-and-forget HTTP+Kafka emit, 11 Go tests passing, race-clean."
   },
-  "code_pr_day30": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/66",
-    "status": "open",
-    "day": 30,
-    "branch": "feat/day-30-traceforge-agent-span-schema",
-    "repo": "infra-ai-streaming",
-    "note": "TraceForge scaffold: DESIGN.md + span schema + OTel mapping + 10 Go tests. Must merge before Day 31 PR."
-  },
-  "code_pr_day32": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/68",
-    "status": "open",
-    "day": 32,
-    "branch": "feat/day-32-traceforge-python-sdk",
-    "repo": "infra-ai-streaming",
-    "note": "TraceForge Python SDK: traceforge.wrap_openai() proxy client, fire-and-forget span emitter, SHA-256 arg hashing, 8 pytest tests all passing."
-  },
-  "merge_order": "PR #66 → PR #67 → PR #68 (must merge in this sequence — each builds on the previous)",
+  "merge_order": "Merge PR #71 (Day 33 Go SDK) to advance to Day 34.",
   "oss_polish_pr": null,
   "email_sent": true,
-  "morning_email_sent": true,
-  "morning_email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + When the Collector Is the Product ✅ (Jul 16 status)",
+  "morning_email_sent": false,
   "feedback_applied": false,
   "covers_status": "pillow_uploaded",
-  "covers_note": "Day 31+32 covers uploaded (Pillow fallback — DALL-E billing limit reached)",
+  "covers_note": "Day 33 covers generated via Pillow fallback (DALL-E billing limit). User-supplied covers expected via email reply.",
   "## Pre-Push Issues": [
-    "Day 29+30+31: github.com profile links return HTTP 403 in pre-push-check (egress proxy policy). Added to SKIP_DOMAINS in pre-push-check.sh."
+    "Day 29+30+31+32+33: github.com profile links return HTTP 403 in pre-push-check (egress proxy policy). Added to SKIP_DOMAINS in pre-push-check.sh."
   ],
   "## Email Errors": [],
-  "6pm_planning_july22": {
-    "timestamp": "2026-07-22T18:00:00+05:30",
-    "outcome": "plans_created",
-    "planning_day": 44,
-    "action": "Day 44 plans created and pushed to main (PR #15, squash-merged).",
-    "day44_plans": {
-      "code": "agent-replay-engine new repo: DESIGN.md + pkg/eventlog (AgentEvent, EventLog, JSON Lines read/write) + pkg/mocker (ToolMocker, frozen response lookup, CallHistory) + go.mod stdlib-only; ≥12 Go tests",
-      "ai_learning": "Day 44 — Event Sourcing for Agent Runs (Kafka log compaction analogy, append-only event log, ToolMocker architecture, determinism rules)",
-      "experience": "Day 44 — Event Sourcing — But the Events Hallucinate (Wayfair PAS: Delphi idempotency, pricing simulation frozen inputs via BigQuery time travel + Bigtable snapshots, pricing_refresh Kafka event-sourcing pattern)",
-      "repo": "agent-replay-engine",
-      "employer": "Wayfair"
-    },
-    "next_run": "11pm Night Check"
-  },
-  "1pm_finalize_july22": {
-    "timestamp": "2026-07-22T13:00:00+05:30",
-    "outcome": "waiting_for_approval",
-    "pr66_state": "open (mergeable_state: blocked — 20 days old, +517 lines, 7 files, CI green)",
-    "pr67_state": "open (mergeable_state: blocked — 20 days old, +1395 lines, 16 files, CI green)",
-    "pr68_state": "open (mergeable_state: blocked — 19 days old, +433 lines, 8 files, CI green)",
-    "email_reply_check": "no replies to morning email found, no approval button click found",
-    "blog_feedback_check": "thread contains only the agent's morning email — no replies, no feedback",
-    "action": "Sent waiting email — no approval found. Day advance blocked.",
-    "email_subject": "1pm: Day 32 waiting for your approval ⏳",
-    "next_action": "Reply 'approved' to morning email or click the green Approve button. After approval, 1pm agent merges #66 → #67 → #68 in sequence and advances plan to Day 33."
-  },
-  "day32_8am_impl_run3_july22": {
-    "timestamp": "2026-07-22T08:00:00+05:30",
-    "outcome": "morning email sent (ALWAYS send override — new calendar day Jul 22, Run 3)",
-    "pr66_state": "open (mergeable_state: blocked — 20 days old, +517 lines, 7 files, CI green)",
-    "pr67_state": "open (mergeable_state: blocked — 20 days old, +1395 lines, 16 files, CI green)",
-    "pr68_state": "open (mergeable_state: blocked — 19 days old, +433 lines, 8 files, CI green)",
-    "action": "Sent Day 32 status email (Jul 22). All 3 PRs still blocked, awaiting review approval. Day 33 preview: Context Propagation in Polyglot Agents + SDK Wrappers.",
-    "email_subject": "[Inferix · LensAI · Day 32] Tool Calling Protocols + Collector Is the Product ✅ (Jul 22 status)",
-    "day33_preview": {
-      "ai": "Day 33 — Context Propagation in Polyglot Agents",
-      "experience": "SDK Wrappers — The Last Resort That Ships",
-      "repo": "agent-trace-collector"
-    }
-  },
-  "3am_impl_run2_july22": {
-    "timestamp": "2026-07-22T03:00:00+05:30",
-    "outcome": "exited — morning_email_sent=true, all 3 PRs confirmed still open+blocked (19-20 days old)",
-    "pr66_state": "open, mergeable_state: blocked, +517 lines, 7 files (created 2026-07-03)",
-    "pr67_state": "open, mergeable_state: blocked, +1395 lines, 16 files (created 2026-07-03)",
-    "pr68_state": "open, mergeable_state: blocked, +433 lines, 8 files (created 2026-07-04)",
-    "action": "Live PR check via GitHub MCP confirmed no merges. morning_email_sent=true → EXIT per state machine. No Overnight Build possible.",
-    "next_action": "Merge #66 → #67 → #68 at https://github.com/AkshantVats/infra-ai-streaming to unblock Day 33 Overnight Build."
-  },
-  "10pm_night_check_july21": {
-    "timestamp": "2026-07-21T22:10:00+05:30",
-    "outcome": "waiting_for_pr_merge",
-    "cover_check": "exit 2 — no image attachments found in today's email thread",
-    "covers_status": "waiting_for_reply",
-    "email_reply_check": "no replies with feedback found",
-    "pr66_state": "open (mergeable_state: blocked — 19 days old, +517 lines, 7 files, CI green)",
-    "pr67_state": "open (mergeable_state: blocked — 19 days old, +1395 lines, 16 files, CI green)",
-    "pr68_state": "open (mergeable_state: blocked — 18 days old, +433 lines, 8 files, CI green)",
-    "action": "Sent 10pm waiting email — PRs still blocked. No advance. No covers uploaded.",
-    "email_subject": "[Inferix · LensAI · Day 32] ⏳ merge code PRs to unlock Day 33",
-    "next_action": "Merge PRs in order: #66 → #67 → #68 at https://github.com/AkshantVats/infra-ai-streaming to unblock Day 33 Overnight Build."
-  },
-  "6pm_planning_july21": {
-    "timestamp": "2026-07-21T18:00:00+05:30",
-    "outcome": "plans_created",
-    "planning_day": 43,
-    "action": "Day 43 plans created and pushed to main.",
-    "day43_plans": {
-      "code": "tool-call-analyzer README + OpenAPI spec (api/openapi.yaml) + pkg/kafka producer + chaos test proving Kafka buffers spans when ClickHouse aggregator is slow",
-      "ai_learning": "Day 43 — Backpressure on Analytics Pipelines (Kafka consumer lag, split topics, chaos testing)",
-      "experience": "Kafka as Shock Absorber — Again (Agoda WhiteFalcon: Kafka absorbing Redis hot-tier slowness; maps to tool-call-analyzer chaos test)",
-      "repo": "tool-call-analyzer",
-      "employer": "Agoda"
-    },
-    "next_run": "11pm Night Check"
+  "10pm_impl_run1_july22": {
+    "timestamp": "2026-07-22T22:30:00+05:30",
+    "outcome": "morning_complete",
+    "action": "Day 33 Overnight Build: TraceForge Go SDK (PR #71 open) + Experience blog (PR #42, squash-merged) + AI Learning blog (PR #43, squash-merged). Both blogs live.",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/71",
+    "ai_learning_pr": "https://github.com/AkshantVats/Profile/pull/43",
+    "experience_pr": "https://github.com/AkshantVats/Profile/pull/42",
+    "next_action": "Send morning email, then wait for PR #71 merge at 11pm Night Check to advance to Day 34."
   }
 }
