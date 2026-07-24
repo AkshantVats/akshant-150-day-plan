@@ -185,7 +185,13 @@
     "note": "TraceForge Go SDK: StartSpan/EndSpan with context propagation, W3C TraceContext inject/extract, fire-and-forget HTTP+Kafka emit, 11 Go tests passing, race-clean."
   },
   "merge_order": "Merge PR #71 (Day 33 Go SDK) to advance to Day 34.",
-  "oss_polish_pr": null,
+  "oss_polish_pr": {
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/76",
+    "branch": "refactor/oss-polish-day-33",
+    "status": "open",
+    "day": 33,
+    "fixes": "gofmt (2 files), kafkaOnce WHY comment, README benchmark estimates, CONTRIBUTING Go SDK section"
+  },
   "email_sent": false,
   "morning_email_sent": true,
   "feedback_applied": false,
