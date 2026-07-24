@@ -174,23 +174,37 @@
       "status": "live",
       "day": 33,
       "title": "Day 33 \u2014 SDK Wrappers: The Last Resort That Ships"
+    },
+    "ai_learning_day34": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/44",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-34-trace-storage-layout-sort-keys-matter.html",
+      "status": "live",
+      "day": 34,
+      "title": "Day 34 \u2014 Trace Storage Layout \u2014 Sort Keys Matter"
+    },
+    "experience_day34": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/45",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-34-clickhouse-for-traces-not-just-metrics.html",
+      "status": "live",
+      "day": 34,
+      "title": "Day 34 \u2014 ClickHouse for Traces: Not Just Metrics"
     }
   },
   "code_pr": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/71",
-    "status": "merged",
-    "day": 33,
-    "branch": "feat/day-33-traceforge-go-sdk",
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/75",
+    "status": "open",
+    "day": 34,
+    "branch": "feat/day-34-clickhouse-storage",
     "repo": "infra-ai-streaming",
-    "note": "TraceForge Go SDK: StartSpan/EndSpan with context propagation, W3C TraceContext inject/extract, fire-and-forget HTTP+Kafka emit, 11 Go tests passing, race-clean."
+    "note": "ClickHouse agent_spans MergeTree ORDER BY (trace_id, start_time), per-trace AggregatingMergeTree cost rollup, Go Kafka consumer (5 tests passing), Grafana waterfall dashboard."
   },
-  "merge_order": "Merge PR #71 (Day 33 Go SDK) to advance to Day 34.",
+  "merge_order": "Merge PR #75 (Day 34 ClickHouse) to advance to Day 35.",
   "oss_polish_pr": null,
-  "email_sent": false,
+  "email_sent": true,
   "morning_email_sent": true,
   "feedback_applied": false,
-  "covers_status": "pillow_uploaded",
-  "covers_note": "Day 33 covers generated via Pillow fallback (DALL-E billing limit). User-supplied covers expected via email reply.",
+  "covers_status": "waiting_for_reply",
+  "covers_note": "Day 34: DALL-E billing limit reached. Covers skipped per CLAUDE.md Section 4.6 — will upload at 11pm Night Check when user replies with PNGs.",
   "## Pre-Push Issues": [
     "Day 29+30+31+32+33: github.com profile links return HTTP 403 in pre-push-check (egress proxy policy). Added to SKIP_DOMAINS in pre-push-check.sh."
   ],
@@ -209,6 +223,16 @@
     "outcome": "morning_email_sent",
     "action": "Morning email sent to akshant3@gmail.com. Subject: [Inferix \u00b7 LensAI \u00b7 Day 33] Context Propagation + SDK Wrappers live. Awaiting PR #71 merge + cover image reply before 11pm Night Check.",
     "next_action": "11pm Night Check: check email reply (covers + feedback), check PR #71 merge state, advance to Day 34 if merged."
+  },
+  "overnight_build_july24": {
+    "timestamp": "2026-07-24T16:55:00+05:30",
+    "outcome": "morning_complete",
+    "action": "Day 34 Overnight Build: ClickHouse schema+rollup+queries+consumer+Grafana (PR #75 open) + AI Learning blog (PR #44, squash-merged) + Experience blog (PR #45, squash-merged). Both blogs live. Morning email sent.",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/75",
+    "ai_learning_pr": "https://github.com/AkshantVats/Profile/pull/44",
+    "experience_pr": "https://github.com/AkshantVats/Profile/pull/45",
+    "covers": "Skipped — DALL-E billing limit, user-supplied PNGs expected via email reply at 11pm Night Check.",
+    "next_action": "11pm Night Check: upload cover PNGs from email reply, check PR #75 merge state, advance to Day 35 if merged."
   },
   "1pm_finalize_july24": {
     "timestamp": "2026-07-24T13:11:33+05:30",
