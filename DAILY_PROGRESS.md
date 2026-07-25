@@ -1,9 +1,9 @@
 {
   "current_day": 35,
   "next_day": 35,
-  "phase": "day_advanced",
-  "last_run": "2026-07-25T13:00:00+05:30",
-  "last_run_agent": "1pm_finalize_july25",
+  "phase": "code_done",
+  "last_run": "2026-07-25T22:15:00+05:30",
+  "last_run_agent": "10pm_impl_run1_july25",
   "blog_prs": {
     "ai_learning": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/23",
@@ -191,17 +191,17 @@
     }
   },
   "code_pr": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/75",
-    "status": "merged",
-    "day": 34,
-    "branch": "feat/day-34-clickhouse-storage",
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/77",
+    "status": "open",
+    "day": 35,
+    "branch": "feat/day-35-react-demo-silent-step7",
     "repo": "infra-ai-streaming",
-    "note": "ClickHouse agent_spans MergeTree ORDER BY (trace_id, start_time), per-trace cost MV, Grafana waterfall. CI: all 6 checks green."
+    "note": "ReAct demo agent — 10-step loop, step 7 silent empty response. ManualSpan + start_span() SDK extension. 7/7 tests passing."
   },
-  "merge_order": "Merge PR #75 (Day 34 ClickHouse storage) to advance to Day 35.",
+  "merge_order": "Merge PR #77 (Day 35 ReAct demo) to advance to Day 36.",
   "oss_polish_pr": null,
   "email_sent": true,
-  "morning_email_sent": true,
+  "morning_email_sent": false,
   "feedback_applied": false,
   "covers_status": "pillow_uploaded",
   "covers_note": "Day 33 covers generated via Pillow fallback (DALL-E billing limit). User-supplied covers expected via email reply.",
@@ -258,5 +258,12 @@
     "code_pr_merged": "https://github.com/AkshantVats/infra-ai-streaming/pull/75",
     "plan_pr": "https://github.com/AkshantVats/akshant-150-day-plan/pull/18",
     "next_action": "Send confirmation email. 2am Overnight Build writes Day 35 blogs + code."
+  },
+  "10pm_impl_run1_july25": {
+    "timestamp": "2026-07-25T22:15:00+05:30",
+    "outcome": "code_done",
+    "action": "Day 35 Overnight Build: ReAct demo agent (PR #77 open) — step-7 silent failure, ManualSpan SDK extension, 7/7 tests passing. Writing Experience + AI Learning blogs next.",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/77",
+    "next_action": "Write Experience blog, AI Learning blog, send morning email."
   }
 }
