@@ -1,8 +1,8 @@
 {
   "current_day": 35,
   "next_day": 35,
-  "phase": "code_done",
-  "last_run": "2026-07-25T22:15:00+05:30",
+  "phase": "morning_complete",
+  "last_run": "2026-07-26T01:45:00+05:30",
   "last_run_agent": "10pm_impl_run1_july25",
   "blog_prs": {
     "ai_learning": {
@@ -188,6 +188,20 @@
       "status": "live",
       "day": 34,
       "title": "Day 34 \u2014 ClickHouse for Traces: Not Just Metrics"
+    },
+    "ai_learning_day35": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/47",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-35-silent-failures-multi-step-agents.html",
+      "status": "live",
+      "day": 35,
+      "title": "Day 35 \u2014 Silent Failures in Multi-Step Agents"
+    },
+    "experience_day35": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/46",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-35-demo-agent-silent-step-7.html",
+      "status": "live",
+      "day": 35,
+      "title": "Day 35 \u2014 The Demo Agent That Always Dies on Step 7"
     }
   },
   "code_pr": {
@@ -201,7 +215,7 @@
   "merge_order": "Merge PR #77 (Day 35 ReAct demo) to advance to Day 36.",
   "oss_polish_pr": null,
   "email_sent": true,
-  "morning_email_sent": false,
+  "morning_email_sent": true,
   "feedback_applied": false,
   "covers_status": "pillow_uploaded",
   "covers_note": "Day 33 covers generated via Pillow fallback (DALL-E billing limit). User-supplied covers expected via email reply.",
@@ -261,9 +275,11 @@
   },
   "10pm_impl_run1_july25": {
     "timestamp": "2026-07-25T22:15:00+05:30",
-    "outcome": "code_done",
-    "action": "Day 35 Overnight Build: ReAct demo agent (PR #77 open) — step-7 silent failure, ManualSpan SDK extension, 7/7 tests passing. Writing Experience + AI Learning blogs next.",
+    "outcome": "morning_complete",
+    "action": "Day 35 full build: ReAct demo agent (PR #77 open), Experience blog (PR #46 squash-merged), AI Learning blog (PR #47 squash-merged). Both blogs live. Morning email sent.",
     "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/77",
-    "next_action": "Write Experience blog, AI Learning blog, send morning email."
+    "experience_pr": "https://github.com/AkshantVats/Profile/pull/46",
+    "ai_learning_pr": "https://github.com/AkshantVats/Profile/pull/47",
+    "next_action": "11pm Night Check: check email reply (covers + feedback), check PR #77 merge state, advance to Day 36 if merged."
   }
 }
