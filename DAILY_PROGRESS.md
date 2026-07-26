@@ -1,7 +1,7 @@
 {
-  "current_day": 35,
-  "next_day": 35,
-  "phase": "morning_complete",
+  "current_day": 36,
+  "next_day": 36,
+  "phase": "code_done",
   "last_run": "2026-07-26T01:45:00+05:30",
   "last_run_agent": "10pm_impl_run1_july25",
   "blog_prs": {
@@ -205,17 +205,17 @@
     }
   },
   "code_pr": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/77",
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/78",
     "status": "open",
-    "day": 35,
-    "branch": "feat/day-35-react-demo-silent-step7",
+    "day": 36,
+    "branch": "feat/tail-sampling-pii-scrub",
     "repo": "infra-ai-streaming",
-    "note": "ReAct demo agent — 10-step loop, step 7 silent empty response. ManualSpan + start_span() SDK extension. 7/7 tests passing."
+    "note": "Head 10% + error tail sampling + PII scrub. 14/14 tests passing."
   },
   "merge_order": "Merge PR #77 (Day 35 ReAct demo) to advance to Day 36.",
   "oss_polish_pr": null,
   "email_sent": true,
-  "morning_email_sent": true,
+  "morning_email_sent": false,
   "feedback_applied": false,
   "covers_status": "pillow_uploaded",
   "covers_note": "Day 33 covers generated via Pillow fallback (DALL-E billing limit). User-supplied covers expected via email reply.",
