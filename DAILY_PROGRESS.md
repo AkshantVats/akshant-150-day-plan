@@ -1,8 +1,8 @@
 {
   "current_day": 36,
   "next_day": 36,
-  "phase": "code_done",
-  "last_run": "2026-07-26T01:45:00+05:30",
+  "phase": "morning_complete",
+  "last_run": "2026-07-26T17:00:00+05:30",
   "last_run_agent": "10pm_impl_run1_july25",
   "blog_prs": {
     "ai_learning": {
@@ -202,6 +202,20 @@
       "status": "live",
       "day": 35,
       "title": "Day 35 \u2014 The Demo Agent That Always Dies on Step 7"
+    },
+    "ai_learning_day36": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/49",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-36-tail-sampling-agent-traces.html",
+      "status": "live",
+      "day": 36,
+      "title": "Day 36 \u2014 Tail Sampling for Agent Traces"
+    },
+    "experience_day36": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/48",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-36-sampling-without-lying.html",
+      "status": "live",
+      "day": 36,
+      "title": "Day 36 \u2014 Sampling Without Lying"
     }
   },
   "code_pr": {
@@ -281,5 +295,14 @@
     "experience_pr": "https://github.com/AkshantVats/Profile/pull/46",
     "ai_learning_pr": "https://github.com/AkshantVats/Profile/pull/47",
     "next_action": "11pm Night Check: check email reply (covers + feedback), check PR #77 merge state, advance to Day 36 if merged."
+  },
+  "10pm_impl_run1_july26": {
+    "timestamp": "2026-07-26T17:00:00+05:30",
+    "outcome": "morning_complete",
+    "action": "Day 36 full build: sampling+PII scrub (PR #78 open), Experience blog (PR #48 squash-merged), AI Learning blog (PR #49 squash-merged). Both blogs live. Morning email sending.",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/78",
+    "experience_pr": "https://github.com/AkshantVats/Profile/pull/48",
+    "ai_learning_pr": "https://github.com/AkshantVats/Profile/pull/49",
+    "next_action": "11pm Night Check: check email reply (covers + feedback), check PR #78 merge state, advance to Day 37 if merged."
   }
 }
