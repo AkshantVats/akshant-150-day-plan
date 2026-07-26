@@ -229,7 +229,7 @@
   "merge_order": "Merge PR #77 (Day 35 ReAct demo) to advance to Day 36.",
   "oss_polish_pr": null,
   "email_sent": true,
-  "morning_email_sent": false,
+  "morning_email_sent": true,
   "feedback_applied": false,
   "covers_status": "pillow_uploaded",
   "covers_note": "Day 33 covers generated via Pillow fallback (DALL-E billing limit). User-supplied covers expected via email reply.",
