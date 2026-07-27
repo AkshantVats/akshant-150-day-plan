@@ -1,5 +1,5 @@
 {
-  "current_day": 35,
+  "current_day": 37,
   "days": [
     {
       "day": 0,
@@ -657,7 +657,7 @@
     },
     {
       "day": 28,
-      "status": "today",
+      "status": "done",
       "weekday": "Tuesday",
       "product": "lensai",
       "product_name": "LensAI",
@@ -824,7 +824,7 @@
     },
     {
       "day": 35,
-      "status": "today",
+      "status": "done",
       "weekday": "Tuesday",
       "product": "traceforge",
       "product_name": "TraceForge",
@@ -847,7 +847,7 @@
     },
     {
       "day": 36,
-      "status": "pending",
+      "status": "done",
       "weekday": "Wednesday",
       "product": "traceforge",
       "product_name": "TraceForge",
@@ -870,7 +870,7 @@
     },
     {
       "day": 37,
-      "status": "pending",
+      "status": "today",
       "weekday": "Thursday",
       "product": "traceforge",
       "product_name": "TraceForge",
