@@ -1,9 +1,9 @@
 {
   "current_day": 37,
-  "next_day": 37,
-  "phase": "day_advanced",
-  "last_run": "2026-07-27T13:09:25.009933+05:30",
-  "last_run_agent": "1pm_finalize_july27",
+  "next_day": 38,
+  "phase": "morning_complete",
+  "last_run": "2026-07-27T02:30:00+05:30",
+  "last_run_agent": "2am_overnight_july27",
   "blog_prs": {
     "ai_learning": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/23",
@@ -166,73 +166,86 @@
       "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-33-context-propagation-polyglot-agents.html",
       "status": "live",
       "day": 33,
-      "title": "Day 33 \u2014 Context Propagation in Polyglot Agents"
+      "title": "Day 33 — Context Propagation in Polyglot Agents"
     },
     "experience_day33": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/42",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-33-sdk-wrappers-last-resort-that-ships.html",
       "status": "live",
       "day": 33,
-      "title": "Day 33 \u2014 SDK Wrappers: The Last Resort That Ships"
+      "title": "Day 33 — SDK Wrappers: The Last Resort That Ships"
     },
     "ai_learning_day34": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/44",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-34-trace-storage-layout-sort-keys-matter.html",
       "status": "live",
       "day": 34,
-      "title": "Day 34 \u2014 Trace Storage Layout \u2014 Sort Keys Matter"
+      "title": "Day 34 — Trace Storage Layout — Sort Keys Matter"
     },
     "experience_day34": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/45",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-34-clickhouse-for-traces-not-just-metrics.html",
       "status": "live",
       "day": 34,
-      "title": "Day 34 \u2014 ClickHouse for Traces: Not Just Metrics"
+      "title": "Day 34 — ClickHouse for Traces: Not Just Metrics"
     },
     "ai_learning_day35": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/47",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-35-silent-failures-multi-step-agents.html",
       "status": "live",
       "day": 35,
-      "title": "Day 35 \u2014 Silent Failures in Multi-Step Agents"
+      "title": "Day 35 — Silent Failures in Multi-Step Agents"
     },
     "experience_day35": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/46",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-35-demo-agent-silent-step-7.html",
       "status": "live",
       "day": 35,
-      "title": "Day 35 \u2014 The Demo Agent That Always Dies on Step 7"
+      "title": "Day 35 — The Demo Agent That Always Dies on Step 7"
     },
     "ai_learning_day36": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/49",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-36-tail-sampling-agent-traces.html",
       "status": "live",
       "day": 36,
-      "title": "Day 36 \u2014 Tail Sampling for Agent Traces"
+      "title": "Day 36 — Tail Sampling for Agent Traces"
     },
     "experience_day36": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/48",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-36-sampling-without-lying.html",
       "status": "live",
       "day": 36,
-      "title": "Day 36 \u2014 Sampling Without Lying"
+      "title": "Day 36 — Sampling Without Lying"
+    },
+    "ai_learning_day37": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/51",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-37-tool-taxonomies-ontology.html",
+      "status": "live",
+      "day": 37,
+      "title": "Day 37 — Tool Taxonomies — Ontology Before Metrics"
+    },
+    "experience_day37": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/50",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-37-langchain-four-vendors.html",
+      "status": "live",
+      "day": 37,
+      "title": "Day 37 — LangChain Is Four Vendors in a Trenchcoat"
     }
   },
   "code_pr": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/78",
-    "status": "merged",
-    "day": 36,
-    "branch": "feat/tail-sampling-pii-scrub",
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/80",
+    "status": "open",
+    "day": 37,
+    "branch": "feat/tool-call-analyzer-design",
     "repo": "infra-ai-streaming",
-    "note": "Head 10% + error tail sampling + PII scrub. 14/14 tests passing."
+    "note": "tool-call-analyzer Go module: ToolCategory enum, Adapter interface, CostEstimate, RetryMeta. 8/8 tests passing."
   },
-  "merge_order": "Merge PR #77 (Day 35 ReAct demo) to advance to Day 36.",
   "oss_polish_pr": null,
   "email_sent": true,
   "morning_email_sent": true,
   "feedback_applied": false,
-  "covers_status": "pillow_uploaded",
-  "covers_note": "Day 33 covers generated via Pillow fallback (DALL-E billing limit). User-supplied covers expected via email reply.",
+  "covers_status": "waiting_for_reply",
+  "covers_note": "Day 37 covers not yet uploaded. Waiting for Akshant's email reply with PNG attachments at 11pm Night Check.",
   "## Pre-Push Issues": [
     "Day 29+30+31+32+33: github.com profile links return HTTP 403 in pre-push-check (egress proxy policy). Added to SKIP_DOMAINS in pre-push-check.sh."
   ],
@@ -249,7 +262,7 @@
   "3am_impl_run2_july22": {
     "timestamp": "2026-07-22T03:00:00+05:30",
     "outcome": "morning_email_sent",
-    "action": "Morning email sent to akshant3@gmail.com. Subject: [Inferix \u00b7 LensAI \u00b7 Day 33] Context Propagation + SDK Wrappers live. Awaiting PR #71 merge + cover image reply before 11pm Night Check.",
+    "action": "Morning email sent to akshant3@gmail.com. Subject: [Inferix · LensAI · Day 33] Context Propagation + SDK Wrappers live. Awaiting PR #71 merge + cover image reply before 11pm Night Check.",
     "next_action": "11pm Night Check: check email reply (covers + feedback), check PR #71 merge state, advance to Day 34 if merged."
   },
   "1pm_finalize_july24": {
@@ -310,7 +323,16 @@
     "outcome": "day_advanced",
     "action": "Approval received (email reply: \"approve all\"). Merged PR #78 (Day 36 head+tail sampling + PII scrub). Advanced plan to Day 37 via chore/advance-plan-day-37 PR.",
     "code_pr_merged": "https://github.com/AkshantVats/infra-ai-streaming/pull/78",
-    "day_37_preview": "Tool Taxonomies \u2014 Ontology Before Metrics + LangChain Is Four Vendors in a Trenchcoat",
+    "day_37_preview": "Tool Taxonomies — Ontology Before Metrics + LangChain Is Four Vendors in a Trenchcoat",
     "next_action": "2am Overnight Build writes Day 37 blogs + code (tool-call-analyzer DESIGN.md)."
+  },
+  "2am_overnight_july27": {
+    "timestamp": "2026-07-27T02:30:00+05:30",
+    "outcome": "morning_complete",
+    "action": "Day 37 full build: tool-call-analyzer Go module (PR #80 open, 8/8 tests passing), Experience blog PR #50 squash-merged, AI Learning blog PR #51 squash-merged. Both blogs live. Day 36 retrofixes applied (series footer + sidebar links). series-index.json updated with D37 entries.",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/80",
+    "experience_pr": "https://github.com/AkshantVats/Profile/pull/50",
+    "ai_learning_pr": "https://github.com/AkshantVats/Profile/pull/51",
+    "next_action": "Send morning email. 11pm Night Check: check email reply (covers + feedback), check PR #80 merge state, advance to Day 38 if merged."
   }
 }
