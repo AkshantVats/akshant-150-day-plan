@@ -2,8 +2,8 @@
   "current_day": 37,
   "next_day": 38,
   "phase": "morning_complete",
-  "last_run": "2026-07-27T02:30:00+05:30",
-  "last_run_agent": "2am_overnight_july27",
+  "last_run": "2026-07-28T03:00:00+05:30",
+  "last_run_agent": "2am_overnight_july28",
   "blog_prs": {
     "ai_learning": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/23",
@@ -230,84 +230,49 @@
       "status": "live",
       "day": 37,
       "title": "Day 37 — LangChain Is Four Vendors in a Trenchcoat"
+    },
+    "ai_learning_day38": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/52",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-38-adapter-pattern-vendor-drift.html",
+      "status": "live",
+      "day": 38,
+      "title": "Day 38 — Adapter Pattern for Vendor Drift"
+    },
+    "experience_day38": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/52",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-38-golden-files-supplier-api-drift.html",
+      "status": "live",
+      "day": 38,
+      "title": "Day 38 — Golden Files — How Platforms Survive API Drift"
     }
   },
   "code_pr": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/80",
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/81",
     "status": "open",
-    "day": 37,
-    "branch": "feat/tool-call-analyzer-design",
+    "day": 38,
+    "branch": "feat/tool-call-adapters-golden-kafka",
     "repo": "infra-ai-streaming",
-    "note": "tool-call-analyzer Go module: ToolCategory enum, Adapter interface, CostEstimate, RetryMeta. 8/8 tests passing."
+    "note": "tool-call-analyzer: OpenAI/Anthropic/LangChain adapters + registry + Kafka publisher + 6 golden fixtures. 18/18 tests passing."
   },
   "oss_polish_pr": null,
   "email_sent": true,
-  "morning_email_sent": true,
+  "morning_email_sent": false,
   "feedback_applied": false,
-  "covers_status": "waiting_for_reply",
-  "covers_note": "Day 37 covers not yet uploaded. Waiting for Akshant's email reply with PNG attachments at 11pm Night Check.",
+  "covers_status": "uploaded",
+  "covers_note": "Day 38 covers uploaded via Pillow fallback (DALL-E billing limit reached). Awaiting user-supplied PNG replacements.",
   "## Pre-Push Issues": [
-    "Day 29+30+31+32+33: github.com profile links return HTTP 403 in pre-push-check (egress proxy policy). Added to SKIP_DOMAINS in pre-push-check.sh."
+    "Day 29+30+31+32+33: github.com profile links return HTTP 403 in pre-push-check (egress proxy policy). Added to SKIP_DOMAINS in pre-push-check.sh.",
+    "Day 38: pre-push-check reports cross-reference 404s (same-day posts link each other; both live simultaneously after push — timing artifact, not a real broken link). Martin Fowler GoldenMaster link fixed with Wayback Machine fallback."
   ],
   "## Email Errors": [],
-  "10pm_impl_run1_july22": {
-    "timestamp": "2026-07-22T22:30:00+05:30",
+  "2am_overnight_july28": {
+    "timestamp": "2026-07-28T03:00:00+05:30",
     "outcome": "morning_complete",
-    "action": "Day 33 Overnight Build: TraceForge Go SDK (PR #71 open) + Experience blog (PR #42, squash-merged) + AI Learning blog (PR #43, squash-merged). Both blogs live.",
-    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/71",
-    "ai_learning_pr": "https://github.com/AkshantVats/Profile/pull/43",
-    "experience_pr": "https://github.com/AkshantVats/Profile/pull/42",
-    "next_action": "Send morning email, then wait for PR #71 merge at 11pm Night Check to advance to Day 34."
-  },
-  "3am_impl_run2_july22": {
-    "timestamp": "2026-07-22T03:00:00+05:30",
-    "outcome": "morning_email_sent",
-    "action": "Morning email sent to akshant3@gmail.com. Subject: [Inferix · LensAI · Day 33] Context Propagation + SDK Wrappers live. Awaiting PR #71 merge + cover image reply before 11pm Night Check.",
-    "next_action": "11pm Night Check: check email reply (covers + feedback), check PR #71 merge state, advance to Day 34 if merged."
-  },
-  "1pm_finalize_july24": {
-    "timestamp": "2026-07-24T13:11:33+05:30",
-    "outcome": "day_advanced",
-    "action": "Approval received (email: \"Merge all prs till now\"). Merged PR #71 (Day 33 Go SDK) + PRs #65,66,67,68 (Days 30-32 backlog) + dep bumps #72,73,74. Advanced to Day 34.",
-    "prs_merged": [
-      "#65 (OSS polish Day 30)",
-      "#66 (Day 30 scaffold)",
-      "#67 (Day 31 OTel pipeline)",
-      "#68 (Day 32 Python SDK)",
-      "#71 (Day 33 Go SDK)",
-      "#72 (dep bump)",
-      "#73 (dep bump)",
-      "#74 (dep bump)"
-    ],
-    "next_action": "Send confirmation email. 2am Overnight Build writes Day 34 blogs + code."
-  },
-  "8am_impl_run3_july25": {
-    "timestamp": "2026-07-25T02:42:00+05:30",
-    "outcome": "morning_email_sent",
-    "action": "State check: Day 34 blogs (PR #44 AI Learning + PR #45 Experience) already merged and live from prior run. Code PR #75 (ClickHouse storage) open with CI green (6/6 checks). Sent Day 34 morning email to akshant3@gmail.com.",
-    "blogs": {
-      "ai_learning": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-34-trace-storage-layout-sort-keys-matter.html",
-      "experience": "https://akshantvats.github.io/Profile/blog/series/experience/day-34-clickhouse-for-traces-not-just-metrics.html"
-    },
-    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/75",
-    "next_action": "11pm Night Check: check email reply (covers + feedback), check PR #75 merge state, advance to Day 35 if merged."
-  },
-  "1pm_finalize_july25": {
-    "timestamp": "2026-07-25T13:00:00+05:30",
-    "outcome": "day_advanced",
-    "action": "Approval received (email reply: \"Approve all\"). Merged PR #75 (Day 34 ClickHouse storage). Advanced plan to Day 35 via PR #18 (squash-merged).",
-    "code_pr_merged": "https://github.com/AkshantVats/infra-ai-streaming/pull/75",
-    "plan_pr": "https://github.com/AkshantVats/akshant-150-day-plan/pull/18",
-    "next_action": "Send confirmation email. 2am Overnight Build writes Day 35 blogs + code."
-  },
-  "10pm_impl_run1_july25": {
-    "timestamp": "2026-07-25T22:15:00+05:30",
-    "outcome": "morning_complete",
-    "action": "Day 35 full build: ReAct demo agent (PR #77 open), Experience blog (PR #46 squash-merged), AI Learning blog (PR #47 squash-merged). Both blogs live. Morning email sent.",
-    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/77",
-    "experience_pr": "https://github.com/AkshantVats/Profile/pull/46",
-    "ai_learning_pr": "https://github.com/AkshantVats/Profile/pull/47",
-    "next_action": "11pm Night Check: check email reply (covers + feedback), check PR #77 merge state, advance to Day 36 if merged."
+    "action": "Day 38 full build: tool-call-analyzer adapters+golden+kafka (PR #81 open, 18/18 tests), Experience blog + AI Learning blog (PR #52 squash-merged). Both blogs live. Day 37 retrofixes applied. series-index.json updated D38 entries. Covers uploaded (Pillow fallback).",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/81",
+    "experience_pr": "https://github.com/AkshantVats/Profile/pull/52",
+    "ai_learning_pr": "https://github.com/AkshantVats/Profile/pull/52",
+    "next_action": "Send morning email. 11pm Night Check: check email reply (covers + feedback), check PR #81 merge state, advance to Day 39 if merged."
   },
   "10pm_impl_run1_july26": {
     "timestamp": "2026-07-26T17:00:00+05:30",
