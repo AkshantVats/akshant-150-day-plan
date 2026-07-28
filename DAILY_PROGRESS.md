@@ -256,7 +256,7 @@
   },
   "oss_polish_pr": null,
   "email_sent": true,
-  "morning_email_sent": false,
+  "morning_email_sent": true,
   "feedback_applied": false,
   "covers_status": "uploaded",
   "covers_note": "Day 38 covers uploaded via Pillow fallback (DALL-E billing limit reached). Awaiting user-supplied PNG replacements.",
