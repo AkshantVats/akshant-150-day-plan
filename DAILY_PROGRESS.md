@@ -258,30 +258,62 @@
       "status": "live",
       "day": 39,
       "title": "Day 39 — The Tool That Ate Your Margin"
+    },
+    "ai_learning_day40": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/afcc3a8",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-40-graph-algorithms-on-traces.html",
+      "status": "live",
+      "day": 40,
+      "title": "Day 40 — Graph Algorithms on Traces"
+    },
+    "experience_day40": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/afcc3a8",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-40-n1-tool-calls-select-star-of-agents.html",
+      "status": "live",
+      "day": 40,
+      "title": "Day 40 — N+1 Tool Calls — The SELECT * of Agents"
     }
   },
   "code_pr": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/83",
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/89",
     "status": "open",
-    "day": 39,
-    "branch": "feat/tool-stats-clickhouse-mvs",
+    "day": 40,
+    "branch": "feat/tool-dependency-graph",
     "repo": "infra-ai-streaming",
-    "created_at": "2026-07-29T16:39:17Z",
-    "note": "tool-call-analyzer: ClickHouse tool_calls table + 3 MVs (per-tool stats, cost rollup, duration alert) + Go HTTP writer + pure-Go stats aggregator. 12 new tests, all passing. CI green 8/8 checks."
+    "created_at": "2026-07-29T21:44:00Z",
+    "note": "tool-call-analyzer: pkg/graph (DependencyGraph, DFS cycle detection, Kahn's-algorithm topological sort, threshold N+1 detection, DOT export) + cmd/traceforge CLI (graph subcommand, text|dot output). 14 new tests, all passing. CI green 8/8 checks. Stacked on still-open PR #83 (Day 39) — diff will collapse to Day 40-only files once #83 merges.",
+    "prior_day_pr_still_open": {
+      "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/83",
+      "day": 39,
+      "status": "open",
+      "created_at": "2026-07-29T16:39:17Z"
+    }
   },
   "oss_polish_pr": null,
   "email_sent": true,
   "morning_email_sent": true,
   "feedback_applied": false,
   "covers_status": "uploaded",
-  "covers_note": "Day 39 covers uploaded via Pillow fallback (DALL-E billing hard limit still in effect, retried once per policy). Awaiting user-supplied PNG replacements.",
+  "covers_note": "Day 40 covers uploaded via Pillow fallback (DALL-E billing hard limit still in effect, retried once per policy). Awaiting user-supplied PNG replacements.",
   "## Pre-Push Issues": [
     "Day 29+30+31+32+33: github.com profile links return HTTP 403 in pre-push-check (egress proxy policy). Added to SKIP_DOMAINS in pre-push-check.sh.",
     "Day 38: pre-push-check reports cross-reference 404s (same-day posts link each other; both live simultaneously after push — timing artifact, not a real broken link). Martin Fowler GoldenMaster link fixed with Wayback Machine fallback.",
     "Day 39: same same-day cross-reference 404 pattern as Day 38 (Experience <-> AI Learning links to each other, both published in same commit). Not a real broken link once both are live.",
-    "Day 39: gh CLI not available in this session's environment — used git + GitHub MCP tools (create_pull_request, pull_request_read) in place of gh pr commands throughout."
+    "Day 39: gh CLI not available in this session's environment — used git + GitHub MCP tools (create_pull_request, pull_request_read) in place of gh pr commands throughout.",
+    "Day 40: same same-day cross-reference pattern as Day 38/39 — confirmed resolved (pre-push-check re-run PASSED) once both posts were pushed together in one commit.",
+    "Day 40: plan.json[39..48].repo says 'tool-call-analyzer' — that GitHub repo does not exist as a standalone repo in this session's connector scope (or possibly at all); confirmed via `gh api repos/AkshantVats/tool-call-analyzer` → 403. Following the precedent set by Days 37-39, Day 40 code was implemented under the tool-call-analyzer/ subdirectory (its own Go module, github.com/AkshantVats/tool-call-analyzer) inside the infra-ai-streaming repo instead. Future days in this range should keep using that same location unless the standalone repo actually gets created and granted session access.",
+    "Day 40: code PR #89 branches off Day 39's still-open PR #83 (feat/tool-stats-clickhouse-mvs) since pkg/graph imports pkg/clickhouse and pkg/stats added by #83. PR #89's diff currently includes #83's files too — it will collapse to just the Day 40 files once #83 merges. Whoever reviews should merge #83 before (or together with) #89."
   ],
   "## Email Errors": [],
+  "3am_run2_july30": {
+    "timestamp": "2026-07-29T21:55:00Z",
+    "outcome": "morning_complete",
+    "action": "Day 40 full build: tool-call-analyzer pkg/graph (DependencyGraph, DFS cycle detection, Kahn's topological sort, N+1 detection, DOT export) + cmd/traceforge CLI (PR #89 open, stacked on #83, CI green 8/8, 14 new tests). Experience blog (Walmart Azure IoT Hub fan-out / edge pre-aggregation) + AI Learning blog (graph algorithms on traces) squash-merged directly to Profile main. Both blogs live. Day 39 retrofixes applied (series footer + sidebar links). series-index.json, sitemap.xml, llms.txt updated with D40 entries. Covers uploaded (Pillow fallback, DALL-E billing limit still in effect). Note: entered this run believing tool-call-analyzer/agent-replay-engine were fully inaccessible for the whole N+1..N+5 window before discovering Day 39 was already complete and the established infra-ai-streaming subdirectory workaround — see Pre-Push Issues for detail.",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/89",
+    "experience_commit": "https://github.com/AkshantVats/Profile/commit/afcc3a8",
+    "ai_learning_commit": "https://github.com/AkshantVats/Profile/commit/afcc3a8",
+    "next_action": "Morning email sent. Next build slot: check PR #83 and PR #89 merge state (merge #83 first), auto-merge either if open >=20h, advance to Day 41 once both are merged."
+  },
   "10pm_run1_july29": {
     "timestamp": "2026-07-29T22:20:00+05:30",
     "outcome": "morning_complete",
