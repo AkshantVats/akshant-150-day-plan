@@ -244,27 +244,53 @@
       "status": "live",
       "day": 38,
       "title": "Day 38 — Golden Files — How Platforms Survive API Drift"
+    },
+    "ai_learning_day39": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/fa86dcb",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-39-exclusive-time-wall-time.html",
+      "status": "live",
+      "day": 39,
+      "title": "Day 39 — Exclusive Time vs Wall Time"
+    },
+    "experience_day39": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/fa86dcb",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-39-tool-ate-your-margin.html",
+      "status": "live",
+      "day": 39,
+      "title": "Day 39 — The Tool That Ate Your Margin"
     }
   },
   "code_pr": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/81",
-    "status": "merged",
-    "day": 38,
-    "branch": "feat/tool-call-adapters-golden-kafka",
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/83",
+    "status": "open",
+    "day": 39,
+    "branch": "feat/tool-stats-clickhouse-mvs",
     "repo": "infra-ai-streaming",
-    "note": "tool-call-analyzer: OpenAI/Anthropic/LangChain adapters + registry + Kafka publisher + 6 golden fixtures. 18/18 tests passing."
+    "created_at": "2026-07-29T16:39:17Z",
+    "note": "tool-call-analyzer: ClickHouse tool_calls table + 3 MVs (per-tool stats, cost rollup, duration alert) + Go HTTP writer + pure-Go stats aggregator. 12 new tests, all passing. CI green 8/8 checks."
   },
   "oss_polish_pr": null,
   "email_sent": true,
   "morning_email_sent": true,
   "feedback_applied": false,
   "covers_status": "uploaded",
-  "covers_note": "Day 38 covers uploaded via Pillow fallback (DALL-E billing limit reached). Awaiting user-supplied PNG replacements.",
+  "covers_note": "Day 39 covers uploaded via Pillow fallback (DALL-E billing hard limit still in effect, retried once per policy). Awaiting user-supplied PNG replacements.",
   "## Pre-Push Issues": [
     "Day 29+30+31+32+33: github.com profile links return HTTP 403 in pre-push-check (egress proxy policy). Added to SKIP_DOMAINS in pre-push-check.sh.",
-    "Day 38: pre-push-check reports cross-reference 404s (same-day posts link each other; both live simultaneously after push — timing artifact, not a real broken link). Martin Fowler GoldenMaster link fixed with Wayback Machine fallback."
+    "Day 38: pre-push-check reports cross-reference 404s (same-day posts link each other; both live simultaneously after push — timing artifact, not a real broken link). Martin Fowler GoldenMaster link fixed with Wayback Machine fallback.",
+    "Day 39: same same-day cross-reference 404 pattern as Day 38 (Experience <-> AI Learning links to each other, both published in same commit). Not a real broken link once both are live.",
+    "Day 39: gh CLI not available in this session's environment — used git + GitHub MCP tools (create_pull_request, pull_request_read) in place of gh pr commands throughout."
   ],
   "## Email Errors": [],
+  "10pm_run1_july29": {
+    "timestamp": "2026-07-29T22:20:00+05:30",
+    "outcome": "morning_complete",
+    "action": "Day 39 full build: tool-call-analyzer ClickHouse MVs + HTTP writer + stats aggregator (PR #83 open, CI green 8/8, 12 new tests). Experience blog (Agoda cardinality attribution) + AI Learning blog (exclusive time vs wall time) squash-merged directly to Profile main. Both blogs live. Day 38 retrofixes applied (series footer + sidebar links). series-index.json, sitemap.xml, llms.txt updated with D39 entries. Covers uploaded (Pillow fallback, DALL-E billing limit).",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/83",
+    "experience_commit": "https://github.com/AkshantVats/Profile/commit/fa86dcb",
+    "ai_learning_commit": "https://github.com/AkshantVats/Profile/commit/fa86dcb",
+    "next_action": "Morning email sent. Next build slot: check PR #83 merge state, auto-merge if open >=20h, advance to Day 40 if merged."
+  },
   "2am_overnight_july28": {
     "timestamp": "2026-07-28T03:00:00+05:30",
     "outcome": "morning_complete",
