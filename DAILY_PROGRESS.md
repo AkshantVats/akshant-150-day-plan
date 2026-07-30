@@ -290,12 +290,13 @@
   },
   "code_pr": {
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/90",
-    "status": "open",
+    "status": "closed_without_merge",
     "day": 41,
     "branch": "feat/tool-cost-waterfall",
     "repo": "infra-ai-streaming",
     "created_at": "2026-07-30T02:40:00Z",
-    "note": "tool-call-analyzer: pkg/graph/exclusive_time.go (ComputeExclusiveTimes bottleneck ranking) + pkg/waterfall (Grafana cost waterfall payload) + cmd/traceforge bottleneck/waterfall subcommands. 18 new tests, all passing (32 total in pkg/graph+pkg/waterfall). gofmt clean, go vet clean, golangci-lint clean on new files. Stacked on still-open PR #89 (Day 40) \u2014 diff will collapse to Day 41-only files once #89 merges.",
+    "closed_at": "2026-07-30T03:15:00Z",
+    "note": "tool-call-analyzer: pkg/graph/exclusive_time.go (ComputeExclusiveTimes bottleneck ranking) + pkg/waterfall (Grafana cost waterfall payload) + cmd/traceforge bottleneck/waterfall subcommands. 18 new tests, all passing (32 total in pkg/graph+pkg/waterfall). gofmt clean, go vet clean, golangci-lint clean on new files. e2e-k3d failed with ErrImageNeverPull (transient image-import flake unrelated to this diff, re-run was triggered) before the PR was closed without merging by the repo owner. Per policy: do not reopen or recreate this PR unless explicitly asked. Day 41's blogs are still live/complete; only the code deliverable for Day 41 is now outstanding.",
     "prior_day_prs_still_open": [
       {
         "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/83",
