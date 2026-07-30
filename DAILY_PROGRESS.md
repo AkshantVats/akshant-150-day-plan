@@ -1,7 +1,7 @@
 {
   "current_day": 40,
   "next_day": 41,
-  "phase": "day_advanced",
+  "phase": "code_done",
   "last_run": "2026-07-30T13:15:00+05:30",
   "last_run_agent": "8am_run3_july30",
   "blog_prs": {
@@ -288,36 +288,29 @@
       "title": "Day 41 \u2014 Exclusive Time \u2014 Flame Graphs for Money"
     }
   },
-  "code_pr": {
+  "day41_code_pr_CLOSED_DO_NOT_REOPEN": {
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/90",
     "status": "closed_without_merge",
     "day": 41,
-    "branch": "feat/tool-cost-waterfall",
+    "note": "Closed by the repo owner (human), not by an agent, after a transient e2e-k3d ErrImageNeverPull flake. POLICY: do not reopen or recreate this PR, and do not build any future PR whose branch stacks on top of Day 41's code (feat/tool-cost-waterfall / feat/tool-cost-waterfall-rebased) unless explicitly asked — main only has code through Day 40. If a future day's PR needs to branch from a prior day's branch (stacking pattern used on Days 39-41), branch from main's actual HEAD, not from any Day-41 branch. Day 41's blogs are live/complete; only its code deliverable is intentionally outstanding.",
+    "self_correction_log": "8am_run3 first accidentally recreated #90 as #91 (closed within minutes, no CI/review activity, non-issue), then the Day 42 code agent independently branched its work off the Day-41 rebase branch producing PR #92 (which would have merged Day 41 code as a side effect) — caught before merge, cherry-picked Day 42's single commit onto true main instead, replacement PR #93 opened, #92 closed. Both mistakes self-corrected before any merge; noting the pattern so future slots don't repeat it."
+  },
+  "code_pr": {
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/93",
+    "status": "open",
+    "day": 42,
+    "branch": "feat/lensai-dual-write-rebased",
     "repo": "infra-ai-streaming",
-    "created_at": "2026-07-30T02:40:00Z",
-    "closed_at": "2026-07-30T03:15:00Z",
-    "note": "tool-call-analyzer: pkg/graph/exclusive_time.go (ComputeExclusiveTimes bottleneck ranking) + pkg/waterfall (Grafana cost waterfall payload) + cmd/traceforge bottleneck/waterfall subcommands. 18 new tests, all passing (32 total in pkg/graph+pkg/waterfall). gofmt clean, go vet clean, golangci-lint clean on new files. e2e-k3d failed with ErrImageNeverPull (transient image-import flake unrelated to this diff, re-run was triggered) before the PR was closed without merging by the repo owner. Per policy: do not reopen or recreate this PR unless explicitly asked. Day 41's blogs are still live/complete; only the code deliverable for Day 41 is now outstanding.",
-    "prior_day_prs_still_open": [
-      {
-        "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/83",
-        "day": 39,
-        "status": "merged",
-        "created_at": "2026-07-29T16:39:17Z"
-      },
-      {
-        "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/89",
-        "day": 40,
-        "status": "merged",
-        "created_at": "2026-07-29T21:44:00Z"
-      }
-    ]
+    "created_at": "2026-07-30T07:58:00Z",
+    "note": "tool-call-analyzer: pkg/lensai (dual-write tool cost_usd to LensAI /ingest as InferenceEvent-shaped envelope, source:tool_call discriminator) + cmd/traceforge dual-write subcommand + grafana/unified-tenant-cost.json (7-panel unified tenant cost dashboard). 11 new tests in pkg/lensai, all passing (main tool-call-analyzer suite: 12 packages ok). gofmt clean, go vet clean. Branched from main's actual HEAD (post PR #89), NOT from the Day 41 rebase branch — see day41_code_pr_CLOSED_DO_NOT_REOPEN note above.",
+    "prior_day_prs_still_open": []
   },
   "oss_polish_pr": null,
-  "email_sent": true,
-  "morning_email_sent": true,
+  "email_sent": false,
+  "morning_email_sent": false,
   "feedback_applied": false,
-  "covers_status": "uploaded",
-  "covers_note": "Day 41 covers uploaded via Pillow fallback (DALL-E billing hard limit still in effect, retried once per policy).",
+  "covers_status": "pending",
+  "covers_note": "Day 42 code PR (#93) open; blog posts + covers in progress via background agent as of this checkpoint.",
   "## Pre-Push Issues": [
     "Day 29+30+31+32+33: github.com profile links return HTTP 403 in pre-push-check (egress proxy policy). Added to SKIP_DOMAINS in pre-push-check.sh.",
     "Day 38: pre-push-check reports cross-reference 404s (same-day posts link each other; both live simultaneously after push \u2014 timing artifact, not a real broken link). Martin Fowler GoldenMaster link fixed with Wayback Machine fallback.",
@@ -332,6 +325,13 @@
     "Day 41 (8am_run3): this session's environment has no gh CLI either — used git (pre-authenticated local proxy remote) + GitHub MCP tools throughout Step 0. Also: merged #83 and #89 (both fully green CI) before pulling latest main, then briefly recreated the owner-closed #90 as a new PR #91 without having seen the owner's 'do not reopen or recreate' note yet — caught it on the next fetch (origin/main had moved) and closed #91 immediately with an explanatory comment. No lasting effect: #91 was open for a few minutes with no CI/review activity. current_day now correctly reflects #83+#89 merged; #90/Day 41 code stays outstanding per owner policy."
   ],
   "## Email Errors": [],
+  "8am_run3_july30": {
+    "timestamp": "2026-07-30T08:00:00Z",
+    "outcome": "code_done",
+    "action": "Step 0: PR #83 (Day 39) and #89 (Day 40) had fully green CI, merged. PR #90 (Day 41) stays closed per repo-owner policy (see day41_code_pr_CLOSED_DO_NOT_REOPEN) — corrected an accidental recreation attempt (#91, closed within minutes). Day 42 code: tool-call-analyzer pkg/lensai (dual-write tool cost_usd to LensAI /ingest, InferenceEvent-shaped envelope, source:tool_call discriminator, 11 tests) + cmd/traceforge dual-write subcommand + grafana/unified-tenant-cost.json (7-panel unified tenant board), via background agent. That agent's first PR (#92) branched off the Day-41 rebase branch and would have merged Day 41 code as a side effect — caught before merge, cherry-picked the Day 42 commit onto main's true HEAD instead, replacement PR #93 opened, #92 closed. Blog posts (Experience: 'One Dashboard for Inference and Tools' / AI Learning: 'Unified Billing Events — One Envelope') in progress via a second background agent.",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/93",
+    "next_action": "Watch PR #93 CI, merge on green. Complete Day 42 blogs, indexes, morning email."
+  },
   "10pm_run1_finalize_july30": {
     "timestamp": "2026-07-30T22:20:00+05:30",
     "outcome": "day_advanced",
@@ -401,8 +401,8 @@
     "day_39_preview": "The Tool That Ate Your Margin (Agoda \u00b7 cost attribution \u00b7 outliers)",
     "next_action": "2am Overnight Build writes Day 39 blogs + code."
   },
-  "indexes_updated": true,
-  "experience_done": true,
-  "ai_blog_done": true,
+  "indexes_updated": false,
+  "experience_done": false,
+  "ai_blog_done": false,
   "code_done": true
 }
