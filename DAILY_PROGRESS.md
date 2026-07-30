@@ -338,8 +338,8 @@
     "prior_day_prs_still_open": []
   },
   "oss_polish_pr": null,
-  "email_sent": false,
-  "morning_email_sent": false,
+  "email_sent": true,
+  "morning_email_sent": true,
   "feedback_applied": false,
   "covers_status": "dalle_failed_pillow_fallback",
   "covers_note": "Day 43 covers: DALL-E 3 (generate_cover_dalle.py) failed both attempts with billing_limit_user_error (non-transient, confirmed on retry), fell back to generate_cover.py per policy. Both fallback covers are valid 1200x630 PNGs.",
