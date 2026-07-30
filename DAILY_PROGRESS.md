@@ -275,19 +275,27 @@
     }
   },
   "code_pr": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/89",
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/90",
     "status": "open",
-    "day": 40,
-    "branch": "feat/tool-dependency-graph",
+    "day": 41,
+    "branch": "feat/tool-cost-waterfall",
     "repo": "infra-ai-streaming",
-    "created_at": "2026-07-29T21:44:00Z",
-    "note": "tool-call-analyzer: pkg/graph (DependencyGraph, DFS cycle detection, Kahn's-algorithm topological sort, threshold N+1 detection, DOT export) + cmd/traceforge CLI (graph subcommand, text|dot output). 14 new tests, all passing. CI green 8/8 checks. Stacked on still-open PR #83 (Day 39) — diff will collapse to Day 40-only files once #83 merges.",
-    "prior_day_pr_still_open": {
-      "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/83",
-      "day": 39,
-      "status": "open",
-      "created_at": "2026-07-29T16:39:17Z"
-    }
+    "created_at": "2026-07-30T02:40:00Z",
+    "note": "tool-call-analyzer: pkg/graph/exclusive_time.go (ComputeExclusiveTimes bottleneck ranking) + pkg/waterfall (Grafana cost waterfall payload) + cmd/traceforge bottleneck/waterfall subcommands. 18 new tests, all passing (32 total in pkg/graph+pkg/waterfall). gofmt clean, go vet clean, golangci-lint clean on new files. Stacked on still-open PR #89 (Day 40) — diff will collapse to Day 41-only files once #89 merges.",
+    "prior_day_prs_still_open": [
+      {
+        "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/83",
+        "day": 39,
+        "status": "open",
+        "created_at": "2026-07-29T16:39:17Z"
+      },
+      {
+        "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/89",
+        "day": 40,
+        "status": "open",
+        "created_at": "2026-07-29T21:44:00Z"
+      }
+    ]
   },
   "oss_polish_pr": null,
   "email_sent": true,
@@ -366,5 +374,12 @@
     "plan_pr": "https://github.com/AkshantVats/akshant-150-day-plan/pull/20",
     "day_39_preview": "The Tool That Ate Your Margin (Agoda · cost attribution · outliers)",
     "next_action": "2am Overnight Build writes Day 39 blogs + code."
+  },
+  "day41_in_progress": {
+    "timestamp": "2026-07-30T02:40:00Z",
+    "phase": "code_done",
+    "action": "Day 41 code: tool-call-analyzer pkg/graph/exclusive_time.go (bottleneck ranking) + pkg/waterfall (Grafana cost waterfall) + traceforge bottleneck/waterfall CLI. PR #90 open, CI pending, stacked on #89 (Day 40).",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/90",
+    "next_action": "Experience blog (Day 41 — Exclusive Time: Flame Graphs for Money, Delivery Hero OSRM) then AI Learning blog (Cost Waterfalls — CFO-Friendly Visuals), then indexes + morning email."
   }
 }
