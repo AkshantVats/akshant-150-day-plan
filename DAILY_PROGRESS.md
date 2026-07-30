@@ -1,11 +1,23 @@
 {
-  "current_day": 42,
-  "next_day": 43,
+  "current_day": 43,
+  "next_day": 44,
   "phase": "morning_complete",
-  "last_run": "2026-07-30T13:35:00+05:30",
-  "last_run_agent": "8am_run3_july30",
+  "last_run": "2026-07-30T18:34:00+05:30",
+  "last_run_agent": "build_slot_july30_1800ist",
   "current_day_note": "current_day skips Day 41: its code PR (#90) was permanently closed unmerged by the repo owner (see day41_code_pr_CLOSED_DO_NOT_REOPEN). Day 41's blogs are live/complete; only its code stays unmerged by owner decision. Day 42's code (PR #93) merged cleanly against main's true HEAD (Day 40), so current_day advances past the Day 41 gap rather than stalling on it.",
   "blog_prs": {
+    "ai_learning_day43": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/a3feedd",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-43-backpressure-analytics-pipelines.html",
+      "status": "live",
+      "day": 43
+    },
+    "experience_day43": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/a3feedd",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-43-kafka-shock-absorber-again.html",
+      "status": "live",
+      "day": 43
+    },
     "ai_learning_day42": {
       "commit": "https://github.com/AkshantVats/Profile/commit/5b88a81",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-42-unified-billing-events-one-envelope.html",
@@ -309,25 +321,28 @@
     "self_correction_log": "8am_run3 first accidentally recreated #90 as #91 (closed within minutes, no CI/review activity, non-issue), then the Day 42 code agent independently branched its work off the Day-41 rebase branch producing PR #92 (which would have merged Day 41 code as a side effect) — caught before merge, cherry-picked Day 42's single commit onto true main instead, replacement PR #93 opened, #92 closed. Both mistakes self-corrected before any merge; noting the pattern so future slots don't repeat it."
   },
   "code_pr": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/93",
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/94",
     "status": "auto_merged_ci_green",
-    "day": 42,
-    "branch": "feat/lensai-dual-write-rebased",
+    "day": 43,
+    "branch": "feat/tool-call-analyzer-kafka-fallback",
     "repo": "infra-ai-streaming",
-    "created_at": "2026-07-30T07:58:00Z",
-    "merged_at": "2026-07-30T08:05:00Z",
-    "additions": 721,
-    "deletions": 1,
-    "changed_files": 5,
-    "note": "tool-call-analyzer: pkg/lensai (dual-write tool cost_usd to LensAI /ingest as InferenceEvent-shaped envelope, source:tool_call discriminator) + cmd/traceforge dual-write subcommand + grafana/unified-tenant-cost.json (7-panel unified tenant cost dashboard). 11 new tests in pkg/lensai, all passing. gofmt clean, go vet clean, full CI green. Branched from main's actual HEAD (post PR #89), NOT from the Day 41 rebase branch — see day41_code_pr_CLOSED_DO_NOT_REOPEN note above.",
+    "created_at": "2026-07-30T12:53:05Z",
+    "merged_at": "2026-07-30T13:04:00Z",
+    "additions": 863,
+    "deletions": 20,
+    "changed_files": 6,
+    "test_pass_pct": 100,
+    "test_passed": 104,
+    "test_total": 104,
+    "note": "tool-call-analyzer: pkg/kafka/fallback.go (sarama-based FallbackProducer buffering spans to new tool-spans topic on ClickHouse write error/timeout, reusing existing sarama client rather than adding segmentio/kafka-go) + pkg/clickhouse/writer.go (Insert now buffers to Kafka via SetFallback/SetFallbackDeadline instead of dropping on error, backward compatible) + pkg/clickhouse/chaos_test.go (100 concurrent spans against a 200ms-latency ClickHouse stub, 0 dropped, via sarama/mocks) + full README.md rewrite + new api/openapi.yaml documenting the real ClickHouse HTTP JSONEachRow write contract. 104/104 tests passing (9 new FallbackProducer tests + 1 new chaos test, no regressions), gofmt/vet clean, full CI green (go/helm/shell/secrets/rust/integration/e2e-k3d/coverage-gate). Spec doc (day-43-CODE.md) assumed a nonexistent HTTP /ingest server and pkg/ingest package — adapted to the real CLI/library architecture (see PR body 'Deviations' section).",
     "prior_day_prs_still_open": []
   },
   "oss_polish_pr": null,
-  "email_sent": true,
-  "morning_email_sent": true,
+  "email_sent": false,
+  "morning_email_sent": false,
   "feedback_applied": false,
-  "covers_status": "uploaded",
-  "covers_note": "Day 42 covers uploaded via Pillow fallback (DALL-E billing hard limit still in effect, retried once per policy, both series).",
+  "covers_status": "dalle_failed_pillow_fallback",
+  "covers_note": "Day 43 covers: DALL-E 3 (generate_cover_dalle.py) failed both attempts with billing_limit_user_error (non-transient, confirmed on retry), fell back to generate_cover.py per policy. Both fallback covers are valid 1200x630 PNGs.",
   "## Pre-Push Issues": [
     "Day 29+30+31+32+33: github.com profile links return HTTP 403 in pre-push-check (egress proxy policy). Added to SKIP_DOMAINS in pre-push-check.sh.",
     "Day 38: pre-push-check reports cross-reference 404s (same-day posts link each other; both live simultaneously after push \u2014 timing artifact, not a real broken link). Martin Fowler GoldenMaster link fixed with Wayback Machine fallback.",
@@ -342,6 +357,15 @@
     "Day 41 (8am_run3): this session's environment has no gh CLI either — used git (pre-authenticated local proxy remote) + GitHub MCP tools throughout Step 0. Also: merged #83 and #89 (both fully green CI) before pulling latest main, then briefly recreated the owner-closed #90 as a new PR #91 without having seen the owner's 'do not reopen or recreate' note yet — caught it on the next fetch (origin/main had moved) and closed #91 immediately with an explanatory comment. No lasting effect: #91 was open for a few minutes with no CI/review activity. current_day now correctly reflects #83+#89 merged; #90/Day 41 code stays outstanding per owner policy."
   ],
   "## Email Errors": [],
+  "build_slot_july30_1800ist": {
+    "timestamp": "2026-07-30T13:04:00Z",
+    "outcome": "morning_complete",
+    "action": "Step 0: PR #93 (Day 42) had fully green CI, merged (this slot beat the CI-watch loop of the run that had opened it — no conflict, that run detected the merge and completed Day 42's blogs/indexes/email itself while this slot moved on). Day 43 code + blogs built in parallel via two background agents. Code: tool-call-analyzer Kafka fallback for the ClickHouse write path (pkg/kafka/fallback.go, sarama-based, reusing the existing client instead of adding segmentio/kafka-go per the spec doc) + chaos test (100 concurrent spans, 0 dropped, sarama/mocks) + README/OpenAPI rewrite, 104/104 tests passing, PR #94 opened and CI-watched to green (9/9 checks), merged squash. Blogs: Experience 'Kafka as Shock Absorber — Again' (Agoda) + AI Learning 'Backpressure on Analytics Pipelines' squash-merged to Profile main (commit a3feedd), Day 42 posts retrofixed to link forward, series-index/sitemap/llms updated (commit 4e30363). DALL-E billing limit still in effect (non-transient), Pillow fallback used for both covers.",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/94",
+    "experience_commit": "https://github.com/AkshantVats/Profile/commit/a3feedd",
+    "ai_learning_commit": "https://github.com/AkshantVats/Profile/commit/a3feedd",
+    "next_action": "Next build slot: scan N+1..N+5 (44-48) for first day with morning_email_sent != true (target_day=44, repo switches to agent-replay-engine per plan.json — verify that repo is reachable/exists before starting; if not, apply the same subdirectory-of-infra-ai-streaming workaround used for tool-call-analyzer since Day 37)."
+  },
   "8am_run3_july30": {
     "timestamp": "2026-07-30T08:00:00Z",
     "outcome": "code_done",
