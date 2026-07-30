@@ -1,5 +1,5 @@
 {
-  "current_day": 43,
+  "current_day": 44,
   "days": [
     {
       "day": 0,
@@ -1011,7 +1011,7 @@
     },
     {
       "day": 43,
-      "status": "today",
+      "status": "done",
       "weekday": "Wednesday",
       "product": "traceforge",
       "product_name": "TraceForge",
@@ -1034,7 +1034,7 @@
     },
     {
       "day": 44,
-      "status": "pending",
+      "status": "done",
       "weekday": "Thursday",
       "product": "traceforge",
       "product_name": "TraceForge",
