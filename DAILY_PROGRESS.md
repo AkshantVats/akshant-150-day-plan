@@ -1,11 +1,25 @@
 {
-  "current_day": 43,
-  "next_day": 44,
+  "current_day": 44,
+  "next_day": 45,
   "phase": "morning_complete",
-  "last_run": "2026-07-30T18:34:00+05:30",
-  "last_run_agent": "build_slot_july30_1800ist",
+  "last_run": "2026-07-30T23:07:25+05:30",
+  "last_run_agent": "build_slot_july30_2300ist",
   "current_day_note": "current_day skips Day 41: its code PR (#90) was permanently closed unmerged by the repo owner (see day41_code_pr_CLOSED_DO_NOT_REOPEN). Day 41's blogs are live/complete; only its code stays unmerged by owner decision. Day 42's code (PR #93) merged cleanly against main's true HEAD (Day 40), so current_day advances past the Day 41 gap rather than stalling on it.",
   "blog_prs": {
+    "ai_learning_day44": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/b008304",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-44-event-sourcing-agent-runs.html",
+      "status": "live",
+      "day": 44,
+      "title": "Day 44 — Event Sourcing for Agent Runs"
+    },
+    "experience_day44": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/b008304",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-44-event-sourcing-events-hallucinate.html",
+      "status": "live",
+      "day": 44,
+      "title": "Day 44 — Event Sourcing — But the Events Hallucinate"
+    },
     "ai_learning_day43": {
       "commit": "https://github.com/AkshantVats/Profile/commit/a3feedd",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-43-backpressure-analytics-pipelines.html",
@@ -321,20 +335,20 @@
     "self_correction_log": "8am_run3 first accidentally recreated #90 as #91 (closed within minutes, no CI/review activity, non-issue), then the Day 42 code agent independently branched its work off the Day-41 rebase branch producing PR #92 (which would have merged Day 41 code as a side effect) — caught before merge, cherry-picked Day 42's single commit onto true main instead, replacement PR #93 opened, #92 closed. Both mistakes self-corrected before any merge; noting the pattern so future slots don't repeat it."
   },
   "code_pr": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/94",
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/95",
     "status": "auto_merged_ci_green",
-    "day": 43,
-    "branch": "feat/tool-call-analyzer-kafka-fallback",
+    "day": 44,
+    "branch": "feat/agent-replay-engine-eventlog-mocker",
     "repo": "infra-ai-streaming",
-    "created_at": "2026-07-30T12:53:05Z",
-    "merged_at": "2026-07-30T13:04:00Z",
-    "additions": 863,
-    "deletions": 20,
-    "changed_files": 6,
+    "created_at": "2026-07-30T16:40:21Z",
+    "merged_at": "2026-07-30T17:35:57Z",
+    "additions": 897,
+    "deletions": 0,
+    "changed_files": 7,
     "test_pass_pct": 100,
-    "test_passed": 104,
-    "test_total": 104,
-    "note": "tool-call-analyzer: pkg/kafka/fallback.go (sarama-based FallbackProducer buffering spans to new tool-spans topic on ClickHouse write error/timeout, reusing existing sarama client rather than adding segmentio/kafka-go) + pkg/clickhouse/writer.go (Insert now buffers to Kafka via SetFallback/SetFallbackDeadline instead of dropping on error, backward compatible) + pkg/clickhouse/chaos_test.go (100 concurrent spans against a 200ms-latency ClickHouse stub, 0 dropped, via sarama/mocks) + full README.md rewrite + new api/openapi.yaml documenting the real ClickHouse HTTP JSONEachRow write contract. 104/104 tests passing (9 new FallbackProducer tests + 1 new chaos test, no regressions), gofmt/vet clean, full CI green (go/helm/shell/secrets/rust/integration/e2e-k3d/coverage-gate). Spec doc (day-43-CODE.md) assumed a nonexistent HTTP /ingest server and pkg/ingest package — adapted to the real CLI/library architecture (see PR body 'Deviations' section).",
+    "test_passed": 12,
+    "test_total": 12,
+    "note": "agent-replay-engine (Day 44): implemented as a subdirectory Go module (module github.com/akshantvats/agent-replay-engine) inside infra-ai-streaming rather than a standalone repo, since AkshantVats/agent-replay-engine is not an accessible standalone repo in this session's GitHub scope -- same workaround used for tool-call-analyzer since Day 37. DESIGN.md + README.md (with Mermaid architecture diagram) + pkg/eventlog (AgentEvent/EventKind/EventLog types, JSONL read/write, First/AllOfKind/Validate, 7 tests) + pkg/mocker (ToolMocker frozen tool-response server, composite-key SHA-256(tool_name+input_hash) lookup, CallHistory divergence tracking, 5 tests incl. a -race-clean concurrency test). 12/12 tests passing, gofmt/vet clean, full CI green (go/rust/helm/shell/secrets/integration/e2e-k3d/coverage-gate, 9/9 checks).",
     "prior_day_prs_still_open": []
   },
   "oss_polish_pr": null,
@@ -342,7 +356,7 @@
   "morning_email_sent": true,
   "feedback_applied": false,
   "covers_status": "dalle_failed_pillow_fallback",
-  "covers_note": "Day 43 covers: DALL-E 3 (generate_cover_dalle.py) failed both attempts with billing_limit_user_error (non-transient, confirmed on retry), fell back to generate_cover.py per policy. Both fallback covers are valid 1200x630 PNGs.",
+  "covers_note": "Day 44 covers: DALL-E 3 returned a non-retryable billing_hard_limit_reached error for both covers (no retry attempted per script policy on non-transient errors), fell back to generate_cover.py. Both fallback covers are valid 1200x630 PNGs. (Day 43 covers had the same billing_limit_user_error fallback.)",
   "## Pre-Push Issues": [
     "Day 29+30+31+32+33: github.com profile links return HTTP 403 in pre-push-check (egress proxy policy). Added to SKIP_DOMAINS in pre-push-check.sh.",
     "Day 38: pre-push-check reports cross-reference 404s (same-day posts link each other; both live simultaneously after push \u2014 timing artifact, not a real broken link). Martin Fowler GoldenMaster link fixed with Wayback Machine fallback.",
@@ -357,6 +371,15 @@
     "Day 41 (8am_run3): this session's environment has no gh CLI either — used git (pre-authenticated local proxy remote) + GitHub MCP tools throughout Step 0. Also: merged #83 and #89 (both fully green CI) before pulling latest main, then briefly recreated the owner-closed #90 as a new PR #91 without having seen the owner's 'do not reopen or recreate' note yet — caught it on the next fetch (origin/main had moved) and closed #91 immediately with an explanatory comment. No lasting effect: #91 was open for a few minutes with no CI/review activity. current_day now correctly reflects #83+#89 merged; #90/Day 41 code stays outstanding per owner policy."
   ],
   "## Email Errors": [],
+  "build_slot_july30_2300ist": {
+    "timestamp": "2026-07-30T23:07:25+05:30",
+    "outcome": "morning_complete",
+    "action": "Step 0: no open code PRs in days 44-53 window (nothing to auto-merge). Target day 44 (plan.json[44].repo = 'agent-replay-engine', a standalone repo not in this session's GitHub scope, so implemented per Day-37 precedent as a subdirectory Go module inside infra-ai-streaming). Code and blogs built in parallel via two background agents. Code: agent-replay-engine/ (pkg/eventlog + pkg/mocker per day-44-CODE.md spec, 12/12 tests, gofmt/vet clean), PR #95 opened and merged once CI went fully green (9/9 checks). Blogs: Experience 'Event Sourcing — But the Events Hallucinate' (Wayfair pricing simulation / idempotent replay) + AI Learning 'Event Sourcing for Agent Runs' (Kafka log-compaction analogy) squash-pushed to Profile main (commit b008304), Day 43 posts retrofixed to link forward, series-index/sitemap/llms updated (commit 73f4371). DALL-E billing hard limit still in effect, Pillow fallback used for both covers.",
+    "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/95",
+    "experience_commit": "https://github.com/AkshantVats/Profile/commit/b008304",
+    "ai_learning_commit": "https://github.com/AkshantVats/Profile/commit/b008304",
+    "next_action": "Next build slot: scan N+1..N+5 (45-49) for first day with morning_email_sent != true (target_day=45, repo continues as agent-replay-engine subdirectory of infra-ai-streaming -- Day 45 spec is the Replay Runner + Model Client Interface, builds on pkg/eventlog + pkg/mocker from Day 44)."
+  },
   "build_slot_july30_1800ist": {
     "timestamp": "2026-07-30T13:04:00Z",
     "outcome": "morning_complete",
