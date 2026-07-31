@@ -90,4 +90,4 @@ go test -race ./...  # exits 0, all packages pass
 ## Series Navigation
 
 Previous: Day 46 — agent-replay-engine: Replay Core + `traceforge replay --stop-at-step`
-Next: Day 48 — TBD
+Next: Day 48 — agent-replay-engine: Fault Injection — `traceforge replay --inject-timeout`
