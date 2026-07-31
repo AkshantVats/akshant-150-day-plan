@@ -396,7 +396,7 @@
   },
   "oss_polish_pr": null,
   "email_sent": true,
-  "morning_email_sent": false,
+  "morning_email_sent": true,
   "feedback_applied": false,
   "covers_status": "dalle_failed_pillow_fallback",
   "covers_note": "Day 47: DALL-E hit OpenAI billing_hard_limit_reached on both covers (retried once each per CLAUDE.md section 4.6/8), fell back to generate_cover.py for both — real 1200x630 PNGs.",
