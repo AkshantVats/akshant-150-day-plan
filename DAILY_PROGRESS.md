@@ -379,6 +379,20 @@
       "status": "live",
       "day": 47,
       "title": "Day 47 — Diff Two Traces — Git Blame for Agents"
+    },
+    "ai_learning_day48": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/56",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-48-fault-injection-for-tool-rpcs.html",
+      "status": "draft_pr_not_merged",
+      "day": 48,
+      "title": "Day 48 — Fault Injection for Tool RPCs"
+    },
+    "experience_day48": {
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/56",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-48-inject-timeout-chaos-for-tool-rpcs.html",
+      "status": "draft_pr_not_merged",
+      "day": 48,
+      "title": "Day 48 — Inject Timeout — Chaos for Tool RPCs"
     }
   },
   "day41_code_pr_CLOSED_DO_NOT_REOPEN": {
@@ -547,5 +561,20 @@
     "action": "Step 0: no open code PRs in days 47-56 window (no progress branches existed yet). Target day 47 (plan.json[47].repo = 'agent-replay-engine', continuing the infra-ai-streaming subdirectory-module precedent from Days 44-46). day-47-CODE/EXPERIENCE/AI-LEARNING.md plan docs did not exist, generated from plan.json[47] + docs/context/ + docs/delivery-hero-rider-tracking-system.md and pushed to akshant-150-day-plan main. GitHub MCP tools used for PR creation/merge (create_pull_request, merge_pull_request); git CLI over the session's local proxy remote for all branch pushes. Code: pkg/diff.Compare (structural first-divergence search on ToolName+InputHash, reusing pkg/mocker's Day 44 composite key) + cmd/traceforge CLI diff subcommand, 60/60 tests (100%), gofmt/vet clean, PR #99 opened against infra-ai-streaming main, subscribed to PR activity. PR #99 CI went fully green (9/9 checks) and was merged squash. Experience blog ('Diff Two Traces — Git Blame for Agents', Delivery Hero route-dispute debugging, deep-dive format) + AI Learning blog ('Day 47 — Diff Semantics — Structural vs Textual', witness-statement DS analogy, mandatory mermaid init block) squash-pushed directly to Profile main (commits 72f0be6 and 3a86033), both live, both pre-push-check.sh clean after one footnote-link fix (parenthesized Wikipedia URL tripped the checker's link regex — false positive, verified 200 via curl, swapped to a paren-free URL). Day 46 posts retrofixed (footer + sidebar) to link to Day 47. sitemap.xml + llms.txt updated and pushed to Profile main. DALL-E cover generation hit OpenAI's billing_hard_limit_reached on both covers (retried once each), fell back cleanly to generate_cover.py for both — real PNGs, not SVG-as-PNG. plan.json current_day/next_day advanced to 47/48, day 47 marked complete.",
     "code_pr_merged": "https://github.com/AkshantVats/infra-ai-streaming/pull/99",
     "test_pass_pct": 100
+  },
+  "build_slot_day48_july31_1826ist": {
+    "timestamp": "2026-07-31T18:26:00+05:30",
+    "target_day": 48,
+    "phase": "morning_complete",
+    "code_pr": {
+      "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/100",
+      "status": "open_draft_ci_green",
+      "test_pass_pct": 100,
+      "note": "80/80 tests passed. CI 8/8 checks green. Opened as a draft PR per this session's branch policy (single designated branch per repo, no direct push to main) rather than auto-merged on CI green — left for manual review/merge."
+    },
+    "blog_prs_note": "Both Day 48 posts (Experience + AI Learning) pushed to Profile as a single draft PR (#56) rather than squash-merged directly to main, for the same branch-policy reason as the code PR. Posts are not yet live on GitHub Pages — merging PR #56 will publish them.",
+    "indexes_updated": "sitemap.xml + llms.txt updates for Day 48 are included in PR #56 (not yet on main).",
+    "morning_email_sent": true,
+    "deviation_from_routine": "This session operates under a real harness constraint requiring all work to land on one pre-assigned branch per repo via a draft PR, rather than the direct-to-main / auto-merge-on-green flow described in CLAUDE.md. current_day was NOT advanced to 48 since neither PR is merged yet."
   }
 }
