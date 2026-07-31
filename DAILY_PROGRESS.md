@@ -1,6 +1,6 @@
 {
-  "current_day": 45,
-  "next_day": 46,
+  "current_day": 46,
+  "next_day": 47,
   "phase": "code_done",
   "last_run": "2026-07-31T08:17:52+05:30",
   "last_run_agent": "build_slot_july31_0817ist",
@@ -362,7 +362,7 @@
   },
   "code_pr": {
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/98",
-    "status": "open",
+    "status": "merged_ci_green",
     "day": 46,
     "branch": "feat/replay-core-stop-at-step",
     "repo": "infra-ai-streaming",
