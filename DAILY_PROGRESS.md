@@ -1,9 +1,9 @@
 {
-  "current_day": 46,
-  "next_day": 47,
+  "current_day": 47,
+  "next_day": 48,
   "phase": "morning_complete",
-  "last_run": "2026-07-31T08:42:00+05:30",
-  "last_run_agent": "build_slot_july31_0817ist",
+  "last_run": "2026-07-31T08:00:00+05:30",
+  "last_run_agent": "build_slot_july31_0741ist",
   "11pm_oss_polish_july30": {
     "timestamp": "2026-07-30T23:15:00+05:30",
     "outcome": "code_merged_polish_merged",
@@ -365,6 +365,20 @@
       "status": "live",
       "day": 41,
       "title": "Day 41 — Exclusive Time — Flame Graphs for Money"
+    },
+    "ai_learning_day47": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/3a86033",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-47-diff-semantics-structural-vs-textual.html",
+      "status": "live",
+      "day": 47,
+      "title": "Day 47 — Diff Semantics — Structural vs Textual"
+    },
+    "experience_day47": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/72f0be6",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-47-diff-two-traces-git-blame-for-agents.html",
+      "status": "live",
+      "day": 47,
+      "title": "Day 47 — Diff Two Traces — Git Blame for Agents"
     }
   },
   "day41_code_pr_CLOSED_DO_NOT_REOPEN": {
@@ -375,23 +389,17 @@
     "self_correction_log": "8am_run3 first accidentally recreated #90 as #91 (closed within minutes, no CI/review activity, non-issue), then the Day 42 code agent independently branched its work off the Day-41 rebase branch producing PR #92 (which would have merged Day 41 code as a side effect) — caught before merge, cherry-picked Day 42's single commit onto true main instead, replacement PR #93 opened, #92 closed. Both mistakes self-corrected before any merge; noting the pattern so future slots don't repeat it."
   },
   "code_pr": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/98",
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/99",
     "status": "merged_ci_green",
-    "day": 46,
-    "branch": "feat/replay-core-stop-at-step",
-    "repo": "infra-ai-streaming",
-    "created_at": "2026-07-31T02:46:00Z",
-    "test_pass_pct": 100,
-    "test_passed": 55,
-    "test_total": 55,
-    "note": "agent-replay-engine (Day 46): pkg/replay.Run — walks a recorded event log's tool_call sequence against a mocker.ToolMocker, halting after --stop-at-step recorded steps instead of always running to final_output (the Day 45 Series Navigation note's 'Replay Runner' deliverable, scoped to direct-log replay since a live ModelClient integration is out of session scope). Added cmd/traceforge CLI (replay subcommand: --log/--trace-id/--stop-at-step) and eventlog.FilterByTraceID to isolate one trace's events from a multi-trace log file. 55/55 tests passing, gofmt/vet clean. PR #98 opened, CI in progress."
+    "created_at": "2026-07-31T07:41:33+05:30",
+    "merged_at": "2026-07-31T07:53:24+05:30"
   },
   "oss_polish_pr": null,
   "email_sent": true,
-  "morning_email_sent": true,
+  "morning_email_sent": false,
   "feedback_applied": false,
   "covers_status": "dalle_failed_pillow_fallback",
-  "covers_note": "Day 45 covers: DALL-E 3 returned billing_hard_limit_reached for both covers (retried once each per policy), fell back to generate_cover.py. Both fallback covers are valid 1200x630 PNGs. (Same pattern as Days 41-44.)",
+  "covers_note": "Day 47: DALL-E hit OpenAI billing_hard_limit_reached on both covers (retried once each per CLAUDE.md section 4.6/8), fell back to generate_cover.py for both — real 1200x630 PNGs.",
   "## Pre-Push Issues": [
     "Day 29+30+31+32+33: github.com profile links return HTTP 403 in pre-push-check (egress proxy policy). Added to SKIP_DOMAINS in pre-push-check.sh.",
     "Day 38: pre-push-check reports cross-reference 404s (same-day posts link each other; both live simultaneously after push — timing artifact, not a real broken link). Martin Fowler GoldenMaster link fixed with Wayback Machine fallback.",
@@ -532,5 +540,12 @@
     "experience_commit": "https://github.com/AkshantVats/Profile/commit/c3a6016",
     "ai_learning_commit": "https://github.com/AkshantVats/Profile/commit/59a8681",
     "indexes_commit": "https://github.com/AkshantVats/Profile/commit/de09269"
+  },
+  "build_slot_july31_0741ist": {
+    "timestamp": "2026-07-31T08:00:00+05:30",
+    "outcome": "morning_complete",
+    "action": "Step 0: no open code PRs in days 47-56 window (no progress branches existed yet). Target day 47 (plan.json[47].repo = 'agent-replay-engine', continuing the infra-ai-streaming subdirectory-module precedent from Days 44-46). day-47-CODE/EXPERIENCE/AI-LEARNING.md plan docs did not exist, generated from plan.json[47] + docs/context/ + docs/delivery-hero-rider-tracking-system.md and pushed to akshant-150-day-plan main. GitHub MCP tools used for PR creation/merge (create_pull_request, merge_pull_request); git CLI over the session's local proxy remote for all branch pushes. Code: pkg/diff.Compare (structural first-divergence search on ToolName+InputHash, reusing pkg/mocker's Day 44 composite key) + cmd/traceforge CLI diff subcommand, 60/60 tests (100%), gofmt/vet clean, PR #99 opened against infra-ai-streaming main, subscribed to PR activity. PR #99 CI went fully green (9/9 checks) and was merged squash. Experience blog ('Diff Two Traces — Git Blame for Agents', Delivery Hero route-dispute debugging, deep-dive format) + AI Learning blog ('Day 47 — Diff Semantics — Structural vs Textual', witness-statement DS analogy, mandatory mermaid init block) squash-pushed directly to Profile main (commits 72f0be6 and 3a86033), both live, both pre-push-check.sh clean after one footnote-link fix (parenthesized Wikipedia URL tripped the checker's link regex — false positive, verified 200 via curl, swapped to a paren-free URL). Day 46 posts retrofixed (footer + sidebar) to link to Day 47. sitemap.xml + llms.txt updated and pushed to Profile main. DALL-E cover generation hit OpenAI's billing_hard_limit_reached on both covers (retried once each), fell back cleanly to generate_cover.py for both — real PNGs, not SVG-as-PNG. plan.json current_day/next_day advanced to 47/48, day 47 marked complete.",
+    "code_pr_merged": "https://github.com/AkshantVats/infra-ai-streaming/pull/99",
+    "test_pass_pct": 100
   }
 }
