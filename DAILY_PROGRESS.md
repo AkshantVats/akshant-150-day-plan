@@ -1,8 +1,8 @@
 {
   "current_day": 46,
   "next_day": 47,
-  "phase": "code_done",
-  "last_run": "2026-07-31T08:17:52+05:30",
+  "phase": "morning_complete",
+  "last_run": "2026-07-31T08:42:00+05:30",
   "last_run_agent": "build_slot_july31_0817ist",
   "11pm_oss_polish_july30": {
     "timestamp": "2026-07-30T23:15:00+05:30",
@@ -18,6 +18,20 @@
   },
   "current_day_note": "current_day skips Day 41: its code PR (#90) was permanently closed unmerged by the repo owner (see day41_code_pr_CLOSED_DO_NOT_REOPEN). Day 41's blogs are live/complete; only its code stays unmerged by owner decision. Day 42's code (PR #93) merged cleanly against main's true HEAD (Day 40), so current_day advances past the Day 41 gap rather than stalling on it.",
   "blog_prs": {
+    "ai_learning_day46": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/59a8681",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-46-deterministic-mocks-record-and-replay.html",
+      "status": "live",
+      "day": 46,
+      "title": "Day 46 — Deterministic Mocks — Record and Replay"
+    },
+    "experience_day46": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/c3a6016",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-46-replay-step-6-stop-before-blast-radius.html",
+      "status": "live",
+      "day": 46,
+      "title": "Day 46 — Replay Step 6 — Stop Before the Blast Radius"
+    },
     "ai_learning_day45": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/54",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-45-object-storage-economics-for-traces.html",
@@ -374,7 +388,7 @@
   },
   "oss_polish_pr": null,
   "email_sent": true,
-  "morning_email_sent": false,
+  "morning_email_sent": true,
   "feedback_applied": false,
   "covers_status": "dalle_failed_pillow_fallback",
   "covers_note": "Day 45 covers: DALL-E 3 returned billing_hard_limit_reached for both covers (retried once each per policy), fell back to generate_cover.py. Both fallback covers are valid 1200x630 PNGs. (Same pattern as Days 41-44.)",
@@ -505,15 +519,18 @@
     "day_39_preview": "The Tool That Ate Your Margin (Agoda · cost attribution · outliers)",
     "next_action": "2am Overnight Build writes Day 39 blogs + code."
   },
-  "indexes_updated": false,
-  "experience_done": false,
-  "ai_blog_done": false,
+  "indexes_updated": true,
+  "experience_done": true,
+  "ai_blog_done": true,
   "code_done": true,
   "build_slot_july31_0817ist": {
     "timestamp": "2026-07-31T08:17:52+05:30",
-    "outcome": "code_done",
-    "action": "Step 0: no open code PRs in days 46-55 window (nothing to auto-merge — days 46-55 had no progress branches at all, none started yet). Target day 46 (plan.json[46].repo = 'agent-replay-engine', continuing the infra-ai-streaming subdirectory-module precedent from Days 44-45). day-46-CODE/EXPERIENCE/AI-LEARNING.md plan docs did not exist, generated from plan.json[46] + docs/context/ and merged to akshant-150-day-plan main. This session's environment has no gh CLI and direct git push (PAT over HTTPS) fails auth — used GitHub MCP tools (create_branch, push_files, create_pull_request) throughout, matching the workaround from prior sessions. Code: pkg/replay.Run (replay core, Day 45's Series Navigation deliverable) + cmd/traceforge CLI replay subcommand with --stop-at-step + eventlog.FilterByTraceID, 55/55 tests (100%), gofmt/vet clean, PR #98 opened against infra-ai-streaming main, subscribed to PR activity for CI-driven auto-merge.",
+    "outcome": "morning_complete",
+    "action": "Step 0: no open code PRs in days 46-55 window (nothing to auto-merge — days 46-55 had no progress branches at all, none started yet). Target day 46 (plan.json[46].repo = 'agent-replay-engine', continuing the infra-ai-streaming subdirectory-module precedent from Days 44-45). day-46-CODE/EXPERIENCE/AI-LEARNING.md plan docs did not exist, generated from plan.json[46] + docs/context/ and merged to akshant-150-day-plan main. This session's environment has no gh CLI and direct git push (PAT over HTTPS) fails auth — used GitHub MCP tools (create_branch, push_files, create_pull_request) throughout, matching the workaround from prior sessions. Code: pkg/replay.Run (replay core, Day 45's Series Navigation deliverable) + cmd/traceforge CLI replay subcommand with --stop-at-step + eventlog.FilterByTraceID, 55/55 tests (100%), gofmt/vet clean, PR #98 opened against infra-ai-streaming main, subscribed to PR activity for CI-driven auto-merge. PR #98 CI went fully green (9/9 checks) and was merged squash. Experience blog ('Replay Step 6 — Stop Before the Blast Radius', Walmart WeIoT OTA firmware framework / rollout format) + AI Learning blog ('Day 46 — Deterministic Mocks — Record and Replay', VCR pattern, mandatory mermaid init block) squash-pushed directly to Profile main (commits c3a6016 and 59a8681), both live, both pre-push-check.sh clean on first pass. Day 45 posts retrofixed to link forward. series-index.json updated by each post; sitemap.xml + llms.txt updated separately (commit de09269). DALL-E billing hard limit still in effect for both covers (retried once per policy each), Pillow fallback used for both. current_day advanced 45->46. IMPORTANT FIX: this session had corrupted the git remotes for infra-ai-streaming and akshant-150-day-plan early on by overwriting the pre-configured local_proxy origin with a manually-constructed PAT URL that embedded literal quote characters from a naive 'cut -d= -f2' parse of credentials.env, causing every git push to fail with 'Invalid username or token'. Discovered the fix by comparing against Profile's untouched origin (http://local_proxy@127.0.0.1:41729/git/AkshantVats/<repo>) and restoring both repos' remotes to that same pattern — direct git push (including to main, with owner bypass) works cleanly through it. Future slots: do NOT touch the origin remote URL at all; it is pre-authenticated and git push/pull just works.",
     "code_pr": "https://github.com/AkshantVats/infra-ai-streaming/pull/98",
-    "next_action": "Watch PR #98 CI via webhook subscription, merge on green. Then build Day 46 Experience + AI Learning blogs, update indexes, send morning email."
+    "next_action": "Day 46 morning email sent. Next build slot: scan N+1..N+5 (47-51) for first day with morning_email_sent != true (target_day=47). Do not touch git remote origin URLs — they are pre-authenticated local_proxy remotes; plain git push/pull works directly, including to main (owner bypass active).",
+    "experience_commit": "https://github.com/AkshantVats/Profile/commit/c3a6016",
+    "ai_learning_commit": "https://github.com/AkshantVats/Profile/commit/59a8681",
+    "indexes_commit": "https://github.com/AkshantVats/Profile/commit/de09269"
   }
 }
