@@ -556,7 +556,7 @@
     "code_pr_status": "open",
     "experience_pr_merged": "https://github.com/AkshantVats/Profile/pull/57",
     "ai_learning_pr_merged": "https://github.com/AkshantVats/Profile/pull/57",
-    "plan_docs_pr": "https://github.com/AkshantVats/akshant-150-day-plan/pull/new/claude/blissful-dijkstra-bxffwe",
+    "plan_docs_pr": "https://github.com/AkshantVats/akshant-150-day-plan/pull/25",
     "test_pass_pct": 100,
     "next_action": "Drive infra-ai-streaming PR #101 to green (subscribed to PR activity) or note the blocker if CI fails and the failure isn't fixable in this session. Send Day 49 morning email once CI status is known. Next build slot: scan N+1..N+5 (48-52) for the first day with morning_email_sent != true -- day 48 may already be complete by then; day 50 is the likely next target."
   }
