@@ -4,8 +4,9 @@
   "last_run": "2026-08-01T13:15:00+05:30",
   "code_pr": {
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/104",
-    "status": "open",
-    "created_at": "2026-08-01T13:15:00+05:30"
+    "status": "auto_merged_ci_green",
+    "created_at": "2026-08-01T13:15:00+05:30",
+    "merged_at": "2026-08-01T13:20:00+05:30"
   },
   "test_pass_pct": 100,
   "morning_email_sent": false,
