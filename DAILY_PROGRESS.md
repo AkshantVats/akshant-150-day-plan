@@ -21,14 +21,20 @@
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-52-parallel-runs-respect-the-rate-limit.html",
       "status": "live",
       "day": 52,
-      "title": "Day 52 — Parallel Runs — Respect the Rate Limit"
+      "title": "Day 52 \u2014 Parallel Runs \u2014 Respect the Rate Limit"
     },
     "ai_learning": {
       "commit": "https://github.com/AkshantVats/Profile/commit/718dc67",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-52-statistical-rigor-n-runs-confidence.html",
       "status": "live",
       "day": 52,
-      "title": "Day 52 — Statistical Rigor — N Runs, Confidence"
+      "title": "Day 52 \u2014 Statistical Rigor \u2014 N Runs, Confidence"
     }
+  },
+  "oss_polish_pr": {
+    "url": null,
+    "status": "skipped_no_issues_found",
+    "test_pass_pct": 100,
+    "note": "agent-benchmark-runner already fully polished by Day 51 oss-polish PR #107 (shared module). golangci-lint 0 issues, gofmt clean, license headers verified, 39/39 unit tests passed. No diff vs main to open a PR against."
   }
 }
