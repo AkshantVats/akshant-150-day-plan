@@ -1,6 +1,6 @@
 {
   "current_day": 50,
-  "phase": "indexes_updated",
+  "phase": "morning_complete",
   "last_run": "2026-08-01T00:00:00+05:30",
   "blog_prs": {
     "experience": {
@@ -24,7 +24,7 @@
     "created_at": "2026-08-01T00:00:00+05:30"
   },
   "oss_polish_pr": null,
-  "morning_email_sent": false,
+  "morning_email_sent": true,
   "indexes_updated": true,
   "experience_done": true,
   "ai_blog_done": true,
