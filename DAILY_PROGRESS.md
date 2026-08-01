@@ -1,6 +1,6 @@
 {
   "current_day": 50,
-  "phase": "experience_done",
+  "phase": "ai_blog_done",
   "last_run": "2026-08-01T00:00:00+05:30",
   "blog_prs": {
     "experience": {
@@ -9,6 +9,13 @@
       "status": "live",
       "day": 50,
       "title": "Day 50 \u2014 Copy-Paste Debuggability"
+    },
+    "ai_learning": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/32551fb",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-50-operability-cli-as-api.html",
+      "status": "live",
+      "day": 50,
+      "title": "Day 50 \u2014 Operability \u2014 CLI as API"
     }
   },
   "code_pr": {
@@ -20,7 +27,7 @@
   "morning_email_sent": false,
   "indexes_updated": false,
   "experience_done": true,
-  "ai_blog_done": false,
+  "ai_blog_done": true,
   "code_done": true,
   "feedback_applied": false,
   "test_pass_pct": 100
