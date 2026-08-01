@@ -20,8 +20,10 @@
   },
   "code_pr": {
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/103",
-    "status": "open",
-    "created_at": "2026-08-01T00:00:00+05:30"
+    "status": "auto_merged_ci_green",
+    "created_at": "2026-08-01T00:00:00+05:30",
+    "merged_at": "2026-08-01T13:00:00+05:30",
+    "note": "Auto-merged by build slot \u2014 CI fully green (9/9 checks) at merge time."
   },
   "oss_polish_pr": null,
   "morning_email_sent": true,
