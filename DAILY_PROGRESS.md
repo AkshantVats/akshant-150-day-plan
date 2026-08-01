@@ -1,8 +1,16 @@
 {
   "current_day": 50,
-  "phase": "code_done",
+  "phase": "experience_done",
   "last_run": "2026-08-01T00:00:00+05:30",
-  "blog_prs": {},
+  "blog_prs": {
+    "experience": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/b6b7db7",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-50-copy-paste-debuggability.html",
+      "status": "live",
+      "day": 50,
+      "title": "Day 50 \u2014 Copy-Paste Debuggability"
+    }
+  },
   "code_pr": {
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/103",
     "status": "open",
@@ -11,7 +19,7 @@
   "oss_polish_pr": null,
   "morning_email_sent": false,
   "indexes_updated": false,
-  "experience_done": false,
+  "experience_done": true,
   "ai_blog_done": false,
   "code_done": true,
   "feedback_applied": false,
