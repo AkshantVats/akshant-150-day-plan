@@ -13,7 +13,7 @@
     "changed_files": 4
   },
   "test_pass_pct": 100,
-  "morning_email_sent": false,
+  "morning_email_sent": true,
   "indexes_updated": true,
   "experience_done": true,
   "ai_blog_done": true,
