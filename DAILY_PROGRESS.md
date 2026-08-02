@@ -1,9 +1,9 @@
 {
-  "current_day": 53,
-  "next_day": 54,
+  "current_day": 54,
+  "next_day": 55,
   "phase": "morning_complete",
-  "last_run": "2026-08-02T10:35:00+05:30",
-  "last_run_agent": "build_slot_aug2_1005ist",
+  "last_run": "2026-08-02T11:20:00+05:30",
+  "last_run_agent": "build_slot_aug2_1120ist",
   "11pm_oss_polish_july30": {
     "timestamp": "2026-07-30T23:15:00+05:30",
     "outcome": "code_merged_polish_merged",
@@ -393,6 +393,20 @@
       "status": "live",
       "day": 53,
       "title": "Day 53 — 14 Calls vs 9 — The Report Hiring Managers Get"
+    },
+    "ai_learning_day54": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/cfecf23",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-54-flame-graphs-cpu-profile-for-agents.html",
+      "status": "live",
+      "day": 54,
+      "title": "Day 54 — Flame Graphs — CPU Profile for Agents"
+    },
+    "experience_day54": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/cfecf23",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-54-flame-graphs-llm-time-vs-tool-time.html",
+      "status": "live",
+      "day": 54,
+      "title": "Day 54 — Flame Graphs — LLM Time vs Tool Time"
     }
   },
   "day41_code_pr_CLOSED_DO_NOT_REOPEN": {
@@ -403,10 +417,10 @@
     "self_correction_log": "8am_run3 first accidentally recreated #90 as #91 (closed within minutes, no CI/review activity, non-issue), then the Day 42 code agent independently branched its work off the Day-41 rebase branch producing PR #92 (which would have merged Day 41 code as a side effect) — caught before merge, cherry-picked Day 42's single commit onto true main instead, replacement PR #93 opened, #92 closed. Both mistakes self-corrected before any merge; noting the pattern so future slots don't repeat it."
   },
   "code_pr": {
-    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/108",
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/109",
     "status": "merged_ci_green",
-    "created_at": "2026-08-02T10:19:45+05:30",
-    "merged_at": "2026-08-02T10:33:26+05:30"
+    "created_at": "2026-08-02T11:08:42+05:30",
+    "merged_at": "2026-08-02T11:18:23+05:30"
   },
   "oss_polish_pr": null,
   "email_sent": true,
