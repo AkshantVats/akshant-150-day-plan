@@ -8,8 +8,9 @@
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/114",
     "repo": "infra-ai-streaming",
     "component": "cross-cutting (ingestion, consumer, agent-benchmark-runner dashboards)",
-    "status": "open",
-    "created_at": "2026-08-03T07:57:32Z"
+    "status": "auto_merged_ci_green",
+    "created_at": "2026-08-03T07:57:32Z",
+    "merged_at": "2026-08-03T08:12:00Z"
   },
   "test_pass_pct": 100,
   "test_summary": "172/172 passing (25 Rust ingestion + 63 Go consumer + 84 Go agent-benchmark-runner), 0 failing. cargo clippy -D warnings clean, cargo fmt clean, gofmt clean. golangci-lint: 14 pre-existing findings, none in touched files.",
