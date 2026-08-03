@@ -5,8 +5,10 @@
   "last_run_agent": "build_slot_aug3_session",
   "code_pr": {
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/116",
-    "status": "open",
+    "status": "merged_ci_green",
     "created_at": "2026-08-03T21:45:00+05:30",
+    "merged_at": "2026-08-03T22:50:00+05:30",
+    "merge_commit": "b1d28f141f615d57e49891e2dbf895cb88555dde",
     "repo": "infra-ai-streaming",
     "module": "semantic-cache-engine (subdirectory module, continuing the Day 44+ precedent -- plan.json's 'repo' field for Day 61 is 'semantic-cache-engine' but that is a module inside infra-ai-streaming, not a separate GitHub repo, matching Day 60's DESIGN.md-only PR #115)"
   },
