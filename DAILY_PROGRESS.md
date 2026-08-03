@@ -1,7 +1,7 @@
 {
   "current_day": 61,
-  "phase": "code_done",
-  "last_run": "2026-08-03T21:32:00+05:30",
+  "phase": "experience_done",
+  "last_run": "2026-08-03T22:05:00+05:30",
   "last_run_agent": "build_slot_aug3_session",
   "code_pr": {
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/116",
@@ -12,10 +12,18 @@
   },
   "test_pass_pct": 100,
   "test_summary": "22/22 unit tests passed (100%). Integration test for pgvector upsert/idempotency (pkg/cachestore/integration_test.go) is gated behind -tags=integration and PGVECTOR_DSN, skipped in this environment -- no live Postgres/pgvector instance available. Noted as follow-on CI scope in DESIGN.md section 7, not silently dropped.",
+  "blog_prs": {
+    "experience": {
+      "commit_url": "https://github.com/AkshantVats/Profile/commit/31a3435",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-61-embeddings-are-batch-jobs.html",
+      "status": "live",
+      "cover_source": "generate_cover.py fallback (DALL-E blocked: OpenAI billing_hard_limit_reached, retried once, both attempts failed)"
+    }
+  },
   "morning_email_sent": false,
   "indexes_updated": false,
-  "experience_done": false,
+  "experience_done": true,
   "ai_blog_done": false,
   "code_done": true,
-  "notes": "Day 61 code: embedding worker for semantic-cache-engine (pkg/embedder OpenAIEmbedder over text-embedding-3-small, pkg/prompthash normalize+sha256, pkg/cachestore pgvector upsert via pgx/v5 ON CONFLICT DO NOTHING on (tenant_id, prompt_hash), pkg/worker batches of 32 + in-run dedup, cmd/embedworker CLI). Branch feat/semantic-cache-embedding-worker, PR #116 against infra-ai-streaming main, subscribed to PR activity, CI pending as of code_done checkpoint. GitHub MCP tools used for PR creation (no gh CLI in this environment); git over the session's pre-authenticated local_proxy remote for all pushes."
+  "notes": "Day 61 code: embedding worker for semantic-cache-engine (pkg/embedder OpenAIEmbedder over text-embedding-3-small, pkg/prompthash normalize+sha256, pkg/cachestore pgvector upsert via pgx/v5 ON CONFLICT DO NOTHING on (tenant_id, prompt_hash), pkg/worker batches of 32 + in-run dedup, cmd/embedworker CLI). Branch feat/semantic-cache-embedding-worker, PR #116 against infra-ai-streaming main, subscribed to PR activity, CI pending as of code_done checkpoint. GitHub MCP tools used for PR creation (no gh CLI in this environment); git over the session's pre-authenticated local_proxy remote for all pushes. Experience post 'Embeddings Are Batch Jobs' anchored on Agoda WhiteFalcon compaction cadence (hourly->3-hour->daily), squash-merged to Profile main, retrofixed Day 60 Experience footer/nav. pre-push-check.sh passed clean (0 hard, 0 soft errors)."
 }
