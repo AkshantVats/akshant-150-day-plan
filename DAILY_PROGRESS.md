@@ -6,8 +6,9 @@
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/115",
     "repo": "infra-ai-streaming",
     "component": "semantic-cache-engine",
-    "status": "open",
+    "status": "auto_merged_ci_green",
     "created_at": "2026-08-03T12:48:39Z",
+    "merged_at": "2026-08-03T18:20:00+05:30",
     "additions": 149,
     "deletions": 1,
     "changed_files": 3
