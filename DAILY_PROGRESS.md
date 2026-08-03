@@ -8,8 +8,9 @@
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/113",
     "repo": "infra-ai-streaming",
     "component": "agent-benchmark-runner",
-    "status": "open",
-    "created_at": "2026-08-03T02:45:21Z"
+    "status": "auto_merged_ci_green",
+    "created_at": "2026-08-03T02:45:21Z",
+    "merged_at": "2026-08-03T07:41:00Z"
   },
   "test_pass_pct": 100,
   "test_summary": "85/85 passing, 0 failing (go build/vet/gofmt/test -race all clean). No implementation bug found; TestLaunchRehearsal added as in-process integration test exercising orchestrator -> compare -> report -> CLI wiring.",
