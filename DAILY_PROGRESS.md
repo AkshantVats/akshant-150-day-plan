@@ -1,6 +1,6 @@
 {
   "current_day": 62,
-  "phase": "experience_done",
+  "phase": "ai_blog_done",
   "last_run": "2026-08-04T00:00:00+05:30",
   "last_run_agent": "build_slot_aug4_session",
   "code_pr": {
@@ -15,13 +15,19 @@
   "morning_email_sent": false,
   "indexes_updated": false,
   "experience_done": true,
-  "ai_blog_done": false,
+  "ai_blog_done": true,
   "code_done": true,
   "notes": "Day 62 code: cache lookup path for semantic-cache-engine (DESIGN.md section1 read-side + section5 LensAI dual-write, left design-only by Day 61). pkg/config per-tenant similarity threshold (default 0.92, matches ingestion's TENANT_LIMITS_PATH two-level shape), pkg/lensai source=cache_hit dual-write mirroring tool-call-analyzer's writer, pkg/cachestore.Reader (FindExact exact-dup fast path + FindNearest hnsw search, touches last_hit_at on hit), pkg/lookup orchestration (exact fast path -> embed+search -> threshold check -> emit; failed emission never turns a hit into a miss), cmd/cachelookup CLI mirroring cmd/embedworker's shape. Branch feat/semantic-cache-lookup-path, PR #117 against infra-ai-streaming main, subscribed to PR activity, CI pending as of code_done checkpoint. GitHub MCP tools used for PR creation (no gh CLI in this environment); git over the session's pre-authenticated local_proxy remote for all pushes. DESIGN.md section8 added documenting the 0.92-vs-0.94 threshold deviation and the tenant-config shape deviation from section3's flat sketch.",
   "blog_prs": {
     "experience": {
       "commit_url": "https://github.com/AkshantVats/Profile/commit/d76cae2",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-62-false-positives-dollar-cost.html",
+      "status": "live",
+      "cover_source": "generate_cover.py fallback (DALL-E blocked: OpenAI billing_hard_limit_reached, retried once, both attempts failed)"
+    },
+    "ai_learning": {
+      "commit_url": "https://github.com/AkshantVats/Profile/commit/7ab796b",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-62-ann-search-at-qps.html",
       "status": "live",
       "cover_source": "generate_cover.py fallback (DALL-E blocked: OpenAI billing_hard_limit_reached, retried once, both attempts failed)"
     }
