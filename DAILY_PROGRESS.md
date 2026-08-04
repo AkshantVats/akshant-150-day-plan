@@ -22,7 +22,11 @@
     "status": "auto_merged_ci_green",
     "created_at": "2026-08-04T16:40:28+05:30"
   },
-  "oss_polish_pr": null,
+  "oss_polish_pr": {
+    "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/121",
+    "status": "merged_ci_green",
+    "test_pass_pct": 100
+  },
   "morning_email_sent": true,
   "indexes_updated": true,
   "experience_done": true,
@@ -62,3 +66,10 @@ None.
 
 None — both posts passed `pre-push-check.sh` (exit 0) after one paragraph split on the
 Experience post during self-review (4-sentence paragraph → 3+2).
+
+## OSS Polish (11pm run)
+
+PR [#121](https://github.com/AkshantVats/infra-ai-streaming/pull/121) — clippy/`go vet` were
+already clean; fixed 1 missing SPDX header (`ingestion/build.rs`), 1 rustdoc unclosed-tag
+warning (`model_resolver.rs`), 1 gofmt file. Tests: 100% (87/87 — 25 Rust + 62 Go packages).
+All 10 CI checks green, squash-merged.
