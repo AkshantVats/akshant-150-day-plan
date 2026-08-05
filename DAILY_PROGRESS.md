@@ -1,7 +1,7 @@
 {
   "current_day": 66,
   "target_day": 67,
-  "phase": "experience_done",
+  "phase": "ai_blog_done",
   "last_run": "2026-08-05T08:17:39+05:30",
   "last_run_agent": "build_slot_aug5_session",
   "code_pr": {
@@ -15,7 +15,7 @@
   "morning_email_sent": false,
   "indexes_updated": false,
   "experience_done": true,
-  "ai_blog_done": false,
+  "ai_blog_done": true,
   "code_done": true,
   "blog_prs": {
     "experience": {
@@ -24,6 +24,13 @@
       "status": "live",
       "day": 67,
       "title": "Day 67 \u2014 Live Budget PATCH \u2014 Ops Can't Wait for Deploy"
+    },
+    "ai_learning": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/8ab57d2",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-67-live-config-for-spend.html",
+      "status": "live",
+      "day": 67,
+      "title": "Day 67 \u2014 Live Config for Spend"
     }
   }
 }
