@@ -6,8 +6,15 @@
   "last_run_agent": "build_slot_aug5_session",
   "code_pr": {
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/123",
-    "status": "open",
-    "created_at": "2026-08-05T08:17:39+05:30"
+    "status": "auto_merged_ci_green",
+    "created_at": "2026-08-05T08:17:39+05:30",
+    "merged_at": "2026-08-05T08:31:55+05:30",
+    "merge_sha": "014e221a07b4c7e50db829031423b39eaa41fe19",
+    "diff": {
+      "additions": 859,
+      "deletions": 5,
+      "changed_files": 12
+    }
   },
   "test_pass_pct": 100,
   "test_summary": "36/36 unit tests passed (100%). golangci-lint clean, go vet clean, gofmt clean.",
