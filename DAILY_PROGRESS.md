@@ -1,7 +1,7 @@
 {
   "current_day": 68,
-  "phase": "experience_done",
-  "last_run": "2026-08-06T08:35:00+05:30",
+  "phase": "ai_blog_done",
+  "last_run": "2026-08-06T08:45:00+05:30",
   "last_run_agent": "build-slot-8am-run3",
   "unblock_note": "The prior 'scope_blocked' determination (build-slot-scope-blocked, reconfirmed by 3 subsequent slots) was incorrect. plan.json's repo field for days 68-69 (\"cost-budget-enforcer\") and 70-76 (\"prompt-fingerprinter\") names a subdirectory module inside infra-ai-streaming (which IS in this session's scope), not a standalone GitHub repository -- confirmed by cost-budget-enforcer/ already existing as a Go module inside infra-ai-streaming on main, built by Days 65-67 (DESIGN.md, pkg/store, pkg/enforcer, pkg/middleware, pkg/admin, pkg/audit), with Day 67's own code_pr already merged against infra-ai-streaming under this exact precedent. Proceeded with Day 68 using that established pattern; prompt-fingerprinter (days 70-76) should be treated the same way once reached, and does not need to exist as a standalone repo either.",
   "code_pr": {
@@ -24,7 +24,7 @@
   "morning_email_sent": false,
   "indexes_updated": false,
   "experience_done": true,
-  "ai_blog_done": false,
+  "ai_blog_done": true,
   "code_done": true,
   "blog_prs": {
     "experience": {
@@ -33,9 +33,16 @@
       "status": "live",
       "day": 68,
       "title": "Day 68 — Stub Gateway — Compose Before Polish"
+    },
+    "ai_learning": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/53d349a",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-68-gateway-middleware-ordering.html",
+      "status": "live",
+      "day": 68,
+      "title": "Day 68 — Gateway Middleware Ordering"
     }
   },
-  "cover_note": "DALL-E cover generation failed both attempts (OpenAI API: insufficient_quota, credit_balance_exhausted) -- fell back to generate_cover.py per policy. Experience cover is the Pillow fallback, not DALL-E.",
+  "cover_note": "DALL-E cover generation failed on both blog posts (OpenAI API: insufficient_quota, credit_balance_exhausted, one retry each per policy) -- fell back to generate_cover.py for both. Neither Day 68 cover is DALL-E; flagging in case OPENAI_API_KEY billing needs attention before Day 69.",
   "prior_error_superseded": {
     "phase": "error",
     "last_run_agent": "build-slot-scope-blocked",
