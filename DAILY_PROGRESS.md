@@ -1,7 +1,7 @@
 {
   "current_day": 71,
   "target_day": 71,
-  "phase": "experience_done",
+  "phase": "ai_blog_done",
   "last_run": "2026-08-06T00:00:00+05:30",
   "last_run_agent": "build-slot-scheduled-session",
   "code_pr": {
@@ -21,7 +21,7 @@
   "morning_email_sent": false,
   "indexes_updated": false,
   "experience_done": true,
-  "ai_blog_done": false,
+  "ai_blog_done": true,
   "code_done": true,
   "feedback_applied": false,
   "blog_prs": {
@@ -31,6 +31,13 @@
       "status": "live",
       "day": 71,
       "title": "Day 71 \u2014 Normalization Is Contract Testing"
+    },
+    "ai_learning": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/33fa51b",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-71-canonicalization-rules.html",
+      "status": "live",
+      "day": 71,
+      "title": "Day 71 \u2014 Canonicalization Rules"
     }
   },
   "cover_note": "DALL-E cover generation hit OpenAI billing_hard_limit (insufficient_quota / credit_balance_exhausted) again today, retried once per policy, fell back to generate_cover.py \u2014 real 1200x630 PNG, not SVG-as-PNG.",
