@@ -1,6 +1,6 @@
 {
   "current_day": 72,
-  "phase": "experience_done",
+  "phase": "ai_blog_done",
   "last_run": "2026-08-06T21:45:17Z",
   "code_pr": {
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/128",
@@ -23,11 +23,18 @@
       "status": "live",
       "day": 72,
       "title": "Day 72 — Two-Tier Cache Metrics"
+    },
+    "ai_learning": {
+      "commit": "https://github.com/AkshantVats/Profile/commit/72e6692",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-72-l1-l2-stack-design.html",
+      "status": "live",
+      "day": 72,
+      "title": "Day 72 — L1/L2 Stack Design"
     }
   },
   "morning_email_sent": false,
   "indexes_updated": false,
   "experience_done": true,
-  "ai_blog_done": false,
+  "ai_blog_done": true,
   "code_done": true
 }
