@@ -3,13 +3,13 @@
 ```json
 {
   "current_day": 74,
-  "phase": "experience_done",
-  "last_run": "2026-08-07T00:30:00+05:30",
+  "phase": "ai_blog_done",
+  "last_run": "2026-08-07T01:00:00+05:30",
   "blog_prs": {
     "ai_learning": {
-      "pr_url": null,
-      "live_url": null,
-      "status": "pending"
+      "pr_url": "https://github.com/AkshantVats/Profile/pull/63",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-74-quality-scorer-preview.html",
+      "status": "live"
     },
     "experience": {
       "pr_url": "https://github.com/AkshantVats/Profile/pull/62",
@@ -34,7 +34,7 @@
   "morning_email_sent": false,
   "indexes_updated": false,
   "experience_done": true,
-  "ai_blog_done": false,
+  "ai_blog_done": true,
   "code_done": true,
   "feedback_applied": false,
   "session_note": "This build-slot session has no gh CLI; PR creation/CI-watch uses GitHub MCP tools + subscribe_pr_activity webhook instead of the polling loop in build-slot.prompt.txt. CI outcome (auto-merge on green) will be handled asynchronously via webhook events rather than a synchronous 15-min watch."
