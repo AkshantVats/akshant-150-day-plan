@@ -3,8 +3,8 @@
 ```json
 {
   "current_day": 75,
-  "phase": "code_done",
-  "last_run": "2026-08-07T22:12:12+05:30",
+  "phase": "experience_done",
+  "last_run": "2026-08-07T22:22:19+05:30",
   "blog_prs": {
     "ai_learning": {
       "pr_url": null,
@@ -13,8 +13,8 @@
     },
     "experience": {
       "pr_url": null,
-      "live_url": null,
-      "status": "pending"
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-75-wayfair-redis-lua-token-bucket.html",
+      "status": "live"
     }
   },
   "code_pr": {
@@ -33,7 +33,7 @@
   "oss_polish_pr": null,
   "morning_email_sent": false,
   "indexes_updated": false,
-  "experience_done": false,
+  "experience_done": true,
   "ai_blog_done": false,
   "code_done": true,
   "feedback_applied": false,
@@ -54,7 +54,19 @@
   `NOTES.md` captures project-blog bullets for Day 87's three-product rollup
   post. PR [#131](https://github.com/AkshantVats/infra-ai-streaming/pull/131),
   `go test -race ./...` green, `golangci-lint run ./...` 0 issues.
-- **Experience / AI Learning:** not started yet this run.
+- **Experience:** Published `rollout`-format post "Wayfair's Redis Lua Token
+  Bucket at 250k SKU Scale" — revisits Day 25's Lua rate-limiter race-condition
+  fix at later scale (before/after topology, PAS batch-run metrics at 15,263
+  RPS peak holding the 800-part SPCS ceiling, and a rollback-verification
+  beat), then bridges to today's code work via prompt-fingerprinter's
+  tenant-scoped cache key as the same "structurally impossible, not merely
+  unlikely" discipline. DALL-E cover generation hit `insufficient_quota` on
+  both the initial attempt and the retry; fell back to `generate_cover.py`.
+  `pre-push-check.sh` passed clean (0 hard, 0 soft errors). Self-review: 0
+  issues found. Squash-merged to Profile main
+  ([1287743](https://github.com/AkshantVats/Profile/commit/1287743)). Live:
+  https://akshantvats.github.io/Profile/blog/series/experience/day-75-wayfair-redis-lua-token-bucket.html
+- **AI Learning:** not started yet this run.
 
 ## Email Errors
 
