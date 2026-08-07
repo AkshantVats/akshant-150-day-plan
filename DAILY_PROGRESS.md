@@ -3,13 +3,13 @@
 ```json
 {
   "current_day": 75,
-  "phase": "experience_done",
-  "last_run": "2026-08-07T22:22:19+05:30",
+  "phase": "indexes_updated",
+  "last_run": "2026-08-07T23:05:00+05:30",
   "blog_prs": {
     "ai_learning": {
       "pr_url": null,
-      "live_url": null,
-      "status": "pending"
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-75-canonical-forms-before-hashing.html",
+      "status": "live"
     },
     "experience": {
       "pr_url": null,
@@ -32,9 +32,9 @@
   },
   "oss_polish_pr": null,
   "morning_email_sent": false,
-  "indexes_updated": false,
+  "indexes_updated": true,
   "experience_done": true,
-  "ai_blog_done": false,
+  "ai_blog_done": true,
   "code_done": true,
   "feedback_applied": false,
   "session_note": "This build-slot session has no gh CLI; PR creation/CI-watch uses GitHub MCP tools + subscribe_pr_activity webhook instead of the polling loop in build-slot.prompt.txt."
@@ -66,7 +66,27 @@
   issues found. Squash-merged to Profile main
   ([1287743](https://github.com/AkshantVats/Profile/commit/1287743)). Live:
   https://akshantvats.github.io/Profile/blog/series/experience/day-75-wayfair-redis-lua-token-bucket.html
-- **AI Learning:** not started yet this run.
+- **AI Learning:** Published `deep-dive`-format post "Prompt Fingerprinting
+  — Canonical Forms Before Hashing" — teaches `Normalize()`'s three-step
+  canonicalization contract (trim/collapse whitespace, re-serialize through
+  a sorted-key `map[string]any` for canonical JSON), why SHA-256 was chosen
+  over a faster hash (collision resistance vs. an embedding-round-trip
+  bottleneck it doesn't touch), and today's real benchmark numbers (p50
+  7.47µs on an L1 hit, 32.6% hit rate on a 35%-duplicate 4,000-request
+  workload). Mailing-address `.attr-box.mine` DS analogy per instructions.
+  Mermaid normalize→hash→lookup pipeline diagram, 6 nodes, all labels ≤6
+  words. Bridges to today's Experience post's Wayfair SKU-normalization
+  thread explicitly. Retrofixed Day 74's series footer/nav to link forward.
+  DALL-E cover generation hit `insufficient_quota` on both the initial
+  attempt and the retry (no OpenAI credits); fell back to
+  `generate_cover.py`. `pre-push-check.sh` passed clean (0 hard, 0 soft
+  errors) on both the new post and the Day 74 retrofix. Self-review: 0
+  issues found. Squash-merged to Profile main
+  ([4402f1e](https://github.com/AkshantVats/Profile/commit/4402f1e)). Live:
+  https://akshantvats.github.io/Profile/blog/series/ai-learning/day-75-canonical-forms-before-hashing.html
+- **Indexes:** `sitemap.xml` and `llms.txt` updated with both Day 75 blog
+  URLs, pushed directly to Profile main
+  ([85be2b5](https://github.com/AkshantVats/Profile/commit/85be2b5)).
 
 ## Email Errors
 
