@@ -3,13 +3,13 @@
 ```json
 {
   "current_day": 73,
-  "phase": "experience_done",
+  "phase": "ai_blog_done",
   "last_run": "2026-08-07T08:20:00+05:30",
   "blog_prs": {
     "ai_learning": {
       "pr_url": null,
-      "live_url": null,
-      "status": "pending"
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-73-collision-handling.html",
+      "status": "live"
     },
     "experience": {
       "pr_url": null,
@@ -34,7 +34,7 @@
   "morning_email_sent": false,
   "indexes_updated": false,
   "experience_done": true,
-  "ai_blog_done": false,
+  "ai_blog_done": true,
   "code_done": true,
   "feedback_applied": false
 }
