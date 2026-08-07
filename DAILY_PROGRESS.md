@@ -4,7 +4,7 @@
   "last_run": "2026-08-06T21:45:17Z",
   "code_pr": {
     "url": "https://github.com/AkshantVats/infra-ai-streaming/pull/128",
-    "status": "open",
+    "status": "superseded_by_day73",
     "repo": "infra-ai-streaming",
     "module": "prompt-fingerprinter (pkg/stack: dual-layer L1 Redis + L2 semantic cache composition, stacked on Day 71's open PR #127)",
     "created_at": "2026-08-06T21:45:17Z",
@@ -13,7 +13,8 @@
       "deletions": 3,
       "changed_files": 8
     },
-    "test_pass_pct": 100
+    "test_pass_pct": 100,
+    "resolution_note": "Closed unmerged on infra-ai-streaming; its diff was already carried into main by Day 73 PR #129 (stacked branch, squash-merged as commit 12f7adf). See PR comment for detail."
   },
   "test_pass_pct": 100,
   "blog_prs": {
@@ -22,14 +23,14 @@
       "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-72-two-tier-cache-metrics.html",
       "status": "live",
       "day": 72,
-      "title": "Day 72 — Two-Tier Cache Metrics"
+      "title": "Day 72 \u2014 Two-Tier Cache Metrics"
     },
     "ai_learning": {
       "commit": "https://github.com/AkshantVats/Profile/commit/72e6692",
       "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-72-l1-l2-stack-design.html",
       "status": "live",
       "day": 72,
-      "title": "Day 72 — L1/L2 Stack Design"
+      "title": "Day 72 \u2014 L1/L2 Stack Design"
     }
   },
   "morning_email_sent": true,
