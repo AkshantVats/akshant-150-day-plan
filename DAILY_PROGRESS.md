@@ -3,8 +3,8 @@
 ```json
 {
   "current_day": 76,
-  "phase": "ai_blog_done",
-  "last_run": "2026-08-08T04:15:00+05:30",
+  "phase": "indexes_updated",
+  "last_run": "2026-08-08T04:22:00+05:30",
   "blog_prs": {
     "ai_learning": {
       "pr_url": null,
@@ -26,7 +26,7 @@
   },
   "oss_polish_pr": null,
   "morning_email_sent": false,
-  "indexes_updated": false,
+  "indexes_updated": true,
   "experience_done": true,
   "ai_blog_done": true,
   "code_done": true,
@@ -78,6 +78,8 @@
   ([c8d4996](https://github.com/AkshantVats/Profile/commit/c8d4996)). Retrofixed Day 75's series
   footer/sidebar to link forward. Live:
   https://akshantvats.github.io/Profile/blog/series/ai-learning/day-76-two-tier-cache-hierarchy.html
+- **Indexes:** `sitemap.xml` and `llms.txt` updated with both Day 76 blog URLs, pushed directly to
+  Profile main ([5990157](https://github.com/AkshantVats/Profile/commit/5990157)).
 
 ## Email Errors
 
