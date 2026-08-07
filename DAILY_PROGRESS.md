@@ -3,13 +3,13 @@
 ```json
 {
   "current_day": 76,
-  "phase": "experience_done",
-  "last_run": "2026-08-08T03:52:00+05:30",
+  "phase": "ai_blog_done",
+  "last_run": "2026-08-08T04:15:00+05:30",
   "blog_prs": {
     "ai_learning": {
       "pr_url": null,
-      "live_url": null,
-      "status": "pending"
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-76-two-tier-cache-hierarchy.html",
+      "status": "live"
     },
     "experience": {
       "pr_url": null,
@@ -28,7 +28,7 @@
   "morning_email_sent": false,
   "indexes_updated": false,
   "experience_done": true,
-  "ai_blog_done": false,
+  "ai_blog_done": true,
   "code_done": true,
   "feedback_applied": false
 }
@@ -62,6 +62,22 @@
   Profile main ([94f49d0](https://github.com/AkshantVats/Profile/commit/94f49d0)). Retrofixed Day
   75's series footer/sidebar to link forward. Live:
   https://akshantvats.github.io/Profile/blog/series/experience/day-76-circuit-breaker-half-open-state.html
+- **AI Learning:** Published `deep-dive`-format post "Exact-Match vs Semantic Cache — Two-Tier
+  Memory Hierarchy" — why `prompt-fingerprinter`'s L1 exact-match tier sits in front of
+  `semantic-cache-engine`'s L2 embedding tier: two genuinely different questions (byte-identical
+  vs. similar-enough), not one lookup at two speeds. CPU L1/L2 cache hierarchy DS analogy per
+  instructions. Bridges to today's code: L1's definition of "duplicate" is now tenant-configurable
+  via the admin API, and `TestIntegration_AdminRulesExpandDuplicateDetection` proves two
+  near-duplicate prompts collide at L1 once a tenant opts in. Closes the observability loop on
+  `cache_hit_type=exact` reaching LensAI. Mermaid L1/L2 decision-tree diagram, 6 nodes, all labels
+  ≤6 words. Cross-links to today's Experience post ("correct vs. exercised," applied to a circuit
+  breaker instead of a cache rule) and to Days 70/75. DALL-E cover generation hit
+  `insufficient_quota` on both the initial attempt and the retry (no OpenAI credits); fell back to
+  `generate_cover.py`. `pre-push-check.sh` passed clean (0 hard, 0 soft errors) on both the new
+  post and the Day 75 retrofix. Self-review: 0 issues found. Squash-merged to Profile main
+  ([c8d4996](https://github.com/AkshantVats/Profile/commit/c8d4996)). Retrofixed Day 75's series
+  footer/sidebar to link forward. Live:
+  https://akshantvats.github.io/Profile/blog/series/ai-learning/day-76-two-tier-cache-hierarchy.html
 
 ## Email Errors
 
