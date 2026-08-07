@@ -3,8 +3,8 @@
 ```json
 {
   "current_day": 75,
-  "phase": "indexes_updated",
-  "last_run": "2026-08-07T23:05:00+05:30",
+  "phase": "morning_complete",
+  "last_run": "2026-08-07T22:32:00+05:30",
   "blog_prs": {
     "ai_learning": {
       "pr_url": null,
@@ -31,7 +31,7 @@
     "test_pass_pct": 100
   },
   "oss_polish_pr": null,
-  "morning_email_sent": false,
+  "morning_email_sent": true,
   "indexes_updated": true,
   "experience_done": true,
   "ai_blog_done": true,
@@ -87,6 +87,11 @@
 - **Indexes:** `sitemap.xml` and `llms.txt` updated with both Day 75 blog
   URLs, pushed directly to Profile main
   ([85be2b5](https://github.com/AkshantVats/Profile/commit/85be2b5)).
+
+- **Morning email:** Sent via `gmail_send.sh --html` — subject "Day 75 ✅ —
+  Canonical Forms Before Hashing + Wayfair Redis Lua Token Bucket" — both
+  live blog URLs, PR #131 link with 9/9 CI checks passing, +346/-0 across 3
+  files, auto-merges in 20h note.
 
 ## Email Errors
 
