@@ -3,8 +3,8 @@
 ```json
 {
   "current_day": 77,
-  "phase": "indexes_updated",
-  "last_run": "2026-08-08T09:25:00+05:30",
+  "phase": "morning_complete",
+  "last_run": "2026-08-08T08:28:44+05:30",
   "blog_prs": {
     "ai_learning": {
       "pr_url": null,
@@ -25,7 +25,7 @@
     "created_at": "2026-08-08T08:12:32+05:30"
   },
   "oss_polish_pr": null,
-  "morning_email_sent": false,
+  "morning_email_sent": true,
   "indexes_updated": true,
   "experience_done": true,
   "ai_blog_done": true,
@@ -83,6 +83,11 @@
 
 - **Indexes:** `sitemap.xml` and `llms.txt` updated with both Day 77 blog URLs, pushed directly to
   Profile main ([622035e](https://github.com/AkshantVats/Profile/commit/622035e)).
+
+- **Morning email:** Sent via `gmail_send.sh --html` — subject "Day 77 ✅ — LLM-as-Judge — Rubrics
+  as Structured Data + Agoda P99 Cannot Be Averaged Across Tenants" — both live blog URLs, PR #134
+  link with 9/10 CI checks passing (1 still running, `e2e-k3d`), +136/-3 across 2 files, auto-merges
+  in 20h note.
 
 ## Email Errors
 
