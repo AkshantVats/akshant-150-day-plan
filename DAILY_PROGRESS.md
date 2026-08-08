@@ -3,8 +3,8 @@
 ```json
 {
   "current_day": 77,
-  "phase": "code_done",
-  "last_run": "2026-08-08T08:12:32+05:30",
+  "phase": "experience_done",
+  "last_run": "2026-08-08T08:52:00+05:30",
   "blog_prs": {
     "ai_learning": {
       "pr_url": null,
@@ -13,8 +13,8 @@
     },
     "experience": {
       "pr_url": null,
-      "live_url": null,
-      "status": "not_started"
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-77-p99-per-tenant-slos.html",
+      "status": "live"
     }
   },
   "code_pr": {
@@ -27,7 +27,7 @@
   "oss_polish_pr": null,
   "morning_email_sent": false,
   "indexes_updated": false,
-  "experience_done": false,
+  "experience_done": true,
   "ai_blog_done": false,
   "code_done": true,
   "feedback_applied": false,
@@ -46,6 +46,21 @@
   today's Experience post on P99 percentiles not being averageable across tenants). Updated
   `README.md`'s RouteIQ component table with the new row. PR
   [#134](https://github.com/AkshantVats/infra-ai-streaming/pull/134).
+
+- **Experience:** Published `deep-dive`-format post "Agoda P99 Cannot Be Averaged Across
+  Tenants" — extends Day 60's cross-tier quantile-merge fix (histogram bucket merge across
+  Redis-hot/Parquet-cold P95) to a worse version of the same mistake: a platform reliability
+  review's traffic-weighted blended P99 request, which would have hidden a real tenant's SLO
+  breach behind everyone else's healthy traffic. Fix was the dashboard default (per-tenant P99
+  first), not new math — the histogram infra already existed via the k8s service-tag cardinality
+  dimension. Bridges to today's model-quality-scorer DESIGN.md (scores per tenant x task_type).
+  DALL-E cover generation hit `insufficient_quota` on both the initial attempt and the retry (no
+  OpenAI credits); fell back to `generate_cover.py`. `pre-push-check.sh` passed clean (0 hard, 0
+  soft errors) on both the new post and the Day 76 retrofix. Self-review: 0 issues found.
+  Squash-merged to Profile main
+  ([626f4ce](https://github.com/AkshantVats/Profile/commit/626f4ce)). Retrofixed Day 76's series
+  footer/sidebar to link forward. Live:
+  https://akshantvats.github.io/Profile/blog/series/experience/day-77-p99-per-tenant-slos.html
 
 ## Email Errors
 
