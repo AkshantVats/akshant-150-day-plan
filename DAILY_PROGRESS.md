@@ -3,8 +3,8 @@
 ```json
 {
   "current_day": 78,
-  "phase": "code_done",
-  "last_run": "2026-08-08T13:19:12+05:30",
+  "phase": "experience_done",
+  "last_run": "2026-08-08T13:45:00+05:30",
   "blog_prs": {
     "ai_learning": {
       "pr_url": null,
@@ -12,9 +12,9 @@
       "status": "pending"
     },
     "experience": {
-      "pr_url": null,
-      "live_url": null,
-      "status": "pending"
+      "commit": "https://github.com/AkshantVats/Profile/commit/7da29d5",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/experience/day-78-decoupling-sqs-from-osrm.html",
+      "status": "live"
     }
   },
   "code_pr": {
@@ -27,7 +27,7 @@
   "oss_polish_pr": null,
   "morning_email_sent": false,
   "indexes_updated": false,
-  "experience_done": false,
+  "experience_done": true,
   "ai_blog_done": false,
   "code_done": true,
   "feedback_applied": false,
