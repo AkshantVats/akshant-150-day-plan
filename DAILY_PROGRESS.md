@@ -3,13 +3,13 @@
 ```json
 {
   "current_day": 77,
-  "phase": "experience_done",
-  "last_run": "2026-08-08T08:52:00+05:30",
+  "phase": "ai_blog_done",
+  "last_run": "2026-08-08T09:20:00+05:30",
   "blog_prs": {
     "ai_learning": {
       "pr_url": null,
-      "live_url": null,
-      "status": "not_started"
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-77-judge-rubrics-structured-data.html",
+      "status": "live"
     },
     "experience": {
       "pr_url": null,
@@ -28,7 +28,7 @@
   "morning_email_sent": false,
   "indexes_updated": false,
   "experience_done": true,
-  "ai_blog_done": false,
+  "ai_blog_done": true,
   "code_done": true,
   "feedback_applied": false,
   "session_note": "This build-slot session has no gh CLI and a GitHub MCP scope limited to 8 repos; model-quality-scorer is a new top-level module dir inside infra-ai-streaming (monorepo pattern already established by prompt-fingerprinter/cost-budget-enforcer), not a separate GitHub repo, so it stayed in scope."
@@ -40,11 +40,15 @@
 - **Code:** `infra-ai-streaming`, new module `model-quality-scorer` — DESIGN.md-only day opening the
   RouteIQ arc's fourth module, same shape as Day 60/65/70's design-first days. Covers the judge
   model choice (Haiku), the `JudgeRubric` JSON schema keyed per `task_type` with weighted criteria,
-  the async Kafka `judge.samples` queue topology, the 200 samples/hr/tenant throughput target
+  the async Kafka `judge-requests` queue topology, the 200 samples/hr/tenant throughput target
   (absolute rate, sampling percentage adapts per tenant), the three-step timeout failure mode
   (bounded retry → dead-letter → circuit breaker), and per-tenant×task_type aggregation (bridges to
   today's Experience post on P99 percentiles not being averageable across tenants). Updated
-  `README.md`'s RouteIQ component table with the new row. PR
+  `README.md`'s RouteIQ component table with the new row. Amended after discovering Day 74's AI
+  Learning post ("Quality Scorer Preview") had already publicly committed to the `judge-requests`
+  topic name, a ClickHouse `quality_scores` table, and a `rationale` field per score — renamed
+  from an initial `judge.samples` draft and added the missing fields so the design doc matches
+  what was already live rather than diverging from it. PR
   [#134](https://github.com/AkshantVats/infra-ai-streaming/pull/134).
 
 - **Experience:** Published `deep-dive`-format post "Agoda P99 Cannot Be Averaged Across
@@ -61,6 +65,21 @@
   ([626f4ce](https://github.com/AkshantVats/Profile/commit/626f4ce)). Retrofixed Day 76's series
   footer/sidebar to link forward. Live:
   https://akshantvats.github.io/Profile/blog/series/experience/day-77-p99-per-tenant-slos.html
+
+- **AI Learning:** Published `deep-dive`-format post "LLM-as-Judge — Rubrics as Structured Data" —
+  the `JudgeRubric` struct as a versioned JSON schema with weighted criteria (judging-panel
+  scorecard DS analogy), why Haiku grades instead of the model being judged (consistency over
+  sophistication for a narrow, fixed-rubric task), the `rationale` field alongside the numeric
+  score, and why scores aggregate per tenant × task_type rather than into one global average.
+  Cross-references Day 74's "Quality Scorer Preview" (which already published the Day 77–80
+  rollout table) and today's companion Experience post on the identical per-tenant aggregation
+  lesson applied to a time-series database's P99. DALL-E cover generation hit `insufficient_quota`
+  on both the initial attempt and the retry (no OpenAI credits); fell back to `generate_cover.py`.
+  `pre-push-check.sh` passed clean (0 hard, 0 soft errors) on both the new post and the Day 76
+  retrofix. Self-review: 0 issues found. Squash-merged to Profile main
+  ([6e3ee4b](https://github.com/AkshantVats/Profile/commit/6e3ee4b)). Retrofixed Day 76's series
+  footer/sidebar to link forward. Live:
+  https://akshantvats.github.io/Profile/blog/series/ai-learning/day-77-judge-rubrics-structured-data.html
 
 ## Email Errors
 
