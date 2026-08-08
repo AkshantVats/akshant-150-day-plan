@@ -3,13 +3,13 @@
 ```json
 {
   "current_day": 78,
-  "phase": "experience_done",
-  "last_run": "2026-08-08T13:45:00+05:30",
+  "phase": "ai_blog_done",
+  "last_run": "2026-08-08T13:55:00+05:30",
   "blog_prs": {
     "ai_learning": {
-      "pr_url": null,
-      "live_url": null,
-      "status": "pending"
+      "commit": "https://github.com/AkshantVats/Profile/commit/0ad1643",
+      "live_url": "https://akshantvats.github.io/Profile/blog/series/ai-learning/day-78-async-evaluation-pipelines-throughput-over-latency.html",
+      "status": "live"
     },
     "experience": {
       "commit": "https://github.com/AkshantVats/Profile/commit/7da29d5",
@@ -28,7 +28,7 @@
   "morning_email_sent": false,
   "indexes_updated": false,
   "experience_done": true,
-  "ai_blog_done": false,
+  "ai_blog_done": true,
   "code_done": true,
   "feedback_applied": false,
   "session_note": "Stacked on infra-ai-streaming PR #134 (Day 77 DESIGN.md, still open, not yet 20h old) since Day 78's code task implements that design. PR #135's diff will shrink once #134 merges. This build-slot session has no gh CLI; used GitHub MCP tools + git with PAT auth instead."
